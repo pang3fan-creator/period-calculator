@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "Period Calculator - Free & Private Menstrual Cycle Tracker",
+    "description": "Calculate your next period, fertile window, and ovulation date. 100% private - all data stays in your browser. No login required."
+  },
+  "common": {
+    "appName": "Period Calculator",
+    "calculate": "Calculate",
+    "reset": "Reset",
+    "privacyBadge": "Your data never leaves your device",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "language": "Language"
+  },
+  "nav": {
+    "home": "Home",
+    "irregularCalculator": "Irregular Period Calculator",
+    "ovulationCalculator": "Ovulation Calculator",
+    "blog": "Blog",
+    "privacyPolicy": "Privacy Policy",
+    "editorialPolicy": "Editorial Policy"
+  },
+  "home": {
+    "title": "Accurate Period Calculator & Cycle Tracker",
+    "subtitle": "Predict your next period, fertile window, and ovulation day with our private, AI-enhanced calculator.",
+    "comingSoon": "Calculator coming soon."
+  }
+}

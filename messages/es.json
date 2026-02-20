@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "Calculadora de Periodo - Seguimiento Menstrual Gratuito y Privado",
+    "description": "Calcula tu próximo periodo, ventana fértil y fecha de ovulación. 100% privado - todos los datos se quedan en tu navegador."
+  },
+  "common": {
+    "appName": "Calculadora de Periodo",
+    "calculate": "Calcular",
+    "reset": "Restablecer",
+    "privacyBadge": "Tus datos nunca salen de tu dispositivo",
+    "darkMode": "Modo Oscuro",
+    "lightMode": "Modo Claro",
+    "language": "Idioma"
+  },
+  "nav": {
+    "home": "Inicio",
+    "irregularCalculator": "Calculadora de Periodo Irregular",
+    "ovulationCalculator": "Calculadora de Ovulación",
+    "blog": "Blog",
+    "privacyPolicy": "Política de Privacidad",
+    "editorialPolicy": "Política Editorial"
+  },
+  "home": {
+    "title": "Calculadora de Periodo Precisa y Seguimiento del Ciclo",
+    "subtitle": "Predice tu próximo periodo, ventana fértil y día de ovulación con nuestra calculadora privada.",
+    "comingSoon": "Calculadora próximamente."
+  }
+}

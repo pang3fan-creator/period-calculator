@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "title": "Calculateur de Règles - Suivi Menstruel Gratuit et Privé",
+    "description": "Calculez vos prochaines règles, fenêtre de fertilité et date d'ovulation. 100% privé - toutes les données restent dans votre navigateur."
+  },
+  "common": {
+    "appName": "Calculateur de Règles",
+    "calculate": "Calculer",
+    "reset": "Réinitialiser",
+    "privacyBadge": "Vos données ne quittent jamais votre appareil",
+    "darkMode": "Mode Sombre",
+    "lightMode": "Mode Clair",
+    "language": "Langue"
+  },
+  "nav": {
+    "home": "Accueil",
+    "irregularCalculator": "Calculateur de Règles Irrégulières",
+    "ovulationCalculator": "Calculateur d'Ovulation",
+    "blog": "Blog",
+    "privacyPolicy": "Politique de Confidentialité",
+    "editorialPolicy": "Politique Éditoriale"
+  },
+  "home": {
+    "title": "Calculateur de Règles Précis et Suivi du Cycle",
+    "subtitle": "Prédisez vos prochaines règles, fenêtre de fertilité et jour d'ovulation avec notre calculateur privé.",
+    "comingSoon": "Calculateur bientôt disponible."
+  }
+}

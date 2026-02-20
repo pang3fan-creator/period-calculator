@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+/* === Tailwind v4 Theme Configuration - Morandi Color Palette === */
+@theme inline {
+  /* Fonts */
+  --font-heading: var(--font-playfair), serif;
+  --font-body: var(--font-inter), sans-serif;
+
+  /* Primary Colors - Dusty Rose */
+  --color-primary-50: #fdf2f4;
+  --color-primary-100: #fbe5ea;
+  --color-primary-200: #f8ced8;
+  --color-primary-300: #f3a9ba;
+  --color-primary-400: #eb7e97;
+  --color-primary-500: #df5579;
+  --color-primary-600: #cc3561;
+  --color-primary-700: #ab2750;
+  --color-primary-800: #8f2347;
+  --color-primary-900: #7a2141;
+  --color-primary-950: #440d1f;
+
+  /* Peach - Secondary Accent */
+  --color-peach-50: #fff7ed;
+  --color-peach-100: #ffeed4;
+  --color-peach-200: #fdd9a8;
+  --color-peach-300: #fcbe71;
+  --color-peach-400: #fa9a38;
+  --color-peach-500: #f87d12;
+
+  /* Ivory - Light Mode Background */
+  --color-ivory-50: #fefdfb;
+  --color-ivory-100: #fdf9f0;
+  --color-ivory-200: #faf3e2;
+  --color-ivory-300: #f5e8cc;
+  --color-ivory-400: #eddab0;
+  --color-ivory-500: #e3c78e;
+
+  /* Warm Beige - Card Backgrounds */
+  --color-warmbeige-50: #faf8f5;
+  --color-warmbeige-100: #f3efe8;
+  --color-warmbeige-200: #e8e0d3;
+  --color-warmbeige-300: #d5c8b4;
+  --color-warmbeige-400: #bfac91;
+  --color-warmbeige-500: #af9777;
+
+  /* Trust Blue */
+  --color-trust-blue-50: #eff4ff;
+  --color-trust-blue-100: #dbe6fe;
+  --color-trust-blue-200: #bfd3fe;
+  --color-trust-blue-300: #93b4fd;
+  --color-trust-blue-400: #6090fa;
+  --color-trust-blue-500: #3b6ef6;
+  --color-trust-blue-600: #1e3a8a;
+  --color-trust-blue-700: #1e3a7b;
+  --color-trust-blue-800: #1e3264;
+  --color-trust-blue-900: #1e2d53;
+
+  /* Trust Green - Sage */
+  --color-trust-green-50: #f0fdf4;
+  --color-trust-green-100: #dcfce7;
+  --color-trust-green-200: #bbf7d0;
+  --color-trust-green-300: #86efac;
+  --color-trust-green-400: #69a97c;
+  --color-trust-green-500: #4a8c5e;
+  --color-trust-green-600: #3d7a50;
+  --color-trust-green-700: #336842;
+  --color-trust-green-800: #2d5739;
+  --color-trust-green-900: #274a31;
+
+  /* Functional Colors - Calendar Visualization */
+  --color-period-red: #e8828a;
+  --color-period-blue: #7ba7d9;
+  --color-period-yellow: #f0d58c;
+
+  /* Dark Mode Surface Colors */
+  --color-dark-bg: #1a1a2e;
+  --color-dark-surface: #25253e;
+  --color-dark-card: #2d2d4a;
+  --color-dark-border: #3d3d5c;
+
+  /* Border Radius */
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
+
+  /* Box Shadows */
+  --shadow-soft: 0 2px 15px -3px rgba(0, 0, 0, 0.07),
+    0 10px 20px -2px rgba(0, 0, 0, 0.04);
+  --shadow-warm: 0 4px 25px -5px rgba(235, 126, 151, 0.15);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+
+  /* Spacing */
+  --spacing-safe-touch: 48px;
+
+  /* Animations */
+  --animate-fade-in: fade-in 0.5s ease-in-out;
+  --animate-slide-up: slide-up 0.4s ease-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Base Styles === */
+@layer base {
+  body {
+    @apply bg-ivory-100 font-body text-gray-800 antialiased;
+  }
+
+  .dark body {
+    @apply bg-dark-bg text-gray-100;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* === Component Utilities === */
+@layer components {
+  .touch-target {
+    @apply min-h-[48px] min-w-[48px] p-3;
+  }
+}
