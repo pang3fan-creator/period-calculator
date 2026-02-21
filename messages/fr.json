@@ -20,9 +20,28 @@
     "privacyPolicy": "Politique de Confidentialité",
     "editorialPolicy": "Politique Éditoriale"
   },
+  "header": {
+    "toggleTheme": "Changer le thème",
+    "selectLanguage": "Sélectionner la langue"
+  },
   "home": {
     "title": "Calculateur de Règles Précis et Suivi du Cycle",
     "subtitle": "Prédisez vos prochaines règles, fenêtre de fertilité et jour d'ovulation avec notre calculateur privé.",
     "comingSoon": "Calculateur bientôt disponible."
+  },
+  "footer": {
+    "tagline": "Suivi Menstruel Gratuit et Privé",
+    "links": "Liens",
+    "trust": "Confiance",
+    "trustText": "Vos données ne quittent jamais votre appareil.",
+    "copyright": "© {year} Calculateur de Règles. Tous droits réservés."
+  },
+  "settings": {
+    "title": "Paramètres",
+    "theme": "Thème",
+    "light": "Clair",
+    "dark": "Sombre",
+    "language": "Langue",
+    "close": "Fermer"
   }
 }

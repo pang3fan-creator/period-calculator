@@ -20,9 +20,28 @@
     "privacyPolicy": "Política de Privacidad",
     "editorialPolicy": "Política Editorial"
   },
+  "header": {
+    "toggleTheme": "Cambiar tema",
+    "selectLanguage": "Seleccionar idioma"
+  },
   "home": {
     "title": "Calculadora de Periodo Precisa y Seguimiento del Ciclo",
     "subtitle": "Predice tu próximo periodo, ventana fértil y día de ovulación con nuestra calculadora privada.",
     "comingSoon": "Calculadora próximamente."
+  },
+  "footer": {
+    "tagline": "Seguimiento Menstrual Gratuito y Privado",
+    "links": "Enlaces",
+    "trust": "Confianza",
+    "trustText": "Tus datos nunca salen de tu dispositivo.",
+    "copyright": "© {year} Calculadora de Periodo. Todos los derechos reservados."
+  },
+  "settings": {
+    "title": "Ajustes",
+    "theme": "Tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "language": "Idioma",
+    "close": "Cerrar"
   }
 }
