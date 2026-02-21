@@ -52,7 +52,10 @@ export function validateCycleData(data: CycleData): ValidationError[] {
       field: "lastPeriodStart",
       message: "validation.invalidDate",
     });
-  } else if (!(data.lastPeriodStart instanceof Date) || isNaN(data.lastPeriodStart.getTime())) {
+  } else if (
+    !(data.lastPeriodStart instanceof Date) ||
+    isNaN(data.lastPeriodStart.getTime())
+  ) {
     errors.push({
       field: "lastPeriodStart",
       message: "validation.invalidDate",
