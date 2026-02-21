@@ -8,6 +8,8 @@ import {
   DEFAULT_PERIOD_LENGTH,
   MIN_CYCLE_LENGTH,
   MAX_CYCLE_LENGTH,
+  MIN_PERIOD_LENGTH,
+  MAX_PERIOD_LENGTH,
 } from "@/lib/constants";
 
 interface CalculatorFormProps {
@@ -21,9 +23,6 @@ interface FormState {
   cycleLength: number;
   periodLength: number;
 }
-
-const MIN_PERIOD_LENGTH = 2;
-const MAX_PERIOD_LENGTH = 7;
 
 export function CalculatorForm({ initialData, onSubmit }: CalculatorFormProps) {
   const t = useTranslations("calculator.form");
