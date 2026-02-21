@@ -4,7 +4,7 @@ export default function PrivacyPolicyPage() {
       <h1 className="text-primary-400 text-center text-3xl font-bold">
         Privacy Policy
       </h1>
-      <p className="mt-4 text-gray-500">Coming soon.</p>
+      <p className="mt-4 text-gray-500 dark:text-gray-400">Coming soon.</p>
     </main>
   );
 }

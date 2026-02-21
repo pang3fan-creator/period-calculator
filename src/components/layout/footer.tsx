@@ -29,7 +29,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/privacy-policy"
-                  className="hover:text-primary-400 block text-sm text-gray-500 transition-colors"
+                  className="focus-visible:ring-primary-400 hover:text-primary-400 block rounded-lg text-sm text-gray-500 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400"
                 >
                   {tNav("privacyPolicy")}
                 </Link>
@@ -37,7 +37,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/editorial-policy"
-                  className="hover:text-primary-400 block text-sm text-gray-500 transition-colors"
+                  className="focus-visible:ring-primary-400 hover:text-primary-400 block rounded-lg text-sm text-gray-500 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400"
                 >
                   {tNav("editorialPolicy")}
                 </Link>
@@ -45,7 +45,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/blog"
-                  className="hover:text-primary-400 block text-sm text-gray-500 transition-colors"
+                  className="focus-visible:ring-primary-400 hover:text-primary-400 block rounded-lg text-sm text-gray-500 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400"
                 >
                   {tNav("blog")}
                 </Link>
@@ -66,6 +66,7 @@ export function Footer() {
               strokeLinecap="round"
               strokeLinejoin="round"
               className="mt-0.5 shrink-0 text-gray-500 dark:text-gray-400"
+              aria-hidden="true"
             >
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
               <path d="M7 11V7a5 5 0 0 1 10 0v4" />

@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* === Tailwind v4 Configuration - Enable class-based dark mode === */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* === Tailwind v4 Theme Configuration - Morandi Color Palette === */
 @theme inline {
   /* Fonts */
@@ -83,11 +86,10 @@
   --radius-4xl: 2rem;
 
   /* Box Shadows */
-  --shadow-soft: 0 2px 15px -3px rgba(0, 0, 0, 0.07),
-    0 10px 20px -2px rgba(0, 0, 0, 0.04);
+  --shadow-soft:
+    0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
   --shadow-warm: 0 4px 25px -5px rgba(235, 126, 151, 0.15);
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04),
-    0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
 
   /* Spacing */
   --spacing-safe-touch: 48px;
@@ -119,6 +121,14 @@
 
 /* === Base Styles === */
 @layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+
   body {
     @apply bg-ivory-100 font-body text-gray-800 antialiased;
   }

@@ -65,7 +65,7 @@ export function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="font-heading text-primary-400 text-xl font-bold"
+          className="focus-visible:ring-primary-400 font-heading text-primary-400 rounded-lg text-xl font-bold outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
         >
           Period Calculator
         </Link>
@@ -76,7 +76,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="flex min-h-[48px] min-w-[48px] items-center justify-center rounded-xl text-gray-500 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+            className="focus-visible:ring-primary-400 hover:bg-warmbeige-100 dark:hover:bg-dark-surface flex min-h-[48px] min-w-[48px] items-center justify-center rounded-xl text-gray-500 transition-colors outline-none hover:text-gray-700 focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-200"
             aria-label={t("toggleTheme")}
           >
             {mounted ? (
@@ -130,7 +130,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setLangOpen(!langOpen)}
-              className="flex min-h-[48px] min-w-[48px] items-center justify-center gap-1 rounded-xl px-3 text-sm font-medium text-gray-600 transition-colors hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100"
+              className="focus-visible:ring-primary-400 flex min-h-[48px] min-w-[48px] items-center justify-center gap-1 rounded-xl px-3 text-sm font-medium text-gray-600 transition-colors outline-none hover:text-gray-800 focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-300 dark:hover:text-gray-100"
               aria-expanded={langOpen}
               aria-haspopup="listbox"
               aria-label={t("selectLanguage")}
@@ -147,6 +147,7 @@ export function Header() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 className={`transition-transform ${langOpen ? "rotate-180" : ""}`}
+                aria-hidden="true"
               >
                 <polyline points="6 9 12 15 18 9" />
               </svg>
@@ -161,7 +162,7 @@ export function Header() {
                     role="option"
                     aria-selected={locale === lang.code}
                     onClick={() => handleLocaleChange(lang.code)}
-                    className="hover:bg-warmbeige-50 dark:hover:bg-dark-surface flex min-h-[44px] w-full items-center justify-between px-4 text-sm text-gray-700 transition-colors dark:text-gray-200"
+                    className="focus-visible:ring-primary-400 hover:bg-warmbeige-50 dark:hover:bg-dark-surface flex min-h-[44px] w-full items-center justify-between px-4 text-sm text-gray-700 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-200"
                   >
                     <span>{lang.label}</span>
                     {locale === lang.code && (
@@ -176,6 +177,7 @@ export function Header() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         className="text-primary-400"
+                        aria-hidden="true"
                       >
                         <polyline points="20 6 9 17 4 12" />
                       </svg>

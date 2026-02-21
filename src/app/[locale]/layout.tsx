@@ -37,7 +37,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${playfair.variable} ${inter.variable} font-body antialiased`}
+        className={`${playfair.variable} ${inter.variable} font-body flex min-h-screen flex-col antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -47,7 +47,7 @@ export default async function LocaleLayout({
         >
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Header />
-            <main className="pb-20 md:pb-0">{children}</main>
+            <main className="flex-1 pb-20 md:pb-0">{children}</main>
             <Footer />
             <MobileNav />
           </NextIntlClientProvider>
