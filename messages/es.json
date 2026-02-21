@@ -62,6 +62,26 @@
       "ovulationDay": "Día de Ovulación",
       "fertileWindow": "Ventana Fértil",
       "pmsPeriod": "Periodo SPM"
+    },
+    "calendar": {
+      "title": "Vista de Calendario",
+      "previousMonth": "Mes anterior",
+      "nextMonth": "Próximo mes",
+      "weekDays": {
+        "mon": "Lun",
+        "tue": "Mar",
+        "wed": "Mié",
+        "thu": "Jue",
+        "fri": "Vie",
+        "sat": "Sáb",
+        "sun": "Dom"
+      },
+      "legend": {
+        "period": "Periodo",
+        "ovulation": "Ovulación",
+        "fertile": "Ventana Fértil",
+        "pms": "SPM"
+      }
     }
   }
 }

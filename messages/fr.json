@@ -62,6 +62,26 @@
       "ovulationDay": "Jour d'Ovulation",
       "fertileWindow": "Fenêtre Fertile",
       "pmsPeriod": "Période SPM"
+    },
+    "calendar": {
+      "title": "Vue du Calendrier",
+      "previousMonth": "Mois précédent",
+      "nextMonth": "Mois suivant",
+      "weekDays": {
+        "mon": "Lun",
+        "tue": "Mar",
+        "wed": "Mer",
+        "thu": "Jeu",
+        "fri": "Ven",
+        "sat": "Sam",
+        "sun": "Dim"
+      },
+      "legend": {
+        "period": "Règles",
+        "ovulation": "Ovulation",
+        "fertile": "Fenêtre Fertile",
+        "pms": "SPM"
+      }
     }
   }
 }
