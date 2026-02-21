@@ -43,5 +43,25 @@
     "dark": "Dark",
     "language": "Language",
     "close": "Close"
+  },
+  "calculator": {
+    "form": {
+      "lastPeriodLabel": "First day of your last period",
+      "lastPeriodPlaceholder": "Select date",
+      "cycleLengthLabel": "Average cycle length",
+      "cycleLengthHelp": "Usually 21-35 days",
+      "cycleLengthUnit": "days",
+      "periodLengthLabel": "Period length",
+      "periodLengthHelp": "How long does your period last?",
+      "periodLengthUnit": "days",
+      "calculateButton": "Calculate My Cycle",
+      "resetButton": "Reset"
+    },
+    "predictions": {
+      "nextPeriod": "Next Period",
+      "ovulationDay": "Ovulation Day",
+      "fertileWindow": "Fertile Window",
+      "pmsPeriod": "PMS Period"
+    }
   }
 }

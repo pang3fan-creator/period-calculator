@@ -43,5 +43,25 @@
     "dark": "Oscuro",
     "language": "Idioma",
     "close": "Cerrar"
+  },
+  "calculator": {
+    "form": {
+      "lastPeriodLabel": "Primer día de tu último periodo",
+      "lastPeriodPlaceholder": "Seleccionar fecha",
+      "cycleLengthLabel": "Duración promedio del ciclo",
+      "cycleLengthHelp": "Generalmente 21-35 días",
+      "cycleLengthUnit": "días",
+      "periodLengthLabel": "Duración del periodo",
+      "periodLengthHelp": "¿Cuánto dura tu periodo?",
+      "periodLengthUnit": "días",
+      "calculateButton": "Calcular Mi Ciclo",
+      "resetButton": "Restablecer"
+    },
+    "predictions": {
+      "nextPeriod": "Próximo Periodo",
+      "ovulationDay": "Día de Ovulación",
+      "fertileWindow": "Ventana Fértil",
+      "pmsPeriod": "Periodo SPM"
+    }
   }
 }
