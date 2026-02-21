@@ -74,7 +74,8 @@
       "recalculate": "Recalculate",
       "privacyNote": "Your data is saved locally on your device and never sent to any server.",
       "calendarEventTitle": "Period Prediction",
-      "calendarEventDescription": "Next period predicted by Period Calculator"
+      "calendarEventDescription": "Next period predicted by Period Calculator",
+      "calendarEventDetails": "Ovulation date: {ovulationDate}"
     },
     "calendar": {
       "title": "Calendar View",

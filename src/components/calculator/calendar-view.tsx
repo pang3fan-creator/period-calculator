@@ -185,7 +185,7 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
   });
 
   return (
-    <div className="dark:bg-dark-card flex w-full flex-col gap-6 rounded-3xl bg-white p-6 shadow-lg md:p-8">
+    <div className="dark:bg-dark-card flex w-full flex-col gap-6 rounded-3xl bg-white p-6 shadow-card md:p-8">
       {/* Calendar Header */}
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
@@ -198,7 +198,7 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
             type="button"
             onClick={handlePreviousMonth}
             aria-label={t("previousMonth")}
-            className="rounded-xl p-2 text-gray-600 transition-colors hover:text-gray-900 focus:ring-2 focus:ring-gray-300 focus:outline-none dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-gray-600"
+            className="rounded-xl p-3 text-gray-600 transition-colors hover:text-gray-900 focus:ring-2 focus:ring-gray-300 focus:outline-none dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-gray-600"
           >
             <ChevronLeftIcon />
           </button>
@@ -211,7 +211,7 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
             type="button"
             onClick={handleNextMonth}
             aria-label={t("nextMonth")}
-            className="rounded-xl p-2 text-gray-600 transition-colors hover:text-gray-900 focus:ring-2 focus:ring-gray-300 focus:outline-none dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-gray-600"
+            className="rounded-xl p-3 text-gray-600 transition-colors hover:text-gray-900 focus:ring-2 focus:ring-gray-300 focus:outline-none dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-gray-600"
           >
             <ChevronRightIcon />
           </button>
@@ -241,11 +241,19 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
               style={{
                 opacity: day.isCurrentMonth ? 1 : 0.4,
               }}
+              tabIndex={day.isCurrentMonth ? 0 : -1}
+              role="button"
               aria-label={
                 day.isCurrentMonth
                   ? format(day.date, "MMM dd, yyyy", { locale: dateFnsLocale })
                   : undefined
               }
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  // Could add click handler here for future features
+                }
+              }}
             >
               {day.dayNumber}
             </div>

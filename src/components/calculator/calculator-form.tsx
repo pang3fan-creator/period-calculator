@@ -241,7 +241,7 @@ export function CalculatorForm({ initialData, onSubmit }: CalculatorFormProps) {
         <button
           type="submit"
           disabled={!isFormValid}
-          className="bg-primary-400 hover:bg-primary-500 shadow-warm focus:ring-primary-300 dark:focus:ring-primary-700 min-h-[48px] flex-1 rounded-2xl px-6 py-3 text-lg font-semibold text-white transition-all hover:shadow-lg focus:ring-4 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+          className="bg-primary-400 hover:bg-primary-500 shadow-warm focus:ring-primary-300 dark:focus:ring-primary-700 disabled:bg-primary-300 dark:disabled:bg-primary-800 min-h-[48px] flex-1 rounded-2xl px-6 py-3 text-lg font-semibold text-white transition-all focus:ring-4 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:disabled:text-gray-400"
         >
           {t("calculateButton")}
         </button>

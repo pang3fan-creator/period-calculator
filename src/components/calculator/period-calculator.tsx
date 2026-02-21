@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import type { CycleData, PredictionResult } from "@/types";
 import { useLocale } from "next-intl";
 import type { Locale } from "@/i18n/config";
@@ -41,25 +41,32 @@ export function PeriodCalculator() {
   const [result, setResult] = useState<PredictionResult | null>(null);
 
   // State for tracking if component has mounted (client-side only)
-  // Use lazy initialization to avoid setState in useEffect
-  const [isMounted] = useState(() => {
-    // This only runs once on the client during initial render
-    if (typeof window !== "undefined") {
-      // Load saved data during initial state creation
-      const savedData = loadCycleData();
-      if (savedData) {
-        const errors = validateCycleData(savedData);
-        if (errors.length === 0) {
-          // Set state with saved data
-          setCycleData(savedData);
-          setResult(calculateCycle(savedData));
-        } else {
-          clearCycleData();
-        }
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Track if data has been loaded to prevent double-loading
+  const dataLoadedRef = useRef(false);
+
+  // Use useEffect to load data only on client-side
+  useEffect(() => {
+    // Prevent double-loading
+    if (dataLoadedRef.current) {
+      return;
+    }
+    dataLoadedRef.current = true;
+
+    // Load saved data on mount
+    const savedData = loadCycleData();
+    if (savedData) {
+      const errors = validateCycleData(savedData);
+      if (errors.length === 0) {
+        setCycleData(savedData);
+        setResult(calculateCycle(savedData));
+      } else {
+        clearCycleData();
       }
     }
-    return true;
-  });
+    setIsMounted(true);
+  }, []);
 
   /**
    * Handle form submission

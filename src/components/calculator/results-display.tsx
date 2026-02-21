@@ -111,13 +111,17 @@ export function ResultsDisplay({
 
     // Build Google Calendar Web Intent URL
     const title = encodeURIComponent(t("calendarEventTitle"));
+    const description = encodeURIComponent(t("calendarEventDescription"));
     const details = encodeURIComponent(
       t("calendarEventDetails", {
         ovulationDate: ovulationDateStr,
       }),
     );
 
-    const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}`;
+    // Combine description and ovulation details
+    const fullDetails = `${description}\n\n${details}`;
+
+    const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${fullDetails}`;
 
     // Open in new tab
     window.open(googleCalendarUrl, "_blank", "noopener,noreferrer");
@@ -136,7 +140,7 @@ export function ResultsDisplay({
         <button
           type="button"
           onClick={handleAddToGoogleCalendar}
-          className="dark:bg-dark-card dark:hover:bg-dark-card/80 flex min-h-[52px] items-center justify-center gap-2 rounded-2xl border-2 border-gray-300 bg-white px-6 py-3.5 text-base font-semibold text-gray-700 transition-all hover:bg-gray-50 hover:shadow-md focus:ring-2 focus:ring-gray-300 focus:outline-none dark:border-gray-600 dark:text-gray-200 dark:focus:ring-gray-500"
+          className="dark:bg-dark-card dark:hover:bg-dark-card/80 flex min-h-[48px] items-center justify-center gap-2 rounded-2xl border-2 border-gray-300 bg-white px-6 py-3 text-base font-semibold text-gray-700 transition-all hover:bg-gray-50 focus:ring-2 focus:ring-gray-300 focus:outline-none dark:border-gray-600 dark:text-gray-200 dark:focus:ring-gray-500"
         >
           <CalendarPlusIcon />
           {t("addToCalendar")}
@@ -145,7 +149,7 @@ export function ResultsDisplay({
         <button
           type="button"
           onClick={onReset}
-          className="flex min-h-[52px] items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 px-6 py-3.5 text-base font-semibold text-white transition-all hover:from-pink-600 hover:to-rose-600 hover:shadow-lg focus:ring-2 focus:ring-pink-300 focus:outline-none dark:focus:ring-pink-700"
+          className="flex min-h-[48px] items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 px-6 py-3 text-base font-semibold text-white transition-all hover:from-pink-600 hover:to-rose-600 focus:ring-2 focus:ring-pink-300 focus:outline-none dark:focus:ring-pink-700"
         >
           <RefreshIcon />
           {t("recalculate")}

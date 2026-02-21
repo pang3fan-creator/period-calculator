@@ -74,7 +74,8 @@
       "recalculate": "Recalcular",
       "privacyNote": "Tus datos se guardan localmente en tu dispositivo y nunca se envían a ningún servidor.",
       "calendarEventTitle": "Predicción de Periodo",
-      "calendarEventDescription": "Próximo periodo predicho por Period Calculator"
+      "calendarEventDescription": "Próximo periodo predicho por Period Calculator",
+      "calendarEventDetails": "Fecha de ovulación: {ovulationDate}"
     },
     "calendar": {
       "title": "Vista de Calendario",
