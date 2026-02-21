@@ -2,6 +2,7 @@
 
 import { useState, useCallback, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
+import { addDays } from "date-fns";
 import { CycleData } from "@/types";
 import {
   DEFAULT_CYCLE_LENGTH,
@@ -11,6 +12,12 @@ import {
   MIN_PERIOD_LENGTH,
   MAX_PERIOD_LENGTH,
 } from "@/lib/constants";
+
+// Helper to get default date (28 days ago for immediate calculation)
+const getDefaultLastPeriodDate = (): string => {
+  const date = addDays(new Date(), -DEFAULT_CYCLE_LENGTH);
+  return date.toISOString().split("T")[0];
+};
 
 interface CalculatorFormProps {
   initialData?: CycleData;
@@ -37,7 +44,7 @@ export function CalculatorForm({ initialData, onSubmit }: CalculatorFormProps) {
       };
     }
     return {
-      lastPeriodStart: "",
+      lastPeriodStart: getDefaultLastPeriodDate(),
       cycleLength: DEFAULT_CYCLE_LENGTH,
       periodLength: DEFAULT_PERIOD_LENGTH,
     };

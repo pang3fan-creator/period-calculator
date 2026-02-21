@@ -111,13 +111,11 @@ function formatDateRange(
   endDate: Date,
   dateFnsLocale: DateFnsLocale,
 ): string {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const formattedStart = format(startDate, "MMM dd, yyyy", {
-    locale: dateFnsLocale as any,
+    locale: dateFnsLocale,
   });
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const formattedEnd = format(endDate, "MMM dd, yyyy", {
-    locale: dateFnsLocale as any,
+    locale: dateFnsLocale,
   });
 
   // Check if dates are the same (compare timestamps)
