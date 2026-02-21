@@ -6,7 +6,11 @@ import { useLocale } from "next-intl";
 import type { Locale } from "@/i18n/config";
 import { validateCycleData } from "@/lib/calculator/validation";
 import { calculateCycle } from "@/lib/calculator/cycle-calculator";
-import { saveCycleData, loadCycleData, clearCycleData } from "@/lib/storage/localStorage";
+import {
+  saveCycleData,
+  loadCycleData,
+  clearCycleData,
+} from "@/lib/storage/localStorage";
 import { CalculatorForm } from "./calculator-form";
 import { ResultsDisplay } from "./results-display";
 import { Card } from "@/components/ui/card";
@@ -104,7 +108,7 @@ export function PeriodCalculator() {
     return (
       <Card>
         <div className="flex min-h-[400px] items-center justify-center">
-          <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary-200 border-t-primary-400" />
+          <div className="border-primary-200 border-t-primary-400 h-8 w-8 animate-spin rounded-full border-4" />
         </div>
       </Card>
     );
@@ -120,7 +124,10 @@ export function PeriodCalculator() {
           onReset={handleReset}
         />
       ) : (
-        <CalculatorForm onSubmit={handleSubmit} initialData={cycleData || undefined} />
+        <CalculatorForm
+          onSubmit={handleSubmit}
+          initialData={cycleData || undefined}
+        />
       )}
     </Card>
   );

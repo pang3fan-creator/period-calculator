@@ -79,7 +79,7 @@ export function calculateCycle(data: CycleData): PredictionResult {
  */
 export function getDatePeriodType(
   date: Date,
-  prediction: PredictionResult
+  prediction: PredictionResult,
 ): PeriodType | null {
   const {
     nextPeriodStart,

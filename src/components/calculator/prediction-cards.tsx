@@ -112,9 +112,13 @@ function formatDateRange(
   dateFnsLocale: DateFnsLocale,
 ): string {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const formattedStart = format(startDate, "MMM dd, yyyy", { locale: dateFnsLocale as any });
+  const formattedStart = format(startDate, "MMM dd, yyyy", {
+    locale: dateFnsLocale as any,
+  });
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const formattedEnd = format(endDate, "MMM dd, yyyy", { locale: dateFnsLocale as any });
+  const formattedEnd = format(endDate, "MMM dd, yyyy", {
+    locale: dateFnsLocale as any,
+  });
 
   // Check if dates are the same (compare timestamps)
   if (startDate.getTime() === endDate.getTime()) {
@@ -152,45 +156,45 @@ export function PredictionCards({ result, locale }: PredictionCardsProps) {
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
       {/* Next Period Card */}
-      <div className="border-red-300 bg-red-50 dark:border-red-700/50 dark:bg-red-950/30 flex items-center gap-4 rounded-2xl border-2 p-5 shadow-sm transition-shadow hover:shadow-md">
-        <div className="text-red-600 dark:text-red-400 flex-shrink-0">
+      <div className="flex items-center gap-4 rounded-2xl border-2 border-red-300 bg-red-50 p-5 shadow-sm transition-shadow hover:shadow-md dark:border-red-700/50 dark:bg-red-950/30">
+        <div className="flex-shrink-0 text-red-600 dark:text-red-400">
           <CalendarIcon />
         </div>
         <div className="min-w-0 flex-1">
-          <p className="text-gray-600 dark:text-gray-400 mb-1 text-sm font-medium">
+          <p className="mb-1 text-sm font-medium text-gray-600 dark:text-gray-400">
             {t("nextPeriod")}
           </p>
-          <p className="text-gray-900 dark:text-gray-100 truncate text-base font-semibold">
+          <p className="truncate text-base font-semibold text-gray-900 dark:text-gray-100">
             {formatDateRange(nextPeriodStart, nextPeriodEnd, dateFnsLocale)}
           </p>
         </div>
       </div>
 
       {/* Ovulation Day Card */}
-      <div className="border-blue-300 bg-blue-50 dark:border-blue-700/50 dark:bg-blue-950/30 flex items-center gap-4 rounded-2xl border-2 p-5 shadow-sm transition-shadow hover:shadow-md">
-        <div className="text-blue-600 dark:text-blue-400 flex-shrink-0">
+      <div className="flex items-center gap-4 rounded-2xl border-2 border-blue-300 bg-blue-50 p-5 shadow-sm transition-shadow hover:shadow-md dark:border-blue-700/50 dark:bg-blue-950/30">
+        <div className="flex-shrink-0 text-blue-600 dark:text-blue-400">
           <SparklesIcon />
         </div>
         <div className="min-w-0 flex-1">
-          <p className="text-gray-600 dark:text-gray-400 mb-1 text-sm font-medium">
+          <p className="mb-1 text-sm font-medium text-gray-600 dark:text-gray-400">
             {t("ovulationDay")}
           </p>
-          <p className="text-gray-900 dark:text-gray-100 truncate text-base font-semibold">
+          <p className="truncate text-base font-semibold text-gray-900 dark:text-gray-100">
             {format(ovulationDate, "MMM dd, yyyy", { locale: dateFnsLocale })}
           </p>
         </div>
       </div>
 
       {/* Fertile Window Card */}
-      <div className="border-blue-300 bg-blue-50 dark:border-blue-700/50 dark:bg-blue-950/30 flex items-center gap-4 rounded-2xl border-2 p-5 shadow-sm transition-shadow hover:shadow-md">
-        <div className="text-blue-600 dark:text-blue-400 flex-shrink-0">
+      <div className="flex items-center gap-4 rounded-2xl border-2 border-blue-300 bg-blue-50 p-5 shadow-sm transition-shadow hover:shadow-md dark:border-blue-700/50 dark:bg-blue-950/30">
+        <div className="flex-shrink-0 text-blue-600 dark:text-blue-400">
           <HeartIcon />
         </div>
         <div className="min-w-0 flex-1">
-          <p className="text-gray-600 dark:text-gray-400 mb-1 text-sm font-medium">
+          <p className="mb-1 text-sm font-medium text-gray-600 dark:text-gray-400">
             {t("fertileWindow")}
           </p>
-          <p className="text-gray-900 dark:text-gray-100 truncate text-base font-semibold">
+          <p className="truncate text-base font-semibold text-gray-900 dark:text-gray-100">
             {formatDateRange(
               fertileWindowStart,
               fertileWindowEnd,
@@ -201,15 +205,15 @@ export function PredictionCards({ result, locale }: PredictionCardsProps) {
       </div>
 
       {/* PMS Period Card */}
-      <div className="border-yellow-300 bg-yellow-50 dark:border-yellow-700/50 dark:bg-yellow-950/30 flex items-center gap-4 rounded-2xl border-2 p-5 shadow-sm transition-shadow hover:shadow-md">
-        <div className="text-yellow-600 dark:text-yellow-400 flex-shrink-0">
+      <div className="flex items-center gap-4 rounded-2xl border-2 border-yellow-300 bg-yellow-50 p-5 shadow-sm transition-shadow hover:shadow-md dark:border-yellow-700/50 dark:bg-yellow-950/30">
+        <div className="flex-shrink-0 text-yellow-600 dark:text-yellow-400">
           <SunIcon />
         </div>
         <div className="min-w-0 flex-1">
-          <p className="text-gray-600 dark:text-gray-400 mb-1 text-sm font-medium">
+          <p className="mb-1 text-sm font-medium text-gray-600 dark:text-gray-400">
             {t("pmsPeriod")}
           </p>
-          <p className="text-gray-900 dark:text-gray-100 truncate text-base font-semibold">
+          <p className="truncate text-base font-semibold text-gray-900 dark:text-gray-100">
             {format(pmsStart, "MMM dd, yyyy", { locale: dateFnsLocale })}
           </p>
         </div>

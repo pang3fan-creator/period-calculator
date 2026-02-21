@@ -26,15 +26,7 @@ const DATE_FNS_LOCALE_MAP: Record<Locale, DateFnsLocale> = {
 };
 
 // Week day order starting from Monday
-const WEEK_DAYS = [
-  "mon",
-  "tue",
-  "wed",
-  "thu",
-  "fri",
-  "sat",
-  "sun",
-] as const;
+const WEEK_DAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"] as const;
 
 interface CalendarDay {
   date: Date;
@@ -188,10 +180,12 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
   }, [currentMonth, prediction]);
 
   // Format month title
-  const monthTitle = format(currentMonth, "MMMM yyyy", { locale: dateFnsLocale });
+  const monthTitle = format(currentMonth, "MMMM yyyy", {
+    locale: dateFnsLocale,
+  });
 
   return (
-    <div className="bg-white dark:bg-dark-card flex w-full flex-col gap-6 rounded-3xl p-6 shadow-lg md:p-8">
+    <div className="dark:bg-dark-card flex w-full flex-col gap-6 rounded-3xl bg-white p-6 shadow-lg md:p-8">
       {/* Calendar Header */}
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
@@ -204,7 +198,7 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
             type="button"
             onClick={handlePreviousMonth}
             aria-label={t("previousMonth")}
-            className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 rounded-xl p-2 transition-colors focus:ring-2 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-600"
+            className="rounded-xl p-2 text-gray-600 transition-colors hover:text-gray-900 focus:ring-2 focus:ring-gray-300 focus:outline-none dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-gray-600"
           >
             <ChevronLeftIcon />
           </button>
@@ -217,7 +211,7 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
             type="button"
             onClick={handleNextMonth}
             aria-label={t("nextMonth")}
-            className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 rounded-xl p-2 transition-colors focus:ring-2 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-600"
+            className="rounded-xl p-2 text-gray-600 transition-colors hover:text-gray-900 focus:ring-2 focus:ring-gray-300 focus:outline-none dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-gray-600"
           >
             <ChevronRightIcon />
           </button>
@@ -227,7 +221,7 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
       {/* Calendar Grid */}
       <div className="w-full">
         {/* Week Day Headers */}
-        <div className="grid grid-cols-7 gap-1 md:gap-2 mb-2">
+        <div className="mb-2 grid grid-cols-7 gap-1 md:gap-2">
           {WEEK_DAYS.map((day) => (
             <div
               key={day}
@@ -262,25 +256,25 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
       {/* Legend */}
       <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
         <div className="flex items-center gap-2">
-          <div className="border-red-400 bg-red-50 dark:border-red-500/50 dark:bg-red-950/40 h-4 w-4 rounded border-2" />
+          <div className="h-4 w-4 rounded border-2 border-red-400 bg-red-50 dark:border-red-500/50 dark:bg-red-950/40" />
           <span className="text-gray-700 dark:text-gray-300">
             {t("legend.period")}
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="border-blue-400 bg-blue-50 dark:border-blue-500/50 dark:bg-blue-950/40 h-4 w-4 rounded border-2" />
+          <div className="h-4 w-4 rounded border-2 border-blue-400 bg-blue-50 dark:border-blue-500/50 dark:bg-blue-950/40" />
           <span className="text-gray-700 dark:text-gray-300">
             {t("legend.ovulation")}
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="border-blue-300 bg-blue-50 dark:border-blue-600/50 dark:bg-blue-950/40 h-4 w-4 rounded border-2" />
+          <div className="h-4 w-4 rounded border-2 border-blue-300 bg-blue-50 dark:border-blue-600/50 dark:bg-blue-950/40" />
           <span className="text-gray-700 dark:text-gray-300">
             {t("legend.fertile")}
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="border-yellow-300 bg-yellow-50 dark:border-yellow-600/50 dark:bg-yellow-950/40 h-4 w-4 rounded border-2" />
+          <div className="h-4 w-4 rounded border-2 border-yellow-300 bg-yellow-50 dark:border-yellow-600/50 dark:bg-yellow-950/40" />
           <span className="text-gray-700 dark:text-gray-300">
             {t("legend.pms")}
           </span>
