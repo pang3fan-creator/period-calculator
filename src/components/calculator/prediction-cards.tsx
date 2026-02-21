@@ -1,13 +1,13 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { format } from "date-fns";
+import { format, type Locale as DateFnsLocale } from "date-fns";
 import { enUS, es, fr } from "date-fns/locale";
 import type { PredictionResult } from "@/types";
 import type { Locale } from "@/i18n/config";
 
 // Locale mapping for date-fns
-const DATE_FNS_LOCALE_MAP: Record<Locale, Locale> = {
+const DATE_FNS_LOCALE_MAP: Record<Locale, DateFnsLocale> = {
   en: enUS,
   es: es,
   fr: fr,
@@ -67,7 +67,7 @@ const HeartIcon = () => (
     className="h-6 w-6"
     aria-hidden="true"
   >
-    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5 4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
   </svg>
 );
 
