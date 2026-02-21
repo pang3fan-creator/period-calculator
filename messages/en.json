@@ -63,6 +63,19 @@
       "fertileWindow": "Fertile Window",
       "pmsPeriod": "PMS Period"
     },
+    "results": {
+      "nextPeriod": "Next Period",
+      "nextPeriodEnd": "to",
+      "ovulationDay": "Ovulation Day",
+      "fertileWindow": "Fertile Window",
+      "fertileWindowEnd": "to",
+      "pmsPeriod": "PMS Period",
+      "addToCalendar": "Add to Calendar",
+      "recalculate": "Recalculate",
+      "privacyNote": "Your data is saved locally on your device and never sent to any server.",
+      "calendarEventTitle": "Period Prediction",
+      "calendarEventDescription": "Next period predicted by Period Calculator"
+    },
     "calendar": {
       "title": "Calendar View",
       "previousMonth": "Previous month",
@@ -82,6 +95,14 @@
         "fertile": "Fertile Window",
         "pms": "PMS"
       }
-    }
+    },
+    "validation": {
+      "invalidDate": "Please select a valid date",
+      "futureDate": "Date cannot be in the future",
+      "cycleLengthRange": "Cycle length must be between 21 and 35 days",
+      "periodLengthRange": "Period length must be between 2 and 7 days"
+    },
+    "title": "Period Calculator",
+    "subtitle": "Track your cycle and predict your next period"
   }
 }

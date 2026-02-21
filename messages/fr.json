@@ -63,6 +63,19 @@
       "fertileWindow": "Fenêtre Fertile",
       "pmsPeriod": "Période SPM"
     },
+    "results": {
+      "nextPeriod": "Prochaines Règles",
+      "nextPeriodEnd": "à",
+      "ovulationDay": "Jour d'Ovulation",
+      "fertileWindow": "Fenêtre Fertile",
+      "fertileWindowEnd": "à",
+      "pmsPeriod": "Période SPM",
+      "addToCalendar": "Ajouter au Calendrier",
+      "recalculate": "Recalculer",
+      "privacyNote": "Vos données sont enregistrées localement sur votre appareil et ne sont jamais envoyées à aucun serveur.",
+      "calendarEventTitle": "Prédiction de Règles",
+      "calendarEventDescription": "Prochaines règles prédites par Period Calculator"
+    },
     "calendar": {
       "title": "Vue du Calendrier",
       "previousMonth": "Mois précédent",
@@ -82,6 +95,14 @@
         "fertile": "Fenêtre Fertile",
         "pms": "SPM"
       }
-    }
+    },
+    "validation": {
+      "invalidDate": "Veuillez sélectionner une date valide",
+      "futureDate": "La date ne peut pas être dans le futur",
+      "cycleLengthRange": "La durée du cycle doit être comprise entre 21 et 35 jours",
+      "periodLengthRange": "La durée des règles doit être comprise entre 2 et 7 jours"
+    },
+    "title": "Calculateur de Règles",
+    "subtitle": "Suivez votre cycle et prédisez vos prochaines règles"
   }
 }

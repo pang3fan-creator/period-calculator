@@ -63,6 +63,19 @@
       "fertileWindow": "Ventana Fértil",
       "pmsPeriod": "Periodo SPM"
     },
+    "results": {
+      "nextPeriod": "Próximo Periodo",
+      "nextPeriodEnd": "a",
+      "ovulationDay": "Día de Ovulación",
+      "fertileWindow": "Ventana Fértil",
+      "fertileWindowEnd": "a",
+      "pmsPeriod": "Periodo SPM",
+      "addToCalendar": "Añadir al Calendario",
+      "recalculate": "Recalcular",
+      "privacyNote": "Tus datos se guardan localmente en tu dispositivo y nunca se envían a ningún servidor.",
+      "calendarEventTitle": "Predicción de Periodo",
+      "calendarEventDescription": "Próximo periodo predicho por Period Calculator"
+    },
     "calendar": {
       "title": "Vista de Calendario",
       "previousMonth": "Mes anterior",
@@ -82,6 +95,14 @@
         "fertile": "Ventana Fértil",
         "pms": "SPM"
       }
-    }
+    },
+    "validation": {
+      "invalidDate": "Por favor selecciona una fecha válida",
+      "futureDate": "La fecha no puede ser futura",
+      "cycleLengthRange": "La duración del ciclo debe estar entre 21 y 35 días",
+      "periodLengthRange": "La duración del periodo debe estar entre 2 y 7 días"
+    },
+    "title": "Calculadora de Periodo",
+    "subtitle": "Rastrea tu ciclo y predice tu próximo periodo"
   }
 }
