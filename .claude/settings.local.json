@@ -8,7 +8,15 @@
       "Bash(npx prettier:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(npx tsc:*)",
+      "Bash(git status:*)",
+      "Bash(echo:*)",
+      "Bash(node --version:*)",
+      "Bash(npx --version:*)",
+      "mcp__web-reader__webReader",
+      "Bash(npm run --list)",
+      "Bash(npm run test)"
     ]
   }
 }
