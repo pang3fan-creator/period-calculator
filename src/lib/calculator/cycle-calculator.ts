@@ -104,7 +104,7 @@ export function getDatePeriodType(
 
   // Check fertile window (inclusive range)
   const daysFromFertileStart = differenceInDays(date, fertileWindowStart);
-  const daysFromFertileEnd = differenceInDays(fertileEnd, date);
+  const daysFromFertileEnd = differenceInDays(fertileWindowEnd, date);
   if (daysFromFertileStart >= 0 && daysFromFertileEnd >= 0) {
     return "fertile";
   }
