@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import type { CycleData, PredictionResult } from "@/types";
+import { useLocale } from "next-intl";
 import type { Locale } from "@/i18n/config";
 import { validateCycleData } from "@/lib/calculator/validation";
 import { calculateCycle } from "@/lib/calculator/cycle-calculator";
@@ -9,10 +10,6 @@ import { saveCycleData, loadCycleData, clearCycleData } from "@/lib/storage/loca
 import { CalculatorForm } from "./calculator-form";
 import { ResultsDisplay } from "./results-display";
 import { Card } from "@/components/ui/card";
-
-interface PeriodCalculatorProps {
-  locale: Locale;
-}
 
 /**
  * Main Period Calculator Container Component
@@ -29,7 +26,10 @@ interface PeriodCalculatorProps {
  *
  * @param locale - Current locale for i18n
  */
-export function PeriodCalculator({ locale }: PeriodCalculatorProps) {
+export function PeriodCalculator() {
+  // Get locale from next-intl
+  const locale = useLocale() as Locale;
+
   // State for cycle data (user input)
   const [cycleData, setCycleData] = useState<CycleData | null>(null);
 

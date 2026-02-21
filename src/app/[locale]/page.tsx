@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { PeriodCalculator } from "@/components/calculator";
 
 export default function HomePage() {
   const t = useTranslations("home");
@@ -11,10 +12,8 @@ export default function HomePage() {
       <p className="mt-4 max-w-2xl text-center text-lg text-gray-600 dark:text-gray-300">
         {t("subtitle")}
       </p>
-      <div className="shadow-soft dark:bg-dark-card mt-12 w-full max-w-2xl rounded-3xl bg-white p-8">
-        <p className="text-center text-gray-500 dark:text-gray-400">
-          {t("comingSoon")}
-        </p>
+      <div className="mt-12 w-full max-w-2xl">
+        <PeriodCalculator />
       </div>
     </div>
   );
