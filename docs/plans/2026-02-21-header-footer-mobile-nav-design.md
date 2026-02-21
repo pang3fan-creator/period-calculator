@@ -8,13 +8,13 @@
 
 ## Decisions Summary
 
-| Component | Decision |
-|-----------|----------|
-| Header | Minimal: Logo + theme icon button + language dropdown |
-| Mobile Nav | 4 Tab: Home / Irregular / Ovulation / Settings |
-| Language Selector | Dropdown menu (EN/ES/FR) |
-| Footer | Standard 3-column layout |
-| Theme Toggle | Sun/moon icon button (desktop: Header, mobile: Settings panel) |
+| Component         | Decision                                                       |
+| ----------------- | -------------------------------------------------------------- |
+| Header            | Minimal: Logo + theme icon button + language dropdown          |
+| Mobile Nav        | 4 Tab: Home / Irregular / Ovulation / Settings                 |
+| Language Selector | Dropdown menu (EN/ES/FR)                                       |
+| Footer            | Standard 3-column layout                                       |
+| Theme Toggle      | Sun/moon icon button (desktop: Header, mobile: Settings panel) |
 
 ---
 
@@ -126,6 +126,7 @@ Bottom sheet overlay, triggered by Settings tab:
 ### Route Highlighting
 
 Using `usePathname()`:
+
 - `/` or `/{locale}` → Home active
 - `/irregular-period-calculator` → Irregular active
 - `/ovulation-calculator` → Ovulation active
@@ -181,20 +182,24 @@ Stacks vertically, center-aligned. Bottom padding for MobileNav clearance.
 ### Three Columns
 
 **Left - Brand**
+
 - Logo: `font-heading text-primary-400 text-lg font-bold`
 - Tagline: `text-sm text-gray-500 dark:text-gray-400 mt-2`
 - Content: "Free & Private Menstrual Cycle Tracker"
 
 **Center - Links**
+
 - Title: `text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider`
 - Links: `space-y-2 mt-3`, each `text-sm text-gray-500 hover:text-primary-400 transition-colors`
 - Items: Privacy Policy → `/privacy-policy`, Editorial Policy → `/editorial-policy`, Blog → `/blog`
 
 **Right - Trust**
+
 - Lock SVG icon + trust copy
 - `text-sm text-gray-500 dark:text-gray-400`
 
 **Copyright Bar**
+
 - Divider: `border-t border-warmbeige-200 dark:border-dark-border mt-8 pt-6`
 - Text: `text-center text-xs text-gray-400`
 
@@ -247,21 +252,21 @@ Update `src/app/[locale]/layout.tsx` to include Header, Footer, and MobileNav:
 
 ## 5. New Files
 
-| File | Type | Purpose |
-|------|------|---------|
-| `src/components/layout/header.tsx` | Client | Header with theme toggle + language selector |
-| `src/components/layout/footer.tsx` | Server | 3-column footer |
-| `src/components/layout/mobile-nav.tsx` | Client | Bottom nav + settings panel |
+| File                                   | Type   | Purpose                                      |
+| -------------------------------------- | ------ | -------------------------------------------- |
+| `src/components/layout/header.tsx`     | Client | Header with theme toggle + language selector |
+| `src/components/layout/footer.tsx`     | Server | 3-column footer                              |
+| `src/components/layout/mobile-nav.tsx` | Client | Bottom nav + settings panel                  |
 
 All three files already exist as stubs and will be replaced.
 
 ## 6. Modified Files
 
-| File | Change |
-|------|--------|
+| File                          | Change                                      |
+| ----------------------------- | ------------------------------------------- |
 | `src/app/[locale]/layout.tsx` | Import and render Header, Footer, MobileNav |
-| `src/app/[locale]/page.tsx` | Remove page-level padding if conflicting |
-| `src/app/globals.css` | Add safe-area-inset utility if needed |
-| `messages/en.json` | Add `footer` namespace |
-| `messages/es.json` | Add `footer` namespace (Spanish) |
-| `messages/fr.json` | Add `footer` namespace (French) |
+| `src/app/[locale]/page.tsx`   | Remove page-level padding if conflicting    |
+| `src/app/globals.css`         | Add safe-area-inset utility if needed       |
+| `messages/en.json`            | Add `footer` namespace                      |
+| `messages/es.json`            | Add `footer` namespace (Spanish)            |
+| `messages/fr.json`            | Add `footer` namespace (French)             |

@@ -15,6 +15,7 @@
 ### Task 1: Add i18n translation keys for footer, settings, and header
 
 **Files:**
+
 - Modify: `messages/en.json`
 - Modify: `messages/es.json`
 - Modify: `messages/fr.json`
@@ -110,6 +111,7 @@ git commit -m "feat: add i18n keys for header, footer, and settings"
 ### Task 2: Implement Header component
 
 **Files:**
+
 - Modify: `src/components/layout/header.tsx` (replace stub)
 
 **Step 1: Write the Header component**
@@ -128,6 +130,7 @@ Replace the entire file with a `"use client"` component containing:
    - Close on Escape key
 
 **Imports needed:**
+
 ```typescript
 "use client";
 import { useState, useEffect, useRef } from "react";
@@ -139,6 +142,7 @@ import { Locale } from "@/i18n/config";
 ```
 
 **Outer wrapper styles (same as existing stub):**
+
 ```
 <header className="sticky top-0 z-50 border-b border-warmbeige-200 bg-ivory-50/80 backdrop-blur-md dark:border-dark-border dark:bg-dark-bg/80">
   <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
@@ -161,6 +165,7 @@ git commit -m "feat: implement header with theme toggle and language selector"
 ### Task 3: Implement Footer component
 
 **Files:**
+
 - Modify: `src/components/layout/footer.tsx` (replace stub)
 
 **Step 1: Write the Footer component**
@@ -168,6 +173,7 @@ git commit -m "feat: implement header with theme toggle and language selector"
 This is a **Server Component** (no `"use client"`). Uses `useTranslations("footer")` and `useTranslations("nav")`.
 
 Structure:
+
 ```
 <footer className="border-t border-warmbeige-200 bg-ivory-50 pb-20 dark:border-dark-border dark:bg-dark-bg md:pb-0">
   <div className="mx-auto max-w-7xl px-4 py-12">
@@ -182,10 +188,12 @@ Structure:
 ```
 
 **Left column — Brand:**
+
 - Logo text: `font-heading text-primary-400 text-lg font-bold`
 - Tagline: `mt-2 text-sm text-gray-500 dark:text-gray-400`, content from `t("tagline")`
 
 **Center column — Links:**
+
 - Title: `text-sm font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300`, content from `t("links")`
 - Links list: `mt-3 space-y-2`
 - Each link: `Link` from `@/i18n/routing`, `text-sm text-gray-500 hover:text-primary-400 transition-colors`
@@ -193,10 +201,12 @@ Structure:
 - Link text from `useTranslations("nav")`: `tNav("privacyPolicy")`, `tNav("editorialPolicy")`, `tNav("blog")`
 
 **Right column — Trust:**
+
 - Inline lock SVG (16x16) + trust text from `t("trustText")`
 - `flex items-start gap-2` (on md), centered on mobile
 
 **Copyright bar:**
+
 - `mt-8 border-t border-warmbeige-200 pt-6 text-center text-xs text-gray-400 dark:border-dark-border`
 - Content: `t("copyright", { year: new Date().getFullYear() })`
 
@@ -217,6 +227,7 @@ git commit -m "feat: implement 3-column footer with brand, links, and trust"
 ### Task 4: Implement MobileNav component
 
 **Files:**
+
 - Modify: `src/components/layout/mobile-nav.tsx` (replace stub)
 
 **Step 1: Write the MobileNav component**
@@ -224,6 +235,7 @@ git commit -m "feat: implement 3-column footer with brand, links, and trust"
 `"use client"` component. Contains two parts: bottom tab bar + settings panel overlay.
 
 **Imports:**
+
 ```typescript
 "use client";
 import { useState, useEffect } from "react";
@@ -235,6 +247,7 @@ import { Locale } from "@/i18n/config";
 ```
 
 **Bottom tab bar:**
+
 ```
 <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-warmbeige-200 bg-ivory-50/95 backdrop-blur-md dark:border-dark-border dark:bg-dark-bg/95 md:hidden"
      style={{ paddingBottom: "env(safe-area-inset-bottom)" }}>
@@ -245,6 +258,7 @@ import { Locale } from "@/i18n/config";
 ```
 
 **Each NavItem (Home, Irregular, Ovulation):**
+
 - Wrapped in `Link` from `@/i18n/routing`
 - `flex flex-col items-center justify-center gap-1`
 - Icon: inline SVG 24x24
@@ -256,12 +270,14 @@ import { Locale } from "@/i18n/config";
   - Ovulation: `pathname === "/ovulation-calculator"`
 
 **Settings button (4th tab):**
+
 - `<button>` instead of `Link`
 - Gear SVG icon + label from `useTranslations("settings")("title")`
 - `onClick` → `setSettingsOpen(true)`
 - Highlight when panel is open: `text-primary-400`
 
 **Settings panel overlay:**
+
 - Render conditionally when `settingsOpen === true`
 - Backdrop: `fixed inset-0 z-[60] bg-black/40`, `onClick` → close
 - Panel: `fixed bottom-0 left-0 right-0 z-[70] rounded-t-2xl bg-white dark:bg-dark-surface`
@@ -298,12 +314,14 @@ git commit -m "feat: implement mobile bottom nav with settings panel"
 ### Task 5: Integrate layout components into locale layout
 
 **Files:**
+
 - Modify: `src/app/[locale]/layout.tsx:34-50` (the return statement)
 - Modify: `src/app/[locale]/page.tsx` (adjust padding)
 
 **Step 1: Update locale layout**
 
 Add imports at top of `src/app/[locale]/layout.tsx`:
+
 ```typescript
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -311,15 +329,21 @@ import { MobileNav } from "@/components/layout/mobile-nav";
 ```
 
 Update the return JSX to wrap children with layout components:
+
 ```tsx
 <html lang={locale} suppressHydrationWarning>
-  <body className={`${playfair.variable} ${inter.variable} font-body antialiased`}>
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+  <body
+    className={`${playfair.variable} ${inter.variable} font-body antialiased`}
+  >
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
       <NextIntlClientProvider locale={locale} messages={messages}>
         <Header />
-        <main className="pb-20 md:pb-0">
-          {children}
-        </main>
+        <main className="pb-20 md:pb-0">{children}</main>
         <Footer />
         <MobileNav />
       </NextIntlClientProvider>
@@ -345,6 +369,7 @@ Expected: Build succeeds.
 
 Run: `npm run dev`
 Check:
+
 - Desktop: Header shows Logo + theme toggle + language dropdown
 - Desktop: Footer shows 3 columns
 - Mobile (resize to < 768px): Bottom nav shows 4 tabs, header hides language selector

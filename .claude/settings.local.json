@@ -16,7 +16,14 @@
       "Bash(npx --version:*)",
       "mcp__web-reader__webReader",
       "Bash(npm run --list)",
-      "Bash(npm run test)"
+      "Bash(npm run test)",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\\\.claude\\\\scripts\\\\save-session.ps1\" -Topic \"period-calculator-project-progress\")",
+      "Bash(ls:*)",
+      "Bash(npm run format)",
+      "Bash(npm test:*)",
+      "Bash(npm run)",
+      "Bash(npx eslint:*)",
+      "Bash(npm run lint:*)"
     ]
   }
 }

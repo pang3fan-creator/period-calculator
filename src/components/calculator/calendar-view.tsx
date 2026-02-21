@@ -9,7 +9,6 @@ import {
   eachDayOfInterval,
   addMonths,
   subMonths,
-  isSameMonth,
   getDate,
   startOfWeek,
   type Locale as DateFnsLocale,
