@@ -7,7 +7,7 @@ import type { PredictionResult } from "@/types";
 import type { Locale } from "@/i18n/config";
 
 // Locale mapping for date-fns
-const DATE_FNS_LOCALE_MAP: Record<Locale, DateFnsLocale> = {
+const DATE_FNS_LOCALE_MAP: Record<string, DateFnsLocale> = {
   en: enUS,
   es: es,
   fr: fr,
@@ -109,14 +109,12 @@ interface PredictionCardsProps {
 function formatDateRange(
   startDate: Date,
   endDate: Date,
-  dateFnsLocale: Locale,
+  dateFnsLocale: DateFnsLocale,
 ): string {
-  const formattedStart = format(startDate, "MMM dd, yyyy", {
-    locale: dateFnsLocale,
-  });
-  const formattedEnd = format(endDate, "MMM dd, yyyy", {
-    locale: dateFnsLocale,
-  });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const formattedStart = format(startDate, "MMM dd, yyyy", { locale: dateFnsLocale as any });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const formattedEnd = format(endDate, "MMM dd, yyyy", { locale: dateFnsLocale as any });
 
   // Check if dates are the same (compare timestamps)
   if (startDate.getTime() === endDate.getTime()) {
@@ -140,7 +138,7 @@ function formatDateRange(
  */
 export function PredictionCards({ result, locale }: PredictionCardsProps) {
   const t = useTranslations("calculator.predictions");
-  const dateFnsLocale = DATE_FNS_LOCALE_MAP[locale];
+  const dateFnsLocale = DATE_FNS_LOCALE_MAP[locale] || enUS;
 
   const {
     nextPeriodStart,
