@@ -71,11 +71,21 @@
       "fertileWindowEnd": "to",
       "pmsPeriod": "PMS Period",
       "addToCalendar": "Add to Calendar",
+      "addToCalendarMenu": "Add to Calendar",
+      "googleCalendar": "Google Calendar",
+      "appleCalendar": "Apple Calendar",
+      "outlook": "Outlook",
+      "downloadIcs": "Download .ics File",
       "recalculate": "Recalculate",
       "privacyNote": "Your data is saved locally on your device and never sent to any server.",
       "calendarEventTitle": "Period Prediction",
       "calendarEventDescription": "Next period predicted by Period Calculator",
-      "calendarEventDetails": "Next Period: {nextPeriodStart} - {nextPeriodEnd}\nOvulation Day: {ovulationDate}\nFertile Window: {fertileStart} - {fertileEnd}\nPMS Period: {pmsStart} - {pmsEnd}\n\nNext period predicted by Period Calculator"
+      "calendarEventDetails": "Next Period: {nextPeriodStart} - {nextPeriodEnd}\nOvulation Day: {ovulationDate}\nFertile Window: {fertileStart} - {fertileEnd}\nPMS Period: {pmsStart} - {pmsEnd}\n\nNext period predicted by Period Calculator",
+      "periodEvent": "Period",
+      "fertileEvent": "Fertile Window",
+      "ovulationEvent": "Ovulation Day",
+      "pmsEvent": "PMS",
+      "eventDescription": "Predicted by Period Calculator"
     },
     "calendar": {
       "title": "Calendar View",
@@ -218,6 +228,28 @@
         "title": "Contact Us",
         "description": "If you have questions about our editorial process or content, please reach out.",
         "email": "Email us at: hello@periodcalculator.com"
+      }
+    }
+  },
+  "howToCalculate": {
+    "title": "How to Calculate Your Cycle",
+    "description": "Understanding how our algorithm works",
+    "steps": {
+      "step1": {
+        "title": "Enter Your Last Period",
+        "description": "Input the first day of your most recent period. This is the starting point for all calculations."
+      },
+      "step2": {
+        "title": "Set Your Cycle Length",
+        "description": "Enter your average cycle length (typically 21-35 days). Our algorithm uses this to predict your next period."
+      },
+      "step3": {
+        "title": "Add Period Duration",
+        "description": "Specify how long your period typically lasts (usually 3-7 days). This helps predict the menstruation phase."
+      },
+      "step4": {
+        "title": "Get Your Predictions",
+        "description": "Our algorithm calculates your next period, fertile window, ovulation day, and PMS dates based on medical research."
       }
     }
   }

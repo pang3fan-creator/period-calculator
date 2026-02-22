@@ -38,7 +38,9 @@
       "Bash(node node_modules/vitest/vitest.mjs run:*)",
       "Bash(npm config get:*)",
       "Bash(NODE_PATH= npm test:*)",
-      "Bash(cmd.exe /c \"cd /d D:\\\\1-github\\\\period-calculator && npm test\":*)"
+      "Bash(cmd.exe /c \"cd /d D:\\\\1-github\\\\period-calculator && npm test\":*)",
+      "Bash(powershell.exe -Command:*)",
+      "Bash(powershell.exe -ExecutionPolicy Bypass:*)"
     ]
   }
 }

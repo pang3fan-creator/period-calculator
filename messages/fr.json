@@ -71,11 +71,21 @@
       "fertileWindowEnd": "à",
       "pmsPeriod": "Période SPM",
       "addToCalendar": "Ajouter au Calendrier",
+      "addToCalendarMenu": "Ajouter au Calendrier",
+      "googleCalendar": "Google Calendar",
+      "appleCalendar": "Apple Calendar",
+      "outlook": "Outlook",
+      "downloadIcs": "Télécharger fichier .ics",
       "recalculate": "Recalculer",
       "privacyNote": "Vos données sont enregistrées localement sur votre appareil et ne sont jamais envoyées à aucun serveur.",
       "calendarEventTitle": "Prédiction de Règles",
       "calendarEventDescription": "Prochaines règles prédites par Period Calculator",
-      "calendarEventDetails": "Prochaines Règles: {nextPeriodStart} - {nextPeriodEnd}\nJour d'ovulation: {ovulationDate}\nFenêtre fertile: {fertileStart} - {fertileEnd}\nPériode SPM: {pmsStart} - {pmsEnd}\n\nProchaines règles prédites par Period Calculator"
+      "calendarEventDetails": "Prochaines Règles: {nextPeriodStart} - {nextPeriodEnd}\nJour d'ovulation: {ovulationDate}\nFenêtre fertile: {fertileStart} - {fertileEnd}\nPériode SPM: {pmsStart} - {pmsEnd}\n\nProchaines règles prédites par Period Calculator",
+      "periodEvent": "Règles",
+      "fertileEvent": "Fenêtre Fertile",
+      "ovulationEvent": "Jour d'Ovulation",
+      "pmsEvent": "SPM",
+      "eventDescription": "Prédit par Period Calculator"
     },
     "calendar": {
       "title": "Vue du Calendrier",
@@ -218,6 +228,28 @@
         "title": "Contactez-nous",
         "description": "Si vous avez des questions sur notre processus éditorial ou notre contenu, veuillez nous contacter.",
         "email": "Envoyez-nous un e-mail à : hello@periodcalculator.com"
+      }
+    }
+  },
+  "howToCalculate": {
+    "title": "Comment Calculer Votre Cycle",
+    "description": "Comprenez comment fonctionne notre algorithme",
+    "steps": {
+      "step1": {
+        "title": "Entrez Votre Dernière Période",
+        "description": "Entrez le premier jour de votre dernière période. C'est le point de départ pour tous les calculs."
+      },
+      "step2": {
+        "title": "Définissez la Durée de Votre Cycle",
+        "description": "Entrez la durée moyenne de votre cycle (généralement 21-35 jours). Notre algorithme utilise cela pour prédire votre prochaine période."
+      },
+      "step3": {
+        "title": "Ajoutez la Durée de la Période",
+        "description": "Spécifiez la durée habituelle de vos règles (généralement 3-7 jours). Cela aide à prédire la phase de menstruation."
+      },
+      "step4": {
+        "title": "Obtenez Vos Prédictions",
+        "description": "Notre algorithme calcule votre prochaine période, votre fenêtre fertile, la date d'ovulation et les dates du SPM basé sur la recherche médicale."
       }
     }
   }

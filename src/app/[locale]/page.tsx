@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { PeriodCalculator } from "@/components/calculator";
+import { HowToCalculate } from "@/components/home/how-to-calculate";
 
 export default function HomePage() {
   const t = useTranslations("home");
@@ -14,6 +15,11 @@ export default function HomePage() {
       </p>
       <div className="mt-12 w-full max-w-2xl">
         <PeriodCalculator />
+      </div>
+
+      {/* Second Screen: How to Calculate */}
+      <div className="mt-24 w-full max-w-4xl">
+        <HowToCalculate />
       </div>
     </div>
   );
