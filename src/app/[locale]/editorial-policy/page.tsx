@@ -291,7 +291,7 @@ export default function EditorialPolicyPage() {
         {/* Footer Navigation */}
         <div className="mt-12 text-center">
           <Link
-            href={`/${locale}`}
+            href="/"
             className="hover:text-trust-green-500 dark:hover:text-trust-green-400 focus-visible:ring-primary-400 inline-flex items-center gap-2 rounded-full text-gray-500 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400"
           >
             <svg
