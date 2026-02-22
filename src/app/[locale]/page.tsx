@@ -1,6 +1,8 @@
 import { useTranslations } from "next-intl";
 import { PeriodCalculator } from "@/components/calculator";
 import { HowToCalculate } from "@/components/home/how-to-calculate";
+import { DeepKnowledge } from "@/components/home/deep-knowledge";
+import { FAQ } from "@/components/home/faq";
 
 export default function HomePage() {
   const t = useTranslations("home");
@@ -20,6 +22,16 @@ export default function HomePage() {
       {/* Second Screen: How to Calculate */}
       <div className="mt-24 w-full max-w-4xl">
         <HowToCalculate />
+      </div>
+
+      {/* Third Screen: Deep Knowledge */}
+      <div className="mt-24 w-full max-w-4xl">
+        <DeepKnowledge />
+      </div>
+
+      {/* Bottom Screen: FAQ */}
+      <div className="mt-24 w-full max-w-4xl">
+        <FAQ />
       </div>
     </div>
   );

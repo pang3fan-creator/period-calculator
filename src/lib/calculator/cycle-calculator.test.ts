@@ -74,6 +74,7 @@ describe("getDatePeriodType", () => {
     fertileWindowStart: new Date("2026-01-10"),
     fertileWindowEnd: new Date("2026-01-16"),
     pmsStart: new Date("2026-01-22"),
+    pmsEnd: new Date("2026-01-28"),
   };
 
   it('should return "period" for dates within period range', () => {

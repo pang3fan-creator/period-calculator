@@ -252,5 +252,70 @@
         "description": "Notre algorithme calcule votre prochaine période, votre fenêtre fertile, la date d'ovulation et les dates du SPM basé sur la recherche médicale."
       }
     }
+  },
+  "deepKnowledge": {
+    "title": "Comprenez Votre Cycle Menstruel",
+    "description": "En savoir plus sur votre corps et votre santé menstruelle",
+    "topics": {
+      "delayedPeriod": {
+        "title": "Pourquoi Vos Règles Peut Être Retardées",
+        "description": "De nombreux facteurs peuvent causer un retard de vos règles. Comprendre ces facteurs peut vous aider à distinguer les variations normales des signes qui justifient une visite chez le médecin.",
+        "point1": "Stress: Des niveaux élevés de stress peuvent supprimer la fonction hypothalamique, retardant l'ovulation et la menstruation",
+        "point2": "Changements de poids: Une perte ou prise de poids significative peut perturber les niveaux hormonaux",
+        "point3": "SOPK: Le syndrome des ovaires polykystiques est une cause courante de règles irrégulières",
+        "seeDoctor": "Consultez un professionnel de santé si vos règles sont régulièrement à plus de 35 jours d'intervalle"
+      },
+      "irregularCycle": {
+        "title": "Ce Que Signifient les Cycles Irréguliers",
+        "description": "Bien qu'une certaine variation soit normale, des cycles régulièrement irréguliers peuvent indiquer des problèmes sous-jacents qui bénéficieraient d'une attention médicale.",
+        "point1": "Plage normale: Les cycles entre 21-35 jours sont considérés comme typiques",
+        "point2": "Suivi: Enregistrez plusieurs mois de cycles pour identifier les habitudes",
+        "point3": "Facteurs de style de vie: L'exercice, l'alimentation et le sommeil peuvent tous affecter la régularité"
+      },
+      "periodsAhead": {
+        "title": "Pourquoi les Règles Arrivent Tôt",
+        "description": "Des règles précoces peuvent survenir pour diverses raisons, et comprendre les causes vous aide à mieux comprendre votre cycle.",
+        "point1": "Phase lutéale courte: Un temps plus court après l'ovulation peut causer des saignements plus précoces",
+        "point2": "Fluctuations hormonales: Les changements hormonaux temporaires sont courants",
+        "point3": "Stress et mode de vie: Un exercice intense ou des changements de vie importants peuvent déclencher des règles précoces"
+      },
+      "periodDuration": {
+        "title": "Quelle est la Durée Normale des Règles",
+        "description": "La durée des règles varie selon les individus, mais il existe des plages typiques qui indiquent un cycle sain.",
+        "point1": "Plage normale: La plupart des règles durent entre 2-7 jours",
+        "point2": "Modèle de flux: Le flux le plus abondant survient généralement les jours 1-2",
+        "point3": "Changements: Une certaine variation d'un mois à l'autre est tout à fait normale"
+      }
+    }
+  },
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "description": "Questions courantes sur les cycles menstruels et notre calculatrice",
+    "items": {
+      "delayedAbnormal": {
+        "question": "Combien de retard de règles est considéré comme anormal?",
+        "answer": "Bien que des retards occasionnels soient normaux, si vos règles sont régulièrement à plus de 35 jours d'intervalle, ou si vous éprouvez un changement soudain par rapport à votre modèle habituel, cela vaut la peine de consulter un professionnel de santé. De plus, si vous avez manqué trois règles ou plus d'affilée (et que vous n'êtes pas enceinte), vous devriez demander un avis médical."
+      },
+      "calculateSafePeriod": {
+        "question": "Comment calculer ma période sûre?",
+        "answer": "La période sûre (quand vous êtes la moins susceptible de concevoir) se calcule en identifiant votre fenêtre fertile. Votre fenêtre fertile couvre généralement 5-6 jours se terminant le jour de l'ovulation. Les jours avant la fenêtre fertile et le jour après l'ovulation sont considérés comme plus sûrs, bien qu'aucun jour ne soit garanti à 100%. Souvenez-vous: cette méthode est moins fiable pour ceux qui ont des cycles irréguliers."
+      },
+      "irregularPreparePregnancy": {
+        "question": "Comment puis-je me préparer à la grossesse avec des cycles irréguliers?",
+        "answer": "Suivez vos cycles pendant plusieurs mois pour identifier les habitudes. Utilisez des kits prédicteurs d'ovulation ou mesurez votre température basale pour identifier l'ovulation. Envisagez de consulter un spécialiste de la fertilité si vous avez essayé pendant 12 mois sans succès (ou 6 mois si vous avez plus de 35 ans). Les cycles irréguliers ne signifient pas l'infertilité, cela signifie simplement que vous devrez peut-être être plus intentionnel dans le timing."
+      },
+      "periodsAhead": {
+        "question": "Pourquoi mes règles sont-elles arrivées tôt ce mois-ci?",
+        "answer": "Des règles précoces peuvent survenir en raison de divers facteurs incluant le stress, des changements de poids significatifs, un exercice intense, des fluctuations hormonales, ou simplement une variation naturelle de la durée du cycle. Si cela arrivenellement, ce occasion n'est généralement pas une préoccupation. Cependant, si les règles précoces deviennent fréquentes ou sont accompagnées de symptômes inhabituels, consultez un professionnel de santé."
+      },
+      "normalFlow": {
+        "question": "Quel flux est normal pendant les règles?",
+        "answer": "Le flux menstruel normal varie d'environ 30-80 ml (environ 2-16 cuillères à soupe) pendant toute la période. La plupart des gens changent leur serviette ou tampon toutes les 4-6 heures les jours de flux abondant. Si vous trempez une serviette ou un tampon toutes les heures, ou si vous évacuez de gros caillots plus grands qu'un quart, cela peut indiquer des saignements abondants dont il vaut la peine de discuter avec votre médecin."
+      },
+      "menopauseChanges": {
+        "question": "Comment la ménopause affecte-t-elle les cycles menstruels?",
+        "answer": "À l'approche de la ménopause (périménopause), les cycles deviennent souvent irréguliers avant de s'arrêter complètement. Vous pouvez expérimenter des cycles plus longs ou plus courts, des flux plus abondants ou plus légers, et divers symptômes comme des bouffées de chaleur. La périménopause commence généralement au milieu de la quarantaine mais peut commencer plus tôt. Si vous expérimentez des changements significatifs, consultez votre professionnel de santé pour des conseils."
+      }
+    }
   }
 }

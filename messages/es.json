@@ -252,5 +252,70 @@
         "description": "Nuestro algoritmo calcula tu próximo período, ventana fértil, día de ovulación y fechas del SPM basándose en investigación médica."
       }
     }
+  },
+  "deepKnowledge": {
+    "title": "Entiende tu Ciclo Menstrual",
+    "description": "Aprende más sobre tu cuerpo y salud menstrual",
+    "topics": {
+      "delayedPeriod": {
+        "title": "Por qué tu Período Puede Retrasarse",
+        "description": "Muchos factores pueden causar que tu período se retrase. Entender estos puede ayudarte a distinguir entre variaciones normales y señales que justifican una visita al médico.",
+        "point1": "Estrés: Los niveles altos de estrés pueden suprimir la función hipotalámica, retardando la ovulación y menstruación",
+        "point2": "Cambios de peso: Pérdida o ganancia significativa de peso pueden alterar los niveles hormonales",
+        "point3": "SOP: El Síndrome de Ovario Poliquístico es una causa común de períodos irregulares",
+        "seeDoctor": "Consulta a un profesional de la salud si tu período está constantemente a más de 35 días de distancia"
+      },
+      "irregularCycle": {
+        "title": "Qué Significan los Ciclos Irregulares",
+        "description": "Aunque alguna variación es normal, los ciclos consistentemente irregulares pueden indicar problemas subyacentes que se beneficiarían de atención médica.",
+        "point1": "Rango normal: Los ciclos entre 21-35 días se consideran típicos",
+        "point2": "Seguimiento: Registra varios meses de ciclos para identificar patrones",
+        "point3": "Factores de estilo: El ejercicio, dieta y sueño pueden afectar la regularidad"
+      },
+      "periodsAhead": {
+        "title": "Por qué los Períodos Llegan Temprano",
+        "description": "Un período temprano puede ocurrir por varias razones, y entender las causas te ayuda a entender mejor tu ciclo.",
+        "point1": "Fase lútea corta: Un tiempo más corto después de la ovulación puede causar sangrado más temprano",
+        "point2": "Fluctuaciones hormonales: Los cambios hormonales temporales son comunes",
+        "point3": "Estrés y estilo de vida: Ejercicio intenso o cambios significativos de vida pueden activar períodos tempranos"
+      },
+      "periodDuration": {
+        "title": "Cuál es una Duración Normal del Período",
+        "description": "La duración del período varía entre personas, pero hay rangos típicos que indican un ciclo saludable.",
+        "point1": "Rango normal: La mayoría de los períodos duran entre 2-7 días",
+        "point2": "Patrón de flujo: El flujo más abundante típicamente ocurre los días 1-2",
+        "point3": "Cambios: Alguna variación mes a mes es completamente normal"
+      }
+    }
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "description": "Preguntas comunes sobre ciclos menstruales y nuestra calculadora",
+    "items": {
+      "delayedAbnormal": {
+        "question": "¿Cuánto se considera anormal el retraso del período?",
+        "answer": "Aunque los retrasos ocasionales son normales, si tu período está constantemente a más de 35 días de distancia, o si experimentas un cambio repentino de tu patrón regular, vale la pena consultar a un proveedor de salud. Además, si has perdido tres o más períodos seguidos (y no estás embarazada), debes buscar consejo médico."
+      },
+      "calculateSafePeriod": {
+        "question": "¿Cómo calculo mi período seguro?",
+        "answer": "El período seguro (cuando es menos probable concebir) se calcula identificando tu ventana fértil. Tu ventana fértil típicamente abarca 5-6 días terminando en el día de ovulación. Los días antes de la ventana fértil y el día después de la ovulación se consideran más seguros, aunque ningún día tiene 100% de garantía. Recuerda: este método es menos confiable para quienes tienen ciclos irregulares."
+      },
+      "irregularPreparePregnancy": {
+        "question": "¿Cómo puedo prepararme para el embarazo con ciclos irregulares?",
+        "answer": "Registra tus ciclos durante varios meses para identificar patrones. Usa kits predictor de ovulación o mide tu temperatura basal para identificar la ovulación. Considera consultar a un especialista en fertilidad si has estado intentando durante 12 meses sin éxito (o 6 meses si tienes más de 35 años). Los ciclos irregulares no significan infertilidad, solo significa que quizás necesites ser más intencional con el tiempo."
+      },
+      "periodsAhead": {
+        "question": "¿Por qué vino mi período temprano este mes?",
+        "answer": "Los períodos tempranos pueden ocurrir debido a varios factores incluyendo estrés, cambios significativos de peso, ejercicio intenso, fluctuaciones hormonales, o simplemente variación natural en la duración del ciclo. Si sucede ocasionalmente, generalmente no es una preocupación. Sin embargo, si los períodos tempranos se vuelven frecuentes o van acompañados de síntomas inusuales, consulta a un proveedor de salud."
+      },
+      "normalFlow": {
+        "question": "¿Cuánto flujo es normal durante un período?",
+        "answer": "El flujo menstrual normal varía de aproximadamente 30-80ml (aproximadamente 2-16 cucharadas) durante todo el período. La mayoría de las personas cambian su toalla o tampón cada 4-6 horas en días más abundantes. Si estás empapando una toalla o tampón cada hora, o pasando coágulos grandes más grandes que un cuarto, eso puede indicar sangrado abundante que vale la pena discutir con tu médico."
+      },
+      "menopauseChanges": {
+        "question": "¿Cómo afecta la menopausia a los ciclos menstruales?",
+        "answer": "A medida que te acercas a la menopausia (perimenopausia), los ciclos a menudo se vuelven irregulares antes de detenerse por completo. Puedes experimentar ciclos más largos o más cortos, flujos más abundantes o más ligeros, y varios síntomas como sofocos. La perimenopausia típicamente comienza a mitad de los 40s pero puede comenzar antes. Si estás experimentando cambios significativos, consulta a tu proveedor de salud para orientación."
+      }
+    }
   }
 }

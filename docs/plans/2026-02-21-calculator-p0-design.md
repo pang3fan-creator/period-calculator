@@ -60,11 +60,11 @@ src/lib/storage/
 
 ### 输入表单
 
-| 字段 | 类型 | 范围 | 默认值 |
-|------|------|------|--------|
-| 上次月经首日 | date picker | - | 今天 |
-| 周期长度 | slider + input | 21-35 | 28 |
-| 经期长度 | slider + input | 2-7 | 5 |
+| 字段         | 类型           | 范围  | 默认值 |
+| ------------ | -------------- | ----- | ------ |
+| 上次月经首日 | date picker    | -     | 今天   |
+| 周期长度     | slider + input | 21-35 | 28     |
+| 经期长度     | slider + input | 2-7   | 5      |
 
 - 计算/重置按钮：最小高度 48px，圆角 16px
 - 移动端友好，所有可交互元素 >= 48px
@@ -73,12 +73,12 @@ src/lib/storage/
 
 移动端单列，桌面端4列：
 
-| 卡片 | 颜色标识 |
-|------|----------|
+| 卡片     | 颜色标识              |
+| -------- | --------------------- |
 | 下次月经 | 红色左边框 + 浅红背景 |
-| 排卵日 | 蓝色左边框 + 浅蓝背景 |
-| 易孕期 | 蓝色左边框 + 浅蓝背景 |
-| PMS期 | 黄色左边框 + 浅黄背景 |
+| 排卵日   | 蓝色左边框 + 浅蓝背景 |
+| 易孕期   | 蓝色左边框 + 浅蓝背景 |
+| PMS期    | 黄色左边框 + 浅黄背景 |
 
 ### 日历视图
 
@@ -127,7 +127,14 @@ function calculateCycle(data: CycleData): PredictionResult {
   // PMS期 = 下次月经首日 - 7天
   const pmsStart = addDays(nextPeriodStart, -7);
 
-  return { nextPeriodStart, nextPeriodEnd, fertileWindowStart, fertileWindowEnd, ovulationDate, pmsStart };
+  return {
+    nextPeriodStart,
+    nextPeriodEnd,
+    fertileWindowStart,
+    fertileWindowEnd,
+    ovulationDate,
+    pmsStart,
+  };
 }
 ```
 
@@ -143,8 +150,11 @@ function addToGoogleCalendar(result: PredictionResult): void {
 
   const params = new URLSearchParams({
     text: "Period Prediction",
-    dates: formatICSDate(result.nextPeriodStart) + "/" + formatICSDate(result.nextPeriodEnd),
-    details: "Next period predicted by Period Calculator"
+    dates:
+      formatICSDate(result.nextPeriodStart) +
+      "/" +
+      formatICSDate(result.nextPeriodEnd),
+    details: "Next period predicted by Period Calculator",
   });
 
   window.open(`${baseUrl}&${params.toString()}`, "_blank");
@@ -163,11 +173,11 @@ function addToGoogleCalendar(result: PredictionResult): void {
 
 ## 八、莫兰迪色系
 
-| 元素 | 颜色 | CSS |
-|------|------|-----|
-| 月经期 | 浅红 | `bg-red-100 border-red-300` |
-| 易孕期 | 浅蓝 | `bg-blue-100 border-blue-300` |
-| PMS期 | 浅黄 | `bg-yellow-100 border-yellow-300` |
+| 元素   | 颜色 | CSS                               |
+| ------ | ---- | --------------------------------- |
+| 月经期 | 浅红 | `bg-red-100 border-red-300`       |
+| 易孕期 | 浅蓝 | `bg-blue-100 border-blue-300`     |
+| PMS期  | 浅黄 | `bg-yellow-100 border-yellow-300` |
 
 深色模式对应 `dark:bg-red-900/30 dark:border-red-700` 等。
 

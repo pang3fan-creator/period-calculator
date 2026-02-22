@@ -252,5 +252,70 @@
         "description": "Our algorithm calculates your next period, fertile window, ovulation day, and PMS dates based on medical research."
       }
     }
+  },
+  "deepKnowledge": {
+    "title": "Understanding Your Menstrual Cycle",
+    "description": "Learn more about your body and menstrual health",
+    "topics": {
+      "delayedPeriod": {
+        "title": "Why Your Period Might Be Delayed",
+        "description": "Many factors can cause your period to be late. Understanding these can help you distinguish between normal variations and signs that warrant a doctor's visit.",
+        "point1": "Stress: High stress levels can suppress hypothalamic function, delaying ovulation and menstruation",
+        "point2": "Weight changes: Significant weight loss or gain can disrupt hormone levels",
+        "point3": "PCOS: Polycystic Ovary Syndrome is a common cause of irregular periods",
+        "seeDoctor": "Consult a healthcare provider if your period is consistently over 35 days apart"
+      },
+      "irregularCycle": {
+        "title": "What Irregular Cycles Mean",
+        "description": "While some variation is normal, consistently irregular cycles may indicate underlying issues that benefit from medical attention.",
+        "point1": "Normal range: Cycles between 21-35 days are considered typical",
+        "point2": "Tracking: Record several months of cycles to identify patterns",
+        "point3": "Lifestyle factors: Exercise, diet, and sleep can all affect regularity"
+      },
+      "periodsAhead": {
+        "title": "Why Periods Come Early",
+        "description": "An early period can happen for various reasons, and understanding the causes helps you better understand your cycle.",
+        "point1": "Short luteal phase: A shorter time after ovulation can cause earlier bleeding",
+        "point2": "Hormonal fluctuations: Temporary hormonal shifts are common",
+        "point3": "Stress and lifestyle: Intense exercise or significant life changes can trigger early periods"
+      },
+      "periodDuration": {
+        "title": "What's a Normal Period Duration",
+        "description": "Period length varies among individuals, but there are typical ranges that indicate a healthy cycle.",
+        "point1": "Normal range: Most periods last between 2-7 days",
+        "point2": "Flow pattern: Heaviest flow typically occurs days 1-2",
+        "point3": "Changes: Some variation month-to-month is completely normal"
+      }
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "description": "Common questions about menstrual cycles and our calculator",
+    "items": {
+      "delayedAbnormal": {
+        "question": "How late is a period considered abnormal?",
+        "answer": "While occasional delays are normal, if your period is consistently over 35 days apart, or if you experience a sudden change from your regular pattern, it's worth consulting a healthcare provider. Additionally, if you've missed three or more periods in a row (and you're not pregnant), you should seek medical advice."
+      },
+      "calculateSafePeriod": {
+        "question": "How do I calculate my safe period?",
+        "answer": "The safe period (when you're least likely to conceive) is calculated by identifying your fertile window. Your fertile window typically spans 5-6 days ending on the day of ovulation. Days before the fertile window and the day after ovulation are considered safer, though no day is 100% guaranteed. Remember: this method is less reliable for those with irregular cycles."
+      },
+      "irregularPreparePregnancy": {
+        "question": "How can I prepare for pregnancy with irregular cycles?",
+        "answer": "Track your cycles for several months to identify patterns. Use ovulation predictor kits or track basal body temperature to pinpoint ovulation. Consider consulting a fertility specialist if you've been trying for 12 months without success (or 6 months if you're over 35). Irregular cycles don't mean infertility—they just mean you may need to be more intentional about timing."
+      },
+      "periodsAhead": {
+        "question": "Why did my period come early this month?",
+        "answer": "Early periods can occur due to various factors including stress, significant weight changes, intense exercise, hormonal fluctuations, or simply natural variation in cycle length. If it happens occasionally, it's usually not a concern. However, if early periods become frequent or are accompanied by unusual symptoms, consult a healthcare provider."
+      },
+      "normalFlow": {
+        "question": "How much flow is normal during a period?",
+        "answer": "Normal menstrual flow ranges from about 30-80ml (roughly 2-16 tablespoons) over the entire period. Most people change their pad or tampon every 4-6 hours on heavier days. If you're soaking through a pad or tampon every hour, or passing large clots larger than a quarter, that may indicate heavy bleeding worth discussing with your doctor."
+      },
+      "menopauseChanges": {
+        "question": "How does menopause affect menstrual cycles?",
+        "answer": "As you approach menopause (perimenopause), cycles often become irregular before stopping entirely. You may experience longer or shorter cycles, heavier or lighter flows, and various symptoms like hot flashes. Perimenopause typically begins in the mid-40s but can start earlier. If you're experiencing significant changes, consult your healthcare provider for guidance."
+      }
+    }
   }
 }

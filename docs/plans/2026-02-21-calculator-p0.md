@@ -13,6 +13,7 @@
 ## Task 1: Create Core Algorithm Module
 
 **Files:**
+
 - Create: `src/lib/calculator/cycle-calculator.ts`
 
 **Step 1: Write the algorithm**
@@ -61,20 +62,15 @@ export function calculateCycle(data: CycleData): PredictionResult {
  */
 export function getDatePeriodType(
   date: Date,
-  prediction: PredictionResult
+  prediction: PredictionResult,
 ): "period" | "fertile" | "ovulation" | "pms" | null {
   // Check if date is within period (inclusive range)
-  if (
-    date >= prediction.nextPeriodStart &&
-    date <= prediction.nextPeriodEnd
-  ) {
+  if (date >= prediction.nextPeriodStart && date <= prediction.nextPeriodEnd) {
     return "period";
   }
 
   // Check ovulation day (exact match)
-  if (
-    date.toDateString() === prediction.ovulationDate.toDateString()
-  ) {
+  if (date.toDateString() === prediction.ovulationDate.toDateString()) {
     return "ovulation";
   }
 
@@ -107,6 +103,7 @@ git commit -m "feat: add core menstrual cycle calculation algorithm"
 ## Task 2: Create Validation Module
 
 **Files:**
+
 - Create: `src/lib/calculator/validation.ts`
 
 **Step 1: Write the validation functions**
@@ -190,6 +187,7 @@ git commit -m "feat: add input validation for cycle data"
 ## Task 3: Create LocalStorage Manager
 
 **Files:**
+
 - Create: `src/lib/storage/localStorage.ts`
 
 **Step 1: Write the storage functions**
@@ -275,6 +273,7 @@ git commit -m "feat: add localStorage manager for cycle data persistence"
 ## Task 4: Create Input Form Component
 
 **Files:**
+
 - Create: `src/components/calculator/calculator-form.tsx`
 
 **Step 1: Write the form component**
@@ -297,13 +296,13 @@ export function CalculatorForm({ initialData, onSubmit }: CalculatorFormProps) {
   const t = useTranslations("calculator.form");
 
   const [lastPeriodStart, setLastPeriodStart] = useState<string>(
-    initialData?.lastPeriodStart?.toISOString().split("T")[0] || ""
+    initialData?.lastPeriodStart?.toISOString().split("T")[0] || "",
   );
   const [cycleLength, setCycleLength] = useState<number>(
-    initialData?.cycleLength ?? DEFAULT_CYCLE_LENGTH
+    initialData?.cycleLength ?? DEFAULT_CYCLE_LENGTH,
   );
   const [periodLength, setPeriodLength] = useState<number>(
-    initialData?.periodLength ?? DEFAULT_PERIOD_LENGTH
+    initialData?.periodLength ?? DEFAULT_PERIOD_LENGTH,
   );
 
   const handleSubmit = useCallback(
@@ -318,7 +317,7 @@ export function CalculatorForm({ initialData, onSubmit }: CalculatorFormProps) {
 
       onSubmit(data);
     },
-    [lastPeriodStart, cycleLength, periodLength, onSubmit]
+    [lastPeriodStart, cycleLength, periodLength, onSubmit],
   );
 
   return (
@@ -327,7 +326,7 @@ export function CalculatorForm({ initialData, onSubmit }: CalculatorFormProps) {
       <div>
         <label
           htmlFor="lastPeriodStart"
-          className="text-gray-700 dark:text-gray-300 mb-2 block text-sm font-medium"
+          className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
         >
           {t("lastPeriodLabel")}
         </label>
@@ -338,7 +337,7 @@ export function CalculatorForm({ initialData, onSubmit }: CalculatorFormProps) {
           onChange={(e) => setLastPeriodStart(e.target.value)}
           max={new Date().toISOString().split("T")[0]}
           required
-          className="dark:bg-dark-card dark:border-dark-border focus:border-primary-400 dark:focus:border-primary-400 focus:ring-primary-400 w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-900 transition-colors focus:outline-none focus:ring-2"
+          className="dark:bg-dark-card dark:border-dark-border focus:border-primary-400 dark:focus:border-primary-400 focus:ring-primary-400 w-full rounded-xl border border-gray-300 px-4 py-3 text-gray-900 transition-colors focus:ring-2 focus:outline-none"
         />
       </div>
 
@@ -346,10 +345,10 @@ export function CalculatorForm({ initialData, onSubmit }: CalculatorFormProps) {
       <div>
         <label
           htmlFor="cycleLength"
-          className="text-gray-700 dark:text-gray-300 mb-2 block text-sm font-medium"
+          className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
         >
           {t("cycleLengthLabel")}
-          <span className="text-gray-500 dark:text-gray-400 ml-2 text-sm">
+          <span className="ml-2 text-sm text-gray-500 dark:text-gray-400">
             {t("days")}
           </span>
         </label>
@@ -361,7 +360,7 @@ export function CalculatorForm({ initialData, onSubmit }: CalculatorFormProps) {
             max="35"
             value={cycleLength}
             onChange={(e) => setCycleLength(Number(e.target.value))}
-            className="flex-1 accent-primary-400"
+            className="accent-primary-400 flex-1"
           />
           <input
             type="number"
@@ -369,7 +368,7 @@ export function CalculatorForm({ initialData, onSubmit }: CalculatorFormProps) {
             max="35"
             value={cycleLength}
             onChange={(e) => setCycleLength(Number(e.target.value))}
-            className="dark:bg-dark-card dark:border-dark-border focus:border-primary-400 dark:focus:border-primary-400 focus:ring-primary-400 w-20 rounded-xl border border-gray-300 px-3 py-2 text-center text-gray-900 transition-colors focus:outline-none focus:ring-2"
+            className="dark:bg-dark-card dark:border-dark-border focus:border-primary-400 dark:focus:border-primary-400 focus:ring-primary-400 w-20 rounded-xl border border-gray-300 px-3 py-2 text-center text-gray-900 transition-colors focus:ring-2 focus:outline-none"
           />
         </div>
       </div>
@@ -378,10 +377,10 @@ export function CalculatorForm({ initialData, onSubmit }: CalculatorFormProps) {
       <div>
         <label
           htmlFor="periodLength"
-          className="text-gray-700 dark:text-gray-300 mb-2 block text-sm font-medium"
+          className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
         >
           {t("periodLengthLabel")}
-          <span className="text-gray-500 dark:text-gray-400 ml-2 text-sm">
+          <span className="ml-2 text-sm text-gray-500 dark:text-gray-400">
             {t("days")}
           </span>
         </label>
@@ -393,7 +392,7 @@ export function CalculatorForm({ initialData, onSubmit }: CalculatorFormProps) {
             max="7"
             value={periodLength}
             onChange={(e) => setPeriodLength(Number(e.target.value))}
-            className="flex-1 accent-primary-400"
+            className="accent-primary-400 flex-1"
           />
           <input
             type="number"
@@ -401,7 +400,7 @@ export function CalculatorForm({ initialData, onSubmit }: CalculatorFormProps) {
             max="7"
             value={periodLength}
             onChange={(e) => setPeriodLength(Number(e.target.value))}
-            className="dark:bg-dark-card dark:border-dark-border focus:border-primary-400 dark:focus:border-primary-400 focus:ring-primary-400 w-20 rounded-xl border border-gray-300 px-3 py-2 text-center text-gray-900 transition-colors focus:outline-none focus:ring-2"
+            className="dark:bg-dark-card dark:border-dark-border focus:border-primary-400 dark:focus:border-primary-400 focus:ring-primary-400 w-20 rounded-xl border border-gray-300 px-3 py-2 text-center text-gray-900 transition-colors focus:ring-2 focus:outline-none"
           />
         </div>
       </div>
@@ -409,7 +408,7 @@ export function CalculatorForm({ initialData, onSubmit }: CalculatorFormProps) {
       {/* Submit Button */}
       <button
         type="submit"
-        className="bg-primary-400 hover:bg-primary-500 active:scale-95 dark:bg-primary-500 dark:hover:bg-primary-600 w-full rounded-2xl px-6 py-4 text-lg font-semibold text-white transition-all shadow-lg hover:shadow-xl min-h-[48px]"
+        className="bg-primary-400 hover:bg-primary-500 dark:bg-primary-500 dark:hover:bg-primary-600 min-h-[48px] w-full rounded-2xl px-6 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:shadow-xl active:scale-95"
       >
         {t("calculateButton")}
       </button>
@@ -430,6 +429,7 @@ git commit -m "feat: add calculator input form component"
 ## Task 5: Create Prediction Cards Component
 
 **Files:**
+
 - Create: `src/components/calculator/prediction-cards.tsx`
 
 **Step 1: Write the prediction cards component**
@@ -456,59 +456,59 @@ export function PredictionCards({ result, locale }: PredictionCardsProps) {
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
       {/* Next Period Card */}
-      <div className="border-l-4 border-red-300 bg-red-50 dark:bg-red-900/20 dark:border-red-700 rounded-r-xl p-4">
-        <div className="text-red-600 dark:text-red-400 mb-2">
-          <CalendarIcon className="w-6 h-6" />
+      <div className="rounded-r-xl border-l-4 border-red-300 bg-red-50 p-4 dark:border-red-700 dark:bg-red-900/20">
+        <div className="mb-2 text-red-600 dark:text-red-400">
+          <CalendarIcon className="h-6 w-6" />
         </div>
-        <h3 className="text-gray-700 dark:text-gray-300 text-sm font-medium">
+        <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">
           {t("nextPeriod")}
         </h3>
-        <p className="text-gray-900 dark:text-white mt-1 font-semibold">
+        <p className="mt-1 font-semibold text-gray-900 dark:text-white">
           {formatDate(result.nextPeriodStart)}
         </p>
-        <p className="text-gray-600 dark:text-gray-400 mt-1 text-sm">
+        <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
           {formatDate(result.nextPeriodEnd)}
         </p>
       </div>
 
       {/* Ovulation Day Card */}
-      <div className="border-l-4 border-blue-300 bg-blue-50 dark:bg-blue-900/20 dark:border-blue-700 rounded-r-xl p-4">
-        <div className="text-blue-600 dark:text-blue-400 mb-2">
-          <SparklesIcon className="w-6 h-6" />
+      <div className="rounded-r-xl border-l-4 border-blue-300 bg-blue-50 p-4 dark:border-blue-700 dark:bg-blue-900/20">
+        <div className="mb-2 text-blue-600 dark:text-blue-400">
+          <SparklesIcon className="h-6 w-6" />
         </div>
-        <h3 className="text-gray-700 dark:text-gray-300 text-sm font-medium">
+        <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">
           {t("ovulationDay")}
         </h3>
-        <p className="text-gray-900 dark:text-white mt-1 font-semibold">
+        <p className="mt-1 font-semibold text-gray-900 dark:text-white">
           {formatDate(result.ovulationDate)}
         </p>
       </div>
 
       {/* Fertile Window Card */}
-      <div className="border-l-4 border-blue-300 bg-blue-50 dark:bg-blue-900/20 dark:border-blue-700 rounded-r-xl p-4">
-        <div className="text-blue-600 dark:text-blue-400 mb-2">
-          <HeartIcon className="w-6 h-6" />
+      <div className="rounded-r-xl border-l-4 border-blue-300 bg-blue-50 p-4 dark:border-blue-700 dark:bg-blue-900/20">
+        <div className="mb-2 text-blue-600 dark:text-blue-400">
+          <HeartIcon className="h-6 w-6" />
         </div>
-        <h3 className="text-gray-700 dark:text-gray-300 text-sm font-medium">
+        <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">
           {t("fertileWindow")}
         </h3>
-        <p className="text-gray-900 dark:text-white mt-1 font-semibold">
+        <p className="mt-1 font-semibold text-gray-900 dark:text-white">
           {formatDate(result.fertileWindowStart)}
         </p>
-        <p className="text-gray-600 dark:text-gray-400 mt-1 text-sm">
+        <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
           {formatDate(result.fertileWindowEnd)}
         </p>
       </div>
 
       {/* PMS Period Card */}
-      <div className="border-l-4 border-yellow-300 bg-yellow-50 dark:bg-yellow-900/20 dark:border-yellow-700 rounded-r-xl p-4">
-        <div className="text-yellow-600 dark:text-yellow-400 mb-2">
-          <SunIcon className="w-6 h-6" />
+      <div className="rounded-r-xl border-l-4 border-yellow-300 bg-yellow-50 p-4 dark:border-yellow-700 dark:bg-yellow-900/20">
+        <div className="mb-2 text-yellow-600 dark:text-yellow-400">
+          <SunIcon className="h-6 w-6" />
         </div>
-        <h3 className="text-gray-700 dark:text-gray-300 text-sm font-medium">
+        <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">
           {t("pmsPeriod")}
         </h3>
-        <p className="text-gray-900 dark:text-white mt-1 font-semibold">
+        <p className="mt-1 font-semibold text-gray-900 dark:text-white">
           {formatDate(result.pmsStart)}
         </p>
       </div>
@@ -601,6 +601,7 @@ git commit -m "feat: add prediction cards component"
 ## Task 6: Create Calendar View Component
 
 **Files:**
+
 - Create: `src/components/calculator/calendar-view.tsx`
 
 **Step 1: Write the calendar view component**
@@ -610,7 +611,14 @@ git commit -m "feat: add prediction cards component"
 "use client";
 
 import { useState, useMemo } from "react";
-import { format, startOfMonth, endOfMonth, eachDayOfInterval, addMonths, subMonths } from "date-fns";
+import {
+  format,
+  startOfMonth,
+  endOfMonth,
+  eachDayOfInterval,
+  addMonths,
+  subMonths,
+} from "date-fns";
 import { useTranslations } from "next-intl";
 import type { PredictionResult, Locale } from "@/types";
 import { getDatePeriodType } from "@/lib/calculator/cycle-calculator";
@@ -669,7 +677,7 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
         <button
           type="button"
           onClick={previousMonth}
-          className="hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2 transition-colors"
+          className="rounded-lg p-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-700"
           aria-label={t("previousMonth")}
         >
           <svg
@@ -680,20 +688,20 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-gray-600 dark:text-gray-400 h-5 w-5"
+            className="h-5 w-5 text-gray-600 dark:text-gray-400"
           >
             <polyline points="15 18 9 12 15 6" />
           </svg>
         </button>
 
-        <h3 className="text-gray-900 dark:text-white text-lg font-semibold">
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
           {format(currentMonth, "MMMM yyyy", { locale })}
         </h3>
 
         <button
           type="button"
           onClick={nextMonth}
-          className="hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2 transition-colors"
+          className="rounded-lg p-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-700"
           aria-label={t("nextMonth")}
         >
           <svg
@@ -704,7 +712,7 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-gray-600 dark:text-gray-400 h-5 w-5"
+            className="h-5 w-5 text-gray-600 dark:text-gray-400"
           >
             <polyline points="9 18 15 12 9 6" />
           </svg>
@@ -712,11 +720,11 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
       </div>
 
       {/* Week Day Headers */}
-      <div className="grid grid-cols-7 gap-1 mb-2">
+      <div className="mb-2 grid grid-cols-7 gap-1">
         {weekDays.map((day) => (
           <div
             key={day}
-            className="text-gray-500 dark:text-gray-400 text-center text-sm font-medium"
+            className="text-center text-sm font-medium text-gray-500 dark:text-gray-400"
           >
             {day}
           </div>
@@ -728,7 +736,7 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
         {calendarDays.map((date) => (
           <div
             key={date.toISOString()}
-            className={`${getDayStyles(date)} min-h-[44px] flex items-center justify-center rounded-lg text-sm transition-colors`}
+            className={`${getDayStyles(date)} flex min-h-[44px] items-center justify-center rounded-lg text-sm transition-colors`}
           >
             {format(date, "d")}
           </div>
@@ -751,6 +759,7 @@ git commit -m "feat: add calendar view component with period highlighting"
 ## Task 7: Create Results Display Component
 
 **Files:**
+
 - Create: `src/components/calculator/results-display.tsx`
 
 **Step 1: Write the results display component**
@@ -781,7 +790,8 @@ export function ResultsDisplay({
   const t = useTranslations("calculator.results");
 
   const addToGoogleCalendar = () => {
-    const baseUrl = "https://calendar.google.com/calendar/render?action=TEMPLATE";
+    const baseUrl =
+      "https://calendar.google.com/calendar/render?action=TEMPLATE";
 
     const formatDateICS = (date: Date) => {
       return format(date, "yyyyMMdd'T'HHmmss'Z'");
@@ -790,7 +800,7 @@ export function ResultsDisplay({
     const params = new URLSearchParams({
       text: t("calendarEventTitle"),
       dates: `${formatDateICS(result.nextPeriodStart)}/${formatDateICS(
-        addDays(result.nextPeriodEnd, 1)
+        addDays(result.nextPeriodEnd, 1),
       )}`,
       details: t("calendarEventDescription"),
     });
@@ -799,7 +809,7 @@ export function ResultsDisplay({
   };
 
   return (
-    <div className="space-y-6 mt-8">
+    <div className="mt-8 space-y-6">
       {/* Prediction Cards */}
       <PredictionCards result={result} locale={locale} />
 
@@ -811,7 +821,7 @@ export function ResultsDisplay({
         <button
           type="button"
           onClick={addToGoogleCalendar}
-          className="bg-primary-400 hover:bg-primary-500 active:scale-95 dark:bg-primary-500 dark:hover:bg-primary-600 flex flex-1 items-center justify-center gap-2 rounded-2xl px-6 py-4 text-lg font-semibold text-white transition-all shadow-lg hover:shadow-xl min-h-[48px]"
+          className="bg-primary-400 hover:bg-primary-500 dark:bg-primary-500 dark:hover:bg-primary-600 flex min-h-[48px] flex-1 items-center justify-center gap-2 rounded-2xl px-6 py-4 text-lg font-semibold text-white shadow-lg transition-all hover:shadow-xl active:scale-95"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -821,7 +831,7 @@ export function ResultsDisplay({
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="w-5 h-5"
+            className="h-5 w-5"
           >
             <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
             <line x1="16" y1="2" x2="16" y2="6" />
@@ -834,14 +844,14 @@ export function ResultsDisplay({
         <button
           type="button"
           onClick={onReset}
-          className="border-gray-300 text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700 active:scale-95 flex flex-1 items-center justify-center rounded-2xl border-2 px-6 py-4 text-lg font-semibold transition-all min-h-[48px]"
+          className="flex min-h-[48px] flex-1 items-center justify-center rounded-2xl border-2 border-gray-300 px-6 py-4 text-lg font-semibold text-gray-700 transition-all hover:bg-gray-50 active:scale-95 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
         >
           {t("recalculate")}
         </button>
       </div>
 
       {/* Privacy Note */}
-      <p className="text-gray-500 dark:text-gray-400 text-center text-sm">
+      <p className="text-center text-sm text-gray-500 dark:text-gray-400">
         {t("privacyNote")}
       </p>
     </div>
@@ -861,6 +871,7 @@ git commit -m "feat: add results display component with action buttons"
 ## Task 8: Create Main Calculator Container
 
 **Files:**
+
 - Create: `src/components/calculator/period-calculator.tsx`
 - Create: `src/components/calculator/index.ts`
 
@@ -875,7 +886,11 @@ import { useTranslations } from "next-intl";
 import type { CycleData, PredictionResult, Locale } from "@/types";
 import { calculateCycle } from "@/lib/calculator/cycle-calculator";
 import { validateCycleData } from "@/lib/calculator/validation";
-import { saveCycleData, loadCycleData, clearCycleData } from "@/lib/storage/localStorage";
+import {
+  saveCycleData,
+  loadCycleData,
+  clearCycleData,
+} from "@/lib/storage/localStorage";
 import { CalculatorForm } from "./calculator-form";
 import { ResultsDisplay } from "./results-display";
 
@@ -924,13 +939,13 @@ export function PeriodCalculator({ locale }: PeriodCalculatorProps) {
   }, []);
 
   return (
-    <div className="dark:bg-dark-card w-full rounded-3xl bg-white p-6 shadow-soft md:p-8">
+    <div className="dark:bg-dark-card shadow-soft w-full rounded-3xl bg-white p-6 md:p-8">
       {!result ? (
         <>
           <h2 className="text-primary-400 text-center text-2xl font-bold md:text-3xl">
             {t("title")}
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 mt-4 text-center">
+          <p className="mt-4 text-center text-gray-600 dark:text-gray-300">
             {t("subtitle")}
           </p>
           <div className="mt-8">
@@ -972,6 +987,7 @@ git commit -m "feat: add main period calculator container component"
 ## Task 9: Integrate Calculator into Home Page
 
 **Files:**
+
 - Modify: `src/app/[locale]/page.tsx`
 
 **Step 1: Replace page content with calculator**
@@ -1009,6 +1025,7 @@ git commit -m "feat: integrate period calculator into home page"
 ## Task 10: Add i18n Translations
 
 **Files:**
+
 - Modify: `messages/en.json`
 - Modify: `messages/es.json`
 - Modify: `messages/fr.json`
@@ -1133,6 +1150,7 @@ npm run dev
 ```
 
 Visit http://localhost:3000 and test:
+
 1. Fill out the form and submit
 2. Verify results display correctly
 3. Test calendar month navigation
@@ -1170,17 +1188,20 @@ After completion, verify:
 ## Implementation Notes
 
 ### Key Dependencies
+
 - `date-fns` - Date manipulation and formatting
 - `next-intl` - Internationalization
 - `localStorage` - Data persistence
 
 ### Design Decisions
+
 - **No .ics file generation** - Using Google Calendar Web Intent for simplicity
 - **Prediction window calendar** - Shows from today to after next period
 - **Border + light background** - Visual style matches Morandi color scheme
 - **Slider + input dual control** - Fast adjustment + precise input
 
 ### Future Enhancements
+
 - Irregular cycle mode (historical data input)
 - Cycle history tracking
 - More calendar export options (.ics, Outlook)
