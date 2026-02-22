@@ -22,9 +22,28 @@ interface StorageData {
 }
 
 /**
+ * Format date as YYYY-MM-DD string in local time (not UTC)
+ * This avoids timezone issues when storing/loading dates
+ */
+function formatDateAsLocalString(date: Date): string {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+/**
+ * Parse YYYY-MM-DD string as local time date
+ */
+function parseLocalDateString(dateStr: string): Date {
+  const [year, month, day] = dateStr.split("-").map(Number);
+  return new Date(year, month - 1, day);
+}
+
+/**
  * Save cycle data to localStorage.
  *
- * Converts Date objects to ISO 8601 strings for serialization.
+ * Converts Date objects to YYYY-MM-DD strings for serialization (local time).
  * Adds a timestamp to track when the data was saved.
  *
  * @param data - The cycle data to persist
@@ -48,7 +67,7 @@ export function saveCycleData(data: CycleData): void {
 
   try {
     const storageData: StorageData = {
-      lastPeriodStart: data.lastPeriodStart.toISOString(),
+      lastPeriodStart: formatDateAsLocalString(data.lastPeriodStart),
       cycleLength: data.cycleLength,
       periodLength: data.periodLength,
       savedAt: new Date().toISOString(),
@@ -64,7 +83,7 @@ export function saveCycleData(data: CycleData): void {
 /**
  * Load cycle data from localStorage.
  *
- * Parses stored JSON and converts ISO date strings back to Date objects.
+ * Parses stored JSON and converts YYYY-MM-DD date strings back to Date objects.
  *
  * @returns The parsed cycle data, or null if no data exists or parsing fails
  *
@@ -89,9 +108,9 @@ export function loadCycleData(): CycleData | null {
 
     const storageData: StorageData = JSON.parse(stored);
 
-    // Convert ISO strings back to Date objects
+    // Convert YYYY-MM-DD strings back to Date objects (local time)
     return {
-      lastPeriodStart: new Date(storageData.lastPeriodStart),
+      lastPeriodStart: parseLocalDateString(storageData.lastPeriodStart),
       cycleLength: storageData.cycleLength,
       periodLength: storageData.periodLength,
     };

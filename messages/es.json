@@ -75,7 +75,7 @@
       "privacyNote": "Tus datos se guardan localmente en tu dispositivo y nunca se envían a ningún servidor.",
       "calendarEventTitle": "Predicción de Periodo",
       "calendarEventDescription": "Próximo periodo predicho por Period Calculator",
-      "calendarEventDetails": "Fecha de ovulación: {ovulationDate}"
+      "calendarEventDetails": "Próximo Periodo: {nextPeriodStart} - {nextPeriodEnd}\nDía de ovulación: {ovulationDate}\nVentana fértil: {fertileStart} - {fertileEnd}\nPeriodo SPM: {pmsStart} - {pmsEnd}\n\nPróximo periodo predicho por Period Calculator"
     },
     "calendar": {
       "title": "Vista de Calendario",

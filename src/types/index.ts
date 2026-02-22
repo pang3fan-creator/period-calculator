@@ -11,4 +11,5 @@ export interface PredictionResult {
   fertileWindowEnd: Date;
   ovulationDate: Date;
   pmsStart: Date;
+  pmsEnd: Date;
 }

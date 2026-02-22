@@ -28,7 +28,9 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(powershell -Command \"& \"\"$env:USERPROFILE\\\\.claude\\\\scripts\\\\save-session.ps1\"\" -Topic \"\"period-calculator-p0-fix\"\"\")",
       "Bash(powershell -Command \"Get-ChildItem -Path $env:USERPROFILE\\\\.claude -Recurse -Filter ''*.ps1'' -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName\")",
-      "Bash(powershell -Command:*)"
+      "Bash(powershell -Command:*)",
+      "mcp__zai-mcp-server__analyze_image",
+      "WebFetch(domain:github.com)"
     ]
   }
 }

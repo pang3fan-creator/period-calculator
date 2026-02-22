@@ -149,10 +149,11 @@ export function PredictionCards({ result, locale }: PredictionCardsProps) {
     fertileWindowStart,
     fertileWindowEnd,
     pmsStart,
+    pmsEnd,
   } = result;
 
   return (
-    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
       {/* Next Period Card */}
       <div className="flex items-center gap-3 rounded-2xl border-2 border-red-300 bg-red-50 p-3  sm:gap-4 sm:p-5 dark:border-red-700/50 dark:bg-red-950/30">
         <div className="flex-shrink-0 text-red-600 dark:text-red-400">
@@ -212,7 +213,7 @@ export function PredictionCards({ result, locale }: PredictionCardsProps) {
             {t("pmsPeriod")}
           </p>
           <p className="text-sm font-semibold whitespace-normal text-gray-900 sm:text-base dark:text-gray-100">
-            {format(pmsStart, "MMM dd, yyyy", { locale: dateFnsLocale })}
+            {formatDateRange(pmsStart, pmsEnd, dateFnsLocale)}
           </p>
         </div>
       </div>

@@ -3,20 +3,25 @@
 import { useState, useCallback, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
 import { addDays } from "date-fns";
+import { DEFAULT_CYCLE_LENGTH, DEFAULT_PERIOD_LENGTH, MIN_CYCLE_LENGTH, MAX_CYCLE_LENGTH, MIN_PERIOD_LENGTH, MAX_PERIOD_LENGTH } from "@/lib/constants";
 import { CycleData } from "@/types";
-import {
-  DEFAULT_CYCLE_LENGTH,
-  DEFAULT_PERIOD_LENGTH,
-  MIN_CYCLE_LENGTH,
-  MAX_CYCLE_LENGTH,
-  MIN_PERIOD_LENGTH,
-  MAX_PERIOD_LENGTH,
-} from "@/lib/constants";
+
+/**
+ * Parse YYYY-MM-DD string as local time date (not UTC)
+ * This fixes the timezone issue where new Date("2026-01-05") is interpreted as UTC
+ */
+function parseLocalDate(dateStr: string): Date {
+  const [year, month, day] = dateStr.split("-").map(Number);
+  return new Date(year, month - 1, day);
+}
 
 // Helper to get default date (28 days ago for immediate calculation)
 const getDefaultLastPeriodDate = (): string => {
   const date = addDays(new Date(), -DEFAULT_CYCLE_LENGTH);
-  return date.toISOString().split("T")[0];
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
 };
 
 interface CalculatorFormProps {
@@ -88,9 +93,9 @@ export function CalculatorForm({ initialData, onSubmit }: CalculatorFormProps) {
         return;
       }
 
-      // Convert form data to CycleData
+      // Convert form data to CycleData (using local time parsing)
       const cycleData: CycleData = {
-        lastPeriodStart: new Date(formData.lastPeriodStart),
+        lastPeriodStart: parseLocalDate(formData.lastPeriodStart),
         cycleLength: formData.cycleLength,
         periodLength: formData.periodLength,
       };

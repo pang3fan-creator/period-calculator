@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { addDays, format } from "date-fns";
 import type { PredictionResult, CycleData } from "@/types";
 import type { Locale } from "@/i18n/config";
 import { PredictionCards } from "./prediction-cards";
@@ -100,28 +101,41 @@ export function ResultsDisplay({
   /**
    * Handle adding to Google Calendar
    * Uses Google Calendar Web Intent URL
+   * Note: Google Calendar endDate is exclusive, so we add 1 day to include the last day
    */
   const handleAddToGoogleCalendar = () => {
-    const { nextPeriodStart, nextPeriodEnd, ovulationDate } = result;
+    const { nextPeriodStart, nextPeriodEnd, ovulationDate, fertileWindowStart, fertileWindowEnd, pmsStart, pmsEnd } = result;
 
-    // Format dates for Google Calendar (yyyyMMdd format)
+    // Format dates for Google Calendar (yyyyMMdd format for event dates)
     const startDate = formatDateForGoogleCalendar(nextPeriodStart);
-    const endDate = formatDateForGoogleCalendar(nextPeriodEnd);
-    const ovulationDateStr = formatDateForGoogleCalendar(ovulationDate);
+    // Add 1 day because Google Calendar endDate is exclusive (doesn't include the last day)
+    const endDate = formatDateForGoogleCalendar(addDays(nextPeriodEnd, 1));
+
+    // Format dates for human-readable details (MMM dd, yyyy)
+    const formatReadableDate = (date: Date) => format(date, "MMM dd, yyyy");
+    const nextPeriodStartStr = formatReadableDate(nextPeriodStart);
+    const nextPeriodEndStr = formatReadableDate(nextPeriodEnd);
+    const ovulationStr = formatReadableDate(ovulationDate);
+    const fertileStartStr = formatReadableDate(fertileWindowStart);
+    const fertileEndStr = formatReadableDate(fertileWindowEnd);
+    const pmsStartStr = formatReadableDate(pmsStart);
+    const pmsEndStr = formatReadableDate(pmsEnd);
 
     // Build Google Calendar Web Intent URL
     const title = encodeURIComponent(t("calendarEventTitle"));
-    const description = encodeURIComponent(t("calendarEventDescription"));
     const details = encodeURIComponent(
       t("calendarEventDetails", {
-        ovulationDate: ovulationDateStr,
+        nextPeriodStart: nextPeriodStartStr,
+        nextPeriodEnd: nextPeriodEndStr,
+        ovulationDate: ovulationStr,
+        fertileStart: fertileStartStr,
+        fertileEnd: fertileEndStr,
+        pmsStart: pmsStartStr,
+        pmsEnd: pmsEndStr,
       }),
     );
 
-    // Combine description and ovulation details
-    const fullDetails = `${description}\n\n${details}`;
-
-    const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${fullDetails}`;
+    const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}`;
 
     // Open in new tab
     window.open(googleCalendarUrl, "_blank", "noopener,noreferrer");

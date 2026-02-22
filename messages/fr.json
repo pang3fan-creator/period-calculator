@@ -75,7 +75,7 @@
       "privacyNote": "Vos données sont enregistrées localement sur votre appareil et ne sont jamais envoyées à aucun serveur.",
       "calendarEventTitle": "Prédiction de Règles",
       "calendarEventDescription": "Prochaines règles prédites par Period Calculator",
-      "calendarEventDetails": "Date d'ovulation: {ovulationDate}"
+      "calendarEventDetails": "Prochaines Règles: {nextPeriodStart} - {nextPeriodEnd}\nJour d'ovulation: {ovulationDate}\nFenêtre fertile: {fertileStart} - {fertileEnd}\nPériode SPM: {pmsStart} - {pmsEnd}\n\nProchaines règles prédites par Period Calculator"
     },
     "calendar": {
       "title": "Vue du Calendrier",

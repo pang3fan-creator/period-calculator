@@ -47,6 +47,8 @@ export function calculateCycle(data: CycleData): PredictionResult {
 
   // Calculate PMS start (7 days before next period)
   const pmsStart = addDays(nextPeriodStart, -7);
+  // PMS ends the day before next period starts
+  const pmsEnd = addDays(nextPeriodStart, -1);
 
   return {
     nextPeriodStart,
@@ -55,6 +57,7 @@ export function calculateCycle(data: CycleData): PredictionResult {
     fertileWindowEnd,
     ovulationDate,
     pmsStart,
+    pmsEnd,
   };
 }
 
