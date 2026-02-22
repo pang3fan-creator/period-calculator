@@ -104,7 +104,15 @@ export function ResultsDisplay({
    * Note: Google Calendar endDate is exclusive, so we add 1 day to include the last day
    */
   const handleAddToGoogleCalendar = () => {
-    const { nextPeriodStart, nextPeriodEnd, ovulationDate, fertileWindowStart, fertileWindowEnd, pmsStart, pmsEnd } = result;
+    const {
+      nextPeriodStart,
+      nextPeriodEnd,
+      ovulationDate,
+      fertileWindowStart,
+      fertileWindowEnd,
+      pmsStart,
+      pmsEnd,
+    } = result;
 
     // Format dates for Google Calendar (yyyyMMdd format for event dates)
     const startDate = formatDateForGoogleCalendar(nextPeriodStart);

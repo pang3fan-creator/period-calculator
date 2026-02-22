@@ -105,5 +105,120 @@
     },
     "title": "Calculadora de Periodo",
     "subtitle": "Rastrea tu ciclo y predice tu próximo periodo"
+  },
+  "privacyPolicy": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización: {date}",
+    "intro": "Tu privacidad es importante para nosotros. Esta política explica cómo recopilamos, usamos y protegemos tu información personal cuando usas Calculadora de Periodo.",
+    "sections": {
+      "dataCollection": {
+        "title": "Datos que Recopilamos",
+        "description": "Calculadora de Periodo está diseñada con la privacidad como nuestra máxima prioridad. Cuando usas nuestro servicio, recopilamos los datos mínimos necesarios para la funcionalidad:",
+        "item0": "Primer día de tu último periodo (para el cálculo del ciclo)",
+        "item1": "Duración promedio del ciclo (para precisión en predicciones)",
+        "item2": "Duración del periodo (para mejores predicciones)",
+        "item3": "Preferencias de idioma y tema (almacenadas localmente)"
+      },
+      "dataStorage": {
+        "title": "Cómo Almacenamos tus Datos",
+        "description": "Todos tus datos se almacenan localmente en tu dispositivo usando el almacenamiento del navegador. Nunca subimos tus datos personales a ningún servidor.",
+        "item0": "Los datos se almacenan en el localStorage de tu navegador",
+        "item1": "Los datos nunca salen de tu dispositivo",
+        "item2": "Puedes eliminar tus datos en cualquier momento borrando la caché del navegador",
+        "item3": "No se requiere cuenta ni inicio de sesión"
+      },
+      "dataUsage": {
+        "title": "Cómo Usamos tus Datos",
+        "description": "Tus datos se usan exclusivamente para proporcionar nuestros servicios principales:",
+        "item0": "Calcular la fecha de tu próximo periodo",
+        "item1": "Predecir tu ventana fértil y día de ovulación",
+        "item2": "Generar eventos de calendario para tus predicciones",
+        "item3": "Recordar tus preferencias (tema, idioma)"
+      },
+      "cookies": {
+        "title": "Cookies",
+        "description": "Usamos cookies mínimas solo para funcionalidad esencial:",
+        "item0": "Preferencia de tema (modo claro/oscuro)",
+        "item1": "Selección de idioma",
+        "item2": "Son cookies funcionales, no de seguimiento"
+      },
+      "thirdParty": {
+        "title": "Servicios de Terceros",
+        "description": "Nos integramos con servicios de terceros de confianza para mejorar tu experiencia:",
+        "item0": "Google Calendar (para añadir eventos) - los datos se envían directamente desde tu dispositivo a Google",
+        "item1": "No se comparten datos con redes publicitarias",
+        "item2": "No hay servicios de análisis o seguimiento"
+      },
+      "userRights": {
+        "title": "Tus Derechos",
+        "description": "Tienes control completo sobre tus datos:",
+        "item0": "Acceder a tus datos en cualquier momento",
+        "item1": "Eliminar tus datos instantáneamente (borrar caché del navegador)",
+        "item2": "Exportar tus datos (no aplica ya que los datos stay on your device)",
+        "item3": "Opt-out simplemente no usando la aplicación"
+      },
+      "contact": {
+        "title": "Contáctanos",
+        "description": "Si tienes alguna pregunta sobre esta política de privacidad, por favor contáctanos.",
+        "email": "Escríbenos a: hello@periodcalculator.com"
+      }
+    },
+    "cta": {
+      "title": "¿Preguntas?",
+      "description": "Estamos aquí para ayudarte con cualquier preocupación sobre privacidad.",
+      "button": "Contáctanos"
+    }
+  },
+  "editorialPolicy": {
+    "title": "Política Editorial",
+    "lastUpdated": "Última actualización: {date}",
+    "intro": "Nuestra política editorial asegura que toda la información de salud proporcionada en Calculadora de Periodo sea precisa, actualizada y basada en fuentes científicas confiables. Estamos comprometidos con la transparencia en nuestro proceso de creación de contenido.",
+    "sections": {
+      "medicalSources": {
+        "title": "Fuentes Médicas",
+        "description": "Referenciamos solo organizaciones médicas autoritativas e investigación revisada por pares para asegurar que nuestro contenido cumpla con los más altos estándares de precisión:",
+        "item0": "Colegio Americano de Obstetras y Ginecólogos (ACOG)",
+        "item1": "Organización Mundial de la Salud (OMS)",
+        "item2": "Servicio Nacional de Salud (NHS) Reino Unido",
+        "item3": "Mayo Clinic"
+      },
+      "reviewProcess": {
+        "title": "Proceso de Revisión de Contenido",
+        "description": "Cada pieza de contenido pasa por un riguroso proceso de revisión para asegurar precisión y relevancia:",
+        "item0": "Investigación inicial por escritores de salud calificados",
+        "item1": "Revisión por profesionales médicos",
+        "item2": "Actualizaciones regulares basadas en investigación más reciente",
+        "item3": "Incorporación de comentarios de usuarios"
+      },
+      "updateFrequency": {
+        "title": "Frecuencia de Actualización",
+        "description": "Mantenemos nuestro contenido para reflejar las últimas pautas médicas e investigación:",
+        "item0": "Contenido principal revisado trimestralmente",
+        "item1": "Pautas médicas actualizadas cuando surge nueva investigación",
+        "item2": "Verificación de datos realizada en todas las referencias",
+        "item3": "Enlaces rotos revisados mensualmente"
+      },
+      "accuracyCommitment": {
+        "title": "Compromiso con la Precisión",
+        "description": "Nos esforzamos por la precisión en toda nuestra información de salud mientras reconocemos las limitaciones de las herramientas predictivas:",
+        "item0": "Algoritmos basados en investigación médica establecida",
+        "item1": "Avisos claros sobre la precisión de las predicciones",
+        "item2": "Política de corrección para errores reportados",
+        "item3": "Transparencia sobre las fuentes de datos"
+      },
+      "disclaimer": {
+        "title": "Aviso Legal",
+        "description": "Información importante sobre las limitaciones de nuestro servicio:",
+        "item0": "Esta es una herramienta predictiva, no un dispositivo médico",
+        "item1": "Los resultados son estimaciones basadas en promedios",
+        "item2": "Consulta profesionales de salud para advice médico",
+        "item3": "No somos responsables de decisiones tomadas basándose en predicciones"
+      },
+      "contact": {
+        "title": "Contáctanos",
+        "description": "Si tienes preguntas sobre nuestro proceso editorial o contenido, por favor comunícate.",
+        "email": "Escríbenos a: hello@periodcalculator.com"
+      }
+    }
   }
 }

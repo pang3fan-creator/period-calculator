@@ -3,7 +3,14 @@
 import { useState, useCallback, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
 import { addDays } from "date-fns";
-import { DEFAULT_CYCLE_LENGTH, DEFAULT_PERIOD_LENGTH, MIN_CYCLE_LENGTH, MAX_CYCLE_LENGTH, MIN_PERIOD_LENGTH, MAX_PERIOD_LENGTH } from "@/lib/constants";
+import {
+  DEFAULT_CYCLE_LENGTH,
+  DEFAULT_PERIOD_LENGTH,
+  MIN_CYCLE_LENGTH,
+  MAX_CYCLE_LENGTH,
+  MIN_PERIOD_LENGTH,
+  MAX_PERIOD_LENGTH,
+} from "@/lib/constants";
 import { CycleData } from "@/types";
 
 /**

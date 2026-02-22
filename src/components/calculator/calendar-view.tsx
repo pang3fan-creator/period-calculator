@@ -185,7 +185,7 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
   });
 
   return (
-    <div className="dark:bg-dark-card flex w-full flex-col gap-6 rounded-3xl bg-white p-6 shadow-card md:p-8">
+    <div className="dark:bg-dark-card shadow-card flex w-full flex-col gap-6 rounded-3xl bg-white p-6 md:p-8">
       {/* Calendar Header */}
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100">

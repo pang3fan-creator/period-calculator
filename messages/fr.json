@@ -105,5 +105,120 @@
     },
     "title": "Calculateur de Règles",
     "subtitle": "Suivez votre cycle et prédisez vos prochaines règles"
+  },
+  "privacyPolicy": {
+    "title": "Politique de Confidentialité",
+    "lastUpdated": "Dernière mise à jour : {date}",
+    "intro": "Votre vie privée est importante pour nous. Cette politique explique comment nous collectons, utilisons et protégeons vos informations personnelles lorsque vous utilisez Calculateur de Règles.",
+    "sections": {
+      "dataCollection": {
+        "title": "Données que Nous Collectons",
+        "description": "Calculateur de Règles est conçu avec la confidentialité comme priorité absolue. Lorsque vous utilisez notre service, nous collectons les données minimales nécessaires au fonctionnement :",
+        "item0": "Premier jour de vos dernières règles (pour le calcul du cycle)",
+        "item1": "Durée moyenne du cycle (pour la précision des prédictions)",
+        "item2": "Durée des règles (pour de meilleures prédictions)",
+        "item3": "Préférences de langue et de thème (stockées localement)"
+      },
+      "dataStorage": {
+        "title": "Comment Nous Stockons vos Données",
+        "description": "Toutes vos données sont stockées localement sur votre appareil via le stockage du navigateur. Nous ne téléchargeons jamais vos données personnelles sur un serveur.",
+        "item0": "Les données sont stockées dans le localStorage de votre navigateur",
+        "item1": "Les données ne quittent jamais votre appareil",
+        "item2": "Vous pouvez supprimer vos données à tout moment en effaçant le cache du navigateur",
+        "item3": "Aucun compte ou inscription requis"
+      },
+      "dataUsage": {
+        "title": "Comment Nous Utilisons vos Données",
+        "description": "Vos données sont utilisées exclusivement pour fournir nos services principaux :",
+        "item0": "Calculer la date de vos prochaines règles",
+        "item1": "Prédire votre fenêtre fertile et jour d'ovulation",
+        "item2": "Générer des événements de calendrier pour vos prédictions",
+        "item3": "Mémoriser vos préférences (thème, langue)"
+      },
+      "cookies": {
+        "title": "Cookies",
+        "description": "Nous utilisons des cookies minimaux uniquement pour la fonctionnalité essentielle :",
+        "item0": "Préférence de thème (mode clair/sombre)",
+        "item1": "Sélection de langue",
+        "item2": "Ce sont des cookies fonctionnels, pas des cookies de suivi"
+      },
+      "thirdParty": {
+        "title": "Services Tiers",
+        "description": "Nous nous intégrons avec des services tiers de confiance pour améliorer votre expérience :",
+        "item0": "Google Calendar (pour ajouter des événements) - les données sont envoyées directement de votre appareil à Google",
+        "item1": "Aucune donnée n'est partagée avec des réseaux publicitaires",
+        "item2": "Aucun service d'analyse ou de suivi"
+      },
+      "userRights": {
+        "title": "Vos Droits",
+        "description": "Vous avez un contrôle complet sur vos données :",
+        "item0": "Accéder à vos données à tout moment",
+        "item1": "Supprimer vos données instantanément (effacer le cache du navigateur)",
+        "item2": "Exporter vos données (non applicable car les données restent sur votre appareil)",
+        "item3": "Vous désinscrire en simplement n'utilisant pas l'application"
+      },
+      "contact": {
+        "title": "Contactez-nous",
+        "description": "Si vous avez des questions concernant cette politique de confidentialité, veuillez nous contacter.",
+        "email": "Envoyez-nous un e-mail à : hello@periodcalculator.com"
+      }
+    },
+    "cta": {
+      "title": "Questions ?",
+      "description": "Nous sommes là pour vous aider pour toute préoccupation concernant la vie privée.",
+      "button": "Contactez-nous"
+    }
+  },
+  "editorialPolicy": {
+    "title": "Politique Éditoriale",
+    "lastUpdated": "Dernière mise à jour : {date}",
+    "intro": "Notre politique éditoriale garantit que toutes les informations de santé fournies sur Calculateur de Règles sont précises, à jour et basées sur des sources scientifiques fiables. Nous nous engageons à la transparence dans notre processus de création de contenu.",
+    "sections": {
+      "medicalSources": {
+        "title": "Sources Médicales",
+        "description": "Nous référençons uniquement les organisations médicales autorisées et la recherche examinée par des pairs pour garantir que notre contenu répond aux normes de précision les plus élevées :",
+        "item0": "American College of Obstetricians and Gynecologists (ACOG)",
+        "item1": "Organisation Mondiale de la Santé (OMS)",
+        "item2": "National Health Service (NHS) Royaume-Uni",
+        "item3": "Mayo Clinic"
+      },
+      "reviewProcess": {
+        "title": "Processus de Révision du Contenu",
+        "description": "Chaque élément de contenu undergoes un processus de révision rigoureux pour garantir la précision et la pertinence :",
+        "item0": "Recherche initiale par des rédacteurs santé qualifiés",
+        "item1": "Révision par des professionnels médicaux",
+        "item2": "Mises à jour régulières basées sur les dernières recherches",
+        "item3": "Intégration des commentaires des utilisateurs"
+      },
+      "updateFrequency": {
+        "title": "Fréquence de Mise à Jour",
+        "description": "Nous maintenons notre contenu pour refléter les dernières directives médicales et recherche :",
+        "item0": "Contenu principal révisé trimestriellement",
+        "item1": "Directives médicales mises à jour au fur et à mesure de l'émergence de nouvelles recherches",
+        "item2": "Vérification des faits effectuée sur toutes les références",
+        "item3": "Liens brisés vérifiés mensuellement"
+      },
+      "accuracyCommitment": {
+        "title": "Engagement de Précision",
+        "description": "Nous visons la précision dans toutes nos informations de santé tout en reconnaissant les limitations des outils prédictifs :",
+        "item0": "Algorithmes basés sur la recherche médicale établie",
+        "item1": "Avertissements clairs sur la précision des prédictions",
+        "item2": "Politique de correction pour les erreurs signalées",
+        "item3": "Transparence sur les sources de données"
+      },
+      "disclaimer": {
+        "title": "Avertissement",
+        "description": "Informations importantes sur les limitations de notre service :",
+        "item0": "Ceci est un outil prédictif, pas un dispositif médical",
+        "item1": "Les résultats sont des estimations basées sur des moyennes",
+        "item2": "Consultez des professionnels de santé pour des conseils médicaux",
+        "item3": "Nous ne sommes pas responsables des décisions prises basées sur les prédictions"
+      },
+      "contact": {
+        "title": "Contactez-nous",
+        "description": "Si vous avez des questions sur notre processus éditorial ou notre contenu, veuillez nous contacter.",
+        "email": "Envoyez-nous un e-mail à : hello@periodcalculator.com"
+      }
+    }
   }
 }

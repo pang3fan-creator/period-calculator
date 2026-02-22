@@ -105,5 +105,120 @@
     },
     "title": "Period Calculator",
     "subtitle": "Track your cycle and predict your next period"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: {date}",
+    "intro": "Your privacy is important to us. This policy explains how we collect, use, and protect your personal information when you use Period Calculator.",
+    "sections": {
+      "dataCollection": {
+        "title": "Data We Collect",
+        "description": "Period Calculator is designed with privacy as our top priority. When you use our service, we collect minimal data necessary for functionality:",
+        "item0": "First day of your last period (for cycle calculation)",
+        "item1": "Average cycle length (for prediction accuracy)",
+        "item2": "Period duration (for better predictions)",
+        "item3": "Language and theme preferences (stored locally)"
+      },
+      "dataStorage": {
+        "title": "How We Store Your Data",
+        "description": "All your data is stored locally on your device using browser storage. We never upload your personal data to any server.",
+        "item0": "Data is stored in your browser's localStorage",
+        "item1": "Data never leaves your device",
+        "item2": "You can delete your data at any time by clearing browser cache",
+        "item3": "No account or login required"
+      },
+      "dataUsage": {
+        "title": "How We Use Your Data",
+        "description": "Your data is used exclusively to provide our core services:",
+        "item0": "Calculate your next period date",
+        "item1": "Predict your fertile window and ovulation day",
+        "item2": "Generate calendar events for your predictions",
+        "item3": "Remember your preferences (theme, language)"
+      },
+      "cookies": {
+        "title": "Cookies",
+        "description": "We use minimal cookies solely for essential functionality:",
+        "item0": "Theme preference (light/dark mode)",
+        "item1": "Language selection",
+        "item2": "These are functional cookies, not tracking cookies"
+      },
+      "thirdParty": {
+        "title": "Third-Party Services",
+        "description": "We integrate with trusted third-party services to enhance your experience:",
+        "item0": "Google Calendar (for adding events) - data is sent directly from your device to Google",
+        "item1": "No data is shared with advertising networks",
+        "item2": "No analytics or tracking services"
+      },
+      "userRights": {
+        "title": "Your Rights",
+        "description": "You have complete control over your data:",
+        "item0": "Access your data at any time",
+        "item1": "Delete your data instantly (clear browser cache)",
+        "item2": "Export your data (not applicable as data stays on your device)",
+        "item3": "Opt-out by simply not using the app"
+      },
+      "contact": {
+        "title": "Contact Us",
+        "description": "If you have any questions about this privacy policy, please contact us.",
+        "email": "Email us at: hello@periodcalculator.com"
+      }
+    },
+    "cta": {
+      "title": "Questions?",
+      "description": "We're here to help with any privacy concerns.",
+      "button": "Contact Us"
+    }
+  },
+  "editorialPolicy": {
+    "title": "Editorial Policy",
+    "lastUpdated": "Last updated: {date}",
+    "intro": "Our editorial policy ensures that all health information provided on Period Calculator is accurate, up-to-date, and based on credible scientific sources. We are committed to transparency in our content creation process.",
+    "sections": {
+      "medicalSources": {
+        "title": "Medical Sources",
+        "description": "We reference only authoritative medical organizations and peer-reviewed research to ensure our content meets the highest standards of accuracy:",
+        "item0": "American College of Obstetricians and Gynecologists (ACOG)",
+        "item1": "World Health Organization (WHO)",
+        "item2": "National Health Service (NHS) UK",
+        "item3": "Mayo Clinic"
+      },
+      "reviewProcess": {
+        "title": "Content Review Process",
+        "description": "Every piece of content goes through a rigorous review process to ensure accuracy and relevance:",
+        "item0": "Initial research by qualified health writers",
+        "item1": "Review by medical professionals",
+        "item2": "Regular updates based on latest research",
+        "item3": "User feedback incorporation"
+      },
+      "updateFrequency": {
+        "title": "Update Frequency",
+        "description": "We maintain our content to reflect the latest medical guidelines and research:",
+        "item0": "Core content reviewed quarterly",
+        "item1": "Medical guidelines updated as new research emerges",
+        "item2": "Fact-checking performed on all references",
+        "item3": "Broken links checked monthly"
+      },
+      "accuracyCommitment": {
+        "title": "Accuracy Commitment",
+        "description": "We strive for precision in all our health information while acknowledging the limitations of predictive tools:",
+        "item0": "Algorithms based on established medical research",
+        "item1": "Clear disclaimers about prediction accuracy",
+        "item2": "Correction policy for reported errors",
+        "item3": "Transparency about data sources"
+      },
+      "disclaimer": {
+        "title": "Disclaimer",
+        "description": "Important information about the limitations of our service:",
+        "item0": "This is a prediction tool, not a medical device",
+        "item1": "Results are estimates based on averages",
+        "item2": "Consult healthcare professionals for medical advice",
+        "item3": "We are not responsible for decisions made based on predictions"
+      },
+      "contact": {
+        "title": "Contact Us",
+        "description": "If you have questions about our editorial process or content, please reach out.",
+        "email": "Email us at: hello@periodcalculator.com"
+      }
+    }
   }
 }

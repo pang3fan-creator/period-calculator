@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "format": "prettier --write \"src/**/*.{ts,tsx}\" \"messages/*.json\"",
-    "test": "vitest"
+    "test": "powershell -Command \"npx vitest run\""
   },
   "dependencies": {
     "date-fns": "^4.1.0",
