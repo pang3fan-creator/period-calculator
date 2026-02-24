@@ -276,7 +276,7 @@ export function ResultsDisplay({
 
     // Format dates for Outlook (ISO 8601 format)
     const startDate = nextPeriodStart.toISOString();
-    const endDate = addDays(nextPeriodEnd, 1).toISOString();
+    const endDate = nextPeriodEnd.toISOString();
 
     // Format dates for human-readable details
     const formatReadableDate = (date: Date) => format(date, "MMM dd, yyyy");

@@ -72,7 +72,7 @@ export function generateICS(events: CalendarEvent[]): string {
   // Build VEVENT sections for each event
   const vevents = events.map((event) => {
     const startDate = formatDateICSAllDay(event.startDate);
-    const endDate = formatDateICSAllDay(addDaysICS(event.endDate, 1)); // ICS end date is exclusive
+    const endDate = formatDateICSAllDay(event.endDate);
 
     return [
       "BEGIN:VEVENT",
