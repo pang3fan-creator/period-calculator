@@ -6,6 +6,21 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { Playfair_Display, Inter } from "next/font/google";
+import { getTranslations } from "next-intl/server";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Period Calculator",
+    description:
+      "Calculate your next period, fertile window, and ovulation date. 100% private.",
+  };
+}
 
 const playfair = Playfair_Display({
   subsets: ["latin"],

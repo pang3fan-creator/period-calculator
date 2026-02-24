@@ -1,7 +1,23 @@
 {
   "metadata": {
     "title": "Calculateur de Règles - Suivi Menstruel Gratuit et Privé",
-    "description": "Calculez vos prochaines règles, fenêtre de fertilité et date d'ovulation. 100% privé - toutes les données restent dans votre navigateur."
+    "description": "Calculez vos prochaines règles, fenêtre de fertilité et date d'ovulation. 100% privé - toutes les données restent dans votre navigateur.",
+    "irregular": {
+      "title": "Calculateur de Règles Irrégulières - Suivez les Cycles Inégaux",
+      "description": "Calculez vos règles même avec des cycles irréguliers. Notre algorithme utilise des données historiques pour des prédictions précises. 100% privé."
+    },
+    "ovulation": {
+      "title": "Calculateur d'Ovulation - Trouvez Votre Fenêtre Fertile",
+      "description": "Calculez votre date d'ovulation et fenêtre fertile. Planifiez une grossesse ou comprenez mieux votre cycle. 100% privé."
+    },
+    "privacy": {
+      "title": "Politique de Confidentialité - Vos Données Restent sur Votre Appareil",
+      "description": "Découvrez comment nous protégeons votre vie privée. Toutes les données sont stockées localement sur votre appareil et jamais téléchargées sur un serveur."
+    },
+    "editorial": {
+      "title": "Politique Éditoriale - Normes d'Information Médicale",
+      "description": "Notre engagement envers une information médicale précise et fondée sur des preuves. Découvrez nos sources et notre processus de révision."
+    }
   },
   "common": {
     "appName": "Calculateur de Règles",
@@ -18,7 +34,8 @@
     "ovulationCalculator": "Calculateur d'Ovulation",
     "blog": "Blog",
     "privacyPolicy": "Politique de Confidentialité",
-    "editorialPolicy": "Politique Éditoriale"
+    "editorialPolicy": "Politique Éditoriale",
+    "about": "À Propos"
   },
   "header": {
     "toggleTheme": "Changer le thème",
@@ -28,6 +45,42 @@
     "title": "Calculateur de Règles Précis et Suivi du Cycle",
     "subtitle": "Prédisez vos prochaines règles, fenêtre de fertilité et jour d'ovulation avec notre calculateur privé.",
     "comingSoon": "Calculateur bientôt disponible."
+  },
+  "about": {
+    "title": "À Propos de Period Calculator",
+    "subtitle": "Autonomiser les femmes avec des outils de santé privés",
+    "mission": {
+      "title": "Notre Mission",
+      "description": "Nous croyons que chaque femme mérite un accès à des outils de santé menstruelle précis et privés. Notre mission est de fournir une calculatrice de règles fiable qui respecte votre vie privée tout en vous aidant à mieux comprendre votre corps."
+    },
+    "whyWeBuilt": {
+      "title": "Pourquoi Nous L'Avons Créé",
+      "description": "De nombreuses applications de suivi des règles nécessitent de créer un compte, de partager des données personnelles avec des tiers ou de s'inquiéter des fuites de données. Nous voulions créer quelque chose de différent.",
+      "items": {
+        "privacyFirst": "Confidentialité Première - Toutes vos données restent sur votre appareil. Nous ne voyons et ne stockons jamais vos informations personnelles.",
+        "noAccount": "Sans Compte Requis - Commencez à utiliser immédiatement sans inscription ni connexion.",
+        "accurate": "Précisions Précises - Nos algorithmes sont basés sur des recherches médicales établies.",
+        "free": "Entièrement Gratuit - Pas de fonctionnalités premium, pas d'abonnements, pas de coûts cachés."
+      }
+    },
+    "approach": {
+      "title": "Notre Approche",
+      "description": "Nous nous engageons à fournir des informations précises et fondées sur des preuves. Tout notre contenu est:",
+      "items": {
+        "reviewed": "Révisé par des professionnels - Notre contenu est révisé par des professionnels de santé qualifiés.",
+        "sources": "Basé sur des sources autorisées - Nous référençons l'ACOG, le NHS, l'OMS et d'autres organisations médicales autorisées.",
+        "updated": "Régularité mis à jour - Nous révisons et mettons à jour notre contenu trimestriellement pour assurer la précision."
+      }
+    },
+    "disclaimer": {
+      "title": "Avertissement Important",
+      "description": "Period Calculator est conçu uniquement à des fins informatives et ne remplace pas les conseils médicaux professionnels, le diagnostic ou le traitement. Consultez toujours votre médecin ou un autre professionnel de santé qualifié pour toute question concernant une condition médicale."
+    },
+    "contact": {
+      "title": "Contactez-Nous",
+      "description": "Avez-vous des questions ou des commentaires? Nous aimerions avoir de vos nouvelles."
+    },
+    "backToHome": "Retour à l'Accueil"
   },
   "footer": {
     "tagline": "Suivi Menstruel Gratuit et Privé",

@@ -57,7 +57,11 @@ export function FAQ() {
                 className="flex min-h-[48px] w-full items-center justify-between p-4 text-left font-medium text-gray-800 transition-colors hover:bg-gray-50 md:p-5 dark:text-white dark:hover:bg-white/5"
                 aria-expanded={isOpen}
                 aria-controls={`faq-answer-${index}`}
-                aria-label={isOpen ? `Collapse ${t(`items.${itemKey}.question`)}` : `Expand ${t(`items.${itemKey}.question`)}`}
+                aria-label={
+                  isOpen
+                    ? `Collapse ${t(`items.${itemKey}.question`)}`
+                    : `Expand ${t(`items.${itemKey}.question`)}`
+                }
               >
                 <span className="pr-4">{t(`items.${itemKey}.question`)}</span>
                 <span

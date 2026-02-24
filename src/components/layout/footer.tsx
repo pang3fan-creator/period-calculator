@@ -42,6 +42,14 @@ export function Footer() {
                   {tNav("editorialPolicy")}
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="focus-visible:ring-primary-400 hover:text-primary-400 block rounded-lg text-sm text-gray-500 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400"
+                >
+                  About
+                </Link>
+              </li>
             </ul>
           </div>
 

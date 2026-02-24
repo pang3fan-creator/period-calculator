@@ -1,7 +1,23 @@
 {
   "metadata": {
     "title": "Calculadora de Periodo - Seguimiento Menstrual Gratuito y Privado",
-    "description": "Calcula tu próximo periodo, ventana fértil y fecha de ovulación. 100% privado - todos los datos se quedan en tu navegador."
+    "description": "Calcula tu próximo periodo, ventana fértil y fecha de ovulación. 100% privado - todos los datos se quedan en tu navegador.",
+    "irregular": {
+      "title": "Calculadora de Periodo Irregular - Rastrea Ciclos Desiguales",
+      "description": "Calcula tu periodo incluso con ciclos irregulares. Nuestro algoritmo usa datos históricos para proporcionar predicciones precisas. 100% privado."
+    },
+    "ovulation": {
+      "title": "Calculadora de Ovulación - Encuentra Tu Ventana Fértil",
+      "description": "Calcula tu fecha de ovulación y ventana fértil. Planifica tu embarazo o comprende mejor tu ciclo. 100% privado."
+    },
+    "privacy": {
+      "title": "Política de Privacidad - Tus Datos Quedan en Tu Dispositivo",
+      "description": "Aprende cómo protegemos tu privacidad. Todos los datos se almacenan localmente en tu dispositivo y nunca se suben a ningún servidor."
+    },
+    "editorial": {
+      "title": "Política Editorial - Estándares de Información Médica",
+      "description": "Nuestro compromiso con información médica precisa y basada en evidencia. Aprende sobre nuestras fuentes y proceso de revisión."
+    }
   },
   "common": {
     "appName": "Calculadora de Periodo",
@@ -18,7 +34,8 @@
     "ovulationCalculator": "Calculadora de Ovulación",
     "blog": "Blog",
     "privacyPolicy": "Política de Privacidad",
-    "editorialPolicy": "Política Editorial"
+    "editorialPolicy": "Política Editorial",
+    "about": "Sobre Nosotros"
   },
   "header": {
     "toggleTheme": "Cambiar tema",
@@ -28,6 +45,42 @@
     "title": "Calculadora de Periodo Precisa y Seguimiento del Ciclo",
     "subtitle": "Predice tu próximo periodo, ventana fértil y día de ovulación con nuestra calculadora privada.",
     "comingSoon": "Calculadora próximamente."
+  },
+  "about": {
+    "title": "Sobre Period Calculator",
+    "subtitle": "Empoderando a las mujeres con herramientas de salud privadas",
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "Creemos que cada mujer merece acceso a herramientas precisas y privadas para la salud menstrual. Nuestra misión es proporcionar una calculadora de periodo confiable que respete tu privacidad mientras te ayuda a entender mejor tu cuerpo."
+    },
+    "whyWeBuilt": {
+      "title": "Por Qué Lo Construimos",
+      "description": "Muchas aplicaciones de seguimiento del ciclo requieren crear una cuenta, compartir datos personales con terceros o preocuparse por filtraciones de datos. Queríamos crear algo diferente.",
+      "items": {
+        "privacyFirst": "Privacidad Primero - Todos tus datos permanecen en tu dispositivo. Nunca vemos ni almacenamos tu información personal.",
+        "noAccount": "Sin Cuenta Requerida - Comienza a usar inmediatamente sin registro ni inicio de sesión.",
+        "accurate": "Predicciones Precisas - Nuestros algoritmos están basados en investigación médica establecida.",
+        "free": "Completamente Gratis - Sin funciones premium, sin suscripciones, sin costos ocultos."
+      }
+    },
+    "approach": {
+      "title": "Nuestro Enfoque",
+      "description": "Estamos comprometidos a proporcionar información precisa y basada en evidencia. Todo nuestro contenido es:",
+      "items": {
+        "reviewed": "Revisado por profesionales - Nuestro contenido es revisado por profesionales de la salud calificados.",
+        "sources": "Basado en fuentes autoritativas - Referenciamos ACOG, NHS, OMS y otras organizaciones médicas autoritativas.",
+        "updated": "Actualizado regularmente - Revisamos y actualizamos nuestro contenido trimestralmente para asegurar la precisión."
+      }
+    },
+    "disclaimer": {
+      "title": "Aviso Importante",
+      "description": "Period Calculator está diseñado solo con fines informativos y no pretende sustituir el asesoramiento médico profesional, el diagnóstico o el tratamiento. Siempre busca el consejo de tu médico u otro proveedor de salud calificado con cualquier pregunta que puedas tener sobre una condición médica."
+    },
+    "contact": {
+      "title": "Contáctanos",
+      "description": "¿Tienes preguntas o comentarios? Nos encantaría saber de ti."
+    },
+    "backToHome": "Volver al Inicio"
   },
   "footer": {
     "tagline": "Seguimiento Menstrual Gratuito y Privado",

@@ -39,6 +39,14 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "Period Calculator",
   },
+  alternates: {
+    canonical: "/",
+    languages: {
+      en: "/",
+      es: "/es",
+      fr: "/fr",
+    },
+  },
 };
 
 export default function RootLayout({

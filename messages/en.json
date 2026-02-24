@@ -1,7 +1,23 @@
 {
   "metadata": {
     "title": "Period Calculator - Free & Private Menstrual Cycle Tracker",
-    "description": "Calculate your next period, fertile window, and ovulation date. 100% private - all data stays in your browser. No login required."
+    "description": "Calculate your next period, fertile window, and ovulation date. 100% private - all data stays in your browser. No login required.",
+    "irregular": {
+      "title": "Irregular Period Calculator - Track Uneven Cycles",
+      "description": "Calculate your period even with irregular cycles. Our algorithm uses historical data to provide accurate predictions. 100% private."
+    },
+    "ovulation": {
+      "title": "Ovulation Calculator - Find Your Fertile Window",
+      "description": "Calculate your ovulation date and fertile window. Plan pregnancy or understand your cycle better. 100% private."
+    },
+    "privacy": {
+      "title": "Privacy Policy - Your Data Stays on Your Device",
+      "description": "Learn how we protect your privacy. All data is stored locally on your device and never uploaded to any server."
+    },
+    "editorial": {
+      "title": "Editorial Policy - Medical Information Standards",
+      "description": "Our commitment to accurate, evidence-based medical information. Learn about our sources and review process."
+    }
   },
   "common": {
     "appName": "Period Calculator",
@@ -18,7 +34,8 @@
     "ovulationCalculator": "Ovulation Calculator",
     "blog": "Blog",
     "privacyPolicy": "Privacy Policy",
-    "editorialPolicy": "Editorial Policy"
+    "editorialPolicy": "Editorial Policy",
+    "about": "About"
   },
   "header": {
     "toggleTheme": "Toggle theme",
@@ -28,6 +45,42 @@
     "title": "Accurate Period Calculator & Cycle Tracker",
     "subtitle": "Predict your next period, fertile window, and ovulation day with our private, AI-enhanced calculator.",
     "comingSoon": "Calculator coming soon."
+  },
+  "about": {
+    "title": "About Period Calculator",
+    "subtitle": "Empowering women with privacy-first health tools",
+    "mission": {
+      "title": "Our Mission",
+      "description": "We believe every woman deserves access to accurate, private menstrual health tools. Our mission is to provide a reliable period calculator that respects your privacy while helping you understand your body better."
+    },
+    "whyWeBuilt": {
+      "title": "Why We Built This",
+      "description": "Many existing period tracking apps require you to create an account, share personal data with third parties, or worry about data breaches. We wanted to create something different.",
+      "items": {
+        "privacyFirst": "Privacy First - All your data stays on your device. We never see or store your personal information.",
+        "noAccount": "No Account Required - Start using immediately without registration or login.",
+        "accurate": "Accurate Predictions - Our algorithms are based on established medical research.",
+        "free": "Completely Free - No premium features, no subscriptions, no hidden costs."
+      }
+    },
+    "approach": {
+      "title": "Our Approach",
+      "description": "We are committed to providing accurate, evidence-based information. All our content is:",
+      "items": {
+        "reviewed": "Reviewed by professionals - Our content is reviewed by qualified healthcare professionals.",
+        "sources": "Based on authoritative sources - We reference ACOG, NHS, WHO, and other authoritative medical organizations.",
+        "updated": "Regularly updated - We review and update our content quarterly to ensure accuracy."
+      }
+    },
+    "disclaimer": {
+      "title": "Important Disclaimer",
+      "description": "Period Calculator is designed for informational purposes only and is not intended as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition."
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "description": "Have questions or feedback? We'd love to hear from you."
+    },
+    "backToHome": "Back to Home"
   },
   "footer": {
     "tagline": "Free & Private Menstrual Cycle Tracker",
