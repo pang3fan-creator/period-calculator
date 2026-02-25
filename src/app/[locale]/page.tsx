@@ -6,11 +6,7 @@ import { DeepKnowledge } from "@/components/home/deep-knowledge";
 import { FAQ } from "@/components/home/faq";
 import { JsonLd } from "@/components/seo/json-ld";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Period Calculator - Free & Private Menstrual Cycle Tracker",
     description:
@@ -20,6 +16,27 @@ export async function generateMetadata({
 
 export default function HomePage() {
   const t = useTranslations("home");
+  const baseUrl = "https://periodcalculator.site";
+
+  // JSON-LD Schema for BreadcrumbList
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: baseUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Period Calculator",
+        item: baseUrl,
+      },
+    ],
+  };
 
   // JSON-LD Schema for WebApplication
   const webApplicationSchema = {
@@ -70,6 +87,32 @@ export default function HomePage() {
     ],
   };
 
+  // JSON-LD Schema for HowTo (Calculation steps)
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to Calculate Your Period",
+    description:
+      "Learn how to calculate your next period date, fertile window, and ovulation day in simple steps.",
+    step: [
+      {
+        "@type": "HowToStep",
+        name: "Enter your last period start date",
+        text: "Select the date when your last menstrual period started.",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Enter your average cycle length",
+        text: "Enter the average number of days between your periods (typically 21-35 days).",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Get your results",
+        text: "View your predicted next period, fertile window, and ovulation date.",
+      },
+    ],
+  };
+
   // JSON-LD Schema for Organization (E-E-A-T signal)
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -90,7 +133,9 @@ export default function HomePage() {
   return (
     <>
       <JsonLd data={webApplicationSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <JsonLd data={faqSchema} />
+      <JsonLd data={howToSchema} />
       <JsonLd data={organizationSchema} />
       <div className="flex flex-col items-center px-4 py-16">
         <h1 className="text-primary-400 text-center text-3xl font-bold md:text-4xl">

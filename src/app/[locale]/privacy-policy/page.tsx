@@ -1,8 +1,28 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
-import { useParams } from "next/navigation";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const titles: Record<string, string> = {
+    en: "Privacy Policy - Your Data Stays on Your Device",
+    es: "Política de Privacidad - Tus Datos Permanecen en Tu Dispositivo",
+    fr: "Politique de Confidentialité - Vos Données Restent sur Votre Appareil",
+  };
+  const descriptions: Record<string, string> = {
+    en: "Learn how we protect your privacy. All your data stays on your device - we never collect or store your personal information.",
+    es: "Aprende cómo protegemos tu privacidad. Todos tus datos permanecen en tu dispositivo - nunca recopilamos ni almacenamos tu información personal.",
+    fr: "Découvrez comment nous protégeons votre vie privée. Toutes vos données restent sur votre appareil - nous ne collectons ni ne stockons vos informations personnelles.",
+  };
+  return {
+    title: titles[locale] || titles.en,
+    description: descriptions[locale] || descriptions.en,
+  };
+}
 
 // Helper function to get items for each section
 const sectionItemCounts: Record<string, number> = {
@@ -16,7 +36,7 @@ const sectionItemCounts: Record<string, number> = {
 
 function getItemsForSection(
   sectionKey: string,
-  t: ReturnType<typeof useTranslations>,
+  t: Awaited<ReturnType<typeof getTranslations>>,
 ): string[] {
   const count = sectionItemCounts[sectionKey] || 0;
   const items: string[] = [];
@@ -38,6 +58,7 @@ function ShieldIcon({ className }: { className?: string }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
     >
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
     </svg>
@@ -56,6 +77,7 @@ function CheckIcon({ className }: { className?: string }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
     >
       <polyline points="20 6 9 17 4 12" />
     </svg>
@@ -74,6 +96,7 @@ function DatabaseIcon({ className }: { className?: string }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
     >
       <ellipse cx="12" cy="5" rx="9" ry="3" />
       <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
@@ -94,6 +117,7 @@ function UsageIcon({ className }: { className?: string }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
     >
       <circle cx="12" cy="12" r="10" />
       <path d="M12 16v-4" />
@@ -114,6 +138,7 @@ function CookieIcon({ className }: { className?: string }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
     >
       <path d="M12 2a10 10 0 1 0 10 10" />
       <path d="M12 12" />
@@ -134,6 +159,7 @@ function UsersIcon({ className }: { className?: string }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
     >
       <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
       <circle cx="9" cy="7" r="4" />
@@ -155,6 +181,7 @@ function MailIcon({ className }: { className?: string }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
     >
       <rect width="20" height="16" x="2" y="4" rx="2" />
       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
@@ -175,10 +202,13 @@ const sectionIcons: Record<
   contact: MailIcon,
 };
 
-export default function PrivacyPolicyPage() {
-  const t = useTranslations("privacyPolicy");
-  const params = useParams();
-  const locale = params.locale as string;
+export default async function PrivacyPolicyPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations("privacyPolicy");
 
   const sections = [
     "dataCollection",
@@ -307,6 +337,7 @@ export default function PrivacyPolicyPage() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
+              aria-hidden="true"
             >
               <path d="m15 18-6-6 6-6" />
             </svg>

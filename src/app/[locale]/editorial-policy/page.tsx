@@ -1,8 +1,28 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
-import { useParams } from "next/navigation";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const titles: Record<string, string> = {
+    en: "Editorial Policy - Medical Sources & Accuracy Commitment",
+    es: "Política Editorial - Fuentes Médicas y Compromiso de Precisión",
+    fr: "Politique Éditoriale - Sources Médicales et Engagement de Précision",
+  };
+  const descriptions: Record<string, string> = {
+    en: "Read about our editorial process, medical sources, and commitment to accurate health information.",
+    es: "Lee sobre nuestro proceso editorial, fuentes médicas y compromiso con información de salud precisa.",
+    fr: "Découvrez notre processus éditorial, nos sources médicales et notre engagement envers des informations de santé précises.",
+  };
+  return {
+    title: titles[locale] || titles.en,
+    description: descriptions[locale] || descriptions.en,
+  };
+}
 
 // Helper function to get items for each section
 const sectionItemCounts: Record<string, number> = {
@@ -15,7 +35,7 @@ const sectionItemCounts: Record<string, number> = {
 
 function getItemsForSection(
   sectionKey: string,
-  t: ReturnType<typeof useTranslations>,
+  t: Awaited<ReturnType<typeof getTranslations>>,
 ): string[] {
   const count = sectionItemCounts[sectionKey] || 0;
   const items: string[] = [];
@@ -37,6 +57,7 @@ function BookOpenIcon({ className }: { className?: string }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
     >
       <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
       <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
@@ -56,6 +77,7 @@ function CheckIcon({ className }: { className?: string }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
     >
       <polyline points="20 6 9 17 4 12" />
     </svg>
@@ -74,6 +96,7 @@ function ClipboardCheckIcon({ className }: { className?: string }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
     >
       <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
       <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
@@ -94,6 +117,7 @@ function RefreshIcon({ className }: { className?: string }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
     >
       <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
       <path d="M21 3v5h-5" />
@@ -115,6 +139,7 @@ function TargetIcon({ className }: { className?: string }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
     >
       <circle cx="12" cy="12" r="10" />
       <circle cx="12" cy="12" r="6" />
@@ -135,6 +160,7 @@ function AlertTriangleIcon({ className }: { className?: string }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
     >
       <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
       <path d="M12 9v4" />
@@ -155,6 +181,7 @@ function MailIcon({ className }: { className?: string }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
     >
       <rect width="20" height="16" x="2" y="4" rx="2" />
       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
@@ -174,10 +201,13 @@ const sectionIcons: Record<
   contact: MailIcon,
 };
 
-export default function EditorialPolicyPage() {
-  const t = useTranslations("editorialPolicy");
-  const params = useParams();
-  const locale = params.locale as string;
+export default async function EditorialPolicyPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations("editorialPolicy");
 
   const sections = [
     "medicalSources",
@@ -304,6 +334,7 @@ export default function EditorialPolicyPage() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
+              aria-hidden="true"
             >
               <path d="m15 18-6-6 6-6" />
             </svg>
