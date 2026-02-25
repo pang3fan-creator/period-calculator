@@ -54,7 +54,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
       // Add all language variants as alternates
       for (const altLocale of locales) {
-        alternateLanguages[altLocale.lang] = `${baseUrl}${altLocale.code}${page.path}`;
+        alternateLanguages[altLocale.lang] =
+          `${baseUrl}${altLocale.code}${page.path}`;
       }
 
       sitemapEntries.push({

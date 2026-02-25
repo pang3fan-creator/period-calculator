@@ -2,15 +2,29 @@ import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 
+const baseUrl = "https://periodcalculator.site";
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
+  const { locale } = await params;
+  const canonicalUrl =
+    locale === "en" ? `${baseUrl}/about` : `${baseUrl}/${locale}/about`;
+
   return {
     title: "About Us - Period Calculator",
     description:
       "Learn about Period Calculator - a privacy-first menstrual cycle tracker. Our mission is to help women understand their bodies without compromising privacy.",
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        en: `${baseUrl}/about`,
+        es: `${baseUrl}/es/about`,
+        fr: `${baseUrl}/fr/about`,
+      },
+    },
   };
 }
 

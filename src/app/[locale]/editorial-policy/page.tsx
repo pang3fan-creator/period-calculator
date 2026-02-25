@@ -8,6 +8,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const baseUrl = "https://periodcalculator.site";
   const titles: Record<string, string> = {
     en: "Editorial Policy - Medical Sources & Accuracy Commitment",
     es: "Política Editorial - Fuentes Médicas y Compromiso de Precisión",
@@ -18,9 +19,30 @@ export async function generateMetadata({
     es: "Lee sobre nuestro proceso editorial, fuentes médicas y compromiso con información de salud precisa.",
     fr: "Découvrez notre processus éditorial, nos sources médicales et notre engagement envers des informations de santé précises.",
   };
+
+  // Map locale to URL path (ensure trailing slash for en)
+  const localeToPath: Record<string, string> = {
+    en: "/",
+    es: "/es",
+    fr: "/fr",
+  };
+
+  const currentPath = localeToPath[locale] || "/";
+  // Ensure proper path joining
+  const pathPrefix = currentPath === "/" ? "" : currentPath;
+  const canonicalUrl = `${baseUrl}${pathPrefix}/editorial-policy`;
+
   return {
     title: titles[locale] || titles.en,
     description: descriptions[locale] || descriptions.en,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        en: `${baseUrl}/editorial-policy`,
+        es: `${baseUrl}/es/editorial-policy`,
+        fr: `${baseUrl}/fr/editorial-policy`,
+      },
+    },
   };
 }
 
