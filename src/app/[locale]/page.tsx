@@ -6,17 +6,40 @@ import { DeepKnowledge } from "@/components/home/deep-knowledge";
 import { FAQ } from "@/components/home/faq";
 import { JsonLd } from "@/components/seo/json-ld";
 
-export async function generateMetadata(): Promise<Metadata> {
+const baseUrl = "https://periodcalculator.site";
+const locales = ["en", "es", "fr"];
+const localeNames: Record<string, string> = {
+  en: "en-US",
+  es: "es-ES",
+  fr: "fr-FR",
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
   return {
     title: "Period Calculator - Free & Private Menstrual Cycle Tracker",
     description:
       "Calculate your next period, fertile window, and ovulation date. 100% private - all data stays in your browser. No login required.",
+    alternates: {
+      canonical: `${baseUrl}/${locale === "en" ? "" : locale}`,
+      languages: locales.reduce(
+        (acc, loc) => {
+          acc[localeNames[loc]] = `${baseUrl}/${loc === "en" ? "" : loc}`;
+          return acc;
+        },
+        {} as Record<string, string>,
+      ),
+    },
   };
 }
 
 export default function HomePage() {
   const t = useTranslations("home");
-  const baseUrl = "https://periodcalculator.site";
 
   // JSON-LD Schema for BreadcrumbList
   const breadcrumbSchema = {
