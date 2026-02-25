@@ -4,118 +4,70 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://periodcalculator.site";
   const lastModified = new Date();
 
-  return [
-    // Main pages
+  const locales = [
+    { code: "", lang: "en" },
+    { code: "/es", lang: "es" },
+    { code: "/fr", lang: "fr" },
+  ];
+
+  // Define all pages with their language variants
+  const pages = [
     {
-      url: baseUrl,
-      lastModified,
-      changeFrequency: "weekly",
+      path: "",
       priority: 1.0,
+      changefreq: "weekly" as const,
     },
     {
-      url: `${baseUrl}/es`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/fr`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    // Tool pages
-    {
-      url: `${baseUrl}/irregular-period-calculator`,
-      lastModified,
-      changeFrequency: "monthly",
+      path: "/irregular-period-calculator",
       priority: 0.8,
+      changefreq: "monthly" as const,
     },
     {
-      url: `${baseUrl}/es/irregular-period-calculator`,
-      lastModified,
-      changeFrequency: "monthly",
+      path: "/ovulation-calculator",
       priority: 0.8,
+      changefreq: "monthly" as const,
     },
     {
-      url: `${baseUrl}/fr/irregular-period-calculator`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/ovulation-calculator`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/es/ovulation-calculator`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/fr/ovulation-calculator`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    // Policy pages
-    {
-      url: `${baseUrl}/privacy-policy`,
-      lastModified,
-      changeFrequency: "monthly",
+      path: "/privacy-policy",
       priority: 0.5,
+      changefreq: "monthly" as const,
     },
     {
-      url: `${baseUrl}/es/privacy-policy`,
-      lastModified,
-      changeFrequency: "monthly",
+      path: "/editorial-policy",
       priority: 0.5,
+      changefreq: "monthly" as const,
     },
     {
-      url: `${baseUrl}/fr/privacy-policy`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/editorial-policy`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/es/editorial-policy`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/fr/editorial-policy`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    // About page
-    {
-      url: `${baseUrl}/about`,
-      lastModified,
-      changeFrequency: "monthly",
+      path: "/about",
       priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/es/about`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/fr/about`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.6,
+      changefreq: "monthly" as const,
     },
   ];
+
+  const sitemapEntries: MetadataRoute.Sitemap = [];
+
+  // Generate sitemap entries with alternate language links
+  for (const page of pages) {
+    for (const locale of locales) {
+      const url = `${baseUrl}${locale.code}${page.path}`;
+      const alternateLanguages: Record<string, string> = {};
+
+      // Add all language variants as alternates
+      for (const altLocale of locales) {
+        alternateLanguages[altLocale.lang] = `${baseUrl}${altLocale.code}${page.path}`;
+      }
+
+      sitemapEntries.push({
+        url,
+        lastModified,
+        changeFrequency: page.changefreq,
+        priority: page.priority,
+        alternates: {
+          languages: alternateLanguages,
+        },
+      });
+    }
+  }
+
+  return sitemapEntries;
 }
