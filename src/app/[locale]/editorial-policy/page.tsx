@@ -237,7 +237,6 @@ export default async function EditorialPolicyPage({
     "updateFrequency",
     "accuracyCommitment",
     "disclaimer",
-    "contact",
   ] as const;
 
   const sectionsWithItems = [
@@ -291,12 +290,6 @@ export default async function EditorialPolicyPage({
             ).includes(sectionKey)
               ? getItemsForSection(sectionKey, t)
               : [];
-            const sectionEmail =
-              sectionKey === "contact"
-                ? t(`sections.${sectionKey}.email`, {
-                    email: "hello@periodcalculator.com",
-                  })
-                : null;
 
             return (
               <div
@@ -327,11 +320,6 @@ export default async function EditorialPolicyPage({
                           </li>
                         ))}
                       </ul>
-                    )}
-                    {sectionEmail && (
-                      <p className="mt-4 text-gray-600 dark:text-gray-300">
-                        {sectionEmail}
-                      </p>
                     )}
                   </div>
                 </div>

@@ -219,11 +219,6 @@
         "item1": "Eliminar tus datos instantáneamente (borrar caché del navegador)",
         "item2": "Exportar tus datos (no aplica ya que los datos stay on your device)",
         "item3": "Opt-out simplemente no usando la aplicación"
-      },
-      "contact": {
-        "title": "Contáctanos",
-        "description": "Si tienes alguna pregunta sobre esta política de privacidad, por favor contáctanos.",
-        "email": "Escríbenos a: hello@periodcalculator.com"
       }
     },
     "cta": {
@@ -276,11 +271,6 @@
         "item1": "Los resultados son estimaciones basadas en promedios",
         "item2": "Consulta profesionales de salud para advice médico",
         "item3": "No somos responsables de decisiones tomadas basándose en predicciones"
-      },
-      "contact": {
-        "title": "Contáctanos",
-        "description": "Si tienes preguntas sobre nuestro proceso editorial o contenido, por favor comunícate.",
-        "email": "Escríbenos a: hello@periodcalculator.com"
       }
     }
   },

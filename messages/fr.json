@@ -219,11 +219,6 @@
         "item1": "Supprimer vos données instantanément (effacer le cache du navigateur)",
         "item2": "Exporter vos données (non applicable car les données restent sur votre appareil)",
         "item3": "Vous désinscrire en simplement n'utilisant pas l'application"
-      },
-      "contact": {
-        "title": "Contactez-nous",
-        "description": "Si vous avez des questions concernant cette politique de confidentialité, veuillez nous contacter.",
-        "email": "Envoyez-nous un e-mail à : hello@periodcalculator.com"
       }
     },
     "cta": {
@@ -276,11 +271,6 @@
         "item1": "Les résultats sont des estimations basées sur des moyennes",
         "item2": "Consultez des professionnels de santé pour des conseils médicaux",
         "item3": "Nous ne sommes pas responsables des décisions prises basées sur les prédictions"
-      },
-      "contact": {
-        "title": "Contactez-nous",
-        "description": "Si vous avez des questions sur notre processus éditorial ou notre contenu, veuillez nous contacter.",
-        "email": "Envoyez-nous un e-mail à : hello@periodcalculator.com"
       }
     }
   },

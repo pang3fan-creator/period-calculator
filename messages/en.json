@@ -219,11 +219,6 @@
         "item1": "Delete your data instantly (clear browser cache)",
         "item2": "Export your data (not applicable as data stays on your device)",
         "item3": "Opt-out by simply not using the app"
-      },
-      "contact": {
-        "title": "Contact Us",
-        "description": "If you have any questions about this privacy policy, please contact us.",
-        "email": "Email us at: hello@periodcalculator.com"
       }
     },
     "cta": {
@@ -276,11 +271,6 @@
         "item1": "Results are estimates based on averages",
         "item2": "Consult healthcare professionals for medical advice",
         "item3": "We are not responsible for decisions made based on predictions"
-      },
-      "contact": {
-        "title": "Contact Us",
-        "description": "If you have questions about our editorial process or content, please reach out.",
-        "email": "Email us at: hello@periodcalculator.com"
       }
     }
   },

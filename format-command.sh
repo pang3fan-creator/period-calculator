@@ -1,0 +1,1 @@
+npx prettier --write "src/app/[locale]/privacy-policy/page.tsx" "src/app/[locale]/editorial-policy/page.tsx" "messages/en.json" "messages/es.json" "messages/fr.json"
