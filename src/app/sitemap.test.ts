@@ -78,8 +78,10 @@ describe("sitemap", () => {
     const sitemapEntries = sitemap();
 
     sitemapEntries.forEach((entry) => {
-      expect(entry.lastModified).toBeInstanceOf(Date);
-      expect(entry.lastModified.getTime()).toBeLessThanOrEqual(Date.now());
+      expect(entry.lastModified).toBeDefined();
+      const lastMod = entry.lastModified as Date;
+      expect(lastMod).toBeInstanceOf(Date);
+      expect(lastMod.getTime()).toBeLessThanOrEqual(Date.now());
     });
   });
 });

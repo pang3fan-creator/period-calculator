@@ -19,6 +19,30 @@ export function Header() {
   const router = useRouter();
   const pathname = usePathname();
 
+  // Scroll-based hide/show
+  const [isHidden, setIsHidden] = useState(false);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    function handleScroll() {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down and past threshold - hide
+        setIsHidden(true);
+      } else {
+        // Scrolling up - show
+        setIsHidden(false);
+      }
+
+      lastScrollY = currentScrollY;
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   // Theme toggle
   const { theme, setTheme } = useTheme();
   const emptySubscribe = () => () => {};
@@ -60,8 +84,12 @@ export function Header() {
   }
 
   return (
-    <header className="border-warmbeige-200 bg-ivory-50/80 dark:border-dark-border dark:bg-dark-bg/80 sticky top-0 z-50 border-b backdrop-blur-md">
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
+    <header
+      className={`bg-ivory-50/95 dark:bg-dark-bg/95 shadow-soft fixed top-4 right-4 left-4 z-50 mx-auto rounded-2xl backdrop-blur-md transition-transform duration-300 md:right-auto md:left-1/2 md:max-w-4xl md:-translate-x-1/2 ${
+        isHidden ? "-translate-y-[150%]" : "translate-y-0"
+      }`}
+    >
+      <nav className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4">
         {/* Logo */}
         <Link
           href="/"

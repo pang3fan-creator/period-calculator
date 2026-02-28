@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 
 const baseUrl = "https://periodcalculator.site";
@@ -101,8 +101,8 @@ function ArrowLeftIcon({ className }: { className?: string }) {
   );
 }
 
-export default function AboutPage() {
-  const t = useTranslations("about");
+export default async function AboutPage() {
+  const t = await getTranslations("about");
 
   return (
     <main className="bg-ivory-100 dark:bg-dark-bg min-h-screen px-4 py-12 sm:px-6 lg:px-8">

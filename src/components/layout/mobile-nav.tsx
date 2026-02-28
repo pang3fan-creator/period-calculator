@@ -2,8 +2,7 @@
 
 import { useState, useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
-import { useTranslations } from "next-intl";
-import { useLocale } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { Locale } from "@/i18n/config";
 
@@ -22,7 +21,6 @@ export function MobileNav() {
     () => false,
   );
   const { theme, setTheme } = useTheme();
-  const tNav = useTranslations("nav");
   const tSettings = useTranslations("settings");
   const pathname = usePathname();
   const router = useRouter();
@@ -48,6 +46,7 @@ export function MobileNav() {
                 ? "text-primary-400"
                 : "text-gray-400 dark:text-gray-500"
             }`}
+            aria-label="Home"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +63,6 @@ export function MobileNav() {
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
               <polyline points="9 22 9 12 15 12 15 22" />
             </svg>
-            <span className="text-xs">{tNav("home")}</span>
           </Link>
 
           {/* Irregular */}
@@ -75,6 +73,7 @@ export function MobileNav() {
                 ? "text-primary-400"
                 : "text-gray-400 dark:text-gray-500"
             }`}
+            aria-label="Irregular Calculator"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +89,6 @@ export function MobileNav() {
             >
               <polyline points="2 17 6 13 10 17 14 9 18 13 22 7" />
             </svg>
-            <span className="text-xs">{tNav("irregularCalculator")}</span>
           </Link>
 
           {/* Ovulation */}
@@ -101,6 +99,7 @@ export function MobileNav() {
                 ? "text-primary-400"
                 : "text-gray-400 dark:text-gray-500"
             }`}
+            aria-label="Ovulation Calculator"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +115,6 @@ export function MobileNav() {
             >
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
             </svg>
-            <span className="text-xs">{tNav("ovulationCalculator")}</span>
           </Link>
 
           {/* Settings */}
@@ -144,7 +142,6 @@ export function MobileNav() {
               <circle cx="12" cy="12" r="3" />
               <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
             </svg>
-            <span className="text-xs">{tSettings("title")}</span>
           </button>
         </div>
       </nav>

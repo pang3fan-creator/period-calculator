@@ -51,29 +51,32 @@ export function OvulationPeriodCalculator() {
     setIsMounted(true);
   }, []);
 
-  const handleSubmit = useCallback((data: CycleData, newPurpose: OvulationPurpose) => {
-    const errors = validateCycleData(data);
-    if (errors.length > 0) {
-      console.error("Validation errors:", errors);
-      return;
-    }
+  const handleSubmit = useCallback(
+    (data: CycleData, newPurpose: OvulationPurpose) => {
+      const errors = validateCycleData(data);
+      if (errors.length > 0) {
+        console.error("Validation errors:", errors);
+        return;
+      }
 
-    const calculatedResult = calculateCycle(data);
+      const calculatedResult = calculateCycle(data);
 
-    try {
-      const storageData: StoredData = {
-        cycleData: data,
-        purpose: newPurpose,
-        timestamp: Date.now(),
-      };
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(storageData));
-    } catch (e) {
-      console.error("Failed to save ovulation calculator data:", e);
-    }
+      try {
+        const storageData: StoredData = {
+          cycleData: data,
+          purpose: newPurpose,
+          timestamp: Date.now(),
+        };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(storageData));
+      } catch (e) {
+        console.error("Failed to save ovulation calculator data:", e);
+      }
 
-    setPurpose(newPurpose);
-    setResult(calculatedResult);
-  }, []);
+      setPurpose(newPurpose);
+      setResult(calculatedResult);
+    },
+    [],
+  );
 
   const handleReset = useCallback(() => {
     try {

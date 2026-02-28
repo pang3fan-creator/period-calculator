@@ -75,12 +75,18 @@ export function OvulationCalculatorForm({
   }, []);
 
   const handleCycleLengthChange = useCallback((value: number) => {
-    const clampedValue = Math.max(MIN_CYCLE_LENGTH, Math.min(MAX_CYCLE_LENGTH, value));
+    const clampedValue = Math.max(
+      MIN_CYCLE_LENGTH,
+      Math.min(MAX_CYCLE_LENGTH, value),
+    );
     setFormData((prev) => ({ ...prev, cycleLength: clampedValue }));
   }, []);
 
   const handlePeriodLengthChange = useCallback((value: number) => {
-    const clampedValue = Math.max(MIN_PERIOD_LENGTH, Math.min(MAX_PERIOD_LENGTH, value));
+    const clampedValue = Math.max(
+      MIN_PERIOD_LENGTH,
+      Math.min(MAX_PERIOD_LENGTH, value),
+    );
     setFormData((prev) => ({ ...prev, periodLength: clampedValue }));
   }, []);
 
@@ -126,11 +132,14 @@ export function OvulationCalculatorForm({
           <button
             type="button"
             onClick={() => handlePurposeChange("conceive")}
-            onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && handlePurposeChange("conceive")}
+            onKeyDown={(e) =>
+              (e.key === "Enter" || e.key === " ") &&
+              handlePurposeChange("conceive")
+            }
             className={`flex-1 rounded-2xl border-2 px-4 py-3 text-base font-semibold transition-colors ${
               formData.purpose === "conceive"
                 ? "border-blue-400 bg-blue-50 text-blue-700 dark:border-blue-600 dark:bg-blue-900/30 dark:text-blue-300"
-                : "border-gray-200 bg-white text-gray-700 hover:border-gray-300 dark:border-gray-600 dark:bg-dark-card dark:text-gray-300"
+                : "dark:bg-dark-card border-gray-200 bg-white text-gray-700 hover:border-gray-300 dark:border-gray-600 dark:text-gray-300"
             }`}
           >
             {t("tryingToConceive")}
@@ -138,11 +147,14 @@ export function OvulationCalculatorForm({
           <button
             type="button"
             onClick={() => handlePurposeChange("avoid")}
-            onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && handlePurposeChange("avoid")}
+            onKeyDown={(e) =>
+              (e.key === "Enter" || e.key === " ") &&
+              handlePurposeChange("avoid")
+            }
             className={`flex-1 rounded-2xl border-2 px-4 py-3 text-base font-semibold transition-colors ${
               formData.purpose === "avoid"
                 ? "border-orange-400 bg-orange-50 text-orange-700 dark:border-orange-600 dark:bg-orange-900/30 dark:text-orange-300"
-                : "border-gray-200 bg-white text-gray-700 hover:border-gray-300 dark:border-gray-600 dark:bg-dark-card dark:text-gray-300"
+                : "dark:bg-dark-card border-gray-200 bg-white text-gray-700 hover:border-gray-300 dark:border-gray-600 dark:text-gray-300"
             }`}
           >
             {t("avoidingPregnancy")}
@@ -152,7 +164,10 @@ export function OvulationCalculatorForm({
 
       {/* Last Period Date */}
       <div className="space-y-3">
-        <label htmlFor="lastPeriodStart" className="block text-lg font-semibold text-gray-800 dark:text-gray-100">
+        <label
+          htmlFor="lastPeriodStart"
+          className="block text-lg font-semibold text-gray-800 dark:text-gray-100"
+        >
           {tForm("lastPeriodLabel")}
         </label>
         <input
@@ -170,10 +185,15 @@ export function OvulationCalculatorForm({
       {/* Cycle Length */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <label htmlFor="cycleLength" className="block text-lg font-semibold text-gray-800 dark:text-gray-100">
+          <label
+            htmlFor="cycleLength"
+            className="block text-lg font-semibold text-gray-800 dark:text-gray-100"
+          >
             {tForm("cycleLengthLabel")}
           </label>
-          <span className="text-sm text-gray-500 dark:text-gray-400">{tForm("cycleLengthHelp")}</span>
+          <span className="text-sm text-gray-500 dark:text-gray-400">
+            {tForm("cycleLengthHelp")}
+          </span>
         </div>
         <input
           type="range"
@@ -181,7 +201,9 @@ export function OvulationCalculatorForm({
           min={MIN_CYCLE_LENGTH}
           max={MAX_CYCLE_LENGTH}
           value={formData.cycleLength}
-          onChange={(e) => handleCycleLengthChange(parseInt(e.target.value, 10))}
+          onChange={(e) =>
+            handleCycleLengthChange(parseInt(e.target.value, 10))
+          }
           className="bg-primary-100 dark:bg-dark-border accent-primary-400 h-2 w-full cursor-pointer appearance-none rounded-full"
         />
         <div className="flex items-center gap-3">
@@ -192,16 +214,25 @@ export function OvulationCalculatorForm({
             min={MIN_CYCLE_LENGTH}
             max={MAX_CYCLE_LENGTH}
             value={formData.cycleLength}
-            onChange={(e) => handleCycleLengthChange(parseInt(e.target.value, 10) || DEFAULT_CYCLE_LENGTH)}
+            onChange={(e) =>
+              handleCycleLengthChange(
+                parseInt(e.target.value, 10) || DEFAULT_CYCLE_LENGTH,
+              )
+            }
             className="border-primary-200 dark:bg-dark-card dark:border-dark-border focus:border-primary-400 focus:ring-primary-100 dark:focus:ring-primary-900/30 min-h-[48px] w-24 rounded-xl border-2 bg-white px-4 py-3 text-center text-gray-800 focus:ring-4 dark:text-gray-100"
           />
-          <span className="font-medium text-gray-600 dark:text-gray-300">{tForm("cycleLengthUnit")}</span>
+          <span className="font-medium text-gray-600 dark:text-gray-300">
+            {tForm("cycleLengthUnit")}
+          </span>
         </div>
       </div>
 
       {/* Period Length */}
       <div className="space-y-4">
-        <label htmlFor="periodLength" className="block text-lg font-semibold text-gray-800 dark:text-gray-100">
+        <label
+          htmlFor="periodLength"
+          className="block text-lg font-semibold text-gray-800 dark:text-gray-100"
+        >
           {tForm("periodLengthLabel")}
         </label>
         <input
@@ -210,7 +241,9 @@ export function OvulationCalculatorForm({
           min={MIN_PERIOD_LENGTH}
           max={MAX_PERIOD_LENGTH}
           value={formData.periodLength}
-          onChange={(e) => handlePeriodLengthChange(parseInt(e.target.value, 10))}
+          onChange={(e) =>
+            handlePeriodLengthChange(parseInt(e.target.value, 10))
+          }
           className="bg-primary-100 dark:bg-dark-border accent-primary-400 h-2 w-full cursor-pointer appearance-none rounded-full"
         />
         <div className="flex items-center gap-3">
@@ -221,10 +254,16 @@ export function OvulationCalculatorForm({
             min={MIN_PERIOD_LENGTH}
             max={MAX_PERIOD_LENGTH}
             value={formData.periodLength}
-            onChange={(e) => handlePeriodLengthChange(parseInt(e.target.value, 10) || DEFAULT_PERIOD_LENGTH)}
+            onChange={(e) =>
+              handlePeriodLengthChange(
+                parseInt(e.target.value, 10) || DEFAULT_PERIOD_LENGTH,
+              )
+            }
             className="border-primary-200 dark:bg-dark-card dark:border-dark-border focus:border-primary-400 focus:ring-primary-100 dark:focus:ring-primary-900/30 min-h-[48px] w-24 rounded-xl border-2 bg-white px-4 py-3 text-center text-gray-800 focus:ring-4 dark:text-gray-100"
           />
-          <span className="font-medium text-gray-600 dark:text-gray-300">{tForm("periodLengthUnit")}</span>
+          <span className="font-medium text-gray-600 dark:text-gray-300">
+            {tForm("periodLengthUnit")}
+          </span>
         </div>
       </div>
 
