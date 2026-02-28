@@ -126,6 +126,22 @@
     "lowConfidenceWarning": "Tus ciclos son bastante irregulares",
     "lowConfidenceAdvice": "Considera consultar a un proveedor de salud. Tu variación de ciclo es mayor a lo típico."
   },
+  "ovulationCalculator": {
+    "title": "Calculadora de Ovulación",
+    "subtitle": "Encuentra tus días más fértiles",
+    "purpose": "Estoy usando esto para",
+    "tryingToConceive": "Intentando quedar embarazada",
+    "avoidingPregnancy": "Evitar embarazo",
+    "contraceptionWarning": "Aviso importante",
+    "contraceptionWarningText": "Esta calculadora no es un método anticonceptivo fiable. El seguimiento del ciclo por sí solo tiene una alta tasa de fracaso. Por favor, consulte a un proveedor de atención médica para opciones anticonceptivas efectivas.",
+    "ovulationDay": "Día de Ovulación",
+    "fertileWindow": "Ventana Fértil",
+    "mostFertile": "Más Fértil",
+    "nextPeriod": "Próximo Período",
+    "pmsPeriod": "Período SPM",
+    "calculateButton": "Calcular",
+    "resetButton": "Reiniciar"
+  },
   "calculator": {
     "form": {
       "lastPeriodLabel": "Primer día de tu último periodo",

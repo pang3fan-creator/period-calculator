@@ -36,6 +36,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/ovulation-calculator"
+                  className="focus-visible:ring-primary-400 hover:text-primary-400 block rounded-lg text-sm text-gray-500 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400"
+                >
+                  {tNav("ovulationCalculator")}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/privacy-policy"
                   className="focus-visible:ring-primary-400 hover:text-primary-400 block rounded-lg text-sm text-gray-500 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400"
                 >

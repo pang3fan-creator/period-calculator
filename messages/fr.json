@@ -126,6 +126,22 @@
     "lowConfidenceWarning": "Vos cycles sont assez irréguliers",
     "lowConfidenceAdvice": "Envisagez de consulter un professionnel de santé. Votre variation de cycle est supérieure à la normale."
   },
+  "ovulationCalculator": {
+    "title": "Calculateur d'Ovulation",
+    "subtitle": "Trouvez vos jours les plus fertiles",
+    "purpose": "J'utilise ceci pour",
+    "tryingToConceive": "Essayer de concevoir",
+    "avoidingPregnancy": "Éviter la grossesse",
+    "contraceptionWarning": "Avertissement important",
+    "contraceptionWarningText": "Ce calculateur n'est pas une méthode de contraception fiable. Le suivi du cycle seul a un taux d'échec élevé. Veuillez consulter un professionnel de santé pour des options contraceptives efficaces.",
+    "ovulationDay": "Jour d'Ovulation",
+    "fertileWindow": "Fenêtre Fertile",
+    "mostFertile": "Plus Fertile",
+    "nextPeriod": "Prochaines Règles",
+    "pmsPeriod": "Période SPM",
+    "calculateButton": "Calculer",
+    "resetButton": "Réinitialiser"
+  },
   "calculator": {
     "form": {
       "lastPeriodLabel": "Premier jour de vos dernières règles",
