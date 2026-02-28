@@ -126,7 +126,8 @@ export function OvulationCalculatorForm({
           <button
             type="button"
             onClick={() => handlePurposeChange("conceive")}
-            className={`flex-1 rounded-2xl border-2 px-4 py-3 text-base font-semibold transition-all ${
+            onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && handlePurposeChange("conceive")}
+            className={`flex-1 rounded-2xl border-2 px-4 py-3 text-base font-semibold transition-colors ${
               formData.purpose === "conceive"
                 ? "border-blue-400 bg-blue-50 text-blue-700 dark:border-blue-600 dark:bg-blue-900/30 dark:text-blue-300"
                 : "border-gray-200 bg-white text-gray-700 hover:border-gray-300 dark:border-gray-600 dark:bg-dark-card dark:text-gray-300"
@@ -137,7 +138,8 @@ export function OvulationCalculatorForm({
           <button
             type="button"
             onClick={() => handlePurposeChange("avoid")}
-            className={`flex-1 rounded-2xl border-2 px-4 py-3 text-base font-semibold transition-all ${
+            onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && handlePurposeChange("avoid")}
+            className={`flex-1 rounded-2xl border-2 px-4 py-3 text-base font-semibold transition-colors ${
               formData.purpose === "avoid"
                 ? "border-orange-400 bg-orange-50 text-orange-700 dark:border-orange-600 dark:bg-orange-900/30 dark:text-orange-300"
                 : "border-gray-200 bg-white text-gray-700 hover:border-gray-300 dark:border-gray-600 dark:bg-dark-card dark:text-gray-300"
@@ -155,6 +157,7 @@ export function OvulationCalculatorForm({
         </label>
         <input
           id="lastPeriodStart"
+          name="lastPeriodStart"
           type="date"
           value={formData.lastPeriodStart}
           onChange={(e) => handleDateChange(e.target.value)}
@@ -185,6 +188,7 @@ export function OvulationCalculatorForm({
           <input
             type="number"
             id="cycleLength"
+            name="cycleLength"
             min={MIN_CYCLE_LENGTH}
             max={MAX_CYCLE_LENGTH}
             value={formData.cycleLength}
@@ -213,6 +217,7 @@ export function OvulationCalculatorForm({
           <input
             type="number"
             id="periodLength"
+            name="periodLength"
             min={MIN_PERIOD_LENGTH}
             max={MAX_PERIOD_LENGTH}
             value={formData.periodLength}
@@ -228,14 +233,14 @@ export function OvulationCalculatorForm({
         <button
           type="submit"
           disabled={!isFormValid}
-          className="bg-primary-400 hover:bg-primary-500 shadow-warm focus:ring-primary-300 dark:focus:ring-primary-700 disabled:bg-primary-300 dark:disabled:bg-primary-800 min-h-[48px] flex-1 rounded-2xl px-6 py-3 text-lg font-semibold text-white transition-all focus:ring-4 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+          className="bg-primary-400 hover:bg-primary-500 shadow-warm focus:ring-primary-300 dark:focus:ring-primary-700 disabled:bg-primary-300 dark:disabled:bg-primary-800 min-h-[48px] flex-1 rounded-2xl px-6 py-3 text-lg font-semibold text-white transition-colors focus:ring-4 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
         >
           {t("calculateButton")}
         </button>
         <button
           type="button"
           onClick={handleReset}
-          className="border-primary-200 hover:border-primary-300 hover:bg-primary-50 dark:hover:bg-dark-card focus:ring-primary-100 dark:focus:ring-primary-900/30 min-h-[48px] rounded-2xl border-2 px-6 py-3 text-lg font-semibold text-gray-700 transition-all dark:text-gray-300"
+          className="border-primary-200 hover:border-primary-300 hover:bg-primary-50 dark:hover:bg-dark-card focus:ring-primary-100 dark:focus:ring-primary-900/30 min-h-[48px] rounded-2xl border-2 px-6 py-3 text-lg font-semibold text-gray-700 transition-colors dark:text-gray-300"
         >
           {t("resetButton")}
         </button>
