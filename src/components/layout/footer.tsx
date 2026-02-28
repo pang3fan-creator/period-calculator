@@ -28,6 +28,14 @@ export function Footer() {
             <ul className="mt-3 space-y-2">
               <li>
                 <Link
+                  href="/irregular-period-calculator"
+                  className="focus-visible:ring-primary-400 hover:text-primary-400 block rounded-lg text-sm text-gray-500 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400"
+                >
+                  {tNav("irregularCalculator")}
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/privacy-policy"
                   className="focus-visible:ring-primary-400 hover:text-primary-400 block rounded-lg text-sm text-gray-500 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400"
                 >

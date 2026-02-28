@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
+import { IrregularPeriodCalculator } from "@/components/calculator/irregular-period-calculator";
 
 const baseUrl = "https://periodcalculator.site";
 const locales = ["en", "es", "fr"];
@@ -77,10 +78,7 @@ export default function IrregularPeriodCalculatorPage() {
       <JsonLd data={webApplicationSchema} />
       <JsonLd data={breadcrumbSchema} />
       <main className="flex min-h-screen flex-col items-center px-4 py-16">
-        <h1 className="text-primary-400 text-center text-3xl font-bold">
-          Irregular Period Calculator
-        </h1>
-        <p className="mt-4 text-gray-500 dark:text-gray-400">Coming soon.</p>
+        <IrregularPeriodCalculator />
       </main>
     </>
   );

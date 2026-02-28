@@ -6,7 +6,6 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { Playfair_Display, Inter } from "next/font/google";
-import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 
 export async function generateMetadata({
@@ -14,7 +13,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const { locale } = await params;
+  await params;
   return {
     title: "Period Calculator",
     description:

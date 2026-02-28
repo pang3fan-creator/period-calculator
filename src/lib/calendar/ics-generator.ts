@@ -67,7 +67,6 @@ function generateUID(): string {
  */
 export function generateICS(events: CalendarEvent[]): string {
   const now = new Date();
-  const uid = generateUID();
 
   // Build VEVENT sections for each event
   const vevents = events.map((event) => {
@@ -102,15 +101,6 @@ export function generateICS(events: CalendarEvent[]): string {
   ].join("\r\n");
 
   return icsContent;
-}
-
-/**
- * Helper function to add days to a date
- */
-function addDaysICS(date: Date, days: number): Date {
-  const result = new Date(date);
-  result.setDate(result.getDate() + days);
-  return result;
 }
 
 /**
