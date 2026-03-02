@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
 import { OvulationPeriodCalculator } from "@/components/calculator/ovulation-period-calculator";
+import { HowToCalculate } from "@/components/home/how-to-calculate";
+import { DeepKnowledge } from "@/components/home/deep-knowledge";
+import { FAQ } from "@/components/home/faq";
 
 const baseUrl = "https://periodcalculator.site";
 const locales = ["en", "es", "fr"];
@@ -73,12 +76,118 @@ export default function OvulationCalculatorPage() {
     ],
   };
 
+  // JSON-LD Schema for FAQPage (Ovulation)
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is ovulation and why is it important?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Ovulation is the process where a mature egg is released from the ovary. It's the most fertile time of your cycle and is crucial for conception. Understanding your ovulation helps you identify your fertile window.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How accurate is the ovulation calculator?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The calculator provides estimates based on your cycle data. For regular cycles, it's quite accurate. For irregular cycles, the prediction may be less precise. For best results, track your cycles over several months.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What is the fertile window?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The fertile window is the 6-day period when conception is most likely: the 5 days before ovulation and the day of ovulation itself. Sperm can survive up to 5 days in the reproductive tract.",
+        },
+      },
+    ],
+  };
+
+  // JSON-LD Schema for HowTo (Ovulation calculation steps)
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to Calculate Your Ovulation Date",
+    description:
+      "Learn how to use our ovulation calculator to find your most fertile days.",
+    step: [
+      {
+        "@type": "HowToStep",
+        name: "Enter your last period start date",
+        text: "Input the first day of your most recent menstrual period.",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Set your cycle length",
+        text: "Enter your average cycle length (typically 21-35 days).",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Choose your purpose",
+        text: "Select whether you're trying to conceive or trying to avoid pregnancy.",
+      },
+      {
+        "@type": "HowToStep",
+        name: "View your results",
+        text: "See your ovulation date, fertile window, and next period start date.",
+      },
+    ],
+  };
+
+  // JSON-LD Schema for Organization (E-E-A-T signal)
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Period Calculator",
+    url: "https://periodcalculator.site",
+    logo: "https://periodcalculator.site/logo.png",
+    description:
+      "Privacy-first menstrual cycle tracker helping women understand their bodies without compromising personal data security.",
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: "hello@periodcalculator.com",
+      contactType: "customer service",
+    },
+    sameAs: [],
+  };
+
   return (
     <>
       <JsonLd data={webApplicationSchema} />
       <JsonLd data={breadcrumbSchema} />
-      <main className="flex min-h-screen flex-col items-center px-4 py-16">
-        <OvulationPeriodCalculator />
+      <JsonLd data={faqSchema} />
+      <JsonLd data={howToSchema} />
+      <JsonLd data={organizationSchema} />
+      <main className="flex flex-col items-center px-4 py-16">
+        <h1 className="text-primary-400 text-center text-3xl font-bold md:text-4xl">
+          Ovulation Calculator
+        </h1>
+        <p className="mt-4 max-w-2xl text-center text-lg text-gray-600 dark:text-gray-300">
+          Find your fertile window and ovulation date. Plan pregnancy or understand your cycle better with accurate predictions.
+        </p>
+        <div className="mt-12 w-full max-w-2xl">
+          <OvulationPeriodCalculator />
+        </div>
+
+        {/* How to Calculate */}
+        <div className="mt-24 w-full max-w-4xl">
+          <HowToCalculate />
+        </div>
+
+        {/* Deep Knowledge */}
+        <div className="mt-24 w-full max-w-4xl">
+          <DeepKnowledge />
+        </div>
+
+        {/* FAQ */}
+        <div className="mt-24 w-full max-w-4xl">
+          <FAQ />
+        </div>
       </main>
     </>
   );
