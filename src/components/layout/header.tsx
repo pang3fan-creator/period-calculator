@@ -85,7 +85,7 @@ export function Header() {
 
   return (
     <header
-      className={`bg-ivory-50/95 dark:bg-dark-bg/95 shadow-soft fixed top-4 right-4 left-4 z-50 mx-auto rounded-2xl backdrop-blur-md transition-transform duration-300 md:right-auto md:left-1/2 md:max-w-4xl md:-translate-x-1/2 ${
+      className={`bg-ivory-50/95 dark:bg-dark-bg/95 shadow-soft fixed top-4 right-4 left-4 z-50 mx-auto rounded-2xl backdrop-blur-md transition-transform duration-300 md:right-auto md:left-1/2 md:max-w-6xl md:-translate-x-1/2 ${
         isHidden ? "-translate-y-[150%]" : "translate-y-0"
       }`}
     >
@@ -153,8 +153,8 @@ export function Header() {
             )}
           </button>
 
-          {/* Language Selector - Desktop only */}
-          <div className="relative hidden md:block" ref={langRef}>
+          {/* Language Selector */}
+          <div className="relative" ref={langRef}>
             <button
               type="button"
               onClick={() => setLangOpen(!langOpen)}

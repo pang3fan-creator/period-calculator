@@ -7,7 +7,7 @@ export function Footer() {
   const tCommon = useTranslations("common");
 
   return (
-    <footer className="border-warmbeige-200 bg-ivory-50 dark:border-dark-border dark:bg-dark-bg border-t pb-20 md:pb-0">
+    <footer className="border-warmbeige-200 bg-ivory-50 dark:border-dark-border dark:bg-dark-bg border-t">
       <div className="mx-auto max-w-7xl px-4 py-12">
         <div className="space-y-8 text-center md:grid md:grid-cols-3 md:gap-8 md:space-y-0 md:text-left">
           {/* Left: Brand */}
@@ -32,22 +32,6 @@ export function Footer() {
                   className="focus-visible:ring-primary-400 hover:text-primary-400 block rounded-lg text-sm text-gray-500 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400"
                 >
                   {tNav("home")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/irregular-period-calculator"
-                  className="focus-visible:ring-primary-400 hover:text-primary-400 block rounded-lg text-sm text-gray-500 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400"
-                >
-                  {tNav("irregularCalculator")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/ovulation-calculator"
-                  className="focus-visible:ring-primary-400 hover:text-primary-400 block rounded-lg text-sm text-gray-500 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400"
-                >
-                  {tNav("ovulationCalculator")}
                 </Link>
               </li>
               <li>

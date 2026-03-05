@@ -4,7 +4,6 @@ import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { MobileNav } from "@/components/layout/mobile-nav";
 import { Playfair_Display, Inter } from "next/font/google";
 import { Metadata } from "next";
 
@@ -61,11 +60,10 @@ export default async function LocaleLayout({
         >
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Header />
-            <main className="flex-1 pt-20 pb-20 md:pt-24 md:pb-0">
+            <main className="flex-1 pt-20 pb-0 md:pt-24">
               {children}
             </main>
             <Footer />
-            <MobileNav />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

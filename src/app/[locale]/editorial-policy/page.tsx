@@ -55,6 +55,14 @@ const sectionItemCounts: Record<string, number> = {
   disclaimer: 4,
 };
 
+// External links for medical sources
+const medicalSourceLinks: Record<number, string> = {
+  0: "https://www.acog.org",
+  1: "https://www.who.int",
+  2: "https://www.nhs.uk",
+  3: "https://www.mayoclinic.org",
+};
+
 function getItemsForSection(
   sectionKey: string,
   t: Awaited<ReturnType<typeof getTranslations>>,
@@ -314,9 +322,21 @@ export default async function EditorialPolicyPage({
                         {sectionItems.map((item: string, index: number) => (
                           <li key={index} className="flex items-start gap-3">
                             <CheckIcon className="text-trust-green-500 mt-0.5 h-5 w-5 flex-shrink-0" />
-                            <span className="text-sm text-gray-600 dark:text-gray-300">
-                              {item}
-                            </span>
+                            {sectionKey === "medicalSources" &&
+                            medicalSourceLinks[index] ? (
+                              <a
+                                href={medicalSourceLinks[index]}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-sm text-gray-600 hover:text-trust-green-600 dark:text-gray-300 dark:hover:text-trust-green-400 underline underline-offset-2"
+                              >
+                                {item}
+                              </a>
+                            ) : (
+                              <span className="text-sm text-gray-600 dark:text-gray-300">
+                                {item}
+                              </span>
+                            )}
                           </li>
                         ))}
                       </ul>
