@@ -342,37 +342,20 @@
     }
   },
   "deepKnowledge": {
-    "title": "Comprenez Votre Cycle Menstruel",
-    "description": "En savoir plus sur votre corps et votre santé menstruelle",
+    "title": "Beyond the Dates: Understanding Your Monthly Rhythm",
+    "description": "Most people think of their cycle as just the days they are bleeding, but your body is actually moving through a sophisticated, three-part biological journey every month. Understanding these shifts is exactly why a precise Period Calculator is about more than just 'day one'—it's about mapping your unique hormonal landscape.",
     "topics": {
-      "delayedPeriod": {
-        "title": "Pourquoi Vos Règles Peut Être Retardées",
-        "description": "De nombreux facteurs peuvent causer un retard de vos règles. Comprendre ces facteurs peut vous aider à distinguer les variations normales des signes qui justifient une visite chez le médecin.",
-        "point1": "Stress: Des niveaux élevés de stress peuvent supprimer la fonction hypothalamique, retardant l'ovulation et la menstruation",
-        "point2": "Changements de poids: Une perte ou prise de poids significative peut perturber les niveaux hormonaux",
-        "point3": "SOPK: Le syndrome des ovaires polykystiques est une cause courante de règles irrégulières",
-        "seeDoctor": "Consultez un professionnel de santé si vos règles sont régulièrement à plus de 35 jours d'intervalle"
+      "follicularPhase": {
+        "title": "The Follicular Phase: The Buildup",
+        "description": "The Follicular Phase begins on the very first day of your period and lasts until you ovulate. During this time, your body is busy maturing an egg for release. As your estrogen levels gradually climb, you might notice a steady boost in your energy, mood, and even skin clarity. By tracking the start of this phase in our Period Calculator, the algorithm begins to learn the specific 'tempo' of your body's preparation."
       },
-      "irregularCycle": {
-        "title": "Ce Que Signifient les Cycles Irréguliers",
-        "description": "Bien qu'une certaine variation soit normale, des cycles régulièrement irréguliers peuvent indiquer des problèmes sous-jacents qui bénéficieraient d'une attention médicale.",
-        "point1": "Plage normale: Les cycles entre 21-35 jours sont considérés comme typiques",
-        "point2": "Suivi: Enregistrez plusieurs mois de cycles pour identifier les habitudes",
-        "point3": "Facteurs de style de vie: L'exercice, l'alimentation et le sommeil peuvent tous affecter la régularité"
+      "ovulation": {
+        "title": "Ovulation: The Main Event",
+        "description": "Ovulation is the brief but vital window—usually lasting only 12 to 24 hours—when an egg is released from the ovary. This is your peak fertility window. Because factors like stress, travel, or sleep can shift your ovulation date, relying on a simple average isn't always enough. Our tool analyzes your historical data to help you pinpoint this window, whether you are trying to conceive or simply want to stay in tune with your body's signals."
       },
-      "periodsAhead": {
-        "title": "Pourquoi les Règles Arrivent Tôt",
-        "description": "Des règles précoces peuvent survenir pour diverses raisons, et comprendre les causes vous aide à mieux comprendre votre cycle.",
-        "point1": "Phase lutéale courte: Un temps plus court après l'ovulation peut causer des saignements plus précoces",
-        "point2": "Fluctuations hormonales: Les changements hormonaux temporaires sont courants",
-        "point3": "Stress et mode de vie: Un exercice intense ou des changements de vie importants peuvent déclencher des règles précoces"
-      },
-      "periodDuration": {
-        "title": "Quelle est la Durée Normale des Règles",
-        "description": "La durée des règles varie selon les individus, mais il existe des plages typiques qui indiquent un cycle sain.",
-        "point1": "Plage normale: La plupart des règles durent entre 2-7 jours",
-        "point2": "Modèle de flux: Le flux le plus abondant survient généralement les jours 1-2",
-        "point3": "Changements: Une certaine variation d'un mois à l'autre est tout à fait normale"
+      "lutealPhase": {
+        "title": "The Luteal Phase: The Countdown",
+        "description": "After ovulation, you enter the Luteal Phase. This is the 10-to-16-day stretch where progesterone takes center stage, thickening the uterine lining. If you've ever wondered why you feel more sensitive or bloated a week before your period, this phase is the reason. A consistent Period Calculator helps you predict exactly when this phase begins, so you're never caught off guard by PMS or the start of your next cycle."
       }
     }
   },

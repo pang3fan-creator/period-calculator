@@ -1,27 +1,23 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
-
-const topics = [
-  "delayedPeriod",
-  "irregularCycle",
-  "periodsAhead",
-  "periodDuration",
-] as const;
+import { useState } from "react";
 
 /**
  * DeepKnowledge Section Component
  *
- * Displays educational content about menstrual health:
- * - Why periods might be delayed
- * - What irregular cycles mean
- * - When to seek medical help
+ * Displays educational content about the menstrual cycle phases:
+ * - The Follicular Phase
+ * - Ovulation
+ * - The Luteal Phase
  *
  * Layout:
- * - Single column stack (4 topics vertically)
+ * - Single card with intro text, image, and three phases stacked vertically
  */
 export function DeepKnowledge() {
   const t = useTranslations("deepKnowledge");
+  const [isImageOpen, setIsImageOpen] = useState(false);
 
   return (
     <section className="w-full">
@@ -30,55 +26,104 @@ export function DeepKnowledge() {
         <h2 className="mb-3 text-2xl font-bold text-gray-800 md:text-3xl dark:text-white">
           {t("title")}
         </h2>
-        <p className="text-gray-600 dark:text-gray-300">{t("description")}</p>
       </div>
 
-      {/* Topics Grid */}
-      <div className="flex flex-col gap-4 md:gap-6">
-        {topics.map((topicKey) => (
-          <div
-            key={topicKey}
-            className="border-warmbeige-200 dark:border-dark-border dark:bg-dark-card hover:border-primary-200 dark:hover:border-primary-700 flex flex-col gap-4 rounded-3xl border bg-white p-5 transition-colors md:p-6"
-          >
-            {/* Topic Title */}
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
-              {t(`topics.${topicKey}.title`)}
-            </h3>
+      {/* Single Card with All Content */}
+      <div className="border-warmbeige-200 dark:border-dark-border dark:bg-dark-card rounded-3xl border bg-white p-5 md:p-8">
+        {/* Intro Description */}
+        <p className="mb-6 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+          {t("description")}
+        </p>
 
-            {/* Topic Description */}
-            <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-              {t(`topics.${topicKey}.description`)}
-            </p>
+        {/* Cycle Image (Clickable) */}
+        <div
+          className="mb-6 overflow-hidden rounded-2xl cursor-pointer"
+          onClick={() => setIsImageOpen(true)}
+        >
+          <Image
+            src="/assets/menstrual_cycle.jpg"
+            alt="the menstrual cycle phases including follicular phase, ovulation, and luteal phase"
+            width={800}
+            height={400}
+            className="w-full h-auto object-cover hover:opacity-95 transition-opacity"
+          />
+        </div>
 
-            {/* Key Points */}
-            <ul role="list" className="mt-1 space-y-2">
-              {["point1", "point2", "point3"].map((pointKey) => {
-                const pointText = t(`topics.${topicKey}.${pointKey}`);
-                // Only render if point exists
-                if (pointText === `topics.${topicKey}.${pointKey}`) return null;
-                return (
-                  <li
-                    key={pointKey}
-                    className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300"
-                  >
-                    <span className="text-primary-500 mt-0.5">•</span>
-                    <span>{pointText}</span>
-                  </li>
-                );
-              })}
-            </ul>
+        {/* Follicular Phase */}
+        <div className="mb-6 last:mb-0">
+          <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-white">
+            {t("topics.follicularPhase.title")}
+          </h3>
+          <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+            {t("topics.follicularPhase.description")}
+          </p>
+        </div>
 
-            {/* When to see a doctor */}
-            {topicKey === "delayedPeriod" && (
-              <div className="mt-2 rounded-2xl bg-amber-50 p-4 dark:bg-amber-900/20">
-                <p className="text-sm font-medium text-amber-800 dark:text-amber-200">
-                  {t("topics.delayedPeriod.seeDoctor")}
-                </p>
-              </div>
-            )}
+        {/* Divider */}
+        <hr className="my-6 border-gray-200 dark:border-gray-700" />
+
+        {/* Ovulation */}
+        <div className="mb-6 last:mb-0">
+          <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-white">
+            {t("topics.ovulation.title")}
+          </h3>
+          <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+            {t("topics.ovulation.description")}
+          </p>
+        </div>
+
+        {/* Divider */}
+        <hr className="my-6 border-gray-200 dark:border-gray-700" />
+
+        {/* Luteal Phase */}
+        <div className="mb-6 last:mb-0">
+          <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-white">
+            {t("topics.lutealPhase.title")}
+          </h3>
+          <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+            {t("topics.lutealPhase.description")}
+          </p>
+        </div>
+      </div>
+
+      {/* Image Lightbox Modal */}
+      {isImageOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          onClick={() => setIsImageOpen(false)}
+        >
+          <div className="relative max-w-4xl w-full max-h-[90vh] overflow-auto">
+            <button
+              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 text-white transition-colors"
+              onClick={() => setIsImageOpen(false)}
+              aria-label="Close"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <Image
+              src="/assets/menstrual_cycle.jpg"
+              alt="the menstrual cycle phases including follicular phase, ovulation, and luteal phase"
+              width={1200}
+              height={600}
+              className="w-full h-auto rounded-lg"
+              priority
+            />
           </div>
-        ))}
-      </div>
+        </div>
+      )}
     </section>
   );
 }

@@ -342,37 +342,20 @@
     }
   },
   "deepKnowledge": {
-    "title": "Entiende tu Ciclo Menstrual",
-    "description": "Aprende más sobre tu cuerpo y salud menstrual",
+    "title": "Beyond the Dates: Understanding Your Monthly Rhythm",
+    "description": "Most people think of their cycle as just the days they are bleeding, but your body is actually moving through a sophisticated, three-part biological journey every month. Understanding these shifts is exactly why a precise Period Calculator is about more than just 'day one'—it's about mapping your unique hormonal landscape.",
     "topics": {
-      "delayedPeriod": {
-        "title": "Por qué tu Período Puede Retrasarse",
-        "description": "Muchos factores pueden causar que tu período se retrase. Entender estos puede ayudarte a distinguir entre variaciones normales y señales que justifican una visita al médico.",
-        "point1": "Estrés: Los niveles altos de estrés pueden suprimir la función hipotalámica, retardando la ovulación y menstruación",
-        "point2": "Cambios de peso: Pérdida o ganancia significativa de peso pueden alterar los niveles hormonales",
-        "point3": "SOP: El Síndrome de Ovario Poliquístico es una causa común de períodos irregulares",
-        "seeDoctor": "Consulta a un profesional de la salud si tu período está constantemente a más de 35 días de distancia"
+      "follicularPhase": {
+        "title": "The Follicular Phase: The Buildup",
+        "description": "The Follicular Phase begins on the very first day of your period and lasts until you ovulate. During this time, your body is busy maturing an egg for release. As your estrogen levels gradually climb, you might notice a steady boost in your energy, mood, and even skin clarity. By tracking the start of this phase in our Period Calculator, the algorithm begins to learn the specific 'tempo' of your body's preparation."
       },
-      "irregularCycle": {
-        "title": "Qué Significan los Ciclos Irregulares",
-        "description": "Aunque alguna variación es normal, los ciclos consistentemente irregulares pueden indicar problemas subyacentes que se beneficiarían de atención médica.",
-        "point1": "Rango normal: Los ciclos entre 21-35 días se consideran típicos",
-        "point2": "Seguimiento: Registra varios meses de ciclos para identificar patrones",
-        "point3": "Factores de estilo: El ejercicio, dieta y sueño pueden afectar la regularidad"
+      "ovulation": {
+        "title": "Ovulation: The Main Event",
+        "description": "Ovulation is the brief but vital window—usually lasting only 12 to 24 hours—when an egg is released from the ovary. This is your peak fertility window. Because factors like stress, travel, or sleep can shift your ovulation date, relying on a simple average isn't always enough. Our tool analyzes your historical data to help you pinpoint this window, whether you are trying to conceive or simply want to stay in tune with your body's signals."
       },
-      "periodsAhead": {
-        "title": "Por qué los Períodos Llegan Temprano",
-        "description": "Un período temprano puede ocurrir por varias razones, y entender las causas te ayuda a entender mejor tu ciclo.",
-        "point1": "Fase lútea corta: Un tiempo más corto después de la ovulación puede causar sangrado más temprano",
-        "point2": "Fluctuaciones hormonales: Los cambios hormonales temporales son comunes",
-        "point3": "Estrés y estilo de vida: Ejercicio intenso o cambios significativos de vida pueden activar períodos tempranos"
-      },
-      "periodDuration": {
-        "title": "Cuál es una Duración Normal del Período",
-        "description": "La duración del período varía entre personas, pero hay rangos típicos que indican un ciclo saludable.",
-        "point1": "Rango normal: La mayoría de los períodos duran entre 2-7 días",
-        "point2": "Patrón de flujo: El flujo más abundante típicamente ocurre los días 1-2",
-        "point3": "Cambios: Alguna variación mes a mes es completamente normal"
+      "lutealPhase": {
+        "title": "The Luteal Phase: The Countdown",
+        "description": "After ovulation, you enter the Luteal Phase. This is the 10-to-16-day stretch where progesterone takes center stage, thickening the uterine lining. If you've ever wondered why you feel more sensitive or bloated a week before your period, this phase is the reason. A consistent Period Calculator helps you predict exactly when this phase begins, so you're never caught off guard by PMS or the start of your next cycle."
       }
     }
   },

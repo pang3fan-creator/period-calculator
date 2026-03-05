@@ -342,37 +342,20 @@
     }
   },
   "deepKnowledge": {
-    "title": "Understanding Your Menstrual Cycle",
-    "description": "Learn more about your body and menstrual health",
+    "title": "Beyond the Dates: Understanding Your Monthly Rhythm",
+    "description": "Most people think of their cycle as just the days they are bleeding, but your body is actually moving through a sophisticated, three-part biological journey every month. Understanding these shifts is exactly why a precise Period Calculator is about more than just 'day one'—it's about mapping your unique hormonal landscape.",
     "topics": {
-      "delayedPeriod": {
-        "title": "Why Your Period Might Be Delayed",
-        "description": "Many factors can cause your period to be late. Understanding these can help you distinguish between normal variations and signs that warrant a doctor's visit.",
-        "point1": "Stress: High stress levels can suppress hypothalamic function, delaying ovulation and menstruation",
-        "point2": "Weight changes: Significant weight loss or gain can disrupt hormone levels",
-        "point3": "PCOS: Polycystic Ovary Syndrome is a common cause of irregular periods",
-        "seeDoctor": "Consult a healthcare provider if your period is consistently over 35 days apart"
+      "follicularPhase": {
+        "title": "The Follicular Phase: The Buildup",
+        "description": "The Follicular Phase begins on the very first day of your period and lasts until you ovulate. During this time, your body is busy maturing an egg for release. As your estrogen levels gradually climb, you might notice a steady boost in your energy, mood, and even skin clarity. By tracking the start of this phase in our Period Calculator, the algorithm begins to learn the specific 'tempo' of your body's preparation."
       },
-      "irregularCycle": {
-        "title": "What Irregular Cycles Mean",
-        "description": "While some variation is normal, consistently irregular cycles may indicate underlying issues that benefit from medical attention.",
-        "point1": "Normal range: Cycles between 21-35 days are considered typical",
-        "point2": "Tracking: Record several months of cycles to identify patterns",
-        "point3": "Lifestyle factors: Exercise, diet, and sleep can all affect regularity"
+      "ovulation": {
+        "title": "Ovulation: The Main Event",
+        "description": "Ovulation is the brief but vital window—usually lasting only 12 to 24 hours—when an egg is released from the ovary. This is your peak fertility window. Because factors like stress, travel, or sleep can shift your ovulation date, relying on a simple average isn't always enough. Our tool analyzes your historical data to help you pinpoint this window, whether you are trying to conceive or simply want to stay in tune with your body's signals."
       },
-      "periodsAhead": {
-        "title": "Why Periods Come Early",
-        "description": "An early period can happen for various reasons, and understanding the causes helps you better understand your cycle.",
-        "point1": "Short luteal phase: A shorter time after ovulation can cause earlier bleeding",
-        "point2": "Hormonal fluctuations: Temporary hormonal shifts are common",
-        "point3": "Stress and lifestyle: Intense exercise or significant life changes can trigger early periods"
-      },
-      "periodDuration": {
-        "title": "What's a Normal Period Duration",
-        "description": "Period length varies among individuals, but there are typical ranges that indicate a healthy cycle.",
-        "point1": "Normal range: Most periods last between 2-7 days",
-        "point2": "Flow pattern: Heaviest flow typically occurs days 1-2",
-        "point3": "Changes: Some variation month-to-month is completely normal"
+      "lutealPhase": {
+        "title": "The Luteal Phase: The Countdown",
+        "description": "After ovulation, you enter the Luteal Phase. This is the 10-to-16-day stretch where progesterone takes center stage, thickening the uterine lining. If you've ever wondered why you feel more sensitive or bloated a week before your period, this phase is the reason. A consistent Period Calculator helps you predict exactly when this phase begins, so you're never caught off guard by PMS or the start of your next cycle."
       }
     }
   },

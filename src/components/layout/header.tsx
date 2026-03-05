@@ -21,6 +21,7 @@ export function Header() {
 
   // Scroll-based hide/show
   const [isHidden, setIsHidden] = useState(false);
+  const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -36,11 +37,28 @@ export function Header() {
         setIsHidden(false);
       }
 
+      // Clear existing timeout when scrolling
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current);
+      }
+
+      // Set timeout to hide navbar after 2 seconds of no scrolling
+      hideTimeoutRef.current = setTimeout(() => {
+        if (window.scrollY > 100) {
+          setIsHidden(true);
+        }
+      }, 2000);
+
       lastScrollY = currentScrollY;
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current);
+      }
+    };
   }, []);
 
   // Theme toggle
@@ -85,11 +103,11 @@ export function Header() {
 
   return (
     <header
-      className={`bg-ivory-50/95 dark:bg-dark-bg/95 shadow-soft fixed top-4 right-4 left-4 z-50 mx-auto rounded-2xl backdrop-blur-md transition-transform duration-300 md:right-auto md:left-1/2 md:max-w-6xl md:-translate-x-1/2 ${
+      className={`bg-ivory-50/95 dark:bg-dark-bg/95 shadow-soft fixed top-4 right-4 left-4 z-50 mx-auto rounded-2xl backdrop-blur-md transition-transform duration-300 md:right-auto md:left-1/2 md:w-[900px] md:-translate-x-1/2 ${
         isHidden ? "-translate-y-[150%]" : "translate-y-0"
       }`}
     >
-      <nav className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4">
+      <nav className="mx-auto flex h-14 w-full items-center justify-between px-5">
         {/* Logo */}
         <Link
           href="/"
@@ -99,7 +117,7 @@ export function Header() {
         </Link>
 
         {/* Right side controls */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           {/* Theme Toggle */}
           <button
             type="button"
