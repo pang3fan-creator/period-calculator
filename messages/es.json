@@ -38,6 +38,7 @@
     "about": "Sobre Nosotros"
   },
   "header": {
+    "appName": "Calculadora de Periodo",
     "toggleTheme": "Cambiar tema",
     "selectLanguage": "Seleccionar idioma"
   },

@@ -113,7 +113,7 @@ export function Header() {
           href="/"
           className="focus-visible:ring-primary-400 font-heading text-primary-400 rounded-lg text-xl font-bold outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
         >
-          Period Calculator
+          {t("appName")}
         </Link>
 
         {/* Right side controls */}

@@ -38,6 +38,7 @@
     "about": "About"
   },
   "header": {
+    "appName": "Period Calculator",
     "toggleTheme": "Toggle theme",
     "selectLanguage": "Select language"
   },
