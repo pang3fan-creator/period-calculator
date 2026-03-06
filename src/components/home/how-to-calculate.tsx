@@ -33,7 +33,6 @@ export function HowToCalculate() {
         <h2 className="mb-3 text-2xl font-bold text-gray-800 md:text-3xl dark:text-white">
           {t("title")}
         </h2>
-        <p className="text-gray-600 dark:text-gray-300">{t("description")}</p>
       </div>
 
       {/* Steps Grid */}

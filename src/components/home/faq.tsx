@@ -4,12 +4,12 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 const faqItems = [
-  "delayedAbnormal",
-  "calculateSafePeriod",
-  "irregularPreparePregnancy",
-  "periodsAhead",
+  "latePeriod",
+  "nextPeriodDate",
+  "safePeriod",
+  "periodEarly",
   "normalFlow",
-  "menopauseChanges",
+  "pregnancyFromLmp",
 ] as const;
 
 /**
@@ -38,7 +38,7 @@ export function FAQ() {
         <h2 className="mb-3 text-2xl font-bold text-gray-800 md:text-3xl dark:text-white">
           {t("title")}
         </h2>
-        <p className="text-gray-600 dark:text-gray-300">{t("description")}</p>
+        
       </div>
 
       {/* FAQ Items */}
@@ -59,8 +59,12 @@ export function FAQ() {
                 aria-controls={`faq-answer-${index}`}
                 aria-label={
                   isOpen
-                    ? `Collapse ${t(`items.${itemKey}.question`)}`
-                    : `Expand ${t(`items.${itemKey}.question`)}`
+                    ? t("collapseLabel", {
+                        question: t(`items.${itemKey}.question`),
+                      })
+                    : t("expandLabel", {
+                        question: t(`items.${itemKey}.question`),
+                      })
                 }
               >
                 <span className="pr-4">{t(`items.${itemKey}.question`)}</span>

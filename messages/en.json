@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Period Calculator - Free & Private Menstrual Cycle Tracker",
-    "description": "Calculate your next period, fertile window, and ovulation date. 100% private - all data stays in your browser. No login required.",
+    "title": "Accurate Period Calculator: Private Menstrual Cycle Tracker",
+    "description": "Predict your next cycle, ovulation, and fertile window with our free period calculator. No login required—100% private, secure, and accurate medical-grade tool.",
     "irregular": {
       "title": "Irregular Period Calculator - Track Uneven Cycles",
       "description": "Calculate your period even with irregular cycles. Our algorithm uses historical data to provide accurate predictions. 100% private."
@@ -42,8 +42,8 @@
     "selectLanguage": "Select language"
   },
   "home": {
-    "title": "Accurate Period Calculator & Cycle Tracker",
-    "subtitle": "Predict your next period, fertile window, and ovulation day with our private, AI-enhanced calculator.",
+    "title": "Accurate Period Calculator: Private Menstrual Cycle Tracker",
+    "subtitle": "Predict your next cycle, ovulation, and fertile window with our free period calculator. No login required—100% private, secure, and accurate medical-grade tool.",
     "comingSoon": "Calculator coming soon."
   },
   "about": {
@@ -321,7 +321,7 @@
   },
   "howToCalculate": {
     "title": "How to Calculate Your Cycle",
-    "description": "Understanding how our algorithm works",
+    
     "steps": {
       "step1": {
         "title": "Enter Your Last Period",
@@ -361,31 +361,33 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "description": "Common questions about menstrual cycles and our calculator",
+    
+    "expandLabel": "Expand {question}",
+    "collapseLabel": "Collapse {question}",
     "items": {
-      "delayedAbnormal": {
-        "question": "How late is a period considered abnormal?",
-        "answer": "While occasional delays are normal, if your period is consistently over 35 days apart, or if you experience a sudden change from your regular pattern, it's worth consulting a healthcare provider. Additionally, if you've missed three or more periods in a row (and you're not pregnant), you should seek medical advice."
+      "latePeriod": {
+        "question": "Am I late for my period?",
+        "answer": "A period is generally considered \"late\" if it hasn't arrived within five days of your expected start date. However, since few people have a perfectly rhythmic 28-day cycle, it's normal to see slight fluctuations. If you are sexually active and your period is even one day late, the most reliable next step is a pregnancy test, as our Period Calculator provides an estimate based on averages, not biological certainty."
       },
-      "calculateSafePeriod": {
-        "question": "How do I calculate my safe period?",
-        "answer": "The safe period (when you're least likely to conceive) is calculated by identifying your fertile window. Your fertile window typically spans 5-6 days ending on the day of ovulation. Days before the fertile window and the day after ovulation are considered safer, though no day is 100% guaranteed. Remember: this method is less reliable for those with irregular cycles."
+      "nextPeriodDate": {
+        "question": "How do I calculate my next period date?",
+        "answer": "To find your next start date, you first need to identify \"Day 1\" of your last cycle. This is the very first day you noticed a steady flow. From there, add your average cycle length, which is the number of days from the start of one period to the start of the next. For example, if your last period began on March 1 and your average cycle is 28 days, your next period is predicted to start on March 29."
       },
-      "irregularPreparePregnancy": {
-        "question": "How can I prepare for pregnancy with irregular cycles?",
-        "answer": "Track your cycles for several months to identify patterns. Use ovulation predictor kits or track basal body temperature to pinpoint ovulation. Consider consulting a fertility specialist if you've been trying for 12 months without success (or 6 months if you're over 35). Irregular cycles don't mean infertility—they just mean you may need to be more intentional about timing."
+      "safePeriod": {
+        "question": "How do I calculate my \"safe period\"?",
+        "answer": "The \"safe period\" refers to the days in your cycle when you are least likely to conceive, typically at the very beginning and very end of your cycle. To calculate this, you must first identify your ovulation window, which is usually 12 to 16 days before your next period. However, it is important to remember that the \"Calendar Method\" is not 100% accurate. Sperm can survive inside the body for up to five days, making it risky to rely on a calculator alone for contraception."
       },
-      "periodsAhead": {
+      "periodEarly": {
         "question": "Why did my period come early this month?",
-        "answer": "Early periods can occur due to various factors including stress, significant weight changes, intense exercise, hormonal fluctuations, or simply natural variation in cycle length. If it happens occasionally, it's usually not a concern. However, if early periods become frequent or are accompanied by unusual symptoms, consult a healthcare provider."
+        "answer": "It is quite common for a period to arrive a few days early. This usually happens because ovulation occurred sooner than usual. Common triggers for an early cycle include high levels of stress, significant changes in your sleep schedule, intense new exercise routines, or even recent travel. If your period is consistently early or accompanied by unusual pain, consulting a healthcare provider is recommended."
       },
       "normalFlow": {
         "question": "How much flow is normal during a period?",
-        "answer": "Normal menstrual flow ranges from about 30-80ml (roughly 2-16 tablespoons) over the entire period. Most people change their pad or tampon every 4-6 hours on heavier days. If you're soaking through a pad or tampon every hour, or passing large clots larger than a quarter, that may indicate heavy bleeding worth discussing with your doctor."
+        "answer": "The average person loses between 30 ml and 80 ml of blood over the course of their entire period, about 2 to 5 tablespoons. In practical terms, this means soaking through a pad or tampon every 3 to 4 hours. If you find yourself needing to change your protection every hour or noticing clots larger than a quarter, your flow may be considered heavy, and you should seek medical advice."
       },
-      "menopauseChanges": {
-        "question": "How does menopause affect menstrual cycles?",
-        "answer": "As you approach menopause (perimenopause), cycles often become irregular before stopping entirely. You may experience longer or shorter cycles, heavier or lighter flows, and various symptoms like hot flashes. Perimenopause typically begins in the mid-40s but can start earlier. If you're experiencing significant changes, consult your healthcare provider for guidance."
+      "pregnancyFromLmp": {
+        "question": "Why is pregnancy calculated from the last period (LMP)?",
+        "answer": "Because most people don't know the exact moment of conception, medical professionals use the Last Menstrual Period (LMP) as a clear, objective starting point. Since ovulation usually happens about two weeks after your period starts, this means that during the first two weeks of a \"40-week pregnancy,\" you are not actually pregnant yet. This standard helps doctors more accurately estimate your due date and track fetal development milestones."
       }
     }
   }

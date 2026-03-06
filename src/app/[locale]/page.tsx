@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { PeriodCalculator } from "@/components/calculator";
 import { HowToCalculate } from "@/components/home/how-to-calculate";
 import { DeepKnowledge } from "@/components/home/deep-knowledge";
@@ -20,11 +21,13 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations("metadata");
 
   return {
-    title: "Period Calculator - Free & Private Menstrual Cycle Tracker",
-    description:
-      "Calculate your next period, fertile window, and ovulation date. 100% private - all data stays in your browser. No login required.",
+    title: {
+      absolute: t("title"),
+    },
+    description: t("description"),
     alternates: {
       canonical: `${baseUrl}/${locale === "en" ? "" : locale}`,
       languages: locales.reduce(
@@ -78,38 +81,6 @@ export default function HomePage() {
     },
   };
 
-  // JSON-LD Schema for FAQPage
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "How late is a period considered abnormal?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "While occasional delays are normal, if your period is consistently over 35 days apart, or if you experience a sudden change from your regular pattern, it's worth consulting a healthcare provider.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How do I calculate my safe period?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "The safe period is calculated by identifying your fertile window. Your fertile window typically spans 5-6 days ending on the day of ovulation.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How can I prepare for pregnancy with irregular cycles?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Track your cycles for several months to identify patterns. Use ovulation predictor kits or track basal body temperature to pinpoint ovulation.",
-        },
-      },
-    ],
-  };
-
   // JSON-LD Schema for HowTo (Calculation steps)
   const howToSchema = {
     "@context": "https://schema.org",
@@ -157,7 +128,6 @@ export default function HomePage() {
     <>
       <JsonLd data={webApplicationSchema} />
       <JsonLd data={breadcrumbSchema} />
-      <JsonLd data={faqSchema} />
       <JsonLd data={howToSchema} />
       <JsonLd data={organizationSchema} />
       <div className="flex flex-col items-center px-4 py-16">

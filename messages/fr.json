@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Calculateur de Règles - Suivi Menstruel Gratuit et Privé",
-    "description": "Calculez vos prochaines règles, fenêtre de fertilité et date d'ovulation. 100% privé - toutes les données restent dans votre navigateur.",
+    "title": "Calculateur Précis de Règles: Suivi Menstruel Privé",
+    "description": "Prédisez votre prochain cycle, ovulation et fenêtre de fertilité avec notre calculateur de règles gratuit. Pas d'inscription nécessaire—100% privé, sécurisé et précis.",
     "irregular": {
       "title": "Calculateur de Règles Irrégulières - Suivez les Cycles Inégaux",
       "description": "Calculez vos règles même avec des cycles irréguliers. Notre algorithme utilise des données historiques pour des prédictions précises. 100% privé."
@@ -42,8 +42,8 @@
     "selectLanguage": "Sélectionner la langue"
   },
   "home": {
-    "title": "Calculateur de Règles Précis et Suivi du Cycle",
-    "subtitle": "Prédisez vos prochaines règles, fenêtre de fertilité et jour d'ovulation avec notre calculateur privé.",
+    "title": "Calculateur Précis de Règles: Suivi Menstruel Privé",
+    "subtitle": "Prédisez votre prochain cycle, ovulation et fenêtre de fertilité avec notre calculateur de règles gratuit. Pas d'inscription nécessaire—100% privé, sécurisé et précis.",
     "comingSoon": "Calculateur bientôt disponible."
   },
   "about": {
@@ -361,31 +361,33 @@
   },
   "faq": {
     "title": "Questions Fréquemment Posées",
-    "description": "Questions courantes sur les cycles menstruels et notre calculatrice",
+    "description": "Des réponses claires sur le timing des règles, le flux, la fertilité et le calcul de la grossesse.",
+    "expandLabel": "Développer {question}",
+    "collapseLabel": "Réduire {question}",
     "items": {
-      "delayedAbnormal": {
-        "question": "Combien de retard de règles est considéré comme anormal?",
-        "answer": "Bien que des retards occasionnels soient normaux, si vos règles sont régulièrement à plus de 35 jours d'intervalle, ou si vous éprouvez un changement soudain par rapport à votre modèle habituel, cela vaut la peine de consulter un professionnel de santé. De plus, si vous avez manqué trois règles ou plus d'affilée (et que vous n'êtes pas enceinte), vous devriez demander un avis médical."
+      "latePeriod": {
+        "question": "Mes règles sont-elles en retard ?",
+        "answer": "En général, on considère qu'un retard de règles existe lorsque vos règles ne sont pas arrivées dans les cinq jours suivant leur date prévue. Cependant, comme peu de personnes ont un cycle parfaitement régulier de 28 jours, de légères variations sont normales. Si vous êtes sexuellement active et que vos règles ont ne serait-ce qu'un jour de retard, l'étape la plus fiable est de faire un test de grossesse, car notre Calculateur de Règles fournit une estimation basée sur des moyennes, pas une certitude biologique."
       },
-      "calculateSafePeriod": {
-        "question": "Comment calculer ma période sûre?",
-        "answer": "La période sûre (quand vous êtes la moins susceptible de concevoir) se calcule en identifiant votre fenêtre fertile. Votre fenêtre fertile couvre généralement 5-6 jours se terminant le jour de l'ovulation. Les jours avant la fenêtre fertile et le jour après l'ovulation sont considérés comme plus sûrs, bien qu'aucun jour ne soit garanti à 100%. Souvenez-vous: cette méthode est moins fiable pour ceux qui ont des cycles irréguliers."
+      "nextPeriodDate": {
+        "question": "Comment calculer la date de mes prochaines règles ?",
+        "answer": "Pour trouver votre prochaine date de début, vous devez d'abord identifier le « jour 1 » de votre dernier cycle. Il s'agit du tout premier jour où vous avez remarqué un flux régulier. À partir de là, ajoutez la durée moyenne de votre cycle, c'est-à-dire le nombre de jours entre le début d'une période et le début de la suivante. Par exemple, si vos dernières règles ont commencé le 1er mars et que votre cycle moyen est de 28 jours, vos prochaines règles sont prévues pour le 29 mars."
       },
-      "irregularPreparePregnancy": {
-        "question": "Comment puis-je me préparer à la grossesse avec des cycles irréguliers?",
-        "answer": "Suivez vos cycles pendant plusieurs mois pour identifier les habitudes. Utilisez des kits prédicteurs d'ovulation ou mesurez votre température basale pour identifier l'ovulation. Envisagez de consulter un spécialiste de la fertilité si vous avez essayé pendant 12 mois sans succès (ou 6 mois si vous avez plus de 35 ans). Les cycles irréguliers ne signifient pas l'infertilité, cela signifie simplement que vous devrez peut-être être plus intentionnel dans le timing."
+      "safePeriod": {
+        "question": "Comment calculer ma « période sûre » ?",
+        "answer": "La « période sûre » correspond aux jours du cycle où vous avez le moins de chances de concevoir, généralement tout au début et tout à la fin du cycle. Pour la calculer, il faut d'abord identifier votre fenêtre d'ovulation, qui se situe généralement entre 12 et 16 jours avant vos prochaines règles. Il est toutefois important de se rappeler que la « méthode du calendrier » n'est pas fiable à 100 %. Les spermatozoïdes peuvent survivre jusqu'à cinq jours dans le corps, ce qui rend risqué le fait de compter uniquement sur une calculatrice comme moyen de contraception."
       },
-      "periodsAhead": {
-        "question": "Pourquoi mes règles sont-elles arrivées tôt ce mois-ci?",
-        "answer": "Des règles précoces peuvent survenir en raison de divers facteurs incluant le stress, des changements de poids significatifs, un exercice intense, des fluctuations hormonales, ou simplement une variation naturelle de la durée du cycle. Si cela arrivenellement, ce occasion n'est généralement pas une préoccupation. Cependant, si les règles précoces deviennent fréquentes ou sont accompagnées de symptômes inhabituels, consultez un professionnel de santé."
+      "periodEarly": {
+        "question": "Pourquoi mes règles sont-elles arrivées tôt ce mois-ci ?",
+        "answer": "Il est assez courant que les règles arrivent quelques jours en avance. Cela se produit souvent parce que l'ovulation a eu lieu plus tôt que d'habitude. Parmi les déclencheurs fréquents, on retrouve un niveau de stress élevé, des changements importants dans votre rythme de sommeil, une nouvelle routine sportive intense ou même un voyage récent. Si vos règles arrivent régulièrement en avance ou s'accompagnent de douleurs inhabituelles, il est recommandé de consulter un professionnel de santé."
       },
       "normalFlow": {
-        "question": "Quel flux est normal pendant les règles?",
-        "answer": "Le flux menstruel normal varie d'environ 30-80 ml (environ 2-16 cuillères à soupe) pendant toute la période. La plupart des gens changent leur serviette ou tampon toutes les 4-6 heures les jours de flux abondant. Si vous trempez une serviette ou un tampon toutes les heures, ou si vous évacuez de gros caillots plus grands qu'un quart, cela peut indiquer des saignements abondants dont il vaut la peine de discuter avec votre médecin."
+        "question": "Quelle quantité de flux est normale pendant les règles ?",
+        "answer": "En moyenne, une personne perd entre 30 ml et 80 ml de sang pendant l'ensemble de ses règles, soit environ 2 à 5 cuillères à soupe. Concrètement, cela correspond souvent au fait de saturer une serviette hygiénique ou un tampon toutes les 3 à 4 heures. Si vous devez changer de protection toutes les heures ou si vous remarquez des caillots plus gros qu'une pièce de monnaie, votre flux peut être considéré comme abondant et il est préférable de demander un avis médical."
       },
-      "menopauseChanges": {
-        "question": "Comment la ménopause affecte-t-elle les cycles menstruels?",
-        "answer": "À l'approche de la ménopause (périménopause), les cycles deviennent souvent irréguliers avant de s'arrêter complètement. Vous pouvez expérimenter des cycles plus longs ou plus courts, des flux plus abondants ou plus légers, et divers symptômes comme des bouffées de chaleur. La périménopause commence généralement au milieu de la quarantaine mais peut commencer plus tôt. Si vous expérimentez des changements significatifs, consultez votre professionnel de santé pour des conseils."
+      "pregnancyFromLmp": {
+        "question": "Pourquoi la grossesse est-elle calculée à partir des dernières règles (LMP) ?",
+        "answer": "Comme la plupart des personnes ne connaissent pas le moment exact de la conception, les professionnels de santé utilisent la date des dernières règles, ou LMP en anglais, comme point de départ clair et objectif. Puisque l'ovulation survient généralement environ deux semaines après le début des règles, cela signifie que pendant les deux premières semaines d'une « grossesse de 40 semaines », vous n'êtes en réalité pas encore enceinte. Cette norme aide les médecins à estimer plus précisément la date d'accouchement et à suivre les étapes du développement fœtal."
       }
     }
   }

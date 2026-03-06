@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Calculadora de Periodo - Seguimiento Menstrual Gratuito y Privado",
-    "description": "Calcula tu próximo periodo, ventana fértil y fecha de ovulación. 100% privado - todos los datos se quedan en tu navegador.",
+    "title": "Calculadora Precisa de Periodo: Seguimiento Menstrual Privado",
+    "description": "Predice tu próximo ciclo, ovulación y ventana fértil con nuestra calculadora de periodo gratuita. Sin registro necesario—100% privada, segura y precisa.",
     "irregular": {
       "title": "Calculadora de Periodo Irregular - Rastrea Ciclos Desiguales",
       "description": "Calcula tu periodo incluso con ciclos irregulares. Nuestro algoritmo usa datos históricos para proporcionar predicciones precisas. 100% privado."
@@ -42,8 +42,8 @@
     "selectLanguage": "Seleccionar idioma"
   },
   "home": {
-    "title": "Calculadora de Periodo Precisa y Seguimiento del Ciclo",
-    "subtitle": "Predice tu próximo periodo, ventana fértil y día de ovulación con nuestra calculadora privada.",
+    "title": "Calculadora Precisa de Periodo: Seguimiento Menstrual Privado",
+    "subtitle": "Predice tu próximo ciclo, ovulación y ventana fértil con nuestra calculadora de periodo gratuita. Sin registro necesario—100% privada, segura y precisa.",
     "comingSoon": "Calculadora próximamente."
   },
   "about": {
@@ -361,31 +361,33 @@
   },
   "faq": {
     "title": "Preguntas Frecuentes",
-    "description": "Preguntas comunes sobre ciclos menstruales y nuestra calculadora",
+    "description": "Respuestas claras sobre el momento del periodo, el flujo, la fertilidad y el cálculo del embarazo.",
+    "expandLabel": "Expandir {question}",
+    "collapseLabel": "Contraer {question}",
     "items": {
-      "delayedAbnormal": {
-        "question": "¿Cuánto se considera anormal el retraso del período?",
-        "answer": "Aunque los retrasos ocasionales son normales, si tu período está constantemente a más de 35 días de distancia, o si experimentas un cambio repentino de tu patrón regular, vale la pena consultar a un proveedor de salud. Además, si has perdido tres o más períodos seguidos (y no estás embarazada), debes buscar consejo médico."
+      "latePeriod": {
+        "question": "¿Se me ha retrasado el periodo?",
+        "answer": "Por lo general, se considera que un periodo está \"retrasado\" si no llega dentro de los cinco días posteriores a la fecha en que esperabas que comenzara. Sin embargo, como pocas personas tienen un ciclo perfectamente regular de 28 días, es normal ver pequeñas variaciones. Si tienes actividad sexual y tu periodo se retrasa incluso un solo día, el paso más fiable es hacerte una prueba de embarazo, ya que nuestra Calculadora de Periodo ofrece una estimación basada en promedios, no una certeza biológica."
       },
-      "calculateSafePeriod": {
-        "question": "¿Cómo calculo mi período seguro?",
-        "answer": "El período seguro (cuando es menos probable concebir) se calcula identificando tu ventana fértil. Tu ventana fértil típicamente abarca 5-6 días terminando en el día de ovulación. Los días antes de la ventana fértil y el día después de la ovulación se consideran más seguros, aunque ningún día tiene 100% de garantía. Recuerda: este método es menos confiable para quienes tienen ciclos irregulares."
+      "nextPeriodDate": {
+        "question": "¿Cómo calculo la fecha de mi próximo periodo?",
+        "answer": "Para encontrar tu próxima fecha de inicio, primero debes identificar el \"Día 1\" de tu último ciclo. Ese es el primer día en que notaste un flujo constante. A partir de ahí, suma la duración promedio de tu ciclo, es decir, el número de días desde el inicio de un periodo hasta el inicio del siguiente. Por ejemplo, si tu último periodo comenzó el 1 de marzo y tu ciclo promedio es de 28 días, se prevé que tu próximo periodo empiece el 29 de marzo."
       },
-      "irregularPreparePregnancy": {
-        "question": "¿Cómo puedo prepararme para el embarazo con ciclos irregulares?",
-        "answer": "Registra tus ciclos durante varios meses para identificar patrones. Usa kits predictor de ovulación o mide tu temperatura basal para identificar la ovulación. Considera consultar a un especialista en fertilidad si has estado intentando durante 12 meses sin éxito (o 6 meses si tienes más de 35 años). Los ciclos irregulares no significan infertilidad, solo significa que quizás necesites ser más intencional con el tiempo."
+      "safePeriod": {
+        "question": "¿Cómo calculo mi \"periodo seguro\"?",
+        "answer": "El \"periodo seguro\" se refiere a los días del ciclo en los que es menos probable concebir, normalmente al principio y al final del ciclo. Para calcularlo, primero debes identificar tu ventana de ovulación, que suele ocurrir entre 12 y 16 días antes de tu próximo periodo. Aun así, es importante recordar que el \"método del calendario\" no es 100% exacto. Los espermatozoides pueden sobrevivir dentro del cuerpo hasta cinco días, por lo que basarse solo en una calculadora como método anticonceptivo puede ser arriesgado."
       },
-      "periodsAhead": {
-        "question": "¿Por qué vino mi período temprano este mes?",
-        "answer": "Los períodos tempranos pueden ocurrir debido a varios factores incluyendo estrés, cambios significativos de peso, ejercicio intenso, fluctuaciones hormonales, o simplemente variación natural en la duración del ciclo. Si sucede ocasionalmente, generalmente no es una preocupación. Sin embargo, si los períodos tempranos se vuelven frecuentes o van acompañados de síntomas inusuales, consulta a un proveedor de salud."
+      "periodEarly": {
+        "question": "¿Por qué me vino el periodo antes este mes?",
+        "answer": "Es bastante común que el periodo llegue unos días antes. Normalmente ocurre porque la ovulación se adelantó con respecto a lo habitual. Entre los desencadenantes frecuentes están los niveles altos de estrés, los cambios importantes en tu horario de sueño, una nueva rutina de ejercicio intenso o incluso un viaje reciente. Si tu periodo se adelanta con frecuencia o viene acompañado de un dolor inusual, se recomienda consultar con un profesional de salud."
       },
       "normalFlow": {
-        "question": "¿Cuánto flujo es normal durante un período?",
-        "answer": "El flujo menstrual normal varía de aproximadamente 30-80ml (aproximadamente 2-16 cucharadas) durante todo el período. La mayoría de las personas cambian su toalla o tampón cada 4-6 horas en días más abundantes. Si estás empapando una toalla o tampón cada hora, o pasando coágulos grandes más grandes que un cuarto, eso puede indicar sangrado abundante que vale la pena discutir con tu médico."
+        "question": "¿Cuánto flujo es normal durante el periodo?",
+        "answer": "La persona promedio pierde entre 30 ml y 80 ml de sangre a lo largo de todo el periodo, es decir, unas 2 a 5 cucharadas. En términos prácticos, esto suele equivaler a empapar una toalla sanitaria o un tampón cada 3 o 4 horas. Si necesitas cambiar tu protección cada hora o notas coágulos más grandes que una moneda grande, tu flujo podría considerarse abundante y conviene buscar orientación médica."
       },
-      "menopauseChanges": {
-        "question": "¿Cómo afecta la menopausia a los ciclos menstruales?",
-        "answer": "A medida que te acercas a la menopausia (perimenopausia), los ciclos a menudo se vuelven irregulares antes de detenerse por completo. Puedes experimentar ciclos más largos o más cortos, flujos más abundantes o más ligeros, y varios síntomas como sofocos. La perimenopausia típicamente comienza a mitad de los 40s pero puede comenzar antes. Si estás experimentando cambios significativos, consulta a tu proveedor de salud para orientación."
+      "pregnancyFromLmp": {
+        "question": "¿Por qué el embarazo se calcula desde la última menstruación (LMP)?",
+        "answer": "Como la mayoría de las personas no conoce el momento exacto de la concepción, los profesionales de la salud usan la Fecha de la Última Menstruación, o LMP por sus siglas en inglés, como un punto de partida claro y objetivo. Dado que la ovulación suele producirse unas dos semanas después de que empieza el periodo, eso significa que durante las dos primeras semanas de un \"embarazo de 40 semanas\" en realidad todavía no hay embarazo. Este estándar ayuda a los médicos a estimar con más precisión la fecha probable de parto y el desarrollo fetal."
       }
     }
   }

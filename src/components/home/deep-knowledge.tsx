@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 /**
  * DeepKnowledge Section Component
@@ -18,6 +18,36 @@ import { useState } from "react";
 export function DeepKnowledge() {
   const t = useTranslations("deepKnowledge");
   const [isImageOpen, setIsImageOpen] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const triggerButtonRef = useRef<HTMLDivElement>(null);
+
+  // Focus management and keyboard support
+  useEffect(() => {
+    if (isImageOpen) {
+      // Lock focus to close button when modal opens
+      setTimeout(() => {
+        closeButtonRef.current?.focus();
+      }, 50);
+      // Prevent body scroll
+      document.body.style.overflow = "hidden";
+    } else {
+      // Restore body scroll
+      document.body.style.overflow = "";
+      // Return focus to trigger element
+      triggerButtonRef.current?.focus();
+    }
+  }, [isImageOpen]);
+
+  // Keyboard support (Escape to close)
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape" && isImageOpen) {
+        setIsImageOpen(false);
+      }
+    }
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isImageOpen]);
 
   return (
     <section className="w-full">
@@ -37,8 +67,18 @@ export function DeepKnowledge() {
 
         {/* Cycle Image (Clickable) */}
         <div
-          className="mb-6 overflow-hidden rounded-2xl cursor-pointer"
+          ref={triggerButtonRef}
+          className="mb-6 overflow-hidden rounded-2xl cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
           onClick={() => setIsImageOpen(true)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setIsImageOpen(true);
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          aria-label="Open menstrual cycle diagram"
         >
           <Image
             src="/assets/menstrual_cycle.jpg"
@@ -89,12 +129,21 @@ export function DeepKnowledge() {
       {/* Image Lightbox Modal */}
       {isImageOpen && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menstrual cycle phases diagram"
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
-          onClick={() => setIsImageOpen(false)}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setIsImageOpen(false);
+          }}
         >
-          <div className="relative max-w-4xl w-full max-h-[90vh] overflow-auto">
+          <div
+            className="relative max-w-4xl w-full max-h-[90vh] overflow-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
-              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 text-white transition-colors"
+              ref={closeButtonRef}
+              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
               onClick={() => setIsImageOpen(false)}
               aria-label="Close"
             >
