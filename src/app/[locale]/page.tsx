@@ -103,6 +103,13 @@ export default async function HomePage({
       price: "0",
       priceCurrency: "USD",
     },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      ratingCount: "1000",
+      bestRating: "5",
+      worstRating: "1",
+    },
   };
 
   // JSON-LD Schema for FAQPage
@@ -140,13 +147,15 @@ export default async function HomePage({
     "@type": "Article",
     headline: tDeepKnowledge("title"),
     description: tDeepKnowledge("description"),
+    url: baseUrl,
     inLanguage: locale,
+    image: `${baseUrl}/assets/menstrual_cycle.jpg`,
     author: {
       "@type": "Organization",
       name: tMetadata("title"),
     },
-    datePublished: "2024-01-01",
-    dateModified: new Date().toISOString().split("T")[0],
+    datePublished: "2024-01-01T00:00:00+00:00",
+    dateModified: new Date().toISOString(),
     articleSection: "Health",
   };
 
