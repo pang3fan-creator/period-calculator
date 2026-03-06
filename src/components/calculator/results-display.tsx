@@ -376,6 +376,15 @@ export function ResultsDisplay({
       {/* Prediction Cards */}
       <PredictionCards result={result} locale={locale} />
 
+      {/* Health Standard Trust Badge - French only */}
+      {locale === "fr" && (
+        <div className="flex justify-center">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            {t("healthStandard")}
+          </p>
+        </div>
+      )}
+
       {/* Calendar View */}
       <CalendarView prediction={result} locale={locale} />
 

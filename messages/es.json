@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Calculadora Precisa de Periodo: Seguimiento Menstrual Privado",
-    "description": "Predice tu próximo ciclo, ovulación y ventana fértil con nuestra calculadora de periodo gratuita. Sin registro necesario—100% privada, segura y precisa.",
+    "title": "Calculadora de Periodo: Calendario Menstrual y de Ovulación",
+    "description": "Predice tu ciclo, ovulación y días fértiles con nuestra calculadora de periodo gratuita. Sin registro, 100% privada, segura y precisa. ¡Tu salud es lo primero!",
     "irregular": {
       "title": "Calculadora de Periodo Irregular - Rastrea Ciclos Desiguales",
       "description": "Calcula tu periodo incluso con ciclos irregulares. Nuestro algoritmo usa datos históricos para proporcionar predicciones precisas. 100% privado."
@@ -43,7 +43,7 @@
     "selectLanguage": "Seleccionar idioma"
   },
   "home": {
-    "title": "Calculadora Precisa de Periodo: Seguimiento Menstrual Privado",
+    "title": "Calculadora Precisa de Periodo",
     "subtitle": "Predice tu próximo ciclo, ovulación y ventana fértil con nuestra calculadora de periodo gratuita. Sin registro necesario—100% privada, segura y precisa.",
     "comingSoon": "Calculadora próximamente."
   },
@@ -321,7 +321,7 @@
     }
   },
   "howToCalculate": {
-    "title": "Cómo Calcular tu Ciclo",
+    "title": "Cómo Calcular tu Periodo",
     "description": "Entiende cómo funciona nuestro algoritmo",
     "steps": {
       "step1": {
@@ -343,7 +343,7 @@
     }
   },
   "deepKnowledge": {
-    "title": "Beyond the Dates: Understanding Your Monthly Rhythm",
+    "title": "Entiende Tu Ritmo Mensual",
     "description": "Most people think of their cycle as just the days they are bleeding, but your body is actually moving through a sophisticated, three-part biological journey every month. Understanding these shifts is exactly why a precise Period Calculator is about more than just 'day one'—it's about mapping your unique hormonal landscape.",
     "topics": {
       "follicularPhase": {

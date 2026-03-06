@@ -1,4 +1,3 @@
-import { useTranslations } from "next-intl";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { PeriodCalculator } from "@/components/calculator";
@@ -41,24 +40,49 @@ export async function generateMetadata({
   };
 }
 
-export default function HomePage() {
-  const t = useTranslations("home");
+// FAQ item keys from the component
+const faqItemKeys = [
+  "latePeriod",
+  "nextPeriodDate",
+  "safePeriod",
+  "periodEarly",
+  "normalFlow",
+  "pregnancyFromLmp",
+] as const;
+
+// HowTo step keys
+const howToStepKeys = ["step1", "step2", "step3", "step4"] as const;
+
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  // Server-side translations
+  const tHome = await getTranslations("home");
+  const tMetadata = await getTranslations("metadata");
+  const tHowTo = await getTranslations("howToCalculate");
+  const tDeepKnowledge = await getTranslations("deepKnowledge");
+  const tFaq = await getTranslations("faq");
 
   // JSON-LD Schema for BreadcrumbList
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    inLanguage: locale,
     itemListElement: [
       {
         "@type": "ListItem",
         position: 1,
-        name: "Home",
+        name: locale === "en" ? "Home" : locale === "es" ? "Inicio" : "Accueil",
         item: baseUrl,
       },
       {
         "@type": "ListItem",
         position: 2,
-        name: "Period Calculator",
+        name: tHome("title"),
         item: baseUrl,
       },
     ],
@@ -68,12 +92,12 @@ export default function HomePage() {
   const webApplicationSchema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "Period Calculator",
-    description:
-      "Calculate your next period, fertile window, and ovulation date. 100% private - all data stays in your browser.",
-    url: "https://periodcalculator.site",
+    name: tMetadata("title"),
+    description: tMetadata("description"),
+    url: baseUrl,
     applicationCategory: "HealthApplication",
     operatingSystem: "Web Browser",
+    inLanguage: locale,
     offers: {
       "@type": "Offer",
       price: "0",
@@ -81,61 +105,64 @@ export default function HomePage() {
     },
   };
 
+  // JSON-LD Schema for FAQPage
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    inLanguage: locale,
+    mainEntity: faqItemKeys.map((key) => ({
+      "@type": "Question",
+      name: tFaq(`items.${key}.question`),
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: tFaq(`items.${key}.answer`),
+      },
+    })),
+  };
+
   // JSON-LD Schema for HowTo (Calculation steps)
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    name: "How to Calculate Your Period",
-    description:
-      "Learn how to calculate your next period date, fertile window, and ovulation day in simple steps.",
-    step: [
-      {
-        "@type": "HowToStep",
-        name: "Enter your last period start date",
-        text: "Select the date when your last menstrual period started.",
-      },
-      {
-        "@type": "HowToStep",
-        name: "Enter your average cycle length",
-        text: "Enter the average number of days between your periods (typically 21-35 days).",
-      },
-      {
-        "@type": "HowToStep",
-        name: "Get your results",
-        text: "View your predicted next period, fertile window, and ovulation date.",
-      },
-    ],
+    name: tHowTo("title"),
+    description: tHowTo("title"),
+    inLanguage: locale,
+    step: howToStepKeys.map((key) => ({
+      "@type": "HowToStep",
+      name: tHowTo(`steps.${key}.title`),
+      text: tHowTo(`steps.${key}.description`),
+    })),
   };
 
-  // JSON-LD Schema for Organization (E-E-A-T signal)
-  const organizationSchema = {
+  // JSON-LD Schema for Article (Deep Knowledge)
+  const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Period Calculator",
-    url: "https://periodcalculator.site",
-    logo: "https://periodcalculator.site/logo.png",
-    description:
-      "Privacy-first menstrual cycle tracker helping women understand their bodies without compromising personal data security.",
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "hello@periodcalculator.com",
-      contactType: "customer service",
+    "@type": "Article",
+    headline: tDeepKnowledge("title"),
+    description: tDeepKnowledge("description"),
+    inLanguage: locale,
+    author: {
+      "@type": "Organization",
+      name: tMetadata("title"),
     },
-    sameAs: [],
+    datePublished: "2024-01-01",
+    dateModified: new Date().toISOString().split("T")[0],
+    articleSection: "Health",
   };
 
   return (
     <>
       <JsonLd data={webApplicationSchema} />
       <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={faqSchema} />
       <JsonLd data={howToSchema} />
-      <JsonLd data={organizationSchema} />
+      <JsonLd data={articleSchema} />
       <div className="flex flex-col items-center px-4 py-16">
         <h1 className="text-primary-400 text-center text-3xl font-bold md:text-4xl">
-          {t("title")}
+          {tHome("title")}
         </h1>
         <p className="mt-4 max-w-2xl text-center text-lg text-gray-600 dark:text-gray-300">
-          {t("subtitle")}
+          {tHome("subtitle")}
         </p>
         <div className="mt-12 w-full max-w-2xl">
           <PeriodCalculator />

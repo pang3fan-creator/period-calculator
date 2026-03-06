@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Calculateur Précis de Règles: Suivi Menstruel Privé",
-    "description": "Prédisez votre prochain cycle, ovulation et fenêtre de fertilité avec notre calculateur de règles gratuit. Pas d'inscription nécessaire—100% privé, sécurisé et précis.",
+    "title": "Calculateur de Règles : Calendrier Menstruel et d'Ovulation",
+    "description": "Prédisez vos prochaines règles, ovulation et jours fertiles avec notre calculateur gratuit. Sans inscription, 100% privé, sûr et précis. Santé intime suivie.",
     "irregular": {
       "title": "Calculateur de Règles Irrégulières - Suivez les Cycles Inégaux",
       "description": "Calculez vos règles même avec des cycles irréguliers. Notre algorithme utilise des données historiques pour des prédictions précises. 100% privé."
@@ -43,7 +43,7 @@
     "selectLanguage": "Sélectionner la langue"
   },
   "home": {
-    "title": "Calculateur Précis de Règles: Suivi Menstruel Privé",
+    "title": "Calculateur Précis de Règles",
     "subtitle": "Prédisez votre prochain cycle, ovulation et fenêtre de fertilité avec notre calculateur de règles gratuit. Pas d'inscription nécessaire—100% privé, sécurisé et précis.",
     "comingSoon": "Calculateur bientôt disponible."
   },
@@ -184,7 +184,8 @@
       "fertileEvent": "Fenêtre Fertile",
       "ovulationEvent": "Jour d'Ovulation",
       "pmsEvent": "SPM",
-      "eventDescription": "Prédit par Period Calculator"
+      "eventDescription": "Prédit par Period Calculator",
+      "healthStandard": "Algorithme conforme aux normes de santé"
     },
     "calendar": {
       "title": "Vue du Calendrier",
@@ -321,7 +322,7 @@
     }
   },
   "howToCalculate": {
-    "title": "Comment Calculer Votre Cycle",
+    "title": "Comment Calculer Vos Règles",
     "description": "Comprenez comment fonctionne notre algorithme",
     "steps": {
       "step1": {
@@ -343,7 +344,7 @@
     }
   },
   "deepKnowledge": {
-    "title": "Beyond the Dates: Understanding Your Monthly Rhythm",
+    "title": "Comprenez Votre Rythme Mensuel",
     "description": "Most people think of their cycle as just the days they are bleeding, but your body is actually moving through a sophisticated, three-part biological journey every month. Understanding these shifts is exactly why a precise Period Calculator is about more than just 'day one'—it's about mapping your unique hormonal landscape.",
     "topics": {
       "follicularPhase": {

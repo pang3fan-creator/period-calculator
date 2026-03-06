@@ -43,7 +43,7 @@
     "selectLanguage": "Select language"
   },
   "home": {
-    "title": "Accurate Period Calculator: Private Menstrual Cycle Tracker",
+    "title": "Accurate Period Calculator",
     "subtitle": "Predict your next cycle, ovulation, and fertile window with our free period calculator. No login required—100% private, secure, and accurate medical-grade tool.",
     "comingSoon": "Calculator coming soon."
   },
@@ -321,7 +321,7 @@
     }
   },
   "howToCalculate": {
-    "title": "How to Calculate Your Cycle",
+    "title": "How to Calculate Your Period",
     
     "steps": {
       "step1": {
@@ -343,7 +343,7 @@
     }
   },
   "deepKnowledge": {
-    "title": "Beyond the Dates: Understanding Your Monthly Rhythm",
+    "title": "Understanding Your Monthly Rhythm",
     "description": "Most people think of their cycle as just the days they are bleeding, but your body is actually moving through a sophisticated, three-part biological journey every month. Understanding these shifts is exactly why a precise Period Calculator is about more than just 'day one'—it's about mapping your unique hormonal landscape.",
     "topics": {
       "follicularPhase": {
