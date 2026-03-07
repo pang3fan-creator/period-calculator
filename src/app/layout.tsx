@@ -21,6 +21,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Period Calculator",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Period Calculator - Free & Private Menstrual Cycle Tracker",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Period Calculator - Free & Private Menstrual Cycle Tracker",
+    description:
+      "Calculate your next period, fertile window, and ovulation date. 100% private - all data stays in your browser.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

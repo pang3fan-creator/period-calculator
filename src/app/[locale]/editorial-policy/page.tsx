@@ -32,9 +32,39 @@ export async function generateMetadata({
   const pathPrefix = currentPath === "/" ? "" : currentPath;
   const canonicalUrl = `${baseUrl}${pathPrefix}/editorial-policy`;
 
+  const localeNames: Record<string, string> = {
+    en: "en-US",
+    es: "es-ES",
+    fr: "fr-FR",
+  };
+  const locales = ["en", "es", "fr"];
+
   return {
     title: titles[locale] || titles.en,
     description: descriptions[locale] || descriptions.en,
+    openGraph: {
+      title: titles[locale] || titles.en,
+      description: descriptions[locale] || descriptions.en,
+      url: canonicalUrl,
+      siteName: "Period Calculator",
+      locale: localeNames[locale],
+      alternateLocale: locales.filter((l) => l !== locale).map((l) => localeNames[l]),
+      type: "website",
+      images: [
+        {
+          url: `${baseUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: titles[locale] || titles.en,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: titles[locale] || titles.en,
+      description: descriptions[locale] || descriptions.en,
+      images: [`${baseUrl}/og-image.png`],
+    },
     alternates: {
       canonical: canonicalUrl,
       languages: {

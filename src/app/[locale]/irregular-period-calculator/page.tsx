@@ -24,6 +24,31 @@ export async function generateMetadata({
     title: "Irregular Period Calculator - Track Uneven Cycles",
     description:
       "Calculate your period even with irregular cycles. Our algorithm uses historical data to provide accurate predictions. 100% private.",
+    openGraph: {
+      title: "Irregular Period Calculator - Track Uneven Cycles",
+      description:
+        "Calculate your period even with irregular cycles. Our algorithm uses historical data to provide accurate predictions. 100% private.",
+      url: `${baseUrl}/${locale === "en" ? "" : locale}/irregular-period-calculator`,
+      siteName: "Period Calculator",
+      locale: localeNames[locale],
+      alternateLocale: locales.filter((l) => l !== locale).map((l) => localeNames[l]),
+      type: "website",
+      images: [
+        {
+          url: `${baseUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: "Irregular Period Calculator",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Irregular Period Calculator - Track Uneven Cycles",
+      description:
+        "Calculate your period even with irregular cycles. Our algorithm uses historical data to provide accurate predictions. 100% private.",
+      images: [`${baseUrl}/og-image.png`],
+    },
     alternates: {
       canonical: `${baseUrl}/${locale === "en" ? "" : locale}/irregular-period-calculator`,
       languages: locales.reduce(

@@ -24,6 +24,31 @@ export async function generateMetadata({
     title: "Ovulation Calculator - Find Your Fertile Window",
     description:
       "Calculate your ovulation date and fertile window. Plan pregnancy or understand your cycle better. 100% private.",
+    openGraph: {
+      title: "Ovulation Calculator - Find Your Fertile Window",
+      description:
+        "Calculate your ovulation date and fertile window. Plan pregnancy or understand your cycle better. 100% private.",
+      url: `${baseUrl}/${locale === "en" ? "" : locale}/ovulation-calculator`,
+      siteName: "Period Calculator",
+      locale: localeNames[locale],
+      alternateLocale: locales.filter((l) => l !== locale).map((l) => localeNames[l]),
+      type: "website",
+      images: [
+        {
+          url: `${baseUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: "Ovulation Calculator",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Ovulation Calculator - Find Your Fertile Window",
+      description:
+        "Calculate your ovulation date and fertile window. Plan pregnancy or understand your cycle better. 100% private.",
+      images: [`${baseUrl}/og-image.png`],
+    },
     alternates: {
       canonical: `${baseUrl}/${locale === "en" ? "" : locale}/ovulation-calculator`,
       languages: locales.reduce(

@@ -13,10 +13,42 @@ export async function generateMetadata({
   const canonicalUrl =
     locale === "en" ? `${baseUrl}/about` : `${baseUrl}/${locale}/about`;
 
+  const localeNames: Record<string, string> = {
+    en: "en-US",
+    es: "es-ES",
+    fr: "fr-FR",
+  };
+  const locales = ["en", "es", "fr"];
+
   return {
     title: "About Us - Period Calculator",
     description:
       "Learn about Period Calculator - a privacy-first menstrual cycle tracker. Our mission is to help women understand their bodies without compromising privacy.",
+    openGraph: {
+      title: "About Us - Period Calculator",
+      description:
+        "Learn about Period Calculator - a privacy-first menstrual cycle tracker. Our mission is to help women understand their bodies without compromising privacy.",
+      url: canonicalUrl,
+      siteName: "Period Calculator",
+      locale: localeNames[locale],
+      alternateLocale: locales.filter((l) => l !== locale).map((l) => localeNames[l]),
+      type: "website",
+      images: [
+        {
+          url: `${baseUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: "About Us - Period Calculator",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "About Us - Period Calculator",
+      description:
+        "Learn about Period Calculator - a privacy-first menstrual cycle tracker. Our mission is to help women understand their bodies without compromising privacy.",
+      images: [`${baseUrl}/og-image.png`],
+    },
     alternates: {
       canonical: canonicalUrl,
       languages: {

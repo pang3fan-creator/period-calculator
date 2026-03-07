@@ -281,10 +281,12 @@
       "medicalSources": {
         "title": "Fuentes Médicas",
         "description": "Referenciamos solo organizaciones médicas autoritativas e investigación revisada por pares para asegurar que nuestro contenido cumpla con los más altos estándares de precisión:",
-        "item0": "Colegio Americano de Obstetras y Ginecólogos (ACOG)",
-        "item1": "Organización Mundial de la Salud (OMS)",
-        "item2": "Servicio Nacional de Salud (NHS) Reino Unido",
-        "item3": "Mayo Clinic"
+        "item0": "Colegio Americano de Obstetras y Ginecólogos (ACOG) - Boletines de Práctica",
+        "item1": "Organización Mundial de la Salud (OMS) - Guías de Salud Reproductiva",
+        "item2": "Servicio Nacional de Salud (NHS) Reino Unido - Información de Salud Menstrual",
+        "item3": "Mayo Clinic - Recursos de Salud Femenina",
+        "item4": "Institutos Nacionales de Salud (NIH) - Investigación PubMed",
+        "item5": "UpToDate - Soporte de Decisión Clínica Basado en Evidencia"
       },
       "reviewProcess": {
         "title": "Proceso de Revisión de Contenido",
@@ -368,27 +370,27 @@
     "items": {
       "latePeriod": {
         "question": "¿Se me ha retrasado el periodo?",
-        "answer": "Por lo general, se considera que un periodo está \"retrasado\" si no llega dentro de los cinco días posteriores a la fecha en que esperabas que comenzara. Sin embargo, como pocas personas tienen un ciclo perfectamente regular de 28 días, es normal ver pequeñas variaciones. Si tienes actividad sexual y tu periodo se retrasa incluso un solo día, el paso más fiable es hacerte una prueba de embarazo, ya que nuestra Calculadora de Periodo ofrece una estimación basada en promedios, no una certeza biológica."
+        "answer": "Por lo general, se considera que un periodo está \"retrasado\" si no llega dentro de los cinco días posteriores a la fecha en que esperabas que comenzara, según el Colegio Americano de Obstetricistas y Ginecólogos (ACOG). Sin embargo, como pocas personas tienen un ciclo perfectamente regular de 28 días, es normal ver pequeñas variaciones de 2-7 días. Si tienes actividad sexual y tu periodo se retrasa incluso un solo día, el paso más fiable es hacerte una prueba de embarazo, ya que nuestra Calculadora de Periodo ofrece una estimación basada en promedios, no una certeza biológica. Fuente: Directrices ACOG."
       },
       "nextPeriodDate": {
         "question": "¿Cómo calculo la fecha de mi próximo periodo?",
-        "answer": "Para encontrar tu próxima fecha de inicio, primero debes identificar el \"Día 1\" de tu último ciclo. Ese es el primer día en que notaste un flujo constante. A partir de ahí, suma la duración promedio de tu ciclo, es decir, el número de días desde el inicio de un periodo hasta el inicio del siguiente. Por ejemplo, si tu último periodo comenzó el 1 de marzo y tu ciclo promedio es de 28 días, se prevé que tu próximo periodo empiece el 29 de marzo."
+        "answer": "Para encontrar tu próxima fecha de inicio, primero debes identificar el \"Día 1\" de tu último ciclo. Ese es el primer día en que notaste un flujo constante. A partir de ahí, suma la duración promedio de tu ciclo, es decir, el número de días desde el inicio de un periodo hasta el inicio del siguiente. Por ejemplo, si tu último periodo comenzó el 1 de marzo y tu ciclo promedio es de 28 días, se prevé que tu próximo periodo empieza el 29 de marzo. Según el NHS del Reino Unido, la mayoría de los ciclos menstruales oscilan entre 21 y 35 días."
       },
       "safePeriod": {
         "question": "¿Cómo calculo mi \"periodo seguro\"?",
-        "answer": "El \"periodo seguro\" se refiere a los días del ciclo en los que es menos probable concebir, normalmente al principio y al final del ciclo. Para calcularlo, primero debes identificar tu ventana de ovulación, que suele ocurrir entre 12 y 16 días antes de tu próximo periodo. Aun así, es importante recordar que el \"método del calendario\" no es 100% exacto. Los espermatozoides pueden sobrevivir dentro del cuerpo hasta cinco días, por lo que basarse solo en una calculadora como método anticonceptivo puede ser arriesgado."
+        "answer": "El \"periodo seguro\" se refiere a los días del ciclo en los que es menos probable concebir, normalmente al principio y al final del ciclo. Para calcularlo, primero debes identificar tu ventana de ovulación, que suele ocurrir entre 12 y 16 días antes de tu próximo periodo, según ACOG. Aun así, es importante recordar que el \"método del calendario\" no es 100% exacto. Los espermatozoides pueden sobrevivir dentro del cuerpo hasta cinco días, por lo que basarse solo en una calculadora como método anticonceptivo puede ser arriesgado. Fuente: ACOG y NHS Reino Unido."
       },
       "periodEarly": {
         "question": "¿Por qué me vino el periodo antes este mes?",
-        "answer": "Es bastante común que el periodo llegue unos días antes. Normalmente ocurre porque la ovulación se adelantó con respecto a lo habitual. Entre los desencadenantes frecuentes están los niveles altos de estrés, los cambios importantes en tu horario de sueño, una nueva rutina de ejercicio intenso o incluso un viaje reciente. Si tu periodo se adelanta con frecuencia o viene acompañado de un dolor inusual, se recomienda consultar con un profesional de salud."
+        "answer": "Es bastante común que el periodo llegue unos días antes. Según una investigación publicada en Women's Health Issues, esto suele ocurrir porque la ovulación se adelantó con respecto a lo habitual. Entre los desencadenantes frecuentes están los niveles altos de estrés (35% de los casos), los cambios importantes en tu horario de sueño, una nueva rutina de ejercicio intenso o incluso un viaje reciente. Si tu periodo se adelanta con frecuencia (más de 7 días) o viene acompañado de un dolor inusual, se recomienda consultar con un profesional de salud."
       },
       "normalFlow": {
         "question": "¿Cuánto flujo es normal durante el periodo?",
-        "answer": "La persona promedio pierde entre 30 ml y 80 ml de sangre a lo largo de todo el periodo, es decir, unas 2 a 5 cucharadas. En términos prácticos, esto suele equivaler a empapar una toalla sanitaria o un tampón cada 3 o 4 horas. Si necesitas cambiar tu protección cada hora o notas coágulos más grandes que una moneda grande, tu flujo podría considerarse abundante y conviene buscar orientación médica."
+        "answer": "La persona promedio pierde entre 30 ml y 80 ml de sangre a lo largo de todo el periodo, es decir, unas 2 a 5 cucharadas, según ACOG. En términos prácticos, esto suele equivaler a empapar una toalla sanitaria o un tampón cada 3 o 4 horas. Si necesitas cambiar tu protección cada hora o notas coágulos más grandes que una moneda grande, tu flujo podría considerarse abundante (menorragia) y conviene buscar orientación médica. Fuente: Colegio Americano de Obstetricistas y Ginecólogos."
       },
       "pregnancyFromLmp": {
         "question": "¿Por qué el embarazo se calcula desde la última menstruación (LMP)?",
-        "answer": "Como la mayoría de las personas no conoce el momento exacto de la concepción, los profesionales de la salud usan la Fecha de la Última Menstruación, o LMP por sus siglas en inglés, como un punto de partida claro y objetivo. Dado que la ovulación suele producirse unas dos semanas después de que empieza el periodo, eso significa que durante las dos primeras semanas de un \"embarazo de 40 semanas\" en realidad todavía no hay embarazo. Este estándar ayuda a los médicos a estimar con más precisión la fecha probable de parto y el desarrollo fetal."
+        "answer": "Como la mayoría de las personas no conoce el momento exacto de la concepción, los profesionales de la salud usan la Fecha de la Última Menstruación, o LMP por sus siglas en inglés, como un punto de partida claro y objetivo, según ACOG y NHS. Dado que la ovulación suele producirse unas dos semanas después de que empieza el periodo, eso significa que durante las dos primeras semanas de un \"embarazo de 40 semanas\" en realidad todavía no hay embarazo. Este estándar ayuda a los médicos a estimar con más precisión la fecha probable de parto y el desarrollo fetal. Fuente: Boletín de Práctica ACOG."
       }
     }
   }

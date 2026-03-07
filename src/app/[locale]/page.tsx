@@ -27,6 +27,29 @@ export async function generateMetadata({
       absolute: t("title"),
     },
     description: t("description"),
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: `${baseUrl}/${locale === "en" ? "" : locale}`,
+      siteName: "Period Calculator",
+      locale: localeNames[locale],
+      alternateLocale: locales.filter((l) => l !== locale).map((l) => localeNames[l]),
+      type: "website",
+      images: [
+        {
+          url: `${baseUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: t("title"),
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: [`${baseUrl}/og-image.png`],
+    },
     alternates: {
       canonical: `${baseUrl}/${locale === "en" ? "" : locale}`,
       languages: locales.reduce(
@@ -67,6 +90,22 @@ export default async function HomePage({
   const tDeepKnowledge = await getTranslations("deepKnowledge");
   const tFaq = await getTranslations("faq");
 
+  // JSON-LD Schema for WebSite with search action
+  const webSiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Period Calculator",
+    url: baseUrl,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${baseUrl}/?s={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   // JSON-LD Schema for BreadcrumbList
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -88,10 +127,10 @@ export default async function HomePage({
     ],
   };
 
-  // JSON-LD Schema for WebApplication
-  const webApplicationSchema = {
+  // JSON-LD Schema for SoftwareApplication (enhanced)
+  const softwareApplicationSchema = {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
+    "@type": "SoftwareApplication",
     name: tMetadata("title"),
     description: tMetadata("description"),
     url: baseUrl,
@@ -102,6 +141,7 @@ export default async function HomePage({
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
     },
     aggregateRating: {
       "@type": "AggregateRating",
@@ -110,6 +150,12 @@ export default async function HomePage({
       bestRating: "5",
       worstRating: "1",
     },
+    author: {
+      "@type": "Organization",
+      name: "Period Calculator",
+      url: baseUrl,
+    },
+    softwareVersion: "1.0.0",
   };
 
   // JSON-LD Schema for FAQPage
@@ -142,6 +188,7 @@ export default async function HomePage({
   };
 
   // JSON-LD Schema for Article (Deep Knowledge)
+  const today = new Date().toISOString();
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -154,14 +201,15 @@ export default async function HomePage({
       "@type": "Organization",
       name: tMetadata("title"),
     },
-    datePublished: "2024-01-01T00:00:00+00:00",
-    dateModified: new Date().toISOString(),
+    datePublished: today,
+    dateModified: today,
     articleSection: "Health",
   };
 
   return (
     <>
-      <JsonLd data={webApplicationSchema} />
+      <JsonLd data={webSiteSchema} />
+      <JsonLd data={softwareApplicationSchema} />
       <JsonLd data={breadcrumbSchema} />
       <JsonLd data={faqSchema} />
       <JsonLd data={howToSchema} />
