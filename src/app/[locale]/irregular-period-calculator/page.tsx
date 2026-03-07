@@ -5,7 +5,7 @@ import { HowToCalculate } from "@/components/home/how-to-calculate";
 import { DeepKnowledge } from "@/components/home/deep-knowledge";
 import { FAQ } from "@/components/home/faq";
 
-const baseUrl = "https://periodcalculator.site";
+const baseUrl = "https://www.aiperiodcalculator.com";
 const locales = ["en", "es", "fr"];
 const localeNames: Record<string, string> = {
   en: "en-US",
@@ -46,7 +46,7 @@ export default function IrregularPeriodCalculatorPage() {
     name: "Irregular Period Calculator",
     description:
       "Calculate your period even with irregular cycles. Our algorithm uses historical data to provide accurate predictions. 100% private.",
-    url: "https://periodcalculator.site/irregular-period-calculator",
+    url: "https://www.aiperiodcalculator.com/irregular-period-calculator",
     applicationCategory: "HealthApplication",
     operatingSystem: "Web Browser",
     offers: {
@@ -139,13 +139,13 @@ export default function IrregularPeriodCalculatorPage() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Period Calculator",
-    url: "https://periodcalculator.site",
-    logo: "https://periodcalculator.site/logo.png",
+    url: "https://www.aiperiodcalculator.com",
+    logo: "https://www.aiperiodcalculator.com/logo.png",
     description:
       "Privacy-first menstrual cycle tracker helping women understand their bodies without compromising personal data security.",
     contactPoint: {
       "@type": "ContactPoint",
-      email: "hello@periodcalculator.com",
+      email: "hello@aiperiodcalculator.com",
       contactType: "customer service",
     },
     sameAs: [],

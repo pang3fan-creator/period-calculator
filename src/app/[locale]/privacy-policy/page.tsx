@@ -18,7 +18,7 @@ export async function generateMetadata({
     es: "Aprende cómo protegemos tu privacidad. Todos tus datos permanecen en tu dispositivo - nunca recopilamos ni almacenamos tu información personal.",
     fr: "Découvrez comment nous protégeons votre vie privée. Toutes vos données restent sur votre appareil - nous ne collectons ni ne stockons vos informations personnelles.",
   };
-  const baseUrl = "https://periodcalculator.site";
+  const baseUrl = "https://www.aiperiodcalculator.com";
   const languages: Record<string, string> = {
     en: "/",
     es: "/es",

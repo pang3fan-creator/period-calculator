@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 
-const baseUrl = "https://periodcalculator.site";
+const baseUrl = "https://www.aiperiodcalculator.com";
 
 export async function generateMetadata({
   params,
@@ -212,11 +212,11 @@ export default async function AboutPage() {
             {t("contact.description")}
           </p>
           <a
-            href="mailto:hello@periodcalculator.com"
+            href="mailto:hello@aiperiodcalculator.com"
             className="text-primary-500 hover:text-primary-600 inline-flex items-center gap-2 font-medium"
           >
             <MailIcon className="h-5 w-5" />
-            hello@periodcalculator.com
+            hello@aiperiodcalculator.com
           </a>
         </section>
 

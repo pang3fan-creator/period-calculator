@@ -10,7 +10,7 @@ describe("sitemap", () => {
 
   it("should include main pages with correct priority", () => {
     const sitemapEntries = sitemap();
-    const baseUrl = "https://periodcalculator.site";
+    const baseUrl = "https://www.aiperiodcalculator.com";
 
     const homePage = sitemapEntries.find((entry) => entry.url === baseUrl);
     expect(homePage).toBeDefined();
@@ -20,7 +20,7 @@ describe("sitemap", () => {
 
   it("should include all multilingual variants", () => {
     const sitemapEntries = sitemap();
-    const baseUrl = "https://periodcalculator.site";
+    const baseUrl = "https://www.aiperiodcalculator.com";
 
     const urls = sitemapEntries.map((entry) => entry.url);
 
@@ -39,7 +39,7 @@ describe("sitemap", () => {
 
   it("should include tool pages with correct priority", () => {
     const sitemapEntries = sitemap();
-    const baseUrl = "https://periodcalculator.site";
+    const baseUrl = "https://www.aiperiodcalculator.com";
 
     const irregularPage = sitemapEntries.find(
       (entry) => entry.url === `${baseUrl}/irregular-period-calculator`,
@@ -55,7 +55,7 @@ describe("sitemap", () => {
 
   it("should include policy pages", () => {
     const sitemapEntries = sitemap();
-    const baseUrl = "https://periodcalculator.site";
+    const baseUrl = "https://www.aiperiodcalculator.com";
 
     const urls = sitemapEntries.map((entry) => entry.url);
 
@@ -65,7 +65,7 @@ describe("sitemap", () => {
 
   it("should include about page", () => {
     const sitemapEntries = sitemap();
-    const baseUrl = "https://periodcalculator.site";
+    const baseUrl = "https://www.aiperiodcalculator.com";
 
     const urls = sitemapEntries.map((entry) => entry.url);
 

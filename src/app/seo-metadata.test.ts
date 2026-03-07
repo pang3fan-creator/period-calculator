@@ -66,7 +66,7 @@ describe("JSON-LD Schema", () => {
     name: "Period Calculator",
     description:
       "Calculate your next period, fertile window, and ovulation date. 100% private - all data stays in your browser.",
-    url: "https://periodcalculator.site",
+    url: "https://www.aiperiodcalculator.com",
     applicationCategory: "HealthApplication",
     operatingSystem: "Web Browser",
     offers: {

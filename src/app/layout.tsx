@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://periodcalculator.site"),
+  metadataBase: new URL("https://www.aiperiodcalculator.com"),
   title: {
     default: "Period Calculator - Free & Private Menstrual Cycle Tracker",
     template: "%s | Period Calculator",

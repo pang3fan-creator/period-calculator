@@ -1,4 +1,4 @@
-export const SITE_URL = "https://periodcalculator.site";
+export const SITE_URL = "https://www.aiperiodcalculator.com";
 export const SITE_NAME = "Period Calculator";
 
 export const DEFAULT_CYCLE_LENGTH = 28;

@@ -8,7 +8,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const baseUrl = "https://periodcalculator.site";
+  const baseUrl = "https://www.aiperiodcalculator.com";
   const titles: Record<string, string> = {
     en: "Editorial Policy - Medical Sources & Accuracy Commitment",
     es: "Política Editorial - Fuentes Médicas y Compromiso de Precisión",

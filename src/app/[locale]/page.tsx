@@ -6,7 +6,7 @@ import { DeepKnowledge } from "@/components/home/deep-knowledge";
 import { FAQ } from "@/components/home/faq";
 import { JsonLd } from "@/components/seo/json-ld";
 
-const baseUrl = "https://periodcalculator.site";
+const baseUrl = "https://www.aiperiodcalculator.com";
 const locales = ["en", "es", "fr"];
 const localeNames: Record<string, string> = {
   en: "en-US",
