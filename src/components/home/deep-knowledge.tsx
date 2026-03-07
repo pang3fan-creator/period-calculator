@@ -33,8 +33,7 @@ export function DeepKnowledge() {
     } else {
       // Restore body scroll
       document.body.style.overflow = "";
-      // Return focus to trigger element
-      triggerButtonRef.current?.focus();
+      // Note: Removed focus() call to prevent page scroll on modal close
     }
   }, [isImageOpen]);
 
