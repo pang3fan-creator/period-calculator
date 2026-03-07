@@ -44,7 +44,7 @@
   },
   "home": {
     "title": "Accurate Period Calculator",
-    "subtitle": "Predict your next cycle, ovulation, and fertile window with our free period calculator. No login required—100% private, secure, and accurate medical-grade tool.",
+    "subtitle": "Use our free Period Calculator to predict your next cycle, ovulation, and fertile window. No login required—100% private, secure, and accurate medical-grade tool. Our Period Calculator helps you track your menstrual cycle with precision.",
     "comingSoon": "Calculator coming soon."
   },
   "about": {
@@ -323,38 +323,39 @@
     }
   },
   "howToCalculate": {
-    "title": "How to Calculate Your Period",
-    
+    "title": "How to Use the Period Calculator",
+    "description": "Learn how to use our free Period Calculator to track your menstrual cycle and predict your next period with accuracy.",
+
     "steps": {
       "step1": {
-        "title": "Enter Your Last Period",
-        "description": "Input the first day of your most recent period. This is the starting point for all calculations."
+        "title": "Enter Your Last Period Date",
+        "description": "Input the first day of your most recent period in the Period Calculator. This is the starting point for all cycle calculations."
       },
       "step2": {
         "title": "Set Your Cycle Length",
-        "description": "Enter your average cycle length (typically 21-35 days). Our algorithm uses this to predict your next period."
+        "description": "Enter your average cycle length (typically 21-35 days) in the Period Calculator. Our algorithm uses this to predict your next period accurately."
       },
       "step3": {
         "title": "Add Period Duration",
-        "description": "Specify how long your period typically lasts (usually 3-7 days). This helps predict the menstruation phase."
+        "description": "Specify how long your period typically lasts (usually 3-7 days) in the Period Calculator. This helps predict the menstruation phase."
       },
       "step4": {
         "title": "Get Your Predictions",
-        "description": "Our algorithm calculates your next period, fertile window, ovulation day, and PMS dates based on medical research."
+        "description": "The Period Calculator calculates your next period, fertile window, ovulation day, and PMS dates based on medical research."
       }
     }
   },
   "deepKnowledge": {
     "title": "Understanding Your Monthly Rhythm",
-    "description": "Most people think of their cycle as just the days they are bleeding, but your body is actually moving through a sophisticated, three-part biological journey every month. Understanding these shifts is exactly why a precise Period Calculator is about more than just 'day one'—it's about mapping your unique hormonal landscape.",
+    "description": "Most people think of their cycle as just the days they are bleeding, but your body is actually moving through a sophisticated, three-part biological journey every month. Understanding these shifts is exactly why a precise Period Calculator is about more than just 'day one'—it's about mapping your unique hormonal landscape. Our Period Calculator helps you track every phase of your menstrual cycle with precision.",
     "topics": {
       "follicularPhase": {
         "title": "The Follicular Phase: The Buildup",
-        "description": "The Follicular Phase begins on the very first day of your period and lasts until you ovulate. During this time, your body is busy maturing an egg for release. As your estrogen levels gradually climb, you might notice a steady boost in your energy, mood, and even skin clarity. By tracking the start of this phase in our Period Calculator, the algorithm begins to learn the specific 'tempo' of your body's preparation."
+        "description": "The Follicular Phase begins on the very first day of your period and lasts until you ovulate. During this time, your body is busy maturing an egg for release. As your estrogen levels gradually climb, you might notice a steady boost in your energy, mood, and even skin clarity. By tracking the start of this phase in our Period Calculator, the algorithm begins to learn the specific 'tempo' of your body's preparation. The Period Calculator tracks this phase to provide accurate predictions."
       },
       "ovulation": {
         "title": "Ovulation: The Main Event",
-        "description": "Ovulation is the brief but vital window—usually lasting only 12 to 24 hours—when an egg is released from the ovary. This is your peak fertility window. Because factors like stress, travel, or sleep can shift your ovulation date, relying on a simple average isn't always enough. Our tool analyzes your historical data to help you pinpoint this window, whether you are trying to conceive or simply want to stay in tune with your body's signals."
+        "description": "Ovulation is the brief but vital window—usually lasting only 12 to 24 hours—when an egg is released from the ovary. This is your peak fertility window. Because factors like stress, travel, or sleep can shift your ovulation date, relying on a simple average isn't always enough. Our Period Calculator analyzes your historical data to help you pinpoint this window, whether you are trying to conceive or simply want to stay in tune with your body's signals."
       },
       "lutealPhase": {
         "title": "The Luteal Phase: The Countdown",

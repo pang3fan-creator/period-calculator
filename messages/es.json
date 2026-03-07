@@ -44,7 +44,7 @@
   },
   "home": {
     "title": "Calculadora Precisa de Periodo",
-    "subtitle": "Predice tu próximo ciclo, ovulación y ventana fértil con nuestra calculadora de periodo gratuita. Sin registro necesario—100% privada, segura y precisa.",
+    "subtitle": "Usa nuestra Calculadora de Periodo gratuita para predecir tu próximo ciclo, ovulación y ventana fértil. Sin registro necesario—100% privada, segura y precisa. Nuestra Calculadora de Periodo te ayuda a seguir tu ciclo menstrual con precisión.",
     "comingSoon": "Calculadora próximamente."
   },
   "about": {
@@ -323,42 +323,42 @@
     }
   },
   "howToCalculate": {
-    "title": "Cómo Calcular tu Periodo",
-    "description": "Entiende cómo funciona nuestro algoritmo",
+    "title": "Cómo Usar la Calculadora de Periodo",
+    "description": "Aprende a usar nuestra Calculadora de Periodo gratuita para seguir tu ciclo menstrual y predecir tu próximo período con precisión.",
     "steps": {
       "step1": {
-        "title": "Ingresa tu Último Período",
-        "description": "Ingresa el primer día de tu período más reciente. Este es el punto de partida para todos los cálculos."
+        "title": "Ingresa la Fecha de tu Último Período",
+        "description": "Ingresa el primer día de tu período más reciente en la Calculadora de Periodo. Este es el punto de partida para todos los cálculos del ciclo."
       },
       "step2": {
         "title": "Establece la Duración de tu Ciclo",
-        "description": "Ingresa la duración promedio de tu ciclo (típicamente 21-35 días). Nuestro algoritmo usa esto para predecir tu próximo período."
+        "description": "Ingresa la duración promedio de tu ciclo (típicamente 21-35 días) en la Calculadora de Periodo. Nuestro algoritmo usa esto para predecir tu próximo período con precisión."
       },
       "step3": {
         "title": "Agrega la Duración del Período",
-        "description": "Especifica cuánto dura tu período típicamente (generalmente 3-7 días). Esto ayuda a predecir la fase de menstruación."
+        "description": "Especifica cuánto dura tu período típicamente (generalmente 3-7 días) en la Calculadora de Periodo. Esto ayuda a predecir la fase de menstruación."
       },
       "step4": {
         "title": "Obtén tus Predicciones",
-        "description": "Nuestro algoritmo calcula tu próximo período, ventana fértil, día de ovulación y fechas del SPM basándose en investigación médica."
+        "description": "La Calculadora de Periodo calcula tu próximo período, ventana fértil, día de ovulación y fechas del SPM basándose en investigación médica."
       }
     }
   },
   "deepKnowledge": {
     "title": "Entiende Tu Ritmo Mensual",
-    "description": "La mayoría de las personas piensan que su ciclo son solo los días de sangrado, pero tu cuerpo realmente está atravesando un sofisticado viaje biológico de tres partes cada mes. Entender estos cambios es exactamente por qué un Calculador de Período preciso se trata de más que solo del 'primer día': se trata de mapear tu único paisaje hormonal.",
+    "description": "La mayoría de las personas piensan que su ciclo son solo los días de sangrado, pero tu cuerpo realmente está atravesando un sofisticado viaje biológico de tres partes cada mes. Entender estos cambios es exactamente por qué un Calculador de Período preciso se trata de más que solo del 'primer día': se trata de mapear tu único paisaje hormonal. Nuestra Calculadora de Periodo te ayuda a seguir cada fase de tu ciclo menstrual con precisión.",
     "topics": {
       "follicularPhase": {
         "title": "La Fase Folicular: La Construcción",
-        "description": "La Fase Folicular comienza el primer día de tu período y dura hasta que ovulas. Durante este tiempo, tu cuerpo está ocupado madurando un óvulo para su liberación. A medida que tus niveles de estrógeno aumentan gradualmente, podrías notar un impulso constante en tu energía, estado de ánimo e incluso claridad de la piel. Al rastrear el inicio de esta fase en nuestro Calculador de Período, el algoritmo comienza a aprender el 'tempo' específico de la preparación de tu cuerpo."
+        "description": "La Fase Folicular comienza el primer día de tu período y dura hasta que ovulas. Durante este tiempo, tu cuerpo está ocupado madurando un óvulo para su liberación. A medida que tus niveles de estrógeno aumentan gradualmente, podrías notar un impulso constante en tu energía, estado de ánimo e incluso claridad de la piel. Al rastrear el inicio de esta fase en nuestra Calculadora de Periodo, el algoritmo comienza a aprender el 'tempo' específico de la preparación de tu cuerpo. La Calculadora de Periodo rastrea esta fase para proporcionar predicciones precisas."
       },
       "ovulation": {
         "title": "Ovulación: El Evento Principal",
-        "description": "La ovulación es la breve pero vital ventana, generalmente durando solo 12 a 24 horas, cuando se libera un óvulo del ovario. Esta es tu ventana de máxima fertilidad. Como factores como el estrés, viajes o el sueño pueden cambiar tu fecha de ovulación, depender de un simple promedio no siempre es suficiente. Nuestra herramienta analiza tus datos históricos para ayudarte a identificar esta ventana, ya sea que estés tratando de concebir o simplemente quieras estar en armonía con las señales de tu cuerpo."
+        "description": "La ovulación es la breve pero vital ventana, generalmente durando solo 12 a 24 horas, cuando se libera un óvulo del ovario. Esta es tu ventana de máxima fertilidad. Como factores como el estrés, viajes o el sueño pueden cambiar tu fecha de ovulación, depender de un simple promedio no siempre es suficiente. Nuestra Calculadora de Periodo analiza tus datos históricos para ayudarte a identificar esta ventana, ya sea que estés tratando de concebir o simplemente quieras estar en armonía con las señales de tu cuerpo."
       },
       "lutealPhase": {
         "title": "La Fase Luteal: La Cuenta Regresiva",
-        "description": "Después de la ovulación, entras en la Fase Luteal. Este es el período de 10 a 16 días donde la progesterona toma el protagonismo, espessando el revestimiento del útero. Si alguna vez te has preguntando por qué te sientes más sensible o hinchada una semana antes de tu período, esta fase es la razón. Un Calculador de Período constante te ayuda a predecir exactamente cuándo comienza esta fase, así nunca te pillarán desprevenida por el SPM o el inicio de tu próximo ciclo."
+        "description": "Después de la ovulación, entras en la Fase Luteal. Este es el período de 10 a 16 días donde la progesterona toma el protagonismo, espessando el revestimiento del útero. Si alguna vez te has preguntando por qué te sientes más sensible o hinchada una semana antes de tu período, esta fase es la razón. Una Calculadora de Periodo constante te ayuda a predecir exactamente cuándo comienza esta fase, así nunca te pillarán desprevenida por el SPM o el inicio de tu próximo ciclo."
       }
     }
   },
