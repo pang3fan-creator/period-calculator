@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { addDays, format } from "date-fns";
-import type { PredictionResult, CycleData } from "@/types";
+import type { PredictionResult } from "@/types";
 import type { Locale } from "@/i18n/config";
 import { PredictionCards } from "./prediction-cards";
 import { CalendarView } from "./calendar-view";
@@ -24,7 +24,6 @@ import {
 
 interface ResultsDisplayProps {
   result: PredictionResult;
-  cycleData: CycleData;
   locale: Locale;
   onReset: () => void;
 }
@@ -50,13 +49,9 @@ function formatDateForGoogleCalendar(date: Date): string {
  */
 export function ResultsDisplay({
   result,
-  cycleData,
   locale,
   onReset,
 }: ResultsDisplayProps) {
-  // cycleData is reserved for future features
-  void cycleData;
-
   const t = useTranslations("calculator.results");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);

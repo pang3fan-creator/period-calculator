@@ -126,7 +126,6 @@ export function PeriodCalculator() {
       {result ? (
         <ResultsDisplay
           result={result}
-          cycleData={cycleData!}
           locale={locale}
           onReset={handleReset}
         />
