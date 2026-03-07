@@ -25,31 +25,38 @@ export function Header() {
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
+    let ticking = false;
 
     function handleScroll() {
-      const currentScrollY = window.scrollY;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down and past threshold - hide
-        setIsHidden(true);
-      } else {
-        // Scrolling up - show
-        setIsHidden(false);
+          if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            // Scrolling down and past threshold - hide
+            setIsHidden(true);
+          } else {
+            // Scrolling up - show
+            setIsHidden(false);
+          }
+
+          // Clear existing timeout when scrolling
+          if (hideTimeoutRef.current) {
+            clearTimeout(hideTimeoutRef.current);
+          }
+
+          // Set timeout to hide navbar after 2 seconds of no scrolling
+          hideTimeoutRef.current = setTimeout(() => {
+            if (window.scrollY > 100) {
+              setIsHidden(true);
+            }
+          }, 2000);
+
+          lastScrollY = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
       }
-
-      // Clear existing timeout when scrolling
-      if (hideTimeoutRef.current) {
-        clearTimeout(hideTimeoutRef.current);
-      }
-
-      // Set timeout to hide navbar after 2 seconds of no scrolling
-      hideTimeoutRef.current = setTimeout(() => {
-        if (window.scrollY > 100) {
-          setIsHidden(true);
-        }
-      }, 2000);
-
-      lastScrollY = currentScrollY;
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true });
