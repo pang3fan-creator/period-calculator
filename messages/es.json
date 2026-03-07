@@ -346,19 +346,19 @@
   },
   "deepKnowledge": {
     "title": "Entiende Tu Ritmo Mensual",
-    "description": "Most people think of their cycle as just the days they are bleeding, but your body is actually moving through a sophisticated, three-part biological journey every month. Understanding these shifts is exactly why a precise Period Calculator is about more than just 'day one'—it's about mapping your unique hormonal landscape.",
+    "description": "La mayoría de las personas piensan que su ciclo son solo los días de sangrado, pero tu cuerpo realmente está atravesando un sofisticado viaje biológico de tres partes cada mes. Entender estos cambios es exactamente por qué un Calculador de Período preciso se trata de más que solo del 'primer día': se trata de mapear tu único paisaje hormonal.",
     "topics": {
       "follicularPhase": {
-        "title": "The Follicular Phase: The Buildup",
-        "description": "The Follicular Phase begins on the very first day of your period and lasts until you ovulate. During this time, your body is busy maturing an egg for release. As your estrogen levels gradually climb, you might notice a steady boost in your energy, mood, and even skin clarity. By tracking the start of this phase in our Period Calculator, the algorithm begins to learn the specific 'tempo' of your body's preparation."
+        "title": "La Fase Folicular: La Construcción",
+        "description": "La Fase Folicular comienza el primer día de tu período y dura hasta que ovulas. Durante este tiempo, tu cuerpo está ocupado madurando un óvulo para su liberación. A medida que tus niveles de estrógeno aumentan gradualmente, podrías notar un impulso constante en tu energía, estado de ánimo e incluso claridad de la piel. Al rastrear el inicio de esta fase en nuestro Calculador de Período, el algoritmo comienza a aprender el 'tempo' específico de la preparación de tu cuerpo."
       },
       "ovulation": {
-        "title": "Ovulation: The Main Event",
-        "description": "Ovulation is the brief but vital window—usually lasting only 12 to 24 hours—when an egg is released from the ovary. This is your peak fertility window. Because factors like stress, travel, or sleep can shift your ovulation date, relying on a simple average isn't always enough. Our tool analyzes your historical data to help you pinpoint this window, whether you are trying to conceive or simply want to stay in tune with your body's signals."
+        "title": "Ovulación: El Evento Principal",
+        "description": "La ovulación es la breve pero vital ventana, generalmente durando solo 12 a 24 horas, cuando se libera un óvulo del ovario. Esta es tu ventana de máxima fertilidad. Como factores como el estrés, viajes o el sueño pueden cambiar tu fecha de ovulación, depender de un simple promedio no siempre es suficiente. Nuestra herramienta analiza tus datos históricos para ayudarte a identificar esta ventana, ya sea que estés tratando de concebir o simplemente quieras estar en armonía con las señales de tu cuerpo."
       },
       "lutealPhase": {
-        "title": "The Luteal Phase: The Countdown",
-        "description": "After ovulation, you enter the Luteal Phase. This is the 10-to-16-day stretch where progesterone takes center stage, thickening the uterine lining. If you've ever wondered why you feel more sensitive or bloated a week before your period, this phase is the reason. A consistent Period Calculator helps you predict exactly when this phase begins, so you're never caught off guard by PMS or the start of your next cycle."
+        "title": "La Fase Luteal: La Cuenta Regresiva",
+        "description": "Después de la ovulación, entras en la Fase Luteal. Este es el período de 10 a 16 días donde la progesterona toma el protagonismo, espessando el revestimiento del útero. Si alguna vez te has preguntando por qué te sientes más sensible o hinchada una semana antes de tu período, esta fase es la razón. Un Calculador de Período constante te ayuda a predecir exactamente cuándo comienza esta fase, así nunca te pillarán desprevenida por el SPM o el inicio de tu próximo ciclo."
       }
     }
   },

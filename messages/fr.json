@@ -347,19 +347,19 @@
   },
   "deepKnowledge": {
     "title": "Comprenez Votre Rythme Mensuel",
-    "description": "Most people think of their cycle as just the days they are bleeding, but your body is actually moving through a sophisticated, three-part biological journey every month. Understanding these shifts is exactly why a precise Period Calculator is about more than just 'day one'—it's about mapping your unique hormonal landscape.",
+    "description": "La plupart des gens pensent que leur cycle n'est que les jours de saignement, mais votre corps traverse en réalité un voyage biologique sophistiqué en trois parties chaque mois. Comprendre ces changements est exactement pourquoi un Calculateur de Période précis ne concerne pas seulement le 'premier jour' : il s'agit de cartographier votre paysage hormonal unique.",
     "topics": {
       "follicularPhase": {
-        "title": "The Follicular Phase: The Buildup",
-        "description": "The Follicular Phase begins on the very first day of your period and lasts until you ovulate. During this time, your body is busy maturing an egg for release. As your estrogen levels gradually climb, you might notice a steady boost in your energy, mood, and even skin clarity. By tracking the start of this phase in our Period Calculator, the algorithm begins to learn the specific 'tempo' of your body's preparation."
+        "title": "La Phase Folliculaire : La Construction",
+        "description": "La Phase Folliculaire commence le premier jour de vos règles et dure jusqu'à l'ovulation. Pendant ce temps, votre corps est occupé à mûrir un ovule pour sa libération. À mesure que vos niveaux d'œstrogènes augmentent progressivement, vous pourriez remarquer un boost constant dans votre énergie, votre humeur et même la clarté de votre peau. En suivant le début de cette phase dans notre Calculateur de Période, l'algorithm commence à apprendre le 'tempo' spécifique de la préparation de votre corps."
       },
       "ovulation": {
-        "title": "Ovulation: The Main Event",
-        "description": "Ovulation is the brief but vital window—usually lasting only 12 to 24 hours—when an egg is released from the ovary. This is your peak fertility window. Because factors like stress, travel, or sleep can shift your ovulation date, relying on a simple average isn't always enough. Our tool analyzes your historical data to help you pinpoint this window, whether you are trying to conceive or simply want to stay in tune with your body's signals."
+        "title": "Ovulation : L'Événement Principal",
+        "description": "L'ovulation est la brève mais vitale fenêtre, durant généralement seulement 12 à 24 heures, lorsqu'un ovule est libéré de l'ovaire. C'est votre fenêtre de fertilité maximale. Parce que des facteurs comme le stress, les voyages ou le sommeil peuvent décaler votre date d'ovulation, compter sur une simple moyenne n'est pas toujours suffisant. Notre outil analyse vos données historiques pour vous aider à identifier cette fenêtre, que vous cherchiez à concevoir ou simplement voulez rester en harmonie avec les signaux de votre corps."
       },
       "lutealPhase": {
-        "title": "The Luteal Phase: The Countdown",
-        "description": "After ovulation, you enter the Luteal Phase. This is the 10-to-16-day stretch where progesterone takes center stage, thickening the uterine lining. If you've ever wondered why you feel more sensitive or bloated a week before your period, this phase is the reason. A consistent Period Calculator helps you predict exactly when this phase begins, so you're never caught off guard by PMS or the start of your next cycle."
+        "title": "La Phase Lutéale : Le Compte à Rebours",
+        "description": "Après l'ovulation, vous entrez dans la Phase Lutéale. C'est la période de 10 à 16 jours où la progestérone prend le devant de la scène, épaississant la paroi utérine. Si vous vous êtes déjà demandé pourquoi vous vous sentez plus sensible ou ballonnée une semaine avant vos règles, cette phase en est la raison. Un Calculateur de Période régulier vous aide à prédire exactement quand cette phase commence, ainsi vous ne serez jamais prise au dépourvu par le SPM ou le début de votre prochain cycle."
       }
     }
   },
