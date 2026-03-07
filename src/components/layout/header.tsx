@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { Locale } from "@/i18n/config";
+import { SunIcon, MoonIcon, ChevronDownIcon, CheckIcon } from "@/components/icons";
 
 const languages: { code: Locale; label: string }[] = [
   { code: "en", label: "English" },

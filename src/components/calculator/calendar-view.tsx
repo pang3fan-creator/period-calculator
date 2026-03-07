@@ -17,6 +17,7 @@ import { enUS, es, fr } from "date-fns/locale";
 import type { PredictionResult } from "@/types";
 import type { Locale } from "@/i18n/config";
 import { getDatePeriodType } from "@/lib/calculator/cycle-calculator";
+import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
 
 // Locale mapping for date-fns
 const DATE_FNS_LOCALE_MAP: Record<Locale, DateFnsLocale> = {
@@ -39,43 +40,6 @@ interface CalendarViewProps {
   prediction: PredictionResult;
   locale: Locale;
 }
-
-// SVG icons for navigation
-const ChevronLeftIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="h-5 w-5"
-    aria-hidden="true"
-  >
-    <path d="m15 18-6-6 6-6" />
-  </svg>
-);
-
-const ChevronRightIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="h-5 w-5"
-    aria-hidden="true"
-  >
-    <path d="m9 18 6-6-6-6" />
-  </svg>
-);
 
 /**
  * Get calendar styling class names based on period type
@@ -200,7 +164,7 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
             aria-label={t("previousMonth")}
             className="rounded-xl p-3 text-gray-600 transition-colors hover:text-gray-900 focus:ring-2 focus:ring-gray-300 focus:outline-none dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-gray-600"
           >
-            <ChevronLeftIcon />
+            <ChevronLeftIcon className="h-5 w-5" />
           </button>
 
           <span className="min-w-[140px] text-center text-lg font-semibold text-gray-800 dark:text-gray-100">
@@ -213,7 +177,7 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
             aria-label={t("nextMonth")}
             className="rounded-xl p-3 text-gray-600 transition-colors hover:text-gray-900 focus:ring-2 focus:ring-gray-300 focus:outline-none dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-gray-600"
           >
-            <ChevronRightIcon />
+            <ChevronRightIcon className="h-5 w-5" />
           </button>
         </div>
       </div>
