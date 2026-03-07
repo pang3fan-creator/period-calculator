@@ -20,6 +20,9 @@ export function Header() {
   const pathname = usePathname();
 
   // Scroll-based hide/show
+  // Performance: Using requestAnimationFrame for scroll throttling
+  // This ensures the scroll handler runs at most once per frame (≈60fps)
+  // which is equivalent to using throttle with ~16ms delay
   const [isHidden, setIsHidden] = useState(false);
   const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 

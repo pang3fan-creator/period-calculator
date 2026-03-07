@@ -394,5 +394,10 @@
         "answer": "Comme la plupart des personnes ne connaissent pas le moment exact de la conception, les professionnels de santé utilisent la date des dernières règles, ou LMP en anglais, comme point de départ clair et objectif, selon ACOG et NHS. Puisque l'ovulation survient généralement environ deux semaines après le début des règles, cela signifie que pendant les deux premières semaines d'une « grossesse de 40 semaines », vous n'êtes en réalité pas encore enceinte. Cette norme aide les médecins à estimer plus précisément la date d'accouchement et à suivre les étapes du développement fœtal. Source : Bulletin de Pratique ACOG."
       }
     }
+  },
+  "errorBoundary": {
+    "title": "Une erreur s'est produite",
+    "message": "Une erreur inattendue s'est produite. Veuillez réessayer.",
+    "tryAgain": "Réessayer"
   }
 }

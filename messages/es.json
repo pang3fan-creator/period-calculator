@@ -393,5 +393,10 @@
         "answer": "Como la mayoría de las personas no conoce el momento exacto de la concepción, los profesionales de la salud usan la Fecha de la Última Menstruación, o LMP por sus siglas en inglés, como un punto de partida claro y objetivo, según ACOG y NHS. Dado que la ovulación suele producirse unas dos semanas después de que empieza el periodo, eso significa que durante las dos primeras semanas de un \"embarazo de 40 semanas\" en realidad todavía no hay embarazo. Este estándar ayuda a los médicos a estimar con más precisión la fecha probable de parto y el desarrollo fetal. Fuente: Boletín de Práctica ACOG."
       }
     }
+  },
+  "errorBoundary": {
+    "title": "Algo salió mal",
+    "message": "Se produjo un error inesperado. Por favor, inténtalo de nuevo.",
+    "tryAgain": "Intentar de nuevo"
   }
 }

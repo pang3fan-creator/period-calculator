@@ -394,5 +394,10 @@
         "answer": "Because most people don't know the exact moment of conception, medical professionals use the Last Menstrual Period (LMP) as a clear, objective starting point, as recommended by ACOG and NHS. Since ovulation usually happens about two weeks after your period starts, this means that during the first two weeks of a \"40-week pregnancy,\" you are not actually pregnant yet. This standard helps doctors more accurately estimate your due date and track fetal development milestones. Source: ACOG Practice Bulletin."
       }
     }
+  },
+  "errorBoundary": {
+    "title": "Something went wrong",
+    "message": "An unexpected error occurred. Please try again.",
+    "tryAgain": "Try Again"
   }
 }
