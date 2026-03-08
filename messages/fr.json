@@ -345,6 +345,29 @@
       }
     }
   },
+  "irregularHowToCalculate": {
+    "title": "Comment Utiliser le Calculateur de Règles Irrégulières",
+    "description": "Apprenez à utiliser notre Calculateur de Règles Irrégulières pour suivre les cycles irréguliers et obtenir des prédictions précises basées sur vos données historiques.",
+
+    "steps": {
+      "step1": {
+        "title": "Entrez Votre Historique de Cycles",
+        "description": "Entrez les dates de début de vos 3-6 derniers cycles menstruels. Plus vous fournissez d'historique, plus vos prédictions seront précises."
+      },
+      "step2": {
+        "title": "Définissez la Durée de Vos Règles",
+        "description": "Entrez la durée habituelle de vos règles (généralement 3-7 jours). Cela aide à calculer les dates exactes de votre prochaine période."
+      },
+      "step3": {
+        "title": "Voir Votre Fenêtre de Prédiction",
+        "description": "Voyez votre fenêtre prédite avec les dates les plus tôt, les plus probables et les plus tardives. La visualisation montre la plage des dates de début possibles."
+      },
+      "step4": {
+        "title": "Vérifiez Votre Niveau de Confiance",
+        "description": "Vérifiez votre niveau de confiance de prédiction basé sur la régularité de vos cycles. Une confiance élevée signifie que vos cycles sont réguliers."
+      }
+    }
+  },
   "deepKnowledge": {
     "title": "Comprenez Votre Rythme Mensuel",
     "description": "La plupart des gens pensent que leur cycle n'est que les jours de saignement, mais votre corps traverse en réalité un voyage biologique sophistiqué en trois parties chaque mois. Comprendre ces changements est exactement pourquoi un Calculateur de Période précis ne concerne pas seulement le 'premier jour' : il s'agit de cartographier votre paysage hormonal unique. Notre Calculateur de Règles vous aide à suivre chaque phase de votre cycle menstruel avec précision.",

@@ -345,6 +345,29 @@
       }
     }
   },
+  "irregularHowToCalculate": {
+    "title": "How to Use the Irregular Period Calculator",
+    "description": "Learn how to use our Irregular Period Calculator to track uneven cycles and get accurate predictions based on your historical data.",
+
+    "steps": {
+      "step1": {
+        "title": "Enter Your Cycle History",
+        "description": "Input the start dates of your last 3-6 menstrual cycles. The more history you provide, the more accurate your predictions will be."
+      },
+      "step2": {
+        "title": "Set Your Period Length",
+        "description": "Enter how many days your period typically lasts (usually 3-7 days). This helps calculate the exact dates of your next period."
+      },
+      "step3": {
+        "title": "View Your Prediction Window",
+        "description": "See your predicted window with earliest, most likely, and latest dates. The visualization shows the range of possible start dates."
+      },
+      "step4": {
+        "title": "Check Your Confidence Level",
+        "description": "Review your prediction confidence level based on cycle consistency. High confidence means your cycles are regular."
+      }
+    }
+  },
   "deepKnowledge": {
     "title": "Understanding Your Monthly Rhythm",
     "description": "Most people think of their cycle as just the days they are bleeding, but your body is actually moving through a sophisticated, three-part biological journey every month. Understanding these shifts is exactly why a precise Period Calculator is about more than just 'day one'—it's about mapping your unique hormonal landscape. Our Period Calculator helps you track every phase of your menstrual cycle with precision.",

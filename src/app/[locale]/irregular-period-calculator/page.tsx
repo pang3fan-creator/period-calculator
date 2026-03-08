@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
 import { IrregularPeriodCalculator } from "@/components/calculator/irregular-period-calculator";
-import { HowToCalculate } from "@/components/home/how-to-calculate";
+import { IrregularHowToCalculate } from "@/components/calculator/irregular-how-to-calculate";
 import { DeepKnowledge } from "@/components/home/deep-knowledge";
 import { FAQ } from "@/components/home/faq";
 
@@ -196,7 +196,7 @@ export default function IrregularPeriodCalculatorPage() {
 
         {/* How to Calculate */}
         <div className="mt-24 w-full max-w-4xl">
-          <HowToCalculate />
+          <IrregularHowToCalculate />
         </div>
 
         {/* Deep Knowledge */}

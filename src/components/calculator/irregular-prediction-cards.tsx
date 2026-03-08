@@ -158,7 +158,7 @@ function getConfidenceColor(
   bg: string;
   border: string;
   text: string;
-  fill: string;
+  progress: string;
 } {
   switch (level) {
     case "high":
@@ -166,21 +166,21 @@ function getConfidenceColor(
         bg: "bg-green-50 dark:bg-green-950/30",
         border: "border-green-300 dark:border-green-700/50",
         text: "text-green-700 dark:text-green-400",
-        fill: "fill-green-500",
+        progress: "bg-green-500",
       };
     case "medium":
       return {
         bg: "bg-yellow-50 dark:bg-yellow-950/30",
         border: "border-yellow-300 dark:border-yellow-700/50",
         text: "text-yellow-700 dark:text-yellow-400",
-        fill: "fill-yellow-500",
+        progress: "bg-yellow-500",
       };
     case "low":
       return {
         bg: "bg-red-50 dark:bg-red-950/30",
         border: "border-red-300 dark:border-red-700/50",
         text: "text-red-700 dark:text-red-400",
-        fill: "fill-red-500",
+        progress: "bg-red-500",
       };
   }
 }
@@ -241,6 +241,21 @@ export function IrregularPredictionCards({
     predictedWindow.latest,
     predictedWindow.earliest,
   );
+  // 计算中心范围区域的宽度（根据 stdDev 动态调整）
+  const maxWindowDays = 14; // 最大窗口天数
+  const rangeWidth = Math.min((windowDays / maxWindowDays) * 100, 100);
+  const rangeLeft = (100 - rangeWidth) / 2;
+
+  // 格式化日期标注
+  const earliestLabel = format(predictedWindow.earliest, "MMM dd", {
+    locale: dateFnsLocale,
+  });
+  const mostLikelyLabel = format(predictedWindow.mostLikely, "MMM dd", {
+    locale: dateFnsLocale,
+  });
+  const latestLabel = format(predictedWindow.latest, "MMM dd", {
+    locale: dateFnsLocale,
+  });
 
   return (
     <div className="space-y-4">
@@ -260,7 +275,7 @@ export function IrregularPredictionCards({
             <div className="mb-1">
               <div className="flex h-2 w-full overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
                 <div
-                  className={`${confidenceColors.fill} transition-all duration-500`}
+                  className={`${confidenceColors.progress} transition-all duration-500`}
                   style={{ width: `${confidencePercentage}%` }}
                 />
               </div>
@@ -308,18 +323,31 @@ export function IrregularPredictionCards({
 
         {/* Window visualization */}
         <div className="mb-4">
-          <div className="relative mb-2 h-4 rounded-full bg-gray-200 dark:bg-gray-700">
+          {/* Date labels above markers */}
+          <div className="mb-1 flex justify-between text-xs font-medium">
+            <span className="text-red-500">{earliestLabel}</span>
+            <span className="text-primary-600 dark:text-primary-400">{mostLikelyLabel}</span>
+            <span className="text-blue-500">{latestLabel}</span>
+          </div>
+          {/* Visual bar with markers */}
+          <div className="relative h-4 rounded-full bg-gray-200 dark:bg-gray-700">
+            {/* Center range area - width based on stdDev */}
+            <div
+              className="absolute top-1/2 h-3 -translate-y-1/2 rounded-full bg-primary-300 dark:bg-primary-600 opacity-60"
+              style={{
+                left: `${rangeLeft}%`,
+                width: `${rangeWidth}%`,
+              }}
+            />
             {/* Earliest marker */}
             <div className="absolute top-1/2 left-0 h-3 w-3 -translate-y-1/2 rounded-full bg-red-400" />
             {/* Most likely marker */}
-            <div
-              className="bg-primary-500 absolute top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white dark:border-gray-800"
-              style={{ left: "50%" }}
-            />
+            <div className="bg-primary-500 absolute top-1/2 left-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white dark:border-gray-800" />
             {/* Latest marker */}
             <div className="absolute top-1/2 right-0 h-3 w-3 -translate-y-1/2 rounded-full bg-blue-400" />
           </div>
-          <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400">
+          {/* Labels below markers */}
+          <div className="mt-1 flex justify-between text-xs text-gray-500 dark:text-gray-400">
             <span>{t("earliest")}</span>
             <span>{t("mostLikely")}</span>
             <span>{t("latest")}</span>

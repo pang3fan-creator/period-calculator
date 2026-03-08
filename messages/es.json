@@ -344,6 +344,29 @@
       }
     }
   },
+  "irregularHowToCalculate": {
+    "title": "Cómo Usar la Calculadora de Períodos Irregulares",
+    "description": "Aprende a usar nuestra Calculadora de Períodos Irregulares para seguir ciclos irregulares y obtener predicciones precisas basadas en tus datos históricos.",
+
+    "steps": {
+      "step1": {
+        "title": "Ingresa tu Historial de Ciclos",
+        "description": "Ingresa las fechas de inicio de tus últimos 3-6 ciclos menstruales. Cuanto más historial proporciones, más precisas serán tus predicciones."
+      },
+      "step2": {
+        "title": "Establece la Duración de tu Período",
+        "description": "Ingresa cuántos días dura tu período típicamente (generalmente 3-7 días). Esto ayuda a calcular las fechas exactas de tu próximo período."
+      },
+      "step3": {
+        "title": "Ver tu Ventana de Predicción",
+        "description": "Ver tu ventana predicha con fechas más tempranas, más probables y más tardías. La visualización muestra el rango de posibles fechas de inicio."
+      },
+      "step4": {
+        "title": "Revisa tu Nivel de Confianza",
+        "description": "Revisa tu nivel de confianza de predicción basado en la consistencia de tus ciclos. Alta confianza significa que tus ciclos son regulares."
+      }
+    }
+  },
   "deepKnowledge": {
     "title": "Entiende Tu Ritmo Mensual",
     "description": "La mayoría de las personas piensan que su ciclo son solo los días de sangrado, pero tu cuerpo realmente está atravesando un sofisticado viaje biológico de tres partes cada mes. Entender estos cambios es exactamente por qué un Calculador de Período preciso se trata de más que solo del 'primer día': se trata de mapear tu único paisaje hormonal. Nuestra Calculadora de Periodo te ayuda a seguir cada fase de tu ciclo menstrual con precisión.",
