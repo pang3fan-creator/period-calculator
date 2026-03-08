@@ -10,7 +10,6 @@ export const config = {
     "/privacy-policy",
     "/editorial-policy",
     "/irregular-period-calculator",
-    "/ovulation-calculator",
     "/about",
   ],
 };

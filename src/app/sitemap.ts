@@ -23,11 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changefreq: "monthly" as const,
     },
     {
-      path: "/ovulation-calculator",
-      priority: 0.8,
-      changefreq: "monthly" as const,
-    },
-    {
       path: "/privacy-policy",
       priority: 0.5,
       changefreq: "monthly" as const,
