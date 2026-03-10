@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
 import { IrregularPeriodCalculator } from "@/components/calculator/irregular-period-calculator";
 import { IrregularHowToCalculate } from "@/components/calculator/irregular-how-to-calculate";
-import { FAQ } from "@/components/home/faq";
+import { IrregularFAQ } from "@/components/calculator/irregular-faq";
 import { IrregularDeepKnowledge } from "@/components/calculator/irregular-deep-knowledge";
 import { getTranslations } from "next-intl/server";
 
@@ -208,7 +208,7 @@ export default async function IrregularPeriodCalculatorPage() {
 
         {/* FAQ */}
         <div className="mt-24 w-full max-w-4xl">
-          <FAQ />
+          <IrregularFAQ />
         </div>
       </main>
     </>
