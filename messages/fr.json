@@ -28,6 +28,17 @@
     "lightMode": "Mode Clair",
     "language": "Langue"
   },
+  "privacyPopup": {
+    "buttonLabel": "Confidentialité",
+    "buttonAriaLabel": "En savoir plus sur la confidentialité",
+    "title": "Votre Confidentialité est Protégée",
+    "description": "Vos données restent 100% sur votre appareil. Nous n'envoyons jamais de données vers des serveurs.",
+    "step1": "Entrée",
+    "step2": "Navigateur",
+    "step3": "Résultat",
+    "note": "Les données ne quittent jamais votre appareil",
+    "closeButton": "Fermer"
+  },
   "nav": {
     "home": "Calculatrice de Périodes",
     "irregularCalculator": "Calculateur de Règles Irrégulières",
@@ -111,7 +122,7 @@
     "minPeriodsRequired": "Au moins {min} périodes requises pour un calcul précis",
     "periodLengthLabel": "Durée des Règles",
     "periodLengthUnit": "jours",
-    "calculateButton": "Calculer Mon Cycle",
+    "calculateButton": "Calculer Mes Règles",
     "resetButton": "Recommencer",
     "averageCycle": "Cycle Moyen",
     "standardDeviation": "Écart-type",
@@ -155,7 +166,7 @@
       "periodLengthLabel": "Durée des règles",
       "periodLengthHelp": "Combien de temps durent vos règles?",
       "periodLengthUnit": "jours",
-      "calculateButton": "Calculer Mon Cycle",
+      "calculateButton": "Calculer Mes Règles",
       "resetButton": "Réinitialiser"
     },
     "predictions": {
@@ -371,7 +382,7 @@
     }
   },
   "deepKnowledge": {
-    "title": "Comprenez Votre Rythme Mensuel",
+    "title": "Au-delà des Dates: Comprenez Vos Règles Mensuelles",
     "description": "La plupart des gens pensent que leur cycle n'est que les jours de saignement, mais votre corps traverse en réalité un voyage biologique sophistiqué en trois parties chaque mois. Comprendre ces changements est exactement pourquoi un Calculateur de Période précis ne concerne pas seulement le 'premier jour' : il s'agit de cartographier votre paysage hormonal unique. Notre Calculateur de Règles vous aide à suivre chaque phase de votre cycle menstruel avec précision.",
     "topics": {
       "follicularPhase": {
@@ -415,7 +426,7 @@
     }
   },
   "faq": {
-    "title": "Questions Fréquemment Posées",
+    "title": "FAQ sur les Règles: Réponses d'Experts",
     "description": "Des réponses claires sur le timing des règles, le flux, la fertilité et le calcul de la grossesse.",
     "expandLabel": "Développer {question}",
     "collapseLabel": "Réduire {question}",
@@ -447,7 +458,7 @@
     }
   },
   "irregularFaq": {
-    "title": "Questions Fréquemment Posées",
+    "title": "FAQ sur les Règles Irrégulières: Réponses d'Experts",
     "expandLabel": "Développer {question}",
     "collapseLabel": "Réduire {question}",
     "items": {

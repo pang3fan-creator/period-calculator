@@ -28,6 +28,17 @@
     "lightMode": "Modo Claro",
     "language": "Idioma"
   },
+  "privacyPopup": {
+    "buttonLabel": "Privacidad",
+    "buttonAriaLabel": "Más información sobre privacidad",
+    "title": "Tu Privacidad está Protegida",
+    "description": "Tus datos permanecen 100% en tu dispositivo. Nunca enviamos datos a servidores.",
+    "step1": "Entrada",
+    "step2": "Navegador",
+    "step3": "Resultado",
+    "note": "Los datos nunca salen de tu dispositivo",
+    "closeButton": "Cerrar"
+  },
   "nav": {
     "home": "Calculadora de Períodos",
     "irregularCalculator": "Calculadora de Periodo Irregular",
@@ -111,7 +122,7 @@
     "minPeriodsRequired": "Se requieren al menos {min} periodos para un cálculo preciso",
     "periodLengthLabel": "Duración del Periodo",
     "periodLengthUnit": "días",
-    "calculateButton": "Calcular Mi Ciclo",
+    "calculateButton": "Calcular Mi Periodo",
     "resetButton": "Comenzar de Nuevo",
     "averageCycle": "Ciclo Promedio",
     "standardDeviation": "Desv. Est.",
@@ -155,7 +166,7 @@
       "periodLengthLabel": "Duración del periodo",
       "periodLengthHelp": "¿Cuánto dura tu periodo?",
       "periodLengthUnit": "días",
-      "calculateButton": "Calcular Mi Ciclo",
+      "calculateButton": "Calcular Mi Periodo",
       "resetButton": "Restablecer"
     },
     "predictions": {
@@ -370,7 +381,7 @@
     }
   },
   "deepKnowledge": {
-    "title": "Entiende Tu Ritmo Mensual",
+    "title": "Más Allá de las Fechas: Entendiendo Tu Periodo Mensual",
     "description": "La mayoría de las personas piensan que su ciclo son solo los días de sangrado, pero tu cuerpo realmente está atravesando un sofisticado viaje biológico de tres partes cada mes. Entender estos cambios es exactamente por qué un Calculador de Período preciso se trata de más que solo del 'primer día': se trata de mapear tu único paisaje hormonal. Nuestra Calculadora de Periodo te ayuda a seguir cada fase de tu ciclo menstrual con precisión.",
     "topics": {
       "follicularPhase": {
@@ -414,7 +425,7 @@
     }
   },
   "faq": {
-    "title": "Preguntas Frecuentes",
+    "title": "Preguntas Frecuentes sobre el Periodo: Respuestas de Expertos",
     "description": "Respuestas claras sobre el momento del periodo, el flujo, la fertilidad y el cálculo del embarazo.",
     "expandLabel": "Expandir {question}",
     "collapseLabel": "Contraer {question}",
@@ -446,7 +457,7 @@
     }
   },
   "irregularFaq": {
-    "title": "Preguntas Frecuentes",
+    "title": "Preguntas Frecuentes sobre Periodos Irregulares: Respuestas de Expertos",
     "expandLabel": "Expandir {question}",
     "collapseLabel": "Contraer {question}",
     "items": {

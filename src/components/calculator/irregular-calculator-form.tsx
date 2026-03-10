@@ -9,6 +9,7 @@ import {
   MAX_PERIOD_LENGTH,
 } from "@/lib/constants";
 import { IrregularCycleData } from "@/types";
+import { PrivacyPopup } from "./privacy-popup";
 
 const MIN_CYCLES = 3;
 const MAX_CYCLES = 6;
@@ -314,13 +315,16 @@ export function IrregularCalculatorForm({
           {t("calculateButton")}
         </button>
         {onReset && (
-          <button
-            type="button"
-            onClick={handleReset}
-            className="border-primary-200 hover:border-primary-300 hover:bg-primary-50 dark:hover:bg-dark-card focus:ring-primary-100 dark:focus:ring-primary-900/30 min-h-[48px] rounded-2xl border-2 px-6 py-3 text-lg font-semibold text-gray-700 transition-all focus:ring-4 focus:outline-none dark:text-gray-300"
-          >
-            {t("resetButton")}
-          </button>
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={handleReset}
+              className="border-primary-200 hover:border-primary-300 hover:bg-primary-50 dark:hover:bg-dark-card focus:ring-primary-100 dark:focus:ring-primary-900/30 min-h-[48px] rounded-2xl border-2 px-6 py-3 text-lg font-semibold text-gray-700 transition-all focus:ring-4 focus:outline-none dark:text-gray-300"
+            >
+              {t("resetButton")}
+            </button>
+            <PrivacyPopup />
+          </div>
         )}
       </div>
     </form>
