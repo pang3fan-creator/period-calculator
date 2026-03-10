@@ -2,8 +2,9 @@ import { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
 import { IrregularPeriodCalculator } from "@/components/calculator/irregular-period-calculator";
 import { IrregularHowToCalculate } from "@/components/calculator/irregular-how-to-calculate";
-import { DeepKnowledge } from "@/components/home/deep-knowledge";
 import { FAQ } from "@/components/home/faq";
+import { IrregularDeepKnowledge } from "@/components/calculator/irregular-deep-knowledge";
+import { getTranslations } from "next-intl/server";
 
 const baseUrl = "https://www.aiperiodcalculator.com";
 const locales = ["en", "es", "fr"];
@@ -19,15 +20,14 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations("irregularCalculator");
 
   return {
-    title: "Irregular Period Calculator - Track Uneven Cycles",
-    description:
-      "Calculate your period even with irregular cycles. Our algorithm uses historical data to provide accurate predictions. 100% private.",
+    title: t("metaTitle"),
+    description: t("metaDescription"),
     openGraph: {
-      title: "Irregular Period Calculator - Track Uneven Cycles",
-      description:
-        "Calculate your period even with irregular cycles. Our algorithm uses historical data to provide accurate predictions. 100% private.",
+      title: t("metaTitle"),
+      description: t("metaDescription"),
       url: `${baseUrl}/${locale === "en" ? "" : locale}/irregular-period-calculator`,
       siteName: "Period Calculator",
       locale: localeNames[locale],
@@ -63,7 +63,9 @@ export async function generateMetadata({
   };
 }
 
-export default function IrregularPeriodCalculatorPage() {
+export default async function IrregularPeriodCalculatorPage() {
+  const t = await getTranslations("irregularCalculator");
+
   // JSON-LD Schema for WebApplication (Irregular Period Calculator)
   const webApplicationSchema = {
     "@context": "https://schema.org",
@@ -185,10 +187,10 @@ export default function IrregularPeriodCalculatorPage() {
       <JsonLd data={organizationSchema} />
       <main className="flex flex-col items-center px-4 py-16">
         <h1 className="text-primary-400 text-center text-3xl font-bold md:text-4xl">
-          Irregular Period Calculator
+          {t("title")}
         </h1>
         <p className="mt-4 max-w-2xl text-center text-lg text-gray-600 dark:text-gray-300">
-          Get accurate predictions even with irregular cycles. Our algorithm uses your cycle history to provide a personalized prediction window.
+          {t("subtitle")}
         </p>
         <div className="mt-12 w-full max-w-2xl">
           <IrregularPeriodCalculator />
@@ -201,7 +203,7 @@ export default function IrregularPeriodCalculatorPage() {
 
         {/* Deep Knowledge */}
         <div className="mt-24 w-full max-w-4xl">
-          <DeepKnowledge />
+          <IrregularDeepKnowledge />
         </div>
 
         {/* FAQ */}
