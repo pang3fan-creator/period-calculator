@@ -170,7 +170,7 @@ export function IrregularCalculatorForm({
         <div className="space-y-3">
           {historicalDates.map((date, index) => (
             <div
-              key={date || `empty-${index}`}
+              key={`period-date-${index}`}
               className="flex items-center gap-3"
             >
               <div className="flex-1">
