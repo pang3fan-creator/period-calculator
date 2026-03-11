@@ -4,6 +4,7 @@ import { OvulationPeriodCalculator } from "@/components/calculator/ovulation-per
 import { HowToCalculate } from "@/components/home/how-to-calculate";
 import { DeepKnowledge } from "@/components/home/deep-knowledge";
 import { FAQ } from "@/components/home/faq";
+import { Breadcrumb } from "@/components/layout/breadcrumb";
 
 const baseUrl = "https://www.aiperiodcalculator.com";
 const locales = ["en", "es", "fr"];
@@ -191,6 +192,9 @@ export default function OvulationCalculatorPage() {
       <JsonLd data={howToSchema} />
       <JsonLd data={organizationSchema} />
       <main className="flex flex-col items-center px-4 py-16">
+        <div className="w-full max-w-4xl">
+          <Breadcrumb />
+        </div>
         <h1 className="text-primary-400 text-center text-3xl font-bold md:text-4xl">
           Ovulation Calculator
         </h1>

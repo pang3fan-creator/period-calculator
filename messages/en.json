@@ -46,7 +46,11 @@
     "blog": "Blog",
     "privacyPolicy": "Privacy Policy",
     "editorialPolicy": "Editorial Policy",
-    "about": "About"
+    "about": "About",
+    "comparison": "Period Calculator vs Flo vs Clue"
+  },
+  "breadcrumb": {
+    "ariaLabel": "Breadcrumb"
   },
   "header": {
     "appName": "Period Calculator",

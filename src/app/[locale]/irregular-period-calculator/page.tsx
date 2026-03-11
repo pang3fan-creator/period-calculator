@@ -4,6 +4,7 @@ import { IrregularPeriodCalculator } from "@/components/calculator/irregular-per
 import { IrregularHowToCalculate } from "@/components/calculator/irregular-how-to-calculate";
 import { IrregularFAQ } from "@/components/calculator/irregular-faq";
 import { IrregularDeepKnowledge } from "@/components/calculator/irregular-deep-knowledge";
+import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 
@@ -214,6 +215,9 @@ export default async function IrregularPeriodCalculatorPage({
       <JsonLd data={howToSchema} />
       <JsonLd data={organizationSchema} />
       <main className="flex flex-col items-center px-4 py-16">
+        <div className="w-full max-w-4xl">
+          <Breadcrumb />
+        </div>
         <h1 className="text-primary-400 text-center text-3xl font-bold md:text-4xl">
           {t("title")}
         </h1>

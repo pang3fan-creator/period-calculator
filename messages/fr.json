@@ -46,7 +46,11 @@
     "blog": "Blog",
     "privacyPolicy": "Politique de Confidentialité",
     "editorialPolicy": "Politique Éditoriale",
-    "about": "À Propos"
+    "about": "À Propos",
+    "comparison": "Comparaison: Period Calculator vs Flo vs Clue"
+  },
+  "breadcrumb": {
+    "ariaLabel": "Fil d'Ariane"
   },
   "header": {
     "appName": "Calculateur de Règles",

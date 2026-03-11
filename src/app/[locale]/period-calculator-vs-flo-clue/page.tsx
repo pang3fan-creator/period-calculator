@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
+import { Breadcrumb } from "@/components/layout/breadcrumb";
 
 const baseUrl = "https://www.aiperiodcalculator.com";
 const locales = ["en", "es", "fr"];
@@ -170,6 +171,9 @@ export default async function ComparisonPage({
       <JsonLd data={articleSchema} />
       <JsonLd data={faqSchema} />
       <main className="flex flex-col items-center px-4 py-16">
+        <div className="w-full max-w-4xl">
+          <Breadcrumb />
+        </div>
         <h1 className="text-primary-400 text-center text-3xl font-bold md:text-4xl">
           Period Calculator vs Flo vs Clue
         </h1>

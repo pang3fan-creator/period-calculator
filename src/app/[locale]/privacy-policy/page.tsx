@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
+import { Breadcrumb } from "@/components/layout/breadcrumb";
 
 export async function generateMetadata({
   params,
@@ -286,6 +287,9 @@ export default async function PrivacyPolicyPage({
   return (
     <main className="bg-ivory-100 dark:bg-dark-bg min-h-screen px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl">
+        {/* Breadcrumb */}
+        <Breadcrumb className="mb-8" />
+
         {/* Header Section */}
         <div className="mb-12 text-center">
           <div className="bg-trust-blue-50 dark:bg-trust-blue-900/30 mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full">

@@ -46,7 +46,11 @@
     "blog": "Blog",
     "privacyPolicy": "Política de Privacidad",
     "editorialPolicy": "Política Editorial",
-    "about": "Sobre Nosotros"
+    "about": "Sobre Nosotros",
+    "comparison": "Comparación: Period Calculator vs Flo vs Clue"
+  },
+  "breadcrumb": {
+    "ariaLabel": "Migas de pan"
   },
   "header": {
     "appName": "Calculadora de Periodo",

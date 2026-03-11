@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
+import { Breadcrumb } from "@/components/layout/breadcrumb";
 
 const baseUrl = "https://www.aiperiodcalculator.com";
 
@@ -141,6 +142,9 @@ export default async function AboutPage() {
   return (
     <main className="bg-ivory-100 dark:bg-dark-bg min-h-screen px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl">
+        {/* Breadcrumb */}
+        <Breadcrumb className="mb-8" />
+
         {/* Header Section */}
         <div className="mb-12 text-center">
           <h1 className="font-heading mb-4 text-4xl font-bold text-gray-800 dark:text-white">
