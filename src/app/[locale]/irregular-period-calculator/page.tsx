@@ -5,6 +5,26 @@ import { IrregularHowToCalculate } from "@/components/calculator/irregular-how-t
 import { IrregularFAQ } from "@/components/calculator/irregular-faq";
 import { IrregularDeepKnowledge } from "@/components/calculator/irregular-deep-knowledge";
 import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/routing";
+
+// Back arrow icon
+function ArrowLeftIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="m15 18-6-6 6-6" />
+    </svg>
+  );
+}
 
 const baseUrl = "https://www.aiperiodcalculator.com";
 const locales = ["en", "es", "fr"];
@@ -31,7 +51,9 @@ export async function generateMetadata({
       url: `${baseUrl}/${locale === "en" ? "" : locale}/irregular-period-calculator`,
       siteName: "Period Calculator",
       locale: localeNames[locale],
-      alternateLocale: locales.filter((l) => l !== locale).map((l) => localeNames[l]),
+      alternateLocale: locales
+        .filter((l) => l !== locale)
+        .map((l) => localeNames[l]),
       type: "website",
       images: [
         {
@@ -63,8 +85,14 @@ export async function generateMetadata({
   };
 }
 
-export default async function IrregularPeriodCalculatorPage() {
+export default async function IrregularPeriodCalculatorPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const t = await getTranslations("irregularCalculator");
+  const tOtherTools = await getTranslations("irregularCalculator.otherTools");
 
   // JSON-LD Schema for WebApplication (Irregular Period Calculator)
   const webApplicationSchema = {
@@ -209,6 +237,40 @@ export default async function IrregularPeriodCalculatorPage() {
         {/* FAQ */}
         <div className="mt-24 w-full max-w-4xl">
           <IrregularFAQ />
+        </div>
+
+        {/* Other Free Tools & Resources */}
+        <div className="mt-24 w-full max-w-4xl">
+          <section className="w-full">
+            <div className="mb-8 text-center">
+              <h2 className="mb-3 text-2xl font-bold text-gray-800 md:text-3xl dark:text-white">
+                {tOtherTools("title")}
+              </h2>
+            </div>
+            <div className="mx-auto max-w-3xl">
+              <div className="border-warmbeige-200 dark:border-dark-border dark:bg-dark-card overflow-hidden rounded-3xl border bg-white p-6">
+                <p>
+                  <Link
+                    href="/"
+                    className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 font-bold transition-colors"
+                  >
+                    {tOtherTools("periodCalculator.description")}
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        {/* Footer Navigation */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/"
+            className="hover:text-trust-green-500 dark:hover:text-trust-green-400 inline-flex items-center gap-2 rounded-full text-gray-500 transition-colors duration-200 dark:text-gray-400"
+          >
+            <ArrowLeftIcon className="h-4 w-4" />
+            <span className="text-sm">{t("backToHome")}</span>
+          </Link>
         </div>
       </main>
     </>

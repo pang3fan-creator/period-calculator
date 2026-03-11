@@ -5,6 +5,7 @@ import { HowToCalculate } from "@/components/home/how-to-calculate";
 import { DeepKnowledge } from "@/components/home/deep-knowledge";
 import { FAQ } from "@/components/home/faq";
 import { JsonLd } from "@/components/seo/json-ld";
+import { Link } from "@/i18n/routing";
 
 const baseUrl = "https://www.aiperiodcalculator.com";
 const locales = ["en", "es", "fr"];
@@ -33,7 +34,9 @@ export async function generateMetadata({
       url: `${baseUrl}/${locale === "en" ? "" : locale}`,
       siteName: "Period Calculator",
       locale: localeNames[locale],
-      alternateLocale: locales.filter((l) => l !== locale).map((l) => localeNames[l]),
+      alternateLocale: locales
+        .filter((l) => l !== locale)
+        .map((l) => localeNames[l]),
       type: "website",
       images: [
         {
@@ -89,6 +92,7 @@ export default async function HomePage({
   const tHowTo = await getTranslations("howToCalculate");
   const tDeepKnowledge = await getTranslations("deepKnowledge");
   const tFaq = await getTranslations("faq");
+  const tOtherTools = await getTranslations("home.otherTools");
 
   // JSON-LD Schema for WebSite with search action
   const webSiteSchema = {
@@ -238,6 +242,29 @@ export default async function HomePage({
         {/* Bottom Screen: FAQ */}
         <div className="mt-24 w-full max-w-4xl">
           <FAQ />
+        </div>
+
+        {/* Other Free Tools & Resources */}
+        <div className="mt-24 w-full max-w-4xl">
+          <section className="w-full">
+            <div className="mb-8 text-center">
+              <h2 className="mb-3 text-2xl font-bold text-gray-800 md:text-3xl dark:text-white">
+                {tOtherTools("title")}
+              </h2>
+            </div>
+            <div className="mx-auto max-w-3xl">
+              <div className="border-warmbeige-200 dark:border-dark-border dark:bg-dark-card overflow-hidden rounded-3xl border bg-white p-6">
+                <p>
+                  <Link
+                    href="/irregular-period-calculator"
+                    className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 font-bold transition-colors"
+                  >
+                    {tOtherTools("irregularCalculator.description")}
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </>

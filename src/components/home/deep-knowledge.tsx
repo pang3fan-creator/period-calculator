@@ -67,7 +67,7 @@ export function DeepKnowledge() {
         {/* Cycle Image (Clickable) */}
         <div
           ref={triggerButtonRef}
-          className="mb-6 overflow-hidden rounded-2xl cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
+          className="focus:ring-primary-400 mb-6 cursor-pointer overflow-hidden rounded-2xl focus:ring-2 focus:ring-offset-2 focus:outline-none"
           onClick={() => setIsImageOpen(true)}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
@@ -84,7 +84,7 @@ export function DeepKnowledge() {
             alt="the menstrual cycle phases including follicular phase, ovulation, and luteal phase"
             width={800}
             height={400}
-            className="w-full h-auto object-cover hover:opacity-95 transition-opacity"
+            className="h-auto w-full object-cover transition-opacity hover:opacity-95"
           />
         </div>
 
@@ -137,12 +137,12 @@ export function DeepKnowledge() {
           }}
         >
           <div
-            className="relative max-w-4xl w-full max-h-[90vh] overflow-auto"
+            className="relative max-h-[90vh] w-full max-w-4xl overflow-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               ref={closeButtonRef}
-              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white transition-colors hover:bg-white/30 focus:ring-2 focus:ring-white/50 focus:outline-none"
               onClick={() => setIsImageOpen(false)}
               aria-label="Close"
             >
@@ -152,7 +152,7 @@ export function DeepKnowledge() {
                 viewBox="0 0 24 24"
                 strokeWidth={2}
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="h-6 w-6"
               >
                 <path
                   strokeLinecap="round"
@@ -166,7 +166,7 @@ export function DeepKnowledge() {
               alt="the menstrual cycle phases including follicular phase, ovulation, and luteal phase"
               width={1200}
               height={600}
-              className="w-full h-auto rounded-lg"
+              className="h-auto w-full rounded-lg"
               priority
             />
           </div>

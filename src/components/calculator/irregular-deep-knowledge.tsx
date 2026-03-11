@@ -48,13 +48,7 @@ export function IrregularDeepKnowledge() {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [openImage]);
 
-  const topics = [
-    "normal",
-    "culprits",
-    "calculator",
-    "doctor",
-    "empowerment",
-  ];
+  const topics = ["normal", "culprits", "calculator", "doctor", "empowerment"];
 
   return (
     <section className="w-full">
@@ -79,16 +73,20 @@ export function IrregularDeepKnowledge() {
               <h3 className="mb-2 text-lg font-semibold text-gray-800 dark:text-white">
                 {t(`topics.${topic}.title`)}
               </h3>
-              <p className={`text-sm leading-relaxed text-gray-600 dark:text-gray-300 ${(topic === 'culprits' || topic === 'doctor') ? 'whitespace-pre-wrap' : ''}`}>
+              <p
+                className={`text-sm leading-relaxed text-gray-600 dark:text-gray-300 ${topic === "culprits" || topic === "doctor" ? "whitespace-pre-wrap" : ""}`}
+              >
                 {t(`topics.${topic}.description`)}
               </p>
 
               {/* Image after normal topic */}
-              {topic === 'normal' && (
+              {topic === "normal" && (
                 <div
                   ref={triggerButtonRef}
-                  className="mt-6 overflow-hidden rounded-2xl cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
-                  onClick={() => setOpenImage("/assets/Menstrual_infographic.jpg")}
+                  className="focus:ring-primary-400 mt-6 cursor-pointer overflow-hidden rounded-2xl focus:ring-2 focus:ring-offset-2 focus:outline-none"
+                  onClick={() =>
+                    setOpenImage("/assets/Menstrual_infographic.jpg")
+                  }
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
                       e.preventDefault();
@@ -104,21 +102,27 @@ export function IrregularDeepKnowledge() {
                     alt="Menstrual cycle infographic showing normal cycle patterns"
                     width={800}
                     height={400}
-                    className="w-full h-auto object-cover hover:opacity-95 transition-opacity"
+                    className="h-auto w-full object-cover transition-opacity hover:opacity-95"
                   />
                 </div>
               )}
 
               {/* Image after culprits topic - Endocrine/Metabolic Disorders */}
-              {topic === 'culprits' && (
+              {topic === "culprits" && (
                 <div
                   ref={triggerButtonRef2}
-                  className="mt-6 overflow-hidden rounded-2xl cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
-                  onClick={() => setOpenImage("/assets/Endocrine_Function_Metabolic_Disorders.jpg")}
+                  className="focus:ring-primary-400 mt-6 cursor-pointer overflow-hidden rounded-2xl focus:ring-2 focus:ring-offset-2 focus:outline-none"
+                  onClick={() =>
+                    setOpenImage(
+                      "/assets/Endocrine_Function_Metabolic_Disorders.jpg",
+                    )
+                  }
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
                       e.preventDefault();
-                      setOpenImage("/assets/Endocrine_Function_Metabolic_Disorders.jpg");
+                      setOpenImage(
+                        "/assets/Endocrine_Function_Metabolic_Disorders.jpg",
+                      );
                     }
                   }}
                   role="button"
@@ -130,7 +134,7 @@ export function IrregularDeepKnowledge() {
                     alt="Endocrine function and metabolic disorders affecting menstrual cycles"
                     width={800}
                     height={400}
-                    className="w-full h-auto object-cover hover:opacity-95 transition-opacity"
+                    className="h-auto w-full object-cover transition-opacity hover:opacity-95"
                   />
                 </div>
               )}
@@ -156,12 +160,12 @@ export function IrregularDeepKnowledge() {
           }}
         >
           <div
-            className="relative max-w-4xl w-full max-h-[90vh] overflow-auto"
+            className="relative max-h-[90vh] w-full max-w-4xl overflow-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               ref={closeButtonRef}
-              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+              className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white transition-colors hover:bg-white/30 focus:ring-2 focus:ring-white/50 focus:outline-none"
               onClick={() => setOpenImage(null)}
               aria-label="Close"
             >
@@ -171,7 +175,7 @@ export function IrregularDeepKnowledge() {
                 viewBox="0 0 24 24"
                 strokeWidth={2}
                 stroke="currentColor"
-                className="w-6 h-6"
+                className="h-6 w-6"
               >
                 <path
                   strokeLinecap="round"
@@ -185,7 +189,7 @@ export function IrregularDeepKnowledge() {
               alt="Image preview"
               width={1200}
               height={600}
-              className="w-full h-auto rounded-lg"
+              className="h-auto w-full rounded-lg"
               priority
             />
           </div>

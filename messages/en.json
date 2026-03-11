@@ -56,7 +56,14 @@
   "home": {
     "title": "Accurate Period Calculator",
     "subtitle": "Use our free Period Calculator to predict your next cycle, ovulation, and fertile window. No login required—100% private, secure, and accurate medical-grade tool. Our Period Calculator helps you track your menstrual cycle with precision.",
-    "comingSoon": "Calculator coming soon."
+    "comingSoon": "Calculator coming soon.",
+    "otherTools": {
+      "title": "Other Free Tools & Resources",
+      "irregularCalculator": {
+        "title": "Irregular Period Calculator",
+        "description": "Irregular Period Calculator: Accurate Cycle Window Predictor"
+      }
+    }
   },
   "about": {
     "title": "About Period Calculator",
@@ -92,7 +99,7 @@
       "title": "Get in Touch",
       "description": "Have questions or feedback? We'd love to hear from you."
     },
-    "backToHome": "Back to Home"
+    "backToHome": "Back to Period Calculator"
   },
   "footer": {
     "tagline": "Free & Private Menstrual Cycle Tracker",
@@ -138,7 +145,15 @@
     "latest": "Latest",
     "windowRange": "({days} day range)",
     "lowConfidenceWarning": "Your cycles are quite irregular",
-    "lowConfidenceAdvice": "Consider consulting a healthcare provider. Your cycle variation is higher than typical."
+    "lowConfidenceAdvice": "Consider consulting a healthcare provider. Your cycle variation is higher than typical.",
+    "otherTools": {
+      "title": "Other Free Tools & Resources",
+      "periodCalculator": {
+        "title": "Period Calculator",
+        "description": "Accurate Period Calculator: Private Menstrual Cycle Tracker"
+      }
+    },
+    "backToHome": "Back to Period Calculator"
   },
   "ovulationCalculator": {
     "title": "Ovulation Calculator",
@@ -284,7 +299,8 @@
       "title": "Questions?",
       "description": "We're here to help with any privacy concerns.",
       "button": "Contact Us"
-    }
+    },
+    "backToHome": "Back to Period Calculator"
   },
   "editorialPolicy": {
     "title": "Editorial Policy",
@@ -333,7 +349,8 @@
         "item2": "Consult healthcare professionals for medical advice",
         "item3": "We are not responsible for decisions made based on predictions"
       }
-    }
+    },
+    "backToHome": "Back to Period Calculator"
   },
   "howToCalculate": {
     "title": "How to Use the Period Calculator",
@@ -427,7 +444,7 @@
   },
   "faq": {
     "title": "Period FAQ: Answers from Experts",
-    
+
     "expandLabel": "Expand {question}",
     "collapseLabel": "Collapse {question}",
     "items": {

@@ -326,14 +326,16 @@ export function IrregularPredictionCards({
           {/* Date labels above markers */}
           <div className="mb-1 flex justify-between text-xs font-medium">
             <span className="text-red-500">{earliestLabel}</span>
-            <span className="text-primary-600 dark:text-primary-400">{mostLikelyLabel}</span>
+            <span className="text-primary-600 dark:text-primary-400">
+              {mostLikelyLabel}
+            </span>
             <span className="text-blue-500">{latestLabel}</span>
           </div>
           {/* Visual bar with markers */}
           <div className="relative h-4 rounded-full bg-gray-200 dark:bg-gray-700">
             {/* Center range area - width based on stdDev */}
             <div
-              className="absolute top-1/2 h-3 -translate-y-1/2 rounded-full bg-primary-300 dark:bg-primary-600 opacity-60"
+              className="bg-primary-300 dark:bg-primary-600 absolute top-1/2 h-3 -translate-y-1/2 rounded-full opacity-60"
               style={{
                 left: `${rangeLeft}%`,
                 width: `${rangeWidth}%`,

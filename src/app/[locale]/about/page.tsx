@@ -31,7 +31,9 @@ export async function generateMetadata({
       url: canonicalUrl,
       siteName: "Period Calculator",
       locale: localeNames[locale],
-      alternateLocale: locales.filter((l) => l !== locale).map((l) => localeNames[l]),
+      alternateLocale: locales
+        .filter((l) => l !== locale)
+        .map((l) => localeNames[l]),
       type: "website",
       images: [
         {

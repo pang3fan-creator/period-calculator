@@ -38,7 +38,6 @@ export function FAQ() {
         <h2 className="mb-3 text-2xl font-bold text-gray-800 md:text-3xl dark:text-white">
           {t("title")}
         </h2>
-        
       </div>
 
       {/* FAQ Items */}

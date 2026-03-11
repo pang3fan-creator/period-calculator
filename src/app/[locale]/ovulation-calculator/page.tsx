@@ -31,7 +31,9 @@ export async function generateMetadata({
       url: `${baseUrl}/${locale === "en" ? "" : locale}/ovulation-calculator`,
       siteName: "Period Calculator",
       locale: localeNames[locale],
-      alternateLocale: locales.filter((l) => l !== locale).map((l) => localeNames[l]),
+      alternateLocale: locales
+        .filter((l) => l !== locale)
+        .map((l) => localeNames[l]),
       type: "website",
       images: [
         {
@@ -193,7 +195,8 @@ export default function OvulationCalculatorPage() {
           Ovulation Calculator
         </h1>
         <p className="mt-4 max-w-2xl text-center text-lg text-gray-600 dark:text-gray-300">
-          Find your fertile window and ovulation date. Plan pregnancy or understand your cycle better with accurate predictions.
+          Find your fertile window and ovulation date. Plan pregnancy or
+          understand your cycle better with accurate predictions.
         </p>
         <div className="mt-12 w-full max-w-2xl">
           <OvulationPeriodCalculator />

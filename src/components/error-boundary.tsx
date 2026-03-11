@@ -66,7 +66,7 @@ export function ErrorBoundary({ children, fallback }: ErrorBoundaryProps) {
         </p>
         <button
           onClick={handleReset}
-          className="rounded-xl bg-primary-400 px-6 py-3 font-medium text-white transition-colors hover:bg-primary-500"
+          className="bg-primary-400 hover:bg-primary-500 rounded-xl px-6 py-3 font-medium text-white transition-colors"
         >
           {t("tryAgain")}
         </button>
@@ -74,11 +74,23 @@ export function ErrorBoundary({ children, fallback }: ErrorBoundaryProps) {
     );
   }
 
-  return <ErrorBoundaryChild onError={(err) => { setHasError(true); setError(err); }}>{children}</ErrorBoundaryChild>;
+  return (
+    <ErrorBoundaryChild
+      onError={(err) => {
+        setHasError(true);
+        setError(err);
+      }}
+    >
+      {children}
+    </ErrorBoundaryChild>
+  );
 }
 
 // Inner component that uses class for error boundary functionality
-class ErrorBoundaryChild extends Component<{ children: ReactNode; onError: (error: Error) => void }, ErrorBoundaryState> {
+class ErrorBoundaryChild extends Component<
+  { children: ReactNode; onError: (error: Error) => void },
+  ErrorBoundaryState
+> {
   constructor(props: { children: ReactNode; onError: (error: Error) => void }) {
     super(props);
     this.state = { hasError: false };

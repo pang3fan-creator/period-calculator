@@ -142,7 +142,8 @@ describe("localStorage", () => {
         periodLength: 5,
         savedAt: "2024-01-15T10:00:00.000Z",
       };
-      mockLocalStorage.data["period_calculator_data"] = JSON.stringify(storedData);
+      mockLocalStorage.data["period_calculator_data"] =
+        JSON.stringify(storedData);
 
       const result = loadCycleData();
 
@@ -158,7 +159,8 @@ describe("localStorage", () => {
         periodLength: 5,
         savedAt: "2024-01-15T10:00:00.000Z",
       };
-      mockLocalStorage.data["period_calculator_data"] = JSON.stringify(storedData);
+      mockLocalStorage.data["period_calculator_data"] =
+        JSON.stringify(storedData);
 
       const result = loadCycleData();
 
@@ -220,7 +222,8 @@ describe("localStorage", () => {
         periodLength: 5,
         savedAt: "2024-01-15T10:00:00.000Z",
       };
-      mockLocalStorage.data["period_calculator_data"] = JSON.stringify(storedData);
+      mockLocalStorage.data["period_calculator_data"] =
+        JSON.stringify(storedData);
 
       const result = getLastSavedTimestamp();
 

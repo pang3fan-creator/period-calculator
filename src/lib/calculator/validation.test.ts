@@ -1,8 +1,5 @@
 import { describe, it, expect } from "vitest";
-import {
-  validateCycleData,
-  isValidCycleData,
-} from "./validation";
+import { validateCycleData, isValidCycleData } from "./validation";
 import type { CycleData } from "@/types";
 
 describe("validation", () => {

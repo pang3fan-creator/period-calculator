@@ -41,10 +41,7 @@ describe("irregular-calculator", () => {
 
     it("should return error for less than 3 cycles", () => {
       const data: IrregularCycleData = {
-        historicalCycles: [
-          new Date("2024-01-01"),
-          new Date("2024-01-29"),
-        ],
+        historicalCycles: [new Date("2024-01-01"), new Date("2024-01-29")],
         periodLength: 5,
       };
 

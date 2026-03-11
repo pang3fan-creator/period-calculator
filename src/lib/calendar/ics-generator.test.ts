@@ -1,9 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import {
-  generateICS,
-  downloadICS,
-  type CalendarEvent,
-} from "./ics-generator";
+import { generateICS, downloadICS, type CalendarEvent } from "./ics-generator";
 
 // Mock document and window objects
 const mockCreateElement = vi.fn();
@@ -264,7 +260,9 @@ describe("ics-generator", () => {
 
       downloadICS(icsContent, "test");
 
-      expect(mockRevokeObjectURL).toHaveBeenCalledWith("blob:http://localhost/test");
+      expect(mockRevokeObjectURL).toHaveBeenCalledWith(
+        "blob:http://localhost/test",
+      );
     });
   });
 });

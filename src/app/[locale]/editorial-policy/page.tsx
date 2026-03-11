@@ -48,7 +48,9 @@ export async function generateMetadata({
       url: canonicalUrl,
       siteName: "Period Calculator",
       locale: localeNames[locale],
-      alternateLocale: locales.filter((l) => l !== locale).map((l) => localeNames[l]),
+      alternateLocale: locales
+        .filter((l) => l !== locale)
+        .map((l) => localeNames[l]),
       type: "website",
       images: [
         {
@@ -336,8 +338,8 @@ export default async function EditorialPolicyPage({
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
-                    <div className="bg-trust-green-50 dark:bg-trust-green-900/30 inline-flex h-10 w-10 items-center justify-center rounded-lg">
-                      <SectionIcon className="text-trust-green-500 h-5 w-5" />
+                    <div className="bg-trust-green-50 dark:bg-trust-green-900/30 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+                      <SectionIcon className="text-trust-green-500 h-6 w-6" />
                     </div>
                   </div>
                   <div className="min-w-0 flex-1">
@@ -351,14 +353,14 @@ export default async function EditorialPolicyPage({
                       <ul className="space-y-2">
                         {sectionItems.map((item: string, index: number) => (
                           <li key={index} className="flex items-start gap-3">
-                            <CheckIcon className="text-trust-green-500 mt-0.5 h-5 w-5 flex-shrink-0" />
+                            <CheckIcon className="text-trust-green-500 mt-0.5 h-6 w-6 flex-shrink-0" />
                             {sectionKey === "medicalSources" &&
                             medicalSourceLinks[index] ? (
                               <a
                                 href={medicalSourceLinks[index]}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-sm text-gray-600 hover:text-trust-green-600 dark:text-gray-300 dark:hover:text-trust-green-400 underline underline-offset-2"
+                                className="hover:text-trust-green-600 dark:hover:text-trust-green-400 text-sm text-gray-600 underline underline-offset-2 dark:text-gray-300"
                               >
                                 {item}
                               </a>
@@ -398,7 +400,7 @@ export default async function EditorialPolicyPage({
             >
               <path d="m15 18-6-6 6-6" />
             </svg>
-            <span className="text-sm">Back to Home</span>
+            <span className="text-sm">{t("backToHome")}</span>
           </Link>
         </div>
       </div>

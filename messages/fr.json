@@ -56,7 +56,14 @@
   "home": {
     "title": "Calculateur Précis de Règles",
     "subtitle": "Utilisez notre Calculateur de Règles gratuit pour prédire votre prochain cycle, ovulation et fenêtre de fertilité. Pas d'inscription nécessaire—100% privé, sécurisé et précis. Notre Calculateur de Règles vous aide à suivre votre cycle menstruel avec précision.",
-    "comingSoon": "Calculateur bientôt disponible."
+    "comingSoon": "Calculateur bientôt disponible.",
+    "otherTools": {
+      "title": "Autres Outils et Ressources Gratuits",
+      "irregularCalculator": {
+        "title": "Calculateur de Règles Irrégulières",
+        "description": "Calculateur de règles irrégulières : Suivi de Cycle et SOPK"
+      }
+    }
   },
   "about": {
     "title": "À Propos de Period Calculator",
@@ -92,7 +99,7 @@
       "title": "Contactez-Nous",
       "description": "Avez-vous des questions ou des commentaires? Nous aimerions avoir de vos nouvelles."
     },
-    "backToHome": "Retour à l'Accueil"
+    "backToHome": "Retour au Calculateur de Règles"
   },
   "footer": {
     "tagline": "Suivi Menstruel Gratuit et Privé",
@@ -138,7 +145,15 @@
     "latest": "Plus Tard",
     "windowRange": "(plage de {days} jours)",
     "lowConfidenceWarning": "Vos cycles sont assez irréguliers",
-    "lowConfidenceAdvice": "Envisagez de consulter un professionnel de santé. Votre variation de cycle est supérieure à la normale."
+    "lowConfidenceAdvice": "Envisagez de consulter un professionnel de santé. Votre variation de cycle est supérieure à la normale.",
+    "otherTools": {
+      "title": "Autres Outils et Ressources Gratuits",
+      "periodCalculator": {
+        "title": "Calculateur de Règles",
+        "description": "Calculateur Précis de Règles : Suivi Menstruel Privé"
+      }
+    },
+    "backToHome": "Retour au Calculateur de Règles"
   },
   "ovulationCalculator": {
     "title": "Calculateur d'Ovulation",
@@ -285,7 +300,8 @@
       "title": "Questions ?",
       "description": "Nous sommes là pour vous aider pour toute préoccupation concernant la vie privée.",
       "button": "Contactez-nous"
-    }
+    },
+    "backToHome": "Retour au Calculateur de Règles"
   },
   "editorialPolicy": {
     "title": "Politique Éditoriale",
@@ -334,7 +350,8 @@
         "item2": "Consultez des professionnels de santé pour des conseils médicaux",
         "item3": "Nous ne sommes pas responsables des décisions prises basées sur les prédictions"
       }
-    }
+    },
+    "backToHome": "Retour au Calculateur de Règles"
   },
   "howToCalculate": {
     "title": "Comment Utiliser le Calculateur de Règles",

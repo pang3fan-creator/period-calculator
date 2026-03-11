@@ -27,7 +27,9 @@ export async function generateMetadata({
       url: `${baseUrl}/${locale === "en" ? "" : locale}/period-calculator-vs-flo-clue`,
       siteName: "Period Calculator",
       locale: localeNames[locale],
-      alternateLocale: locales.filter((l) => l !== locale).map((l) => localeNames[l]),
+      alternateLocale: locales
+        .filter((l) => l !== locale)
+        .map((l) => localeNames[l]),
       type: "article",
       images: [
         {
@@ -172,7 +174,8 @@ export default async function ComparisonPage({
           Period Calculator vs Flo vs Clue
         </h1>
         <p className="mt-4 max-w-2xl text-center text-lg text-gray-600 dark:text-gray-300">
-          A comprehensive privacy-focused comparison of the best period tracking apps in 2025.
+          A comprehensive privacy-focused comparison of the best period tracking
+          apps in 2025.
         </p>
 
         {/* Comparison Table */}
@@ -180,28 +183,38 @@ export default async function ComparisonPage({
           <table className="w-full border-collapse text-left">
             <thead>
               <tr className="bg-primary-100 dark:bg-primary-900">
-                <th className="border border-gray-200 p-4 font-bold">Feature</th>
-                <th className="border border-gray-200 p-4 font-bold text-primary-600">
+                <th className="border border-gray-200 p-4 font-bold">
+                  Feature
+                </th>
+                <th className="text-primary-600 border border-gray-200 p-4 font-bold">
                   Period Calculator
                 </th>
                 <th className="border border-gray-200 p-4 font-bold">Flo</th>
                 <th className="border border-gray-200 p-4 font-bold">Clue</th>
-                <th className="border border-gray-200 p-4 font-bold">Natural Cycles</th>
+                <th className="border border-gray-200 p-4 font-bold">
+                  Natural Cycles
+                </th>
               </tr>
             </thead>
             <tbody>
               {comparisons.map((row, index) => (
                 <tr
                   key={index}
-                  className={index % 2 === 0 ? "bg-gray-50 dark:bg-gray-800" : ""}
+                  className={
+                    index % 2 === 0 ? "bg-gray-50 dark:bg-gray-800" : ""
+                  }
                 >
-                  <td className="border border-gray-200 p-4 font-medium">{row.feature}</td>
-                  <td className="border border-gray-200 p-4 font-bold text-primary-600">
+                  <td className="border border-gray-200 p-4 font-medium">
+                    {row.feature}
+                  </td>
+                  <td className="text-primary-600 border border-gray-200 p-4 font-bold">
                     {row.periodCalculator}
                   </td>
                   <td className="border border-gray-200 p-4">{row.flo}</td>
                   <td className="border border-gray-200 p-4">{row.clue}</td>
-                  <td className="border border-gray-200 p-4">{row.naturalCycles}</td>
+                  <td className="border border-gray-200 p-4">
+                    {row.naturalCycles}
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -210,14 +223,17 @@ export default async function ComparisonPage({
 
         {/* Key Takeaways */}
         <div className="mt-16 w-full max-w-4xl">
-          <h2 className="mb-6 text-2xl font-bold">Why Choose Period Calculator?</h2>
+          <h2 className="mb-6 text-2xl font-bold">
+            Why Choose Period Calculator?
+          </h2>
           <div className="grid gap-6 md:grid-cols-3">
             <div className="rounded-lg bg-green-50 p-6 dark:bg-green-900/20">
               <h3 className="mb-2 text-lg font-bold text-green-700 dark:text-green-400">
                 100% Private
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-300">
-                Your data never leaves your device. No accounts, no cloud storage, no data collection.
+                Your data never leaves your device. No accounts, no cloud
+                storage, no data collection.
               </p>
             </div>
             <div className="rounded-lg bg-blue-50 p-6 dark:bg-blue-900/20">
@@ -225,7 +241,8 @@ export default async function ComparisonPage({
                 Completely Free
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-300">
-                All features included. No premium upsells, no subscription required.
+                All features included. No premium upsells, no subscription
+                required.
               </p>
             </div>
             <div className="rounded-lg bg-purple-50 p-6 dark:bg-purple-900/20">
@@ -233,7 +250,8 @@ export default async function ComparisonPage({
                 Advanced Algorithm
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-300">
-                Uses weighted averages and standard deviation for accurate irregular cycle predictions.
+                Uses weighted averages and standard deviation for accurate
+                irregular cycle predictions.
               </p>
             </div>
           </div>
@@ -242,9 +260,10 @@ export default async function ComparisonPage({
         {/* Disclaimer */}
         <div className="mt-12 w-full max-w-4xl rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            <strong>Disclaimer:</strong> This comparison is based on publicly available information as of 2025.
-            Period Calculator is designed for informational purposes only and is not a medical device.
-            Always consult healthcare professionals for medical advice.
+            <strong>Disclaimer:</strong> This comparison is based on publicly
+            available information as of 2025. Period Calculator is designed for
+            informational purposes only and is not a medical device. Always
+            consult healthcare professionals for medical advice.
           </p>
         </div>
       </main>

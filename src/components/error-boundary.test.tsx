@@ -33,7 +33,7 @@ describe("ErrorBoundary", () => {
     const html = renderToString(
       <ErrorBoundary>
         <Child />
-      </ErrorBoundary>
+      </ErrorBoundary>,
     );
 
     expect(html).toContain("Test content");
@@ -44,7 +44,7 @@ describe("ErrorBoundary", () => {
     const html = renderToString(
       <ErrorBoundary>
         <div>Test</div>
-      </ErrorBoundary>
+      </ErrorBoundary>,
     );
 
     // Should not contain error messages when there's no error

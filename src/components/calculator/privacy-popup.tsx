@@ -40,14 +40,14 @@ export function PrivacyPopup() {
           onClick={() => setIsOpen(false)}
         >
           <div
-            className="relative w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl dark:bg-dark-card"
+            className="dark:bg-dark-card relative w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-500 transition-colors hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+              className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-500 transition-colors hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
               aria-label={t("closeButton")}
             >
               <svg

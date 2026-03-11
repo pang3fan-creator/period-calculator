@@ -96,26 +96,30 @@ className = "min-h-[48px] rounded-2xl font-body transition-all";
 ### 样式
 
 ```tsx
-className = "shadow-card dark:bg-dark-card rounded-3xl bg-white p-6";
+// 推荐样式（带边框）
+className = "border-warmbeige-200 dark:border-dark-border dark:bg-dark-card rounded-3xl border bg-white p-6";
 ```
 
 ### 属性
 
-| 属性   | 值                               | 说明         |
-| ------ | -------------------------------- | ------------ |
-| 背景   | `bg-white` / `dark:bg-dark-card` | 支持深色模式 |
-| 阴影   | `shadow-card`                    | 轻微阴影     |
-| 圆角   | `rounded-3xl` (24px)             | 超大圆角     |
-| 内边距 | `p-6` (24px) / `sm:p-8` (32px)   | 响应式内边距 |
+| 属性   | 值                                            | 说明         |
+| ------ | --------------------------------------------- | ------------ |
+| 背景   | `bg-white` / `dark:bg-dark-card`              | 支持深色模式 |
+| 边框   | `border border-warmbeige-200 dark:border-dark-border` | 温暖色调边框 |
+| 圆角   | `rounded-3xl` (24px)                          | 超大圆角     |
+| 内边距 | `p-6` (24px) / `sm:p-8` (32px)                | 响应式内边距 |
 
 ### 卡片变体
 
 ```tsx
-// 带边框卡片（常用）
-className = "border border-warmbeige-200 dark:border-dark-border rounded-3xl p-6 sm:p-8"
+// 基础卡片（推荐）
+className = "border-warmbeige-200 dark:border-dark-border dark:bg-dark-card rounded-3xl border bg-white p-6 sm:p-8"
 
 // 悬停效果卡片
 className = "hover:border-primary-200 dark:hover:border-primary-700 rounded-3xl border bg-white p-5 md:p-6"
+
+// 阴影卡片（特殊场景）
+className = "shadow-card dark:bg-dark-card rounded-3xl bg-white p-6"
 ```
 
 ### 示例代码
@@ -131,22 +135,31 @@ className = "hover:border-primary-200 dark:hover:border-primary-700 rounded-3xl 
 
 ## 深度策略
 
-### 阴影层级
+### 优先级
 
-| 类名          | 用途                     |
-| ------------- | ------------------------ |
-| `shadow-card` | 卡片默认阴影             |
-| `shadow-soft` | 轻微阴影（悬停效果）     |
-| `shadow-warm` | 温暖色调阴影（强调元素） |
+1. **优先使用边框**：用于卡片、面板、分隔区域
+2. **阴影用于强调**：用于悬浮元素、模态框、按钮
 
-### 边框使用
+### 边框使用（推荐）
 
 ```tsx
+// 卡片边框
+className = "border border-warmbeige-200 dark:border-dark-border rounded-3xl";
+
 // 顶部边框（分隔线）
 className = "border-t border-warmbeige-200";
 
 // 深色模式边框
-className = "border-t border-warmbeige-200 dark:border-dark-border";
+className = "border-warmbeige-200 dark:border-dark-border";
+```
+
+### 阴影层级
+
+| 类名          | 用途                     |
+| ------------- | ------------------------ |
+| `shadow-card` | 卡片阴影（特殊场景）     |
+| `shadow-soft` | 轻微阴影（悬停效果）     |
+| `shadow-warm` | 温暖色调阴影（强调元素） |
 ```
 
 ### 优先级

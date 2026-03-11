@@ -10,7 +10,8 @@ vi.mock("next-intl", () => ({
         buttonLabel: "Privacy",
         buttonAriaLabel: "Learn about privacy",
         title: "Your Privacy is Protected",
-        description: "Your data stays 100% on your device. We never send any data to servers.",
+        description:
+          "Your data stays 100% on your device. We never send any data to servers.",
         step1: "Input",
         step2: "Browser",
         step3: "Result",
@@ -59,6 +60,6 @@ describe("PrivacyPopup", () => {
     const html = renderToString(<PrivacyPopup />);
 
     expect(html).toContain("button");
-    expect(html).toContain("type=\"button\"");
+    expect(html).toContain('type="button"');
   });
 });

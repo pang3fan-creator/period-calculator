@@ -56,7 +56,14 @@
   "home": {
     "title": "Calculadora Precisa de Periodo",
     "subtitle": "Usa nuestra Calculadora de Periodo gratuita para predecir tu próximo ciclo, ovulación y ventana fértil. Sin registro necesario—100% privada, segura y precisa. Nuestra Calculadora de Periodo te ayuda a seguir tu ciclo menstrual con precisión.",
-    "comingSoon": "Calculadora próximamente."
+    "comingSoon": "Calculadora próximamente.",
+    "otherTools": {
+      "title": "Otras Herramientas y Recursos Gratuitos",
+      "irregularCalculator": {
+        "title": "Calculadora de Periodo Irregular",
+        "description": "Calculadora de Periodo Irregular: Predicción de Ciclo y SOP"
+      }
+    }
   },
   "about": {
     "title": "Sobre Period Calculator",
@@ -92,7 +99,7 @@
       "title": "Contáctanos",
       "description": "¿Tienes preguntas o comentarios? Nos encantaría saber de ti."
     },
-    "backToHome": "Volver al Inicio"
+    "backToHome": "Volver a la Calculadora de Periodo"
   },
   "footer": {
     "tagline": "Seguimiento Menstrual Gratuito y Privado",
@@ -138,7 +145,15 @@
     "latest": "Más Tarde",
     "windowRange": "({days} días de rango)",
     "lowConfidenceWarning": "Tus ciclos son bastante irregulares",
-    "lowConfidenceAdvice": "Considera consultar a un proveedor de salud. Tu variación de ciclo es mayor a lo típico."
+    "lowConfidenceAdvice": "Considera consultar a un proveedor de salud. Tu variación de ciclo es mayor a lo típico.",
+    "otherTools": {
+      "title": "Otras Herramientas y Recursos Gratuitos",
+      "periodCalculator": {
+        "title": "Calculadora de Periodo",
+        "description": "Calculadora Precisa de Periodo: Rastreador Privado de Ciclo Menstrual"
+      }
+    },
+    "backToHome": "Volver a la Calculadora de Periodo"
   },
   "ovulationCalculator": {
     "title": "Calculadora de Ovulación",
@@ -284,7 +299,8 @@
       "title": "¿Preguntas?",
       "description": "Estamos aquí para ayudarte con cualquier preocupación sobre privacidad.",
       "button": "Contáctanos"
-    }
+    },
+    "backToHome": "Volver a la Calculadora de Periodo"
   },
   "editorialPolicy": {
     "title": "Política Editorial",
@@ -333,7 +349,8 @@
         "item2": "Consulta profesionales de salud para advice médico",
         "item3": "No somos responsables de decisiones tomadas basándose en predicciones"
       }
-    }
+    },
+    "backToHome": "Volver a la Calculadora de Periodo"
   },
   "howToCalculate": {
     "title": "Cómo Usar la Calculadora de Periodo",

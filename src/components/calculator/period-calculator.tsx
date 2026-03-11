@@ -124,11 +124,7 @@ export function PeriodCalculator() {
   return (
     <Card>
       {result ? (
-        <ResultsDisplay
-          result={result}
-          locale={locale}
-          onReset={handleReset}
-        />
+        <ResultsDisplay result={result} locale={locale} onReset={handleReset} />
       ) : (
         <CalculatorForm
           onSubmit={handleSubmit}
