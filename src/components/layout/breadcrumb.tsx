@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { ChevronRightIcon } from "@/components/icons";
 import { breadcrumbConfig } from "@/config/breadcrumbs";
@@ -24,6 +24,9 @@ interface BreadcrumbProps {
   className?: string;
 }
 
+// Supported locales - matches i18n config
+const SUPPORTED_LOCALES = ["en", "es", "fr"];
+
 /**
  * Breadcrumb Component
  *
@@ -32,6 +35,7 @@ interface BreadcrumbProps {
  */
 export function Breadcrumb({ overrides, className = "" }: BreadcrumbProps) {
   const pathname = usePathname();
+  const locale = useLocale();
   const tNav = useTranslations("nav");
   const tBreadcrumb = useTranslations("breadcrumb");
 
@@ -40,8 +44,13 @@ export function Breadcrumb({ overrides, className = "" }: BreadcrumbProps) {
     return null;
   }
 
-  // Parse path segments
-  const segments = pathname.split("/").filter(Boolean);
+  // Parse path segments and filter out locale prefix
+  const allSegments = pathname.split("/").filter(Boolean);
+
+  // Remove locale prefix if present (e.g., "es", "fr")
+  const segments = allSegments.filter(
+    (segment, index) => index !== 0 || !SUPPORTED_LOCALES.includes(segment),
+  );
 
   // Build breadcrumb items
   const items: BreadcrumbItem[] = [];
