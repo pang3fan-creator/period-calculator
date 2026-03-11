@@ -2,7 +2,47 @@
 
 **项目定位**：隐私优先、极致丝滑、温馨专业的下一代女性经期管理工具。
 
-**核心理念**：通过“无登录、本地存储”解决大厂隐私痛点；通过“极致加载速度”和“AI 内容建模”挑战老牌站点。
+**核心理念**：通过”无登录、本地存储”解决大厂隐私痛点；通过”极致加载速度”和”AI 内容建模”挑战老牌站点。
+
+---
+
+## Quick Start
+
+```bash
+npm install          # 安装依赖
+npm run dev          # 启动开发服务器 (localhost:3000)
+npm run build        # 生产构建
+npm run start        # 启动生产服务器
+npm run lint         # 代码检查
+npm run format       # 代码格式化
+npm test             # 运行测试 (102+ 测试用例)
+```
+
+---
+
+## 项目结构
+
+```
+src/
+├── app/[locale]/           # Next.js App Router 页面
+│   ├── page.tsx            # 首页
+│   ├── irregular-period-calculator/
+│   ├── ovulation-calculator/
+│   ├── about/
+│   ├── privacy-policy/
+│   ├── editorial-policy/
+│   ├── period-calculator-vs-flo-clue/
+│   └── blog/[slug]/
+├── components/             # React 组件
+│   ├── layout/             # 布局组件 (Header, Footer, Breadcrumb)
+│   ├── ui/                 # UI 组件
+│   └── seo/                # SEO 组件 (JsonLd)
+├── config/                 # 配置文件
+│   └── breadcrumbs.ts      # 面包屑路由映射
+├── i18n/                   # 国际化配置
+├── lib/                    # 工具函数
+└── messages/               # 多语言翻译文件
+```
 
 ---
 
@@ -139,3 +179,9 @@
 
 ### 3. 组件设计模式
 - **页面专用组件**：每个计算器页面应有专属的 HowTo 组件（如 `IrregularHowToCalculate`），而非复用首页组件
+
+### 4. next-intl 多语言路径处理
+- **usePathname() 包含语言前缀**：在客户端组件中，`usePathname()` 返回的路径包含语言前缀（如 `/es/about`），解析路径时需过滤掉语言段
+- **Link 自动处理语言**：从 `@/i18n/routing` 导入的 Link 组件会自动添加当前语言前缀，传入 `/about` 即可
+- **useLocale hook**：使用 `const locale = useLocale()` 获取当前语言环境
+- **过滤语言段示例**：`segments.filter((s, i) => i !== 0 || !SUPPORTED_LOCALES.includes(s))`
