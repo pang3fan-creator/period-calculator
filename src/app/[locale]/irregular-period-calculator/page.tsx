@@ -4,6 +4,7 @@ import { IrregularPeriodCalculator } from "@/components/calculator/irregular-per
 import { IrregularHowToCalculate } from "@/components/calculator/irregular-how-to-calculate";
 import { IrregularFAQ } from "@/components/calculator/irregular-faq";
 import { IrregularDeepKnowledge } from "@/components/calculator/irregular-deep-knowledge";
+import { IrregularAlgorithmTransparency } from "@/components/calculator/irregular-algorithm-transparency";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
@@ -231,6 +232,11 @@ export default async function IrregularPeriodCalculatorPage({
         {/* How to Calculate */}
         <div className="mt-24 w-full max-w-4xl">
           <IrregularHowToCalculate />
+        </div>
+
+        {/* Algorithm Transparency */}
+        <div className="mt-24 w-full max-w-4xl">
+          <IrregularAlgorithmTransparency />
         </div>
 
         {/* Deep Knowledge */}

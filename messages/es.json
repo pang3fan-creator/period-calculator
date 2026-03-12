@@ -373,6 +373,33 @@
     "disclaimer": "Los resultados son solo estimaciones, no consejo médico. Los ciclos individuales pueden variar.",
     "learnMore": "Más información sobre nuestra Política Editorial"
   },
+  "irregularAlgorithmTransparency": {
+    "title": "Cómo Calculamos Tu Período Irregular",
+    "cards": {
+      "averageCycle": {
+        "title": "Ciclo Promedio",
+        "formula": "Σ(días) / n"
+      },
+      "standardDeviation": {
+        "title": "Desviación Estándar",
+        "formula": "σ = √(Σ(x-x̄)²/n)"
+      },
+      "confidence": {
+        "title": "Confianza",
+        "ruleHigh": "σ≤3 días → Alta",
+        "ruleMedium": "σ≤6 días → Media",
+        "ruleLow": "σ>6 días → Baja"
+      }
+    },
+    "predictionWindow": {
+      "title": "Ventana de Predicción",
+      "earliest": "Más Temprano",
+      "mostLikely": "Más Probable",
+      "latest": "Más Tardío"
+    },
+    "disclaimer": "Los resultados son solo estimaciones, no consejo médico. Los ciclos individuales pueden variar.",
+    "learnMore": "Más información sobre nuestra Política Editorial"
+  },
   "howToCalculate": {
     "title": "Cómo Usar la Calculadora de Periodo",
     "description": "Aprende a usar nuestra Calculadora de Periodo gratuita para seguir tu ciclo menstrual y predecir tu próximo período con precisión.",

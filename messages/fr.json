@@ -374,6 +374,33 @@
     "disclaimer": "Les résultats sont des estimations uniquement, pas des conseils médicaux. Les cycles individuels peuvent varier.",
     "learnMore": "En savoir plus sur notre Politique Éditoriale"
   },
+  "irregularAlgorithmTransparency": {
+    "title": "Comment Nous Calculons Vos Règles Irrégulières",
+    "cards": {
+      "averageCycle": {
+        "title": "Cycle Moyen",
+        "formula": "Σ(jours) / n"
+      },
+      "standardDeviation": {
+        "title": "Écart Type",
+        "formula": "σ = √(Σ(x-x̄)²/n)"
+      },
+      "confidence": {
+        "title": "Confiance",
+        "ruleHigh": "σ≤3 jours → Élevée",
+        "ruleMedium": "σ≤6 jours → Moyenne",
+        "ruleLow": "σ>6 jours → Faible"
+      }
+    },
+    "predictionWindow": {
+      "title": "Fenêtre de Prédiction",
+      "earliest": "Plus Tôt",
+      "mostLikely": "Plus Probable",
+      "latest": "Plus Tard"
+    },
+    "disclaimer": "Les résultats sont des estimations uniquement, pas des conseils médicaux. Les cycles individuels peuvent varier.",
+    "learnMore": "En savoir plus sur notre Politique Éditoriale"
+  },
   "howToCalculate": {
     "title": "Comment Utiliser le Calculateur de Règles",
     "description": "Apprenez à utiliser notre Calculateur de Règles gratuit pour suivre votre cycle menstruel et prédire votre prochaine période avec précision.",
