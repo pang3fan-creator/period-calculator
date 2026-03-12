@@ -513,5 +513,24 @@
     "title": "Une erreur s'est produite",
     "message": "Une erreur inattendue s'est produite. Veuillez réessayer.",
     "tryAgain": "Réessayer"
+  },
+  "reportButton": {
+    "label": "Signaler une inexactitude",
+    "subject": "[Commentaires] Signaler une inexactitude",
+    "body": "J'ai trouvé une inexactitude sur la page suivante :",
+    "modalTitle": "Signaler une inexactitude",
+    "modalDescription": "Choisissez comment vous souhaitez nous envoyer vos commentaires :",
+    "openEmail": "Ouvrir le client mail",
+    "copyEmail": "Copier l'adresse e-mail",
+    "copied": "Copié !",
+    "close": "Fermer"
+  },
+  "emailModal": {
+    "title": "Nous contacter",
+    "description": "Choisissez comment vous souhaitez nous contacter :",
+    "openEmail": "Ouvrir le client mail",
+    "copyEmail": "Copier l'adresse e-mail",
+    "copied": "Copié !",
+    "close": "Fermer"
   }
 }

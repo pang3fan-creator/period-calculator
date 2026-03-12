@@ -513,5 +513,24 @@
     "title": "Something went wrong",
     "message": "An unexpected error occurred. Please try again.",
     "tryAgain": "Try Again"
+  },
+  "reportButton": {
+    "label": "Report an Inaccuracy",
+    "subject": "[Feedback] Report an Inaccuracy",
+    "body": "I found an inaccuracy on the following page:",
+    "modalTitle": "Report an Inaccuracy",
+    "modalDescription": "Choose how you'd like to send us feedback:",
+    "openEmail": "Open Email Client",
+    "copyEmail": "Copy Email Address",
+    "copied": "Copied!",
+    "close": "Close"
+  },
+  "emailModal": {
+    "title": "Contact Us",
+    "description": "Choose how you'd like to contact us:",
+    "openEmail": "Open Email Client",
+    "copyEmail": "Copy Email Address",
+    "copied": "Copied!",
+    "close": "Close"
   }
 }

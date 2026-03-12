@@ -512,5 +512,24 @@
     "title": "Algo salió mal",
     "message": "Se produjo un error inesperado. Por favor, inténtalo de nuevo.",
     "tryAgain": "Intentar de nuevo"
+  },
+  "reportButton": {
+    "label": "Informar de una inexactitud",
+    "subject": "[Comentarios] Informar de una inexactitud",
+    "body": "Encontré una inexactitud en la siguiente página:",
+    "modalTitle": "Informar de una inexactitud",
+    "modalDescription": "Elija cómo desea enviarnos sus comentarios:",
+    "openEmail": "Abrir cliente de correo",
+    "copyEmail": "Copiar dirección de correo",
+    "copied": "¡Copiado!",
+    "close": "Cerrar"
+  },
+  "emailModal": {
+    "title": "Contáctenos",
+    "description": "Elija cómo desea contactarnos:",
+    "openEmail": "Abrir cliente de correo",
+    "copyEmail": "Copiar dirección de correo",
+    "copied": "¡Copiado!",
+    "close": "Cerrar"
   }
 }

@@ -1,0 +1,106 @@
+<h2>用户点击按钮后，应该如何收集反馈？</h2>
+<p class="subtitle">选择最适合您项目的方式</p>
+
+<div class="cards" style="margin-top: 24px;">
+  <div class="card" data-choice="modal" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 20px; background: #f8f5f0; min-height: 180px;">
+      <div style="background: rgba(0,0,0,0.4); position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+        <div style="background: white; border-radius: 16px; padding: 24px; width: 280px; box-shadow: 0 8px 32px rgba(0,0,0,0.2);">
+          <h4 style="margin: 0 0 12px; font-size: 16px;">报告错误</h4>
+          <textarea placeholder="请描述您发现的问题..." style="width: 100%; height: 60px; border: 1px solid #ddd; border-radius: 8px; padding: 8px; font-size: 14px; resize: none;"></textarea>
+          <button style="margin-top: 12px; background: #eb7e97; color: white; border: none; padding: 8px 16px; border-radius: 8px; width: 100%;">提交</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. 站内模态表单</h3>
+      <p>用户填写表单，数据发送到您的服务</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="email" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 20px; background: #f8f5f0; min-height: 180px;">
+      <div style="background: rgba(0,0,0,0.4); position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+        <div style="background: white; border-radius: 16px; padding: 24px; width: 280px; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.2);">
+          <div style="font-size: 48px; margin-bottom: 12px;">📧</div>
+          <h4 style="margin: 0 0 8px; font-size: 16px;">打开邮件客户端</h4>
+          <p style="font-size: 13px; color: #666; margin: 0;">将跳转到您的默认邮件应用</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. 邮件链接 (mailto:)</h3>
+      <p>打开用户邮件客户端，预填收件人和主题</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="github" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 20px; background: #f8f5f0; min-height: 180px;">
+      <div style="background: rgba(0,0,0,0.4); position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+        <div style="background: white; border-radius: 16px; padding: 24px; width: 280px; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.2);">
+          <div style="font-size: 48px; margin-bottom: 12px;">🐙</div>
+          <h4 style="margin: 0 0 8px; font-size: 16px;">在 GitHub 上反馈</h4>
+          <p style="font-size: 13px; color: #666; margin: 0;">将跳转到 GitHub Issues</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. GitHub Issues</h3>
+      <p>跳转到项目的 GitHub Issues 页面</p>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 24px;">
+  <h3>各方案对比</h3>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 12px;">
+    <thead>
+      <tr style="background: #f0f0f0;">
+        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">方案</th>
+        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">优点</th>
+        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">缺点</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 12px; border: 1px solid #ddd;"><strong>模态表单</strong></td>
+        <td style="padding: 12px; border: 1px solid #ddd;">体验流畅，可收集结构化数据</td>
+        <td style="padding: 12px; border: 1px solid #ddd;">需要后端 API 或第三方服务</td>
+      </tr>
+      <tr>
+        <td style="padding: 12px; border: 1px solid #ddd;"><strong>邮件链接</strong></td>
+        <td style="padding: 12px; border: 1px solid #ddd;">零成本，无需后端</td>
+        <td style="padding: 12px; border: 1px solid #ddd;">依赖用户邮件客户端，体验断裂</td>
+      </tr>
+      <tr>
+        <td style="padding: 12px; border: 1px solid #ddd;"><strong>GitHub Issues</strong></td>
+        <td style="padding: 12px; border: 1px solid #ddd;">公开透明，便于跟踪</td>
+        <td style="padding: 12px; border: 1px solid #ddd;">需要用户有 GitHub 账号</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="options" style="margin-top: 24px;">
+  <div class="option" data-choice="modal" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>站内模态表单</h3>
+      <p>最佳用户体验，但需要后端支持</p>
+    </div>
+  </div>
+  <div class="option" data-choice="email" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>邮件链接 (mailto:)</h3>
+      <p>简单零成本，无需后端</p>
+    </div>
+  </div>
+  <div class="option" data-choice="github" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>GitHub Issues</h3>
+      <p>适合开源项目，公开透明</p>
+    </div>
+  </div>
+</div>

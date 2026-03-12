@@ -1,0 +1,114 @@
+<h2>悬浮按钮应该放在哪个角落？</h2>
+<p class="subtitle">选择一个位置，考虑用户习惯和与现有 UI 的协调性</p>
+
+<div class="split" style="margin-top: 24px;">
+  <div class="mockup">
+    <div class="mockup-header">A. 右下角（推荐）</div>
+    <div class="mockup-body" style="position: relative; height: 300px; background: #f8f5f0;">
+      <div class="mock-nav" style="background: #eb7e97; color: white; padding: 12px;">Period Calculator</div>
+      <div style="padding: 20px; color: #666;">
+        <p>页面内容区域...</p>
+        <p>计算器表单...</p>
+        <p>结果展示...</p>
+      </div>
+      <!-- FAB 右下角 -->
+      <div style="position: absolute; bottom: 20px; right: 20px; width: 56px; height: 56px; background: #eb7e97; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">!</div>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">B. 左下角</div>
+    <div class="mockup-body" style="position: relative; height: 300px; background: #f8f5f0;">
+      <div class="mock-nav" style="background: #eb7e97; color: white; padding: 12px;">Period Calculator</div>
+      <div style="padding: 20px; color: #666;">
+        <p>页面内容区域...</p>
+        <p>计算器表单...</p>
+        <p>结果展示...</p>
+      </div>
+      <!-- FAB 左下角 -->
+      <div style="position: absolute; bottom: 20px; left: 20px; width: 56px; height: 56px; background: #eb7e97; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">!</div>
+    </div>
+  </div>
+</div>
+
+<div class="split" style="margin-top: 16px;">
+  <div class="mockup">
+    <div class="mockup-header">C. 右上角</div>
+    <div class="mockup-body" style="position: relative; height: 300px; background: #f8f5f0;">
+      <div class="mock-nav" style="background: #eb7e97; color: white; padding: 12px;">Period Calculator</div>
+      <div style="padding: 20px; color: #666;">
+        <p>页面内容区域...</p>
+        <p>计算器表单...</p>
+        <p>结果展示...</p>
+      </div>
+      <!-- FAB 右上角 -->
+      <div style="position: absolute; top: 80px; right: 20px; width: 56px; height: 56px; background: #eb7e97; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">!</div>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">D. 左上角</div>
+    <div class="mockup-body" style="position: relative; height: 300px; background: #f8f5f0;">
+      <div class="mock-nav" style="background: #eb7e97; color: white; padding: 12px;">Period Calculator</div>
+      <div style="padding: 20px; color: #666;">
+        <p>页面内容区域...</p>
+        <p>计算器表单...</p>
+        <p>结果展示...</p>
+      </div>
+      <!-- FAB 左上角 -->
+      <div style="position: absolute; top: 80px; left: 20px; width: 56px; height: 56px; background: #eb7e97; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">!</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 24px;">
+  <div class="pros-cons">
+    <div class="pros">
+      <h4>右下角（推荐）的优势</h4>
+      <ul>
+        <li>符合 Material Design 和用户习惯</li>
+        <li>不干扰主要内容阅读</li>
+        <li>拇指可达性好（移动端）</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <h4>其他位置的考虑</h4>
+      <ul>
+        <li>左下角：可能与面包屑导航冲突</li>
+        <li>右上角：与 Header 功能按钮距离太近</li>
+        <li>左上角：容易被忽略</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="options" style="margin-top: 24px;">
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>右下角</h3>
+      <p>最常见且用户熟悉的位置</p>
+    </div>
+  </div>
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>左下角</h3>
+      <p>避开右手操作区域</p>
+    </div>
+  </div>
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>右上角</h3>
+      <p>更显眼但不干扰下方内容</p>
+    </div>
+  </div>
+  <div class="option" data-choice="d" onclick="toggleSelect(this)">
+    <div class="letter">D</div>
+    <div class="content">
+      <h3>左上角</h3>
+      <p>最不常见的位置</p>
+    </div>
+  </div>
+</div>

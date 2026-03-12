@@ -1,0 +1,108 @@
+<h2>设计概览：Report an Inaccuracy 按钮</h2>
+<p class="subtitle">以下是最终设计方案，请确认是否符合您的预期</p>
+
+<div class="section" style="margin-top: 24px;">
+  <h3>📋 设计决策摘要</h3>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 12px;">
+    <tbody>
+      <tr>
+        <td style="padding: 12px; border: 1px solid #ddd; background: #f8f5f0; font-weight: bold; width: 30%;">按钮位置</td>
+        <td style="padding: 12px; border: 1px solid #ddd;">右下角 (fixed bottom-4 right-4)</td>
+      </tr>
+      <tr>
+        <td style="padding: 12px; border: 1px solid #ddd; background: #f8f5f0; font-weight: bold;">反馈方式</td>
+        <td style="padding: 12px; border: 1px solid #ddd;">邮件链接 (mailto:)</td>
+      </tr>
+      <tr>
+        <td style="padding: 12px; border: 1px solid #ddd; background: #f8f5f0; font-weight: bold;">视觉样式</td>
+        <td style="padding: 12px; border: 1px solid #ddd;">主色调填充（玫瑰粉 #eb7e97）</td>
+      </tr>
+      <tr>
+        <td style="padding: 12px; border: 1px solid #ddd; background: #f8f5f0; font-weight: bold;">收件邮箱</td>
+        <td style="padding: 12px; border: 1px solid #ddd;">hello@aiperiodcalculator.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section" style="margin-top: 24px;">
+  <h3>🎨 视觉预览</h3>
+  <div class="mockup" style="margin-top: 12px;">
+    <div class="mockup-header">亮色模式</div>
+    <div class="mockup-body" style="position: relative; height: 280px; background: #fefdfb;">
+      <div style="background: #eb7e97; color: white; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-weight: 600;">Period Calculator</span>
+        <span style="opacity: 0.8;">🌙 ☯️</span>
+      </div>
+      <div style="padding: 20px; color: #666;">
+        <p>页面主内容...</p>
+        <p>计算器表单...</p>
+      </div>
+      <div style="position: absolute; bottom: 16px; right: 16px; width: 56px; height: 56px; background: #eb7e97; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(235,126,151,0.4); cursor: pointer;" title="Report an Inaccuracy">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="mockup" style="margin-top: 16px;">
+    <div class="mockup-header">深色模式</div>
+    <div class="mockup-body" style="position: relative; height: 280px; background: #1a1a2e;">
+      <div style="background: #2d2d4a; color: white; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-weight: 600;">Period Calculator</span>
+        <span style="opacity: 0.8;">☀️ ☯️</span>
+      </div>
+      <div style="padding: 20px; color: #a0a0b0;">
+        <p>页面主内容...</p>
+        <p>计算器表单...</p>
+      </div>
+      <div style="position: absolute; bottom: 16px; right: 16px; width: 56px; height: 56px; background: #eb7e97; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(235,126,151,0.3); cursor: pointer;" title="Report an Inaccuracy">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 24px;">
+  <h3>🔧 技术实现要点</h3>
+  <ul style="margin-top: 12px; line-height: 1.8;">
+    <li><strong>组件位置：</strong><code>src/components/ui/report-button.tsx</code></li>
+    <li><strong>引入位置：</strong>在 <code>src/app/[locale]/layout.tsx</code> 中全局引入</li>
+    <li><strong>多语言支持：</strong>添加翻译键到 <code>messages/en.json</code>、<code>es.json</code>、<code>fr.json</code></li>
+    <li><strong>无障碍：</strong>添加 <code>aria-label</code> 和 <code>title</code> 属性</li>
+    <li><strong>响应式：</strong>在移动端保持足够大的点击区域 (48px+)</li>
+  </ul>
+</div>
+
+<div class="section" style="margin-top: 24px;">
+  <h3>📧 邮件预设内容</h3>
+  <div style="background: #f8f5f0; padding: 16px; border-radius: 8px; margin-top: 12px;">
+    <p><strong>收件人：</strong>hello@aiperiodcalculator.com</p>
+    <p><strong>主题：</strong>[Feedback] Report an Inaccuracy - [页面URL]</p>
+    <p><strong>正文：</strong>预填页面 URL 和语言信息，方便定位问题</p>
+  </div>
+</div>
+
+<div class="options" style="margin-top: 24px;">
+  <div class="option" data-choice="approve" onclick="toggleSelect(this)">
+    <div class="letter">✓</div>
+    <div class="content">
+      <h3>确认设计</h3>
+      <p>设计符合预期，可以开始实现</p>
+    </div>
+  </div>
+  <div class="option" data-choice="revise" onclick="toggleSelect(this)">
+    <div class="letter">✎</div>
+    <div class="content">
+      <h3>需要修改</h3>
+      <p>请在终端中告诉我需要调整的地方</p>
+    </div>
+  </div>
+</div>

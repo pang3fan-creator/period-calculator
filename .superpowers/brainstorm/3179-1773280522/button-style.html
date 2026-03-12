@@ -1,0 +1,81 @@
+<h2>悬浮按钮的视觉样式</h2>
+<p class="subtitle">选择与项目莫兰迪色系协调的设计风格</p>
+
+<div class="cards" style="margin-top: 24px;">
+  <div class="card" data-choice="primary" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 20px; background: #f8f5f0; min-height: 140px; display: flex; align-items: center; justify-content: center;">
+      <div style="width: 56px; height: 56px; background: #eb7e97; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(235,126,151,0.4);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. 主色调填充（推荐）</h3>
+      <p>使用品牌玫瑰粉，醒目且统一</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="outline" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 20px; background: #f8f5f0; min-height: 140px; display: flex; align-items: center; justify-content: center;">
+      <div style="width: 56px; height: 56px; background: white; border: 2px solid #eb7e97; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#eb7e97" stroke-width="2">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. 描边样式</h3>
+      <p>轻盈通透，不抢视觉焦点</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="dark" onclick="toggleSelect(this)">
+    <div class="card-image" style="padding: 20px; background: #1a1a2e; min-height: 140px; display: flex; align-items: center; justify-content: center;">
+      <div style="width: 56px; height: 56px; background: #2d2d4a; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#eb7e97" stroke-width="2">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. 深色卡片样式</h3>
+      <p>深色模式下自动适配</p>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 24px;">
+  <h3>图标选择</h3>
+  <p style="color: #666; margin-top: 8px;">使用警示图标（三角形+感叹号）传达"报告问题"的含义，与功能语义一致。</p>
+</div>
+
+<div class="options" style="margin-top: 24px;">
+  <div class="option" data-choice="primary" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>主色调填充</h3>
+      <p>醒目，与品牌统一</p>
+    </div>
+  </div>
+  <div class="option" data-choice="outline" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>描边样式</h3>
+      <p>轻盈，不抢焦点</p>
+    </div>
+  </div>
+  <div class="option" data-choice="dark" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>深色卡片样式</h3>
+      <p>深色模式适配</p>
+    </div>
+  </div>
+</div>

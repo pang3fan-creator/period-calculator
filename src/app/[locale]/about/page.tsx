@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
+import { EmailLink } from "@/components/ui/email-link";
 
 const baseUrl = "https://www.aiperiodcalculator.com";
 
@@ -249,13 +250,13 @@ export default async function AboutPage() {
           <p className="mb-4 leading-relaxed text-gray-700 dark:text-gray-200">
             {t("contact.description")}
           </p>
-          <a
-            href="mailto:hello@aiperiodcalculator.com"
+          <EmailLink
+            email="hello@aiperiodcalculator.com"
             className="text-primary-500 hover:text-primary-600 inline-flex items-center gap-2 font-medium"
           >
             <MailIcon className="h-5 w-5" />
             hello@aiperiodcalculator.com
-          </a>
+          </EmailLink>
         </section>
 
         {/* Footer Navigation */}

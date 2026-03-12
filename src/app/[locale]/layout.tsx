@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ErrorBoundary } from "@/components/error-boundary";
+import { ReportButton } from "@/components/ui/report-button";
 import { Playfair_Display, Inter } from "next/font/google";
 import { Metadata } from "next";
 
@@ -65,6 +66,7 @@ export default async function LocaleLayout({
               <ErrorBoundary>{children}</ErrorBoundary>
             </main>
             <Footer />
+            <ReportButton />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
