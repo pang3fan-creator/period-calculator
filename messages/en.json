@@ -356,6 +356,23 @@
     },
     "backToHome": "Back to Period Calculator"
   },
+  "algorithmTransparency": {
+    "title": "How We Calculate Your Monthly Period",
+    "timeline": {
+      "lastPeriod": "Last Period",
+      "nextPeriod": "Next Period",
+      "ovulation": "Ovulation",
+      "fertileWindow": "Fertile Window"
+    },
+    "formulas": {
+      "nextPeriod": "Last Period + Cycle Length",
+      "ovulation": "Next Period - 14 days",
+      "fertileWindow": "Ovulation ± 5 days",
+      "pms": "Next Period - 7 days"
+    },
+    "disclaimer": "Results are estimates only, not medical advice. Individual cycles may vary.",
+    "learnMore": "Learn more about our Editorial Policy"
+  },
   "howToCalculate": {
     "title": "How to Use the Period Calculator",
     "description": "Learn how to use our free Period Calculator to track your menstrual cycle and predict your next period with accuracy.",

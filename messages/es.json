@@ -356,6 +356,23 @@
     },
     "backToHome": "Volver a la Calculadora de Periodo"
   },
+  "algorithmTransparency": {
+    "title": "Cómo Calculamos Tu Período Mensual",
+    "timeline": {
+      "lastPeriod": "Último Período",
+      "nextPeriod": "Próximo Período",
+      "ovulation": "Ovulación",
+      "fertileWindow": "Ventana Fértil"
+    },
+    "formulas": {
+      "nextPeriod": "Último Período + Duración del Ciclo",
+      "ovulation": "Próximo Período - 14 días",
+      "fertileWindow": "Ovulación ± 5 días",
+      "pms": "Próximo Período - 7 días"
+    },
+    "disclaimer": "Los resultados son solo estimaciones, no consejo médico. Los ciclos individuales pueden variar.",
+    "learnMore": "Más información sobre nuestra Política Editorial"
+  },
   "howToCalculate": {
     "title": "Cómo Usar la Calculadora de Periodo",
     "description": "Aprende a usar nuestra Calculadora de Periodo gratuita para seguir tu ciclo menstrual y predecir tu próximo período con precisión.",

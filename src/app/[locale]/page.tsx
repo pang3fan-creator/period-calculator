@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { PeriodCalculator } from "@/components/calculator";
 import { HowToCalculate } from "@/components/home/how-to-calculate";
+import { AlgorithmTransparency } from "@/components/home/algorithm-transparency";
 import { DeepKnowledge } from "@/components/home/deep-knowledge";
 import { FAQ } from "@/components/home/faq";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -232,6 +233,11 @@ export default async function HomePage({
         {/* Second Screen: How to Calculate */}
         <div className="mt-24 w-full max-w-4xl">
           <HowToCalculate />
+        </div>
+
+        {/* Algorithm Transparency */}
+        <div className="mt-24 w-full max-w-4xl">
+          <AlgorithmTransparency />
         </div>
 
         {/* Third Screen: Deep Knowledge */}

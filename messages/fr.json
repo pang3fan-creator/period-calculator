@@ -357,6 +357,23 @@
     },
     "backToHome": "Retour au Calculateur de Règles"
   },
+  "algorithmTransparency": {
+    "title": "Comment Nous Calculons Vos Règles Mensuelles",
+    "timeline": {
+      "lastPeriod": "Dernières Règles",
+      "nextPeriod": "Prochaines Règles",
+      "ovulation": "Ovulation",
+      "fertileWindow": "Fenêtre Fertile"
+    },
+    "formulas": {
+      "nextPeriod": "Dernières Règles + Durée du Cycle",
+      "ovulation": "Prochaines Règles - 14 jours",
+      "fertileWindow": "Ovulation ± 5 jours",
+      "pms": "Prochaines Règles - 7 jours"
+    },
+    "disclaimer": "Les résultats sont des estimations uniquement, pas des conseils médicaux. Les cycles individuels peuvent varier.",
+    "learnMore": "En savoir plus sur notre Politique Éditoriale"
+  },
   "howToCalculate": {
     "title": "Comment Utiliser le Calculateur de Règles",
     "description": "Apprenez à utiliser notre Calculateur de Règles gratuit pour suivre votre cycle menstruel et prédire votre prochaine période avec précision.",
