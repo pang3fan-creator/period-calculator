@@ -67,11 +67,13 @@ src/components/calculator/irregular-algorithm-transparency.tsx
 
 ### Statistical Cards
 
-| Card | Icon | Title | Formula |
+| Card | Icon | Title | Content |
 |------|------|-------|---------|
-| 1 | 📊 | Average Cycle | `Σ(days) / n` |
-| 2 | 📏 | Standard Deviation | `σ = √(Σ(x-x̄)²/n)` |
-| 3 | 🎯 | Confidence | `σ≤3→High, σ≤6→Medium, σ>6→Low` |
+| 1 | 📊 | Average Cycle | Formula: `Σ(days) / n` |
+| 2 | 📏 | Standard Deviation | Formula: `σ = √(Σ(x-x̄)²/n)` |
+| 3 | 🎯 | Confidence | Rules: High (σ≤3), Medium (σ≤6), Low (σ>6) |
+
+> **Note**: The Confidence card displays logic rules rather than a mathematical formula, as confidence level is determined by threshold comparison rather than calculation. |
 
 ### Prediction Window
 
@@ -93,6 +95,8 @@ src/components/calculator/irregular-algorithm-transparency.tsx
 
 ### Translation Keys
 
+> **Naming Rationale**: Using `irregularAlgorithmTransparency` as a separate namespace (rather than nesting under `irregularCalculator`) maintains consistency with the homepage's `algorithmTransparency` namespace pattern. Both are top-level keys for their respective calculator pages.
+
 ```json
 {
   "irregularAlgorithmTransparency": {
@@ -108,7 +112,9 @@ src/components/calculator/irregular-algorithm-transparency.tsx
       },
       "confidence": {
         "title": "Confidence",
-        "formula": "σ≤3→High, σ≤6→Medium, σ>6→Low"
+        "ruleHigh": "σ≤3 days → High",
+        "ruleMedium": "σ≤6 days → Medium",
+        "ruleLow": "σ>6 days → Low"
       }
     },
     "predictionWindow": {
@@ -202,6 +208,44 @@ src/components/calculator/irregular-algorithm-transparency.tsx
 - **Background**: `bg-white dark:bg-dark-card`
 - **Dark mode**: Fully supported
 
+### Prediction Window Styling
+
+**Colors**:
+- Timeline line: `bg-primary-300 dark:bg-primary-600`
+- Earliest node: `bg-amber-100 dark:bg-amber-900/50 border-amber-300 dark:border-amber-600`
+- Most Likely node: `bg-primary-100 dark:bg-primary-900/50 border-primary-300 dark:border-primary-600`
+- Latest node: `bg-amber-100 dark:bg-amber-900/50 border-amber-300 dark:border-amber-600`
+- Connecting line between nodes: `h-0.5 bg-gradient-to-r from-amber-300 via-primary-400 to-amber-300`
+
+**Spacing**:
+- Node size: `h-12 w-12` (desktop), `h-10 w-10` (mobile)
+- Gap between nodes: `gap-4` (flexbox)
+- Card padding: `p-6 md:p-8`
+
+---
+
+## Accessibility
+
+### ARIA Labels
+
+- Card containers: No special ARIA needed (semantic HTML sufficient)
+- Icon emojis: Use `aria-hidden="true"` (decorative only)
+- Formula text: Wrapped in `<p>` with `font-mono` class
+- Prediction Window nodes: `role="img"` with `aria-label` describing the node
+- Link: Standard `<Link>` component with descriptive text
+
+### Keyboard Navigation
+
+- All interactive elements (link only) are keyboard accessible via default browser behavior
+- No custom keyboard interactions needed (pure display component)
+- Focus visible states: Default Tailwind `focus:ring` classes
+
+### Screen Reader Considerations
+
+- Mathematical formulas presented as text (not MathML) for broader compatibility
+- Confidence rules structured as list items for clear reading
+- Section title provides context for all content
+
 ---
 
 ## Implementation Checklist
@@ -225,6 +269,7 @@ src/components/calculator/irregular-algorithm-transparency.tsx
    - [ ] Dark mode test
    - [ ] Internationalization test (en/es/fr)
    - [ ] Link test (Editorial Policy navigation)
+   - [ ] Accessibility test (keyboard navigation, screen reader)
 
 ---
 
@@ -249,9 +294,9 @@ function determineConfidenceLevel(stdDev: number): ConfidenceLevel {
 }
 
 // Prediction Window
-const earliest = addDays(mostLikely, -windowDays);  // Average - StdDev
-const mostLikely = addDays(lastPeriodStart, Math.round(averageCycleLength));  // Average
-const latest = addDays(mostLikely, windowDays);  // Average + StdDev
+const mostLikely = addDays(lastPeriodStart, Math.round(averageCycleLength));  // LastPeriodStart + Average
+const earliest = addDays(mostLikely, -windowDays);  // MostLikely - StdDev
+const latest = addDays(mostLikely, windowDays);  // MostLikely + StdDev
 ```
 
 ---
