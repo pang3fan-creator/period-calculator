@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
+import { JsonLd } from "@/components/seo/json-ld";
 
 export async function generateMetadata({
   params,
@@ -297,117 +298,220 @@ export default async function EditorialPolicyPage({
     },
   );
 
+  const baseUrl = "https://www.aiperiodcalculator.com";
+
+  // Schema Markup for Editorial Policy page
+  const editorialSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${baseUrl}/#organization`,
+        name: "Period Calculator",
+        url: baseUrl,
+        logo: {
+          "@type": "ImageObject",
+          url: `${baseUrl}/logo.png`,
+          width: 1200,
+          height: 630,
+        },
+        description:
+          "Privacy-first menstrual cycle tracker helping women understand their bodies without compromising personal data security.",
+        contactPoint: {
+          "@type": "ContactPoint",
+          email: "hello@aiperiodcalculator.com",
+          contactType: "customer service",
+        },
+        sameAs: [
+          "https://twitter.com/aiperiodcalc",
+          "https://www.facebook.com/aiperiodcalculator",
+        ],
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name:
+              locale === "en" ? "Home" : locale === "es" ? "Inicio" : "Accueil",
+            item: baseUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Editorial Policy",
+            item: `${baseUrl}/editorial-policy`,
+          },
+        ],
+      },
+      {
+        "@type": "Article",
+        headline: t("title"),
+        description: t("intro"),
+        url: `${baseUrl}/editorial-policy`,
+        inLanguage: locale,
+        author: {
+          "@type": "Organization",
+          "@id": `${baseUrl}/#organization`,
+        },
+        publisher: {
+          "@id": `${baseUrl}/#organization`,
+        },
+        datePublished: "2024-01-01T00:00:00.000Z",
+        dateModified: "2026-03-01T00:00:00.000Z",
+      },
+    ],
+  };
+
   return (
-    <main className="bg-ivory-100 dark:bg-dark-bg min-h-screen px-4 py-12 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-4xl">
-        {/* Breadcrumb */}
-        <Breadcrumb className="mb-8" />
+    <>
+      <JsonLd data={editorialSchema} />
+      <main className="bg-ivory-100 dark:bg-dark-bg min-h-screen px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          {/* Breadcrumb */}
+          <Breadcrumb className="mb-8" />
 
-        {/* Header Section */}
-        <div className="mb-12 text-center">
-          <div className="bg-trust-green-50 dark:bg-trust-green-900/30 mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full">
-            <BookOpenIcon className="text-trust-green-500 h-8 w-8" />
+          {/* Header Section */}
+          <div className="mb-12 text-center">
+            <div className="bg-trust-green-50 dark:bg-trust-green-900/30 mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full">
+              <BookOpenIcon className="text-trust-green-500 h-8 w-8" />
+            </div>
+            <h1 className="font-heading mb-4 text-4xl font-bold text-gray-800 dark:text-white">
+              {t("title")}
+            </h1>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              {t("lastUpdated", { date: today })}
+            </p>
+            <p className="mt-2 text-xs text-gray-400 dark:text-gray-500">
+              Reviewed by our medical advisory team
+            </p>
           </div>
-          <h1 className="font-heading mb-4 text-4xl font-bold text-gray-800 dark:text-white">
-            {t("title")}
-          </h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            {t("lastUpdated", { date: today })}
-          </p>
-        </div>
 
-        {/* Introduction */}
-        <div className="bg-warmbeige-50 dark:bg-dark-card border-warmbeige-200 dark:border-dark-border mb-8 rounded-3xl border p-6 sm:p-8">
-          <p className="leading-relaxed text-gray-700 dark:text-gray-200">
-            {t("intro")}
-          </p>
-        </div>
+          {/* Introduction */}
+          <div className="bg-warmbeige-50 dark:bg-dark-card border-warmbeige-200 dark:border-dark-border mb-8 rounded-3xl border p-6 sm:p-8">
+            <p className="leading-relaxed text-gray-700 dark:text-gray-200">
+              {t("intro")}
+            </p>
+          </div>
 
-        {/* Content Sections */}
-        <div className="space-y-6">
-          {sections.map((sectionKey) => {
-            const SectionIcon = sectionIcons[sectionKey] || BookOpenIcon;
-            const sectionTitle = t(`sections.${sectionKey}.title`);
-            const sectionDescription = t(`sections.${sectionKey}.description`);
-            const sectionItems = (
-              sectionsWithItems as readonly string[]
-            ).includes(sectionKey)
-              ? getItemsForSection(sectionKey, t)
-              : [];
+          {/* Content Sections */}
+          <div className="space-y-6">
+            {sections.map((sectionKey) => {
+              const SectionIcon = sectionIcons[sectionKey] || BookOpenIcon;
+              const sectionTitle = t(`sections.${sectionKey}.title`);
+              const sectionDescription = t(
+                `sections.${sectionKey}.description`,
+              );
+              const sectionItems = (
+                sectionsWithItems as readonly string[]
+              ).includes(sectionKey)
+                ? getItemsForSection(sectionKey, t)
+                : [];
 
-            return (
-              <div
-                key={sectionKey}
-                className="bg-warmbeige-50 dark:bg-dark-card border-warmbeige-200 dark:border-dark-border hover:border-trust-green-200 dark:hover:border-trust-green-700 rounded-3xl border p-6 transition-colors duration-200 sm:p-8"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0">
-                    <div className="bg-trust-green-50 dark:bg-trust-green-900/30 inline-flex h-12 w-12 items-center justify-center rounded-lg">
-                      <SectionIcon className="text-trust-green-500 h-6 w-6" />
+              return (
+                <div
+                  key={sectionKey}
+                  className="bg-warmbeige-50 dark:bg-dark-card border-warmbeige-200 dark:border-dark-border hover:border-trust-green-200 dark:hover:border-trust-green-700 rounded-3xl border p-6 transition-colors duration-200 sm:p-8"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="bg-trust-green-50 dark:bg-trust-green-900/30 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+                        <SectionIcon className="text-trust-green-500 h-6 w-6" />
+                      </div>
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h2 className="font-heading mb-3 text-xl font-semibold text-gray-900 dark:text-white">
+                        {sectionTitle}
+                      </h2>
+                      <p className="mb-4 leading-relaxed text-gray-600 dark:text-gray-300">
+                        {sectionDescription}
+                      </p>
+                      {sectionItems.length > 0 && (
+                        <ul className="space-y-2">
+                          {sectionItems.map((item: string, index: number) => (
+                            <li key={index} className="flex items-start gap-3">
+                              <CheckIcon className="text-trust-green-500 mt-0.5 h-6 w-6 flex-shrink-0" />
+                              <div>
+                                {sectionKey === "medicalSources" &&
+                                medicalSourceLinks[index] ? (
+                                  <>
+                                    <a
+                                      href={medicalSourceLinks[index]}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="hover:text-trust-green-600 dark:hover:text-trust-green-400 text-sm font-medium text-gray-600 underline underline-offset-2 dark:text-gray-300"
+                                    >
+                                      {item}
+                                    </a>
+                                    {index === 0 && (
+                                      <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                                        American College of Obstetricians and
+                                        Gynecologists - the leading authority on
+                                        women&apos;s health
+                                      </p>
+                                    )}
+                                    {index === 1 && (
+                                      <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                                        World Health Organization - global
+                                        health authority
+                                      </p>
+                                    )}
+                                    {index === 2 && (
+                                      <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                                        UK National Health Service -
+                                        evidence-based health guidance
+                                      </p>
+                                    )}
+                                    {index === 3 && (
+                                      <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+                                        Mayo Clinic - trusted medical research
+                                        and education
+                                      </p>
+                                    )}
+                                  </>
+                                ) : (
+                                  <span className="text-sm text-gray-600 dark:text-gray-300">
+                                    {item}
+                                  </span>
+                                )}
+                              </div>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <h2 className="font-heading mb-3 text-xl font-semibold text-gray-900 dark:text-white">
-                      {sectionTitle}
-                    </h2>
-                    <p className="mb-4 leading-relaxed text-gray-600 dark:text-gray-300">
-                      {sectionDescription}
-                    </p>
-                    {sectionItems.length > 0 && (
-                      <ul className="space-y-2">
-                        {sectionItems.map((item: string, index: number) => (
-                          <li key={index} className="flex items-start gap-3">
-                            <CheckIcon className="text-trust-green-500 mt-0.5 h-6 w-6 flex-shrink-0" />
-                            {sectionKey === "medicalSources" &&
-                            medicalSourceLinks[index] ? (
-                              <a
-                                href={medicalSourceLinks[index]}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-trust-green-600 dark:hover:text-trust-green-400 text-sm text-gray-600 underline underline-offset-2 dark:text-gray-300"
-                              >
-                                {item}
-                              </a>
-                            ) : (
-                              <span className="text-sm text-gray-600 dark:text-gray-300">
-                                {item}
-                              </span>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
 
-        {/* Footer Navigation */}
-        <div className="mt-12 text-center">
-          <Link
-            href="/"
-            className="hover:text-trust-green-500 dark:hover:text-trust-green-400 focus-visible:ring-primary-400 inline-flex items-center gap-2 rounded-full text-gray-500 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
+          {/* Footer Navigation */}
+          <div className="mt-12 text-center">
+            <Link
+              href="/"
+              className="hover:text-trust-green-500 dark:hover:text-trust-green-400 focus-visible:ring-primary-400 inline-flex items-center gap-2 rounded-full text-gray-500 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400"
             >
-              <path d="m15 18-6-6 6-6" />
-            </svg>
-            <span className="text-sm">{t("backToHome")}</span>
-          </Link>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+              <span className="text-sm">{t("backToHome")}</span>
+            </Link>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

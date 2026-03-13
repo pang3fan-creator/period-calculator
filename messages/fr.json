@@ -72,6 +72,12 @@
   "about": {
     "title": "À Propos de Period Calculator",
     "subtitle": "Autonomiser les femmes avec des outils de santé privés",
+    "lastUpdated": "Dernière mise à jour : {date}",
+    "stats": {
+      "monthlyUsers": "Utilisateurs Mensuels",
+      "dataSent": "Données envoyées aux serveurs",
+      "dataOnDevice": "Données restent sur l'appareil"
+    },
     "mission": {
       "title": "Notre Mission",
       "description": "Nous croyons que chaque femme mérite un accès à des outils de santé menstruelle précis et privés. Notre mission est de fournir une calculatrice de règles fiable qui respecte votre vie privée tout en vous aidant à mieux comprendre votre corps."
@@ -93,6 +99,10 @@
         "reviewed": "Révisé par des professionnels - Notre contenu est révisé par des professionnels de santé qualifiés.",
         "sources": "Basé sur des sources autorisées - Nous référençons l'ACOG, le NHS, l'OMS et d'autres organisations médicales autorisées.",
         "updated": "Régularité mis à jour - Nous révisons et mettons à jour notre contenu trimestriellement pour assurer la précision."
+      },
+      "authoritySources": {
+        "prefix": "Nos calculs sont basés sur les directives de",
+        "and": "et"
       }
     },
     "disclaimer": {
@@ -455,6 +465,23 @@
   "deepKnowledge": {
     "title": "Au-delà des Dates: Comprenez Vos Règles Mensuelles",
     "description": "La plupart des gens pensent que leur cycle n'est que les jours de saignement, mais votre corps traverse en réalité un voyage biologique sophistiqué en trois parties chaque mois. Comprendre ces changements est exactement pourquoi un Calculateur de Période précis ne concerne pas seulement le 'premier jour' : il s'agit de cartographier votre paysage hormonal unique. Notre Calculateur de Règles vous aide à suivre chaque phase de votre cycle menstruel avec précision.",
+    "lastUpdated": "Dernière mise à jour : mars 2026",
+    "medicallyReviewed": "Révisé médicalement",
+    "keyStatistics": {
+      "title": "Statistiques Clés sur les Cycles Menstruels",
+      "stat1": {
+        "value": "28 jours",
+        "description": "durée moyenne du cycle menstruel (ACOG)"
+      },
+      "stat2": {
+        "value": "12-24 heures",
+        "description": "durée de la fenêtre d'ovulation (NHS UK)"
+      },
+      "stat3": {
+        "value": "10-16 jours",
+        "description": "durée typique de la phase lutéale (ACOG)"
+      }
+    },
     "topics": {
       "follicularPhase": {
         "title": "La Phase Folliculaire : La Construction",

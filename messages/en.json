@@ -72,6 +72,12 @@
   "about": {
     "title": "About Period Calculator",
     "subtitle": "Empowering women with privacy-first health tools",
+    "lastUpdated": "Last updated: {date}",
+    "stats": {
+      "monthlyUsers": "Monthly Users",
+      "dataSent": "Data sent to servers",
+      "dataOnDevice": "Data stays on device"
+    },
     "mission": {
       "title": "Our Mission",
       "description": "We believe every woman deserves access to accurate, private menstrual health tools. Our mission is to provide a reliable period calculator that respects your privacy while helping you understand your body better."
@@ -93,6 +99,10 @@
         "reviewed": "Reviewed by professionals - Our content is reviewed by qualified healthcare professionals.",
         "sources": "Based on authoritative sources - We reference ACOG, NHS, WHO, and other authoritative medical organizations.",
         "updated": "Regularly updated - We review and update our content quarterly to ensure accuracy."
+      },
+      "authoritySources": {
+        "prefix": "Our calculations are based on guidelines from",
+        "and": "and"
       }
     },
     "disclaimer": {
@@ -455,6 +465,23 @@
   "deepKnowledge": {
     "title": "Beyond the Dates: Understanding Your Monthly Period",
     "description": "Most people think of their cycle as just the days they are bleeding, but your body is actually moving through a sophisticated, three-part biological journey every month. Understanding these shifts is exactly why a precise Period Calculator is about more than just 'day one'—it's about mapping your unique hormonal landscape. Our Period Calculator helps you track every phase of your menstrual cycle with precision.",
+    "lastUpdated": "Last Updated: March 2026",
+    "medicallyReviewed": "Medically Reviewed",
+    "keyStatistics": {
+      "title": "Key Statistics About Menstrual Cycles",
+      "stat1": {
+        "value": "28 days",
+        "description": "average menstrual cycle length (ACOG)"
+      },
+      "stat2": {
+        "value": "12-24 hours",
+        "description": "ovulation window duration (NHS UK)"
+      },
+      "stat3": {
+        "value": "10-16 days",
+        "description": "typical luteal phase length (ACOG)"
+      }
+    },
     "topics": {
       "follicularPhase": {
         "title": "The Follicular Phase: The Buildup",

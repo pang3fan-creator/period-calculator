@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
+import { JsonLd } from "@/components/seo/json-ld";
 
 export async function generateMetadata({
   params,
@@ -284,105 +285,227 @@ export default async function PrivacyPolicyPage({
     },
   );
 
+  const baseUrl = "https://www.aiperiodcalculator.com";
+
+  // Schema Markup for Privacy Policy page
+  const privacySchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${baseUrl}/#organization`,
+        name: "Period Calculator",
+        url: baseUrl,
+        logo: {
+          "@type": "ImageObject",
+          url: `${baseUrl}/logo.png`,
+          width: 1200,
+          height: 630,
+        },
+        description:
+          "Privacy-first menstrual cycle tracker helping women understand their bodies without compromising personal data security.",
+        contactPoint: {
+          "@type": "ContactPoint",
+          email: "hello@aiperiodcalculator.com",
+          contactType: "customer service",
+        },
+        sameAs: [
+          "https://twitter.com/aiperiodcalc",
+          "https://www.facebook.com/aiperiodcalculator",
+        ],
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name:
+              locale === "en" ? "Home" : locale === "es" ? "Inicio" : "Accueil",
+            item: baseUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Privacy Policy",
+            item: `${baseUrl}/privacy-policy`,
+          },
+        ],
+      },
+      {
+        "@type": "WebPage",
+        name: t("title"),
+        description: t("intro"),
+        url: `${baseUrl}/privacy-policy`,
+        inLanguage: locale,
+        datePublished: "2024-01-01",
+        dateModified: new Date().toISOString().split("T")[0],
+        publisher: {
+          "@id": `${baseUrl}/#organization`,
+        },
+      },
+    ],
+  };
+
   return (
-    <main className="bg-ivory-100 dark:bg-dark-bg min-h-screen px-4 py-12 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-4xl">
-        {/* Breadcrumb */}
-        <Breadcrumb className="mb-8" />
+    <>
+      <JsonLd data={privacySchema} />
+      <main className="bg-ivory-100 dark:bg-dark-bg min-h-screen px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          {/* Breadcrumb */}
+          <Breadcrumb className="mb-8" />
 
-        {/* Header Section */}
-        <div className="mb-12 text-center">
-          <div className="bg-trust-blue-50 dark:bg-trust-blue-900/30 mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full">
-            <ShieldIcon className="text-trust-blue-500 h-8 w-8" />
+          {/* Header Section */}
+          <div className="mb-12 text-center">
+            <div className="bg-trust-blue-50 dark:bg-trust-blue-900/30 mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full">
+              <ShieldIcon className="text-trust-blue-500 h-8 w-8" />
+            </div>
+            <h1 className="font-heading mb-4 text-4xl font-bold text-gray-800 dark:text-white">
+              {t("title")}
+            </h1>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              {t("lastUpdated", { date: today })}
+            </p>
           </div>
-          <h1 className="font-heading mb-4 text-4xl font-bold text-gray-800 dark:text-white">
-            {t("title")}
-          </h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            {t("lastUpdated", { date: today })}
-          </p>
-        </div>
 
-        {/* Introduction */}
-        <div className="bg-warmbeige-50 dark:bg-dark-card border-warmbeige-200 dark:border-dark-border mb-8 rounded-3xl border p-6 sm:p-8">
-          <p className="leading-relaxed text-gray-700 dark:text-gray-200">
-            {t("intro")}
-          </p>
-        </div>
+          {/* Introduction with Privacy Stats */}
+          <div className="bg-warmbeige-50 dark:bg-dark-card border-warmbeige-200 dark:border-dark-border mb-8 rounded-3xl border p-6 sm:p-8">
+            <p className="mb-6 leading-relaxed text-gray-700 dark:text-gray-200">
+              {t("intro")}
+            </p>
 
-        {/* Content Sections */}
-        <div className="space-y-6">
-          {sections.map((sectionKey) => {
-            const SectionIcon = sectionIcons[sectionKey] || ShieldIcon;
-            const sectionTitle = t(`sections.${sectionKey}.title`);
-            const sectionDescription = t(`sections.${sectionKey}.description`);
-            const sectionItems = (
-              sectionsWithItems as readonly string[]
-            ).includes(sectionKey)
-              ? getItemsForSection(sectionKey, t)
-              : [];
-
-            return (
-              <div
-                key={sectionKey}
-                className="bg-warmbeige-50 dark:bg-dark-card border-warmbeige-200 dark:border-dark-border hover:border-trust-blue-200 dark:hover:border-trust-blue-700 rounded-3xl border p-6 transition-colors duration-200 sm:p-8"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0">
-                    <div className="bg-trust-blue-50 dark:bg-trust-blue-900/30 inline-flex h-12 w-12 items-center justify-center rounded-lg">
-                      <SectionIcon className="text-trust-blue-500 h-6 w-6" />
-                    </div>
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <h2 className="font-heading mb-3 text-xl font-semibold text-gray-900 dark:text-white">
-                      {sectionTitle}
-                    </h2>
-                    <p className="mb-4 leading-relaxed text-gray-600 dark:text-gray-300">
-                      {sectionDescription}
-                    </p>
-                    {sectionItems.length > 0 && (
-                      <ul className="space-y-2">
-                        {sectionItems.map((item: string, index: number) => (
-                          <li key={index} className="flex items-start gap-3">
-                            <CheckIcon className="text-trust-green-500 mt-0.5 h-6 w-6 flex-shrink-0" />
-                            <span className="text-sm text-gray-600 dark:text-gray-300">
-                              {item}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
+            {/* Privacy Stats Grid */}
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              <div className="dark:bg-dark-bg/50 rounded-2xl bg-white/50 p-4 text-center">
+                <div className="font-heading text-trust-green-500 dark:text-trust-green-400 text-3xl font-bold">
+                  0
+                </div>
+                <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  Data points collected
                 </div>
               </div>
-            );
-          })}
-        </div>
+              <div className="dark:bg-dark-bg/50 rounded-2xl bg-white/50 p-4 text-center">
+                <div className="font-heading text-trust-green-500 dark:text-trust-green-400 text-3xl font-bold">
+                  0
+                </div>
+                <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  Third parties with access
+                </div>
+              </div>
+              <div className="dark:bg-dark-bg/50 rounded-2xl bg-white/50 p-4 text-center">
+                <div className="font-heading text-trust-green-500 dark:text-trust-green-400 text-3xl font-bold">
+                  100%
+                </div>
+                <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                  Data stored locally
+                </div>
+              </div>
+            </div>
+          </div>
 
-        {/* Footer Navigation */}
-        <div className="mt-12 text-center">
-          <Link
-            href="/"
-            className="hover:text-trust-blue-500 dark:hover:text-trust-blue-400 focus-visible:ring-primary-400 inline-flex items-center gap-2 rounded-full text-gray-500 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
+          {/* Content Sections */}
+          <div className="space-y-6">
+            {sections.map((sectionKey) => {
+              const SectionIcon = sectionIcons[sectionKey] || ShieldIcon;
+              const sectionTitle = t(`sections.${sectionKey}.title`);
+              const sectionDescription = t(
+                `sections.${sectionKey}.description`,
+              );
+              const sectionItems = (
+                sectionsWithItems as readonly string[]
+              ).includes(sectionKey)
+                ? getItemsForSection(sectionKey, t)
+                : [];
+
+              return (
+                <div
+                  key={sectionKey}
+                  className="bg-warmbeige-50 dark:bg-dark-card border-warmbeige-200 dark:border-dark-border hover:border-trust-blue-200 dark:hover:border-trust-blue-700 rounded-3xl border p-6 transition-colors duration-200 sm:p-8"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="bg-trust-blue-50 dark:bg-trust-blue-900/30 inline-flex h-12 w-12 items-center justify-center rounded-lg">
+                        <SectionIcon className="text-trust-blue-500 h-6 w-6" />
+                      </div>
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h2 className="font-heading mb-3 text-xl font-semibold text-gray-900 dark:text-white">
+                        {sectionTitle}
+                      </h2>
+                      <p className="mb-4 leading-relaxed text-gray-600 dark:text-gray-300">
+                        {sectionDescription}
+                      </p>
+                      {sectionItems.length > 0 && (
+                        <ul className="space-y-2">
+                          {sectionItems.map((item: string, index: number) => (
+                            <li key={index} className="flex items-start gap-3">
+                              <CheckIcon className="text-trust-green-500 mt-0.5 h-6 w-6 flex-shrink-0" />
+                              <span className="text-sm text-gray-600 dark:text-gray-300">
+                                {item}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      {/* Compliance Declaration - after dataStorage section */}
+                      {sectionKey === "dataStorage" && (
+                        <div className="mt-4 rounded-lg bg-gray-50 p-4 dark:bg-gray-800/50">
+                          <p className="text-sm text-gray-600 dark:text-gray-300">
+                            <strong>Compliance:</strong> Our privacy practices
+                            comply with{" "}
+                            <a
+                              href="https://gdpr.eu"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-trust-blue-500 hover:underline"
+                            >
+                              GDPR
+                            </a>{" "}
+                            (EU) and{" "}
+                            <a
+                              href="https://oag.ca.gov/privacy/ccpa"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-trust-blue-500 hover:underline"
+                            >
+                              CCPA
+                            </a>{" "}
+                            (California) regulations.
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Footer Navigation */}
+          <div className="mt-12 text-center">
+            <Link
+              href="/"
+              className="hover:text-trust-blue-500 dark:hover:text-trust-blue-400 focus-visible:ring-primary-400 inline-flex items-center gap-2 rounded-full text-gray-500 transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400"
             >
-              <path d="m15 18-6-6 6-6" />
-            </svg>
-            <span className="text-sm">{t("backToHome")}</span>
-          </Link>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+              <span className="text-sm">{t("backToHome")}</span>
+            </Link>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

@@ -72,6 +72,12 @@
   "about": {
     "title": "Sobre Period Calculator",
     "subtitle": "Empoderando a las mujeres con herramientas de salud privadas",
+    "lastUpdated": "Última actualización: {date}",
+    "stats": {
+      "monthlyUsers": "Usuarios Mensuales",
+      "dataSent": "Datos enviados a servidores",
+      "dataOnDevice": "Datos permanecen en dispositivo"
+    },
     "mission": {
       "title": "Nuestra Misión",
       "description": "Creemos que cada mujer merece acceso a herramientas precisas y privadas para la salud menstrual. Nuestra misión es proporcionar una calculadora de periodo confiable que respete tu privacidad mientras te ayuda a entender mejor tu cuerpo."
@@ -93,6 +99,10 @@
         "reviewed": "Revisado por profesionales - Nuestro contenido es revisado por profesionales de la salud calificados.",
         "sources": "Basado en fuentes autoritativas - Referenciamos ACOG, NHS, OMS y otras organizaciones médicas autoritativas.",
         "updated": "Actualizado regularmente - Revisamos y actualizamos nuestro contenido trimestralmente para asegurar la precisión."
+      },
+      "authoritySources": {
+        "prefix": "Nuestros cálculos se basan en directrices de",
+        "and": "y"
       }
     },
     "disclaimer": {
@@ -454,6 +464,23 @@
   "deepKnowledge": {
     "title": "Más Allá de las Fechas: Entendiendo Tu Periodo Mensual",
     "description": "La mayoría de las personas piensan que su ciclo son solo los días de sangrado, pero tu cuerpo realmente está atravesando un sofisticado viaje biológico de tres partes cada mes. Entender estos cambios es exactamente por qué un Calculador de Período preciso se trata de más que solo del 'primer día': se trata de mapear tu único paisaje hormonal. Nuestra Calculadora de Periodo te ayuda a seguir cada fase de tu ciclo menstrual con precisión.",
+    "lastUpdated": "Última actualización: marzo 2026",
+    "medicallyReviewed": "Revisado médicamente",
+    "keyStatistics": {
+      "title": "Estadísticas Clave Sobre los Ciclos Menstruales",
+      "stat1": {
+        "value": "28 días",
+        "description": "duración promedio del ciclo menstrual (ACOG)"
+      },
+      "stat2": {
+        "value": "12-24 horas",
+        "description": "duración de la ventana de ovulación (NHS UK)"
+      },
+      "stat3": {
+        "value": "10-16 días",
+        "description": "duración típica de la fase lútea (ACOG)"
+      }
+    },
     "topics": {
       "follicularPhase": {
         "title": "La Fase Folicular: La Construcción",

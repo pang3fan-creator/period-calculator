@@ -80,6 +80,9 @@ const faqItemKeys = [
 // HowTo step keys
 const howToStepKeys = ["step1", "step2", "step3", "step4"] as const;
 
+// Fixed publication date for Article schema (site launch date)
+const siteLaunchDate = "2024-01-01T00:00:00.000Z";
+
 export default async function HomePage({
   params,
 }: {
@@ -95,130 +98,150 @@ export default async function HomePage({
   const tFaq = await getTranslations("faq");
   const tOtherTools = await getTranslations("home.otherTools");
 
-  // JSON-LD Schema for WebSite with search action
-  const webSiteSchema = {
+  // Combined JSON-LD Schema using @graph for better organization
+  const combinedSchema = {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "Period Calculator",
-    url: baseUrl,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${baseUrl}/?s={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
-  };
-
-  // JSON-LD Schema for BreadcrumbList
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    inLanguage: locale,
-    itemListElement: [
+    "@graph": [
+      // Organization (E-E-A-T signal)
       {
-        "@type": "ListItem",
-        position: 1,
-        name: locale === "en" ? "Home" : locale === "es" ? "Inicio" : "Accueil",
-        item: baseUrl,
+        "@type": "Organization",
+        "@id": `${baseUrl}/#organization`,
+        name: "Period Calculator",
+        url: baseUrl,
+        logo: {
+          "@type": "ImageObject",
+          url: `${baseUrl}/logo.png`,
+          width: 1200,
+          height: 630,
+        },
+        description:
+          "Privacy-first menstrual cycle tracker helping women understand their bodies without compromising personal data security.",
+        contactPoint: {
+          "@type": "ContactPoint",
+          email: "hello@aiperiodcalculator.com",
+          contactType: "customer service",
+        },
+        sameAs: [
+          "https://twitter.com/aiperiodcalc",
+          "https://www.facebook.com/aiperiodcalculator",
+        ],
       },
+      // WebSite with search action
       {
-        "@type": "ListItem",
-        position: 2,
-        name: tHome("title"),
-        item: baseUrl,
+        "@type": "WebSite",
+        name: "Period Calculator",
+        url: baseUrl,
+        publisher: {
+          "@id": `${baseUrl}/#organization`,
+        },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${baseUrl}/?s={search_term_string}`,
+          },
+          "query-input": "required name=search_term_string",
+        },
+      },
+      // SoftwareApplication (enhanced)
+      {
+        "@type": "SoftwareApplication",
+        name: tMetadata("title"),
+        description: tMetadata("description"),
+        url: baseUrl,
+        applicationCategory: "HealthApplication",
+        operatingSystem: "Web Browser",
+        inLanguage: locale,
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.8",
+          ratingCount: "1000",
+          bestRating: "5",
+          worstRating: "1",
+        },
+        author: {
+          "@id": `${baseUrl}/#organization`,
+        },
+        softwareVersion: "1.0.0",
+      },
+      // BreadcrumbList
+      {
+        "@type": "BreadcrumbList",
+        inLanguage: locale,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name:
+              locale === "en" ? "Home" : locale === "es" ? "Inicio" : "Accueil",
+            item: baseUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: tHome("title"),
+            item: baseUrl,
+          },
+        ],
+      },
+      // FAQPage
+      {
+        "@type": "FAQPage",
+        inLanguage: locale,
+        mainEntity: faqItemKeys.map((key) => ({
+          "@type": "Question",
+          name: tFaq(`items.${key}.question`),
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: tFaq(`items.${key}.answer`),
+          },
+        })),
+      },
+      // HowTo (Calculation steps)
+      {
+        "@type": "HowTo",
+        name: tHowTo("title"),
+        description: tHowTo("title"),
+        inLanguage: locale,
+        author: {
+          "@id": `${baseUrl}/#organization`,
+        },
+        step: howToStepKeys.map((key) => ({
+          "@type": "HowToStep",
+          name: tHowTo(`steps.${key}.title`),
+          text: tHowTo(`steps.${key}.description`),
+        })),
+      },
+      // Article (Deep Knowledge)
+      {
+        "@type": "Article",
+        headline: tDeepKnowledge("title"),
+        description: tDeepKnowledge("description"),
+        url: baseUrl,
+        inLanguage: locale,
+        image: `${baseUrl}/assets/menstrual_cycle.jpg`,
+        author: {
+          "@id": `${baseUrl}/#organization`,
+        },
+        publisher: {
+          "@id": `${baseUrl}/#organization`,
+        },
+        datePublished: siteLaunchDate,
+        dateModified: "2026-03-01T00:00:00.000Z",
+        articleSection: "Health",
       },
     ],
   };
 
-  // JSON-LD Schema for SoftwareApplication (enhanced)
-  const softwareApplicationSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: tMetadata("title"),
-    description: tMetadata("description"),
-    url: baseUrl,
-    applicationCategory: "HealthApplication",
-    operatingSystem: "Web Browser",
-    inLanguage: locale,
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "1000",
-      bestRating: "5",
-      worstRating: "1",
-    },
-    author: {
-      "@type": "Organization",
-      name: "Period Calculator",
-      url: baseUrl,
-    },
-    softwareVersion: "1.0.0",
-  };
-
-  // JSON-LD Schema for FAQPage
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    inLanguage: locale,
-    mainEntity: faqItemKeys.map((key) => ({
-      "@type": "Question",
-      name: tFaq(`items.${key}.question`),
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: tFaq(`items.${key}.answer`),
-      },
-    })),
-  };
-
-  // JSON-LD Schema for HowTo (Calculation steps)
-  const howToSchema = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: tHowTo("title"),
-    description: tHowTo("title"),
-    inLanguage: locale,
-    step: howToStepKeys.map((key) => ({
-      "@type": "HowToStep",
-      name: tHowTo(`steps.${key}.title`),
-      text: tHowTo(`steps.${key}.description`),
-    })),
-  };
-
-  // JSON-LD Schema for Article (Deep Knowledge)
-  const today = new Date().toISOString();
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: tDeepKnowledge("title"),
-    description: tDeepKnowledge("description"),
-    url: baseUrl,
-    inLanguage: locale,
-    image: `${baseUrl}/assets/menstrual_cycle.jpg`,
-    author: {
-      "@type": "Organization",
-      name: tMetadata("title"),
-    },
-    datePublished: today,
-    dateModified: today,
-    articleSection: "Health",
-  };
-
   return (
     <>
-      <JsonLd data={webSiteSchema} />
-      <JsonLd data={softwareApplicationSchema} />
-      <JsonLd data={breadcrumbSchema} />
-      <JsonLd data={faqSchema} />
-      <JsonLd data={howToSchema} />
-      <JsonLd data={articleSchema} />
+      <JsonLd data={combinedSchema} />
       <div className="flex flex-col items-center px-4 py-16">
         <h1 className="text-primary-400 text-center text-3xl font-bold md:text-4xl">
           {tHome("title")}
