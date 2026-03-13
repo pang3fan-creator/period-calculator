@@ -1,11 +1,32 @@
 import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { JsonLd } from "@/components/seo/json-ld";
 import { OvulationPeriodCalculator } from "@/components/calculator/ovulation-period-calculator";
+import { OvulationFAQ } from "@/components/calculator/ovulation-faq";
+import { OvulationAlgorithmTransparency } from "@/components/calculator/ovulation-algorithm-transparency";
 import { OvulationHowToCalculate } from "@/components/calculator/ovulation-how-to-calculate";
-import { AlgorithmTransparency } from "@/components/home/algorithm-transparency";
 import { DeepKnowledge } from "@/components/home/deep-knowledge";
-import { FAQ } from "@/components/home/faq";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
+import { Link } from "@/i18n/routing";
+
+// Back arrow icon
+function ArrowLeftIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="m15 18-6-6 6-6" />
+    </svg>
+  );
+}
 
 const baseUrl = "https://www.aiperiodcalculator.com";
 const locales = ["en", "es", "fr"];
@@ -67,7 +88,9 @@ export async function generateMetadata({
   };
 }
 
-export default function OvulationCalculatorPage() {
+export default async function OvulationCalculatorPage() {
+  const t = await getTranslations("ovulationCalculator");
+  const tOtherTools = await getTranslations("ovulationCalculator.otherTools");
   // JSON-LD Schema for WebApplication (Ovulation Calculator)
   const webApplicationSchema = {
     "@context": "https://schema.org",
@@ -197,7 +220,7 @@ export default function OvulationCalculatorPage() {
           <Breadcrumb />
         </div>
         <h1 className="text-primary-400 text-center text-3xl font-bold md:text-4xl">
-          Ovulation Calculator
+          {t("h1Title")}
         </h1>
         <p className="mt-4 max-w-2xl text-center text-lg text-gray-600 dark:text-gray-300">
           Find your fertile window and ovulation date. Plan pregnancy or
@@ -214,7 +237,7 @@ export default function OvulationCalculatorPage() {
 
         {/* Algorithm Transparency */}
         <div className="mt-24 w-full max-w-4xl">
-          <AlgorithmTransparency />
+          <OvulationAlgorithmTransparency />
         </div>
 
         {/* Deep Knowledge */}
@@ -224,7 +247,51 @@ export default function OvulationCalculatorPage() {
 
         {/* FAQ */}
         <div className="mt-24 w-full max-w-4xl">
-          <FAQ />
+          <OvulationFAQ />
+        </div>
+
+        {/* Other Free Tools & Resources */}
+        <div className="mt-24 w-full max-w-4xl">
+          <section className="w-full">
+            <div className="mb-8 text-center">
+              <h2 className="mb-3 text-2xl font-bold text-gray-800 md:text-3xl dark:text-white">
+                {tOtherTools("title")}
+              </h2>
+            </div>
+            <div className="mx-auto max-w-3xl space-y-4">
+              <div className="border-warmbeige-200 dark:border-dark-border dark:bg-dark-card overflow-hidden rounded-3xl border bg-white p-6">
+                <p>
+                  <Link
+                    href="/"
+                    className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 font-bold transition-colors"
+                  >
+                    {tOtherTools("periodCalculator.description")}
+                  </Link>
+                </p>
+              </div>
+              <div className="border-warmbeige-200 dark:border-dark-border dark:bg-dark-card overflow-hidden rounded-3xl border bg-white p-6">
+                <p>
+                  <Link
+                    href="/irregular-period-calculator"
+                    className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 font-bold transition-colors"
+                  >
+                    {tOtherTools("irregularCalculator.description")}
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        {/* Footer Navigation */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/"
+            className="hover:text-trust-green-500 dark:hover:text-trust-green-400 inline-flex items-center gap-2 rounded-full text-gray-500 transition-colors duration-200 dark:text-gray-400"
+          >
+            <ArrowLeftIcon className="h-4 w-4" />
+            <span className="text-sm">{t("backToHome")}</span>
+          </Link>
         </div>
       </main>
     </>
