@@ -42,7 +42,7 @@
   "nav": {
     "home": "Calculadora de Períodos",
     "irregularCalculator": "Calculadora de Periodo Irregular",
-    "ovulationCalculator": "Calculadora de Ovulación",
+    "ovulationCalculator": "Calculadora de Periodo de Ovulación",
     "blog": "Blog",
     "privacyPolicy": "Política de Privacidad",
     "editorialPolicy": "Política Editorial",
@@ -66,6 +66,10 @@
       "irregularCalculator": {
         "title": "Calculadora de Periodo Irregular",
         "description": "Calculadora de Periodo Irregular: Predicción de Ciclo y SOP"
+      },
+      "ovulationCalculator": {
+        "title": "Calculadora de Ovulación",
+        "description": "Calculadora de Ovulación: Encuentra tu Ventana Fértil"
       }
     }
   },

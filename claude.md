@@ -25,7 +25,7 @@ src/
 ├── app/[locale]/           # Next.js App Router 页面
 │   ├── page.tsx            # 首页
 │   ├── irregular-period-calculator/
-│   ├── ovulation-calculator/
+│   ├── ovulation-period-calculator/
 │   ├── about/
 │   ├── privacy-policy/
 │   ├── editorial-policy/
@@ -85,3 +85,7 @@ src/
 ### 5. 隐私合规
 - GDPR/CCPA: 数据不存服务器，仅需简单 Cookie 告知
 - Privacy Policy 中详述本地存储机制
+
+### 6. 测试注意事项
+- Node.js v24 + vitest 4.x 可能出现 "No test suite found" 临时性错误
+- 解决方案：`npx vitest run --reporter=verbose`

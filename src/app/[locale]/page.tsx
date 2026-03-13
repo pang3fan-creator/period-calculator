@@ -281,7 +281,7 @@ export default async function HomePage({
                 {tOtherTools("title")}
               </h2>
             </div>
-            <div className="mx-auto max-w-3xl">
+            <div className="mx-auto max-w-3xl space-y-4">
               <div className="border-warmbeige-200 dark:border-dark-border dark:bg-dark-card overflow-hidden rounded-3xl border bg-white p-6">
                 <p>
                   <Link
@@ -289,6 +289,16 @@ export default async function HomePage({
                     className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 font-bold transition-colors"
                   >
                     {tOtherTools("irregularCalculator.description")}
+                  </Link>
+                </p>
+              </div>
+              <div className="border-warmbeige-200 dark:border-dark-border dark:bg-dark-card overflow-hidden rounded-3xl border bg-white p-6">
+                <p>
+                  <Link
+                    href="/ovulation-period-calculator"
+                    className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 font-bold transition-colors"
+                  >
+                    {tOtherTools("ovulationCalculator.description")}
                   </Link>
                 </p>
               </div>

@@ -42,7 +42,7 @@
   "nav": {
     "home": "Calculatrice de Périodes",
     "irregularCalculator": "Calculateur de Règles Irrégulières",
-    "ovulationCalculator": "Calculateur d'Ovulation",
+    "ovulationCalculator": "Calculateur de Période d'Ovulation",
     "blog": "Blog",
     "privacyPolicy": "Politique de Confidentialité",
     "editorialPolicy": "Politique Éditoriale",
@@ -66,6 +66,10 @@
       "irregularCalculator": {
         "title": "Calculateur de Règles Irrégulières",
         "description": "Calculateur de règles irrégulières : Suivi de Cycle et SOPK"
+      },
+      "ovulationCalculator": {
+        "title": "Calculateur d'Ovulation",
+        "description": "Calculateur d'Ovulation : Trouvez votre Fenêtre Féconde"
       }
     }
   },

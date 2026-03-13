@@ -42,7 +42,7 @@
   "nav": {
     "home": "Period Calculator",
     "irregularCalculator": "Irregular Period Calculator",
-    "ovulationCalculator": "Ovulation Calculator",
+    "ovulationCalculator": "Ovulation Period Calculator",
     "blog": "Blog",
     "privacyPolicy": "Privacy Policy",
     "editorialPolicy": "Editorial Policy",
@@ -66,6 +66,10 @@
       "irregularCalculator": {
         "title": "Irregular Period Calculator",
         "description": "Irregular Period Calculator: Accurate Cycle Window Predictor"
+      },
+      "ovulationCalculator": {
+        "title": "Ovulation Calculator",
+        "description": "Ovulation Calculator: Find Your Fertile Window"
       }
     }
   },

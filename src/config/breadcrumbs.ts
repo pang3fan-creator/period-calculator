@@ -8,7 +8,7 @@
 export const breadcrumbConfig: Record<string, string> = {
   "/": "nav.home",
   "/irregular-period-calculator": "nav.irregularCalculator",
-  "/ovulation-calculator": "nav.ovulationCalculator",
+  "/ovulation-period-calculator": "nav.ovulationCalculator",
   "/about": "nav.about",
   "/privacy-policy": "nav.privacyPolicy",
   "/editorial-policy": "nav.editorialPolicy",

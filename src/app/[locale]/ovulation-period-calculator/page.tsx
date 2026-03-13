@@ -30,7 +30,7 @@ export async function generateMetadata({
       title: "Ovulation Calculator - Find Your Fertile Window",
       description:
         "Calculate your ovulation date and fertile window. Plan pregnancy or understand your cycle better. 100% private.",
-      url: `${baseUrl}/${locale === "en" ? "" : locale}/ovulation-calculator`,
+      url: `${baseUrl}/${locale === "en" ? "" : locale}/ovulation-period-calculator`,
       siteName: "Period Calculator",
       locale: localeNames[locale],
       alternateLocale: locales
@@ -54,11 +54,11 @@ export async function generateMetadata({
       images: [`${baseUrl}/og-image.png`],
     },
     alternates: {
-      canonical: `${baseUrl}/${locale === "en" ? "" : locale}/ovulation-calculator`,
+      canonical: `${baseUrl}/${locale === "en" ? "" : locale}/ovulation-period-calculator`,
       languages: locales.reduce(
         (acc, loc) => {
           acc[localeNames[loc]] =
-            `${baseUrl}/${loc === "en" ? "" : loc}/ovulation-calculator`;
+            `${baseUrl}/${loc === "en" ? "" : loc}/ovulation-period-calculator`;
           return acc;
         },
         {} as Record<string, string>,
@@ -75,7 +75,7 @@ export default function OvulationCalculatorPage() {
     name: "Ovulation Calculator",
     description:
       "Calculate your ovulation date and fertile window. Plan pregnancy or understand your cycle better. 100% private - all data stays in your browser.",
-    url: `${baseUrl}/ovulation-calculator`,
+    url: `${baseUrl}/ovulation-period-calculator`,
     applicationCategory: "HealthApplication",
     operatingSystem: "Web Browser",
     offers: {
@@ -100,7 +100,7 @@ export default function OvulationCalculatorPage() {
         "@type": "ListItem",
         position: 2,
         name: "Ovulation Calculator",
-        item: `${baseUrl}/ovulation-calculator`,
+        item: `${baseUrl}/ovulation-period-calculator`,
       },
     ],
   };
