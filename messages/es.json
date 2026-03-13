@@ -193,7 +193,23 @@
     "nextPeriod": "Próximo Período",
     "pmsPeriod": "Período SPM",
     "calculateButton": "Calcular",
-    "resetButton": "Reiniciar"
+    "resetButton": "Reiniciar",
+    "conceive": {
+      "ovulationTitle": "Mejor Momento para Concebir",
+      "ovulationSubtitle": "Tu momento más fértil",
+      "fertileTitle": "Ventana Fértil",
+      "fertileDesc": "Los espermatozoides pueden sobrevivir hasta 5 días. Aprovecha esta oportunidad dorada.",
+      "periodTitle": "Próximo Período",
+      "pmsTitle": "Alerta de Autocuidado"
+    },
+    "avoid": {
+      "ovulationTitle": "Día de Ovulación (Alto Riesgo)",
+      "ovulationSubtitle": "Mayor probabilidad de embarazo",
+      "fertileTitle": "Período de Alto Riesgo",
+      "fertileDesc": "Mayor probabilidad de embarazo. Se requiere anticoncepción estricta.",
+      "periodTitle": "Período Esperado",
+      "pmsTitle": "Período de Alerta SPM"
+    }
   },
   "calculator": {
     "form": {
@@ -256,6 +272,14 @@
         "ovulation": "Ovulación",
         "fertile": "Ventana Fértil",
         "pms": "SPM"
+      },
+      "conceive": {
+        "legendOvulation": "Mejor Momento de Concepción",
+        "legendFertile": "Ventana Fértil"
+      },
+      "avoid": {
+        "legendOvulation": "Día de Alto Riesgo",
+        "legendFertile": "Período de Alto Riesgo"
       }
     },
     "validation": {
@@ -462,6 +486,27 @@
       "step4": {
         "title": "Revisa tu Nivel de Confianza",
         "description": "Revisa tu nivel de confianza de predicción basado en la consistencia de tus ciclos. Alta confianza significa que tus ciclos son regulares."
+      }
+    }
+  },
+  "ovulationHowToCalculate": {
+    "title": "Cómo Usar la Calculadora de Ovulación",
+    "steps": {
+      "step1": {
+        "title": "Ingresa la Fecha de tu Último Período",
+        "description": "Introduce el primer día de tu último período menstrual. Esta es la línea base para calcular tu fecha de ovulación."
+      },
+      "step2": {
+        "title": "Establece tu Duración del Ciclo",
+        "description": "Ingresa la duración promedio de tu ciclo (generalmente 21-35 días). Nuestro algoritmo usa esto para predecir tu ventana fértil."
+      },
+      "step3": {
+        "title": "Elige tu Propósito",
+        "description": "Selecciona si estás intentando concebir o evitar el embarazo. Esto personaliza la presentación de tus resultados."
+      },
+      "step4": {
+        "title": "Obtén tus Predicciones",
+        "description": "Ve tu fecha de ovulación, ventana fértil, próximo período y fechas de SPM en un calendario interactivo."
       }
     }
   },

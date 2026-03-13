@@ -9,6 +9,10 @@ import {
 import { enUS, es, fr } from "date-fns/locale";
 import type { IrregularPredictionResult } from "@/types";
 import type { Locale } from "@/i18n/config";
+import {
+  getOvulationTheme,
+  buildCardClasses,
+} from "@/lib/theme/ovulation-theme";
 
 // Locale mapping for date-fns
 const DATE_FNS_LOCALE_MAP: Record<string, DateFnsLocale> = {
@@ -220,6 +224,7 @@ export function IrregularPredictionCards({
   const t = useTranslations("irregularCalculator");
   const tPredictions = useTranslations("calculator.predictions");
   const dateFnsLocale = DATE_FNS_LOCALE_MAP[locale] || enUS;
+  const theme = getOvulationTheme(undefined); // Use standardTheme
 
   const {
     predictedWindow,
@@ -372,8 +377,10 @@ export function IrregularPredictionCards({
       {/* Standard Predictions Row */}
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         {/* Next Period Card */}
-        <div className="flex items-center gap-3 rounded-2xl border-2 border-red-300 bg-red-50 p-3 sm:gap-4 sm:p-5 dark:border-red-700/50 dark:bg-red-950/30">
-          <div className="flex-shrink-0 text-red-600 dark:text-red-400">
+        <div className={buildCardClasses(theme, "period")}>
+          <div
+            className={`flex-shrink-0 ${theme.colors.period.text} ${theme.colors.period.darkText || ""}`}
+          >
             <CalendarIcon />
           </div>
           <div className="min-w-0 flex-1">
@@ -387,8 +394,10 @@ export function IrregularPredictionCards({
         </div>
 
         {/* Ovulation Day Card */}
-        <div className="flex items-center gap-3 rounded-2xl border-2 border-blue-300 bg-blue-50 p-3 sm:gap-4 sm:p-5 dark:border-blue-700/50 dark:bg-blue-950/30">
-          <div className="flex-shrink-0 text-blue-600 dark:text-blue-400">
+        <div className={buildCardClasses(theme, "ovulation")}>
+          <div
+            className={`flex-shrink-0 ${theme.colors.ovulation.text} ${theme.colors.ovulation.darkText || ""}`}
+          >
             <SparklesIcon />
           </div>
           <div className="min-w-0 flex-1">
@@ -402,8 +411,10 @@ export function IrregularPredictionCards({
         </div>
 
         {/* Fertile Window Card */}
-        <div className="flex items-center gap-3 rounded-2xl border-2 border-blue-300 bg-blue-50 p-3 sm:gap-4 sm:p-5 dark:border-blue-700/50 dark:bg-blue-950/30">
-          <div className="flex-shrink-0 text-blue-600 dark:text-blue-400">
+        <div className={buildCardClasses(theme, "fertile")}>
+          <div
+            className={`flex-shrink-0 ${theme.colors.fertile.text} ${theme.colors.fertile.darkText || ""}`}
+          >
             <HeartIcon />
           </div>
           <div className="min-w-0 flex-1">
@@ -421,8 +432,10 @@ export function IrregularPredictionCards({
         </div>
 
         {/* PMS Period Card */}
-        <div className="flex items-center gap-3 rounded-2xl border-2 border-yellow-300 bg-yellow-50 p-3 sm:gap-4 sm:p-5 dark:border-yellow-700/50 dark:bg-yellow-950/30">
-          <div className="flex-shrink-0 text-yellow-600 dark:text-yellow-400">
+        <div className={buildCardClasses(theme, "pms")}>
+          <div
+            className={`flex-shrink-0 ${theme.colors.pms.text} ${theme.colors.pms.darkText || ""}`}
+          >
             <SunIcon />
           </div>
           <div className="min-w-0 flex-1">

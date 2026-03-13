@@ -10,7 +10,7 @@ import { OvulationCalculatorForm } from "./ovulation-calculator-form";
 import { OvulationResultsDisplay } from "./ovulation-results-display";
 import { Card } from "@/components/ui/card";
 
-type OvulationPurpose = "conceive" | "avoid";
+export type OvulationPurpose = "conceive" | "avoid";
 
 const STORAGE_KEY = "ovulation-calculator-data";
 

@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { addDays, format } from "date-fns";
 import type { PredictionResult } from "@/types";
 import type { Locale } from "@/i18n/config";
+import type { OvulationPurpose } from "./ovulation-period-calculator";
 import { OvulationPredictionCards } from "./ovulation-prediction-cards";
 import { CalendarView } from "./calendar-view";
 import {
@@ -12,8 +13,6 @@ import {
   downloadICS,
   type CalendarEvent,
 } from "@/lib/calendar/ics-generator";
-
-type OvulationPurpose = "conceive" | "avoid";
 
 interface OvulationResultsDisplayProps {
   result: PredictionResult;
@@ -286,8 +285,12 @@ export function OvulationResultsDisplay({
         </div>
       )}
 
-      <OvulationPredictionCards result={result} locale={locale} />
-      <CalendarView prediction={result} locale={locale} />
+      <OvulationPredictionCards
+        result={result}
+        locale={locale}
+        purpose={purpose}
+      />
+      <CalendarView prediction={result} locale={locale} purpose={purpose} />
 
       {/* Action Buttons */}
       <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">

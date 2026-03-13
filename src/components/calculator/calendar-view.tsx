@@ -16,8 +16,14 @@ import {
 import { enUS, es, fr } from "date-fns/locale";
 import type { PredictionResult } from "@/types";
 import type { Locale } from "@/i18n/config";
+import type { OvulationPurpose } from "./ovulation-period-calculator";
 import { getDatePeriodType } from "@/lib/calculator/cycle-calculator";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
+import {
+  getOvulationTheme,
+  getCalendarDayClasses,
+  type OvulationTheme,
+} from "@/lib/theme/ovulation-theme";
 
 // Locale mapping for date-fns
 const DATE_FNS_LOCALE_MAP: Record<Locale, DateFnsLocale> = {
@@ -39,37 +45,36 @@ interface CalendarDay {
 interface CalendarViewProps {
   prediction: PredictionResult;
   locale: Locale;
+  purpose?: OvulationPurpose;
 }
 
 /**
- * Get calendar styling class names based on period type
+ * Get legend color box classes based on period type and purpose
  */
-function getDayCellStyles(periodType: ReturnType<typeof getDatePeriodType>) {
-  const baseStyles =
-    "flex h-11 min-h-[44px] items-center justify-center rounded-2xl text-sm font-medium transition-all";
+function getLegendColorClasses(
+  theme: OvulationTheme,
+  type: "period" | "ovulation" | "fertile" | "pms",
+) {
+  const color = theme.colors[type];
+  const classes = ["h-4 w-4 rounded border-2", color.border, color.bg];
 
-  switch (periodType) {
-    case "period":
-      return `${baseStyles} border-2 border-red-400 bg-red-50 text-red-700 dark:border-red-500/50 dark:bg-red-950/40 dark:text-red-300`;
-    case "ovulation":
-      return `${baseStyles} border-2 border-blue-400 bg-blue-50 text-blue-700 font-bold dark:border-blue-500/50 dark:bg-blue-950/40 dark:text-blue-300`;
-    case "fertile":
-      return `${baseStyles} border-2 border-blue-300 bg-blue-50 text-blue-700 dark:border-blue-600/50 dark:bg-blue-950/40 dark:text-blue-300`;
-    case "pms":
-      return `${baseStyles} border-2 border-yellow-300 bg-yellow-50 text-yellow-700 dark:border-yellow-600/50 dark:bg-yellow-950/40 dark:text-yellow-300`;
-    default:
-      return `${baseStyles} text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800`;
+  if (color.darkBorder) classes.push(color.darkBorder);
+  if (color.darkBg && !color.darkBg.includes("gradient")) {
+    classes.push(color.darkBg);
+  } else {
+    classes.push("dark:bg-gray-900/40");
   }
+
+  return classes.join(" ");
 }
 
 /**
  * CalendarView Component
  *
- * Displays a monthly calendar view with cycle prediction highlighting:
- * - Red: Menstruation period
- * - Blue (bold): Ovulation day
- * - Blue: Fertile window
- * - Yellow: PMS period
+ * Displays a monthly calendar view with cycle prediction highlighting.
+ * Styling varies based on purpose:
+ * - conceive: Romantic, warm colors (green fertile, violet ovulation)
+ * - avoid: Professional, cautionary colors (red fertile, amber ovulation)
  *
  * Features:
  * - 7-column grid (Mon-Sun)
@@ -80,15 +85,25 @@ function getDayCellStyles(periodType: ReturnType<typeof getDatePeriodType>) {
  *
  * @param prediction - Prediction result from calculateCycle()
  * @param locale - Current locale for date formatting
+ * @param purpose - Purpose mode for styling (conceive/avoid)
  */
-export function CalendarView({ prediction, locale }: CalendarViewProps) {
+export function CalendarView({
+  prediction,
+  locale,
+  purpose,
+}: CalendarViewProps) {
   const t = useTranslations("calculator.calendar");
   const dateFnsLocale = DATE_FNS_LOCALE_MAP[locale];
+  const theme = getOvulationTheme(purpose);
 
-  // Initialize current month to the next period start date
+  // Initialize current month based on purpose:
+  // - Ovulation calculator (with purpose): focus on ovulation date
+  // - General period calculator (no purpose): focus on next period start
   const [currentMonth, setCurrentMonth] = useState(() => {
-    // Start from the month of next period
-    return startOfMonth(prediction.nextPeriodStart);
+    const keyDate = purpose
+      ? prediction.ovulationDate
+      : prediction.nextPeriodStart;
+    return startOfMonth(keyDate);
   });
 
   // Navigate to previous month
@@ -201,7 +216,7 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
           {calendarDays.map((day, index) => (
             <div
               key={index}
-              className={getDayCellStyles(day.periodType)}
+              className={getCalendarDayClasses(day.periodType, purpose)}
               style={{
                 opacity: day.isCurrentMonth ? 1 : 0.4,
               }}
@@ -228,25 +243,29 @@ export function CalendarView({ prediction, locale }: CalendarViewProps) {
       {/* Legend */}
       <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
         <div className="flex items-center gap-2">
-          <div className="h-4 w-4 rounded border-2 border-red-400 bg-red-50 dark:border-red-500/50 dark:bg-red-950/40" />
+          <div className={getLegendColorClasses(theme, "period")} />
           <span className="text-gray-700 dark:text-gray-300">
             {t("legend.period")}
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="h-4 w-4 rounded border-2 border-blue-400 bg-blue-50 dark:border-blue-500/50 dark:bg-blue-950/40" />
+          <div className={getLegendColorClasses(theme, "ovulation")} />
           <span className="text-gray-700 dark:text-gray-300">
-            {t("legend.ovulation")}
+            {theme.textPrefix
+              ? t(`${theme.textPrefix}.legendOvulation`)
+              : t("legend.ovulation")}
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="h-4 w-4 rounded border-2 border-blue-300 bg-blue-50 dark:border-blue-600/50 dark:bg-blue-950/40" />
+          <div className={getLegendColorClasses(theme, "fertile")} />
           <span className="text-gray-700 dark:text-gray-300">
-            {t("legend.fertile")}
+            {theme.textPrefix
+              ? t(`${theme.textPrefix}.legendFertile`)
+              : t("legend.fertile")}
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <div className="h-4 w-4 rounded border-2 border-yellow-300 bg-yellow-50 dark:border-yellow-600/50 dark:bg-yellow-950/40" />
+          <div className={getLegendColorClasses(theme, "pms")} />
           <span className="text-gray-700 dark:text-gray-300">
             {t("legend.pms")}
           </span>

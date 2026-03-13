@@ -5,6 +5,12 @@ import { format } from "date-fns";
 import { enUS, es, fr } from "date-fns/locale";
 import type { PredictionResult } from "@/types";
 import type { Locale } from "@/i18n/config";
+import type { OvulationPurpose } from "./ovulation-period-calculator";
+import {
+  getOvulationTheme,
+  buildCardClasses,
+  type OvulationTheme,
+} from "@/lib/theme/ovulation-theme";
 
 const DATE_FNS_LOCALE_MAP: Record<string, typeof enUS> = {
   en: enUS,
@@ -88,9 +94,68 @@ const SunIcon = () => (
   </svg>
 );
 
+const WarningIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="h-6 w-6"
+    aria-hidden="true"
+  >
+    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+    <line x1="12" y1="9" x2="12" y2="13" />
+    <line x1="12" y1="17" x2="12.01" y2="17" />
+  </svg>
+);
+
+const ShieldIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="h-6 w-6"
+    aria-hidden="true"
+  >
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+  </svg>
+);
+
+const InfoIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="h-6 w-6"
+    aria-hidden="true"
+  >
+    <circle cx="12" cy="12" r="10" />
+    <line x1="12" y1="16" x2="12" y2="12" />
+    <line x1="12" y1="8" x2="12.01" y2="8" />
+  </svg>
+);
+
 interface OvulationPredictionCardsProps {
   result: PredictionResult;
   locale: Locale;
+  purpose: OvulationPurpose;
 }
 
 function formatDateRange(start: Date, end: Date, locale: string) {
@@ -101,11 +166,27 @@ function formatDateRange(start: Date, end: Date, locale: string) {
   return `${format(start, "MMM dd", { locale: dateFnsLocale })} - ${format(end, "MMM dd, yyyy", { locale: dateFnsLocale })}`;
 }
 
+function getIconForType(
+  theme: OvulationTheme,
+  type: "ovulation" | "fertile" | "period" | "pms",
+) {
+  const iconMap = {
+    ovulation:
+      theme.textPrefix === "conceive" ? <SparklesIcon /> : <WarningIcon />,
+    fertile: theme.textPrefix === "conceive" ? <HeartIcon /> : <ShieldIcon />,
+    period: <CalendarIcon />,
+    pms: theme.textPrefix === "conceive" ? <SunIcon /> : <InfoIcon />,
+  };
+  return iconMap[type];
+}
+
 export function OvulationPredictionCards({
   result,
   locale,
+  purpose,
 }: OvulationPredictionCardsProps) {
   const t = useTranslations("ovulationCalculator");
+  const theme = getOvulationTheme(purpose);
   const {
     ovulationDate,
     fertileWindowStart,
@@ -118,33 +199,43 @@ export function OvulationPredictionCards({
   return (
     <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
       {/* Ovulation Day - Featured */}
-      <div className="col-span-full flex items-center gap-3 rounded-2xl border-2 border-blue-400 bg-blue-50 p-4 sm:gap-4 sm:p-5 dark:border-blue-600 dark:bg-blue-950/30">
-        <div className="flex-shrink-0 text-blue-600 dark:text-blue-400">
-          <SparklesIcon />
+      <div className={buildCardClasses(theme, "ovulation", true)}>
+        <div
+          className={`flex-shrink-0 ${theme.colors.ovulation.text} ${theme.colors.ovulation.darkText || ""}`}
+        >
+          {getIconForType(theme, "ovulation")}
         </div>
         <div className="min-w-0 flex-1">
-          <p className="mb-0.5 text-sm font-medium text-blue-600 dark:text-blue-400">
-            {t("ovulationDay")}
+          <p
+            className={`mb-0.5 text-sm font-medium ${theme.colors.ovulation.text} ${theme.colors.ovulation.darkText || ""}`}
+          >
+            {t(`${theme.textPrefix}.ovulationTitle`)}
           </p>
-          <p className="text-xl font-bold text-blue-900 dark:text-blue-100">
+          <p
+            className={`text-xl font-bold ${theme.colors.ovulation.text.replace("700", "900")} dark:text-white`}
+          >
             {format(ovulationDate, "MMMM dd, yyyy", {
               locale: DATE_FNS_LOCALE_MAP[locale] || enUS,
             })}
           </p>
-          <p className="text-sm font-medium text-blue-600 dark:text-blue-400">
-            {t("mostFertile")}
+          <p
+            className={`text-sm font-medium ${theme.colors.ovulation.text} ${theme.colors.ovulation.darkText || ""}`}
+          >
+            {t(`${theme.textPrefix}.ovulationSubtitle`)}
           </p>
         </div>
       </div>
 
-      {/* Fertile Window */}
-      <div className="flex items-center gap-3 rounded-2xl border-2 border-blue-300 bg-blue-50 p-3 sm:gap-4 sm:p-5 dark:border-blue-700/50 dark:bg-blue-950/30">
-        <div className="flex-shrink-0 text-blue-600 dark:text-blue-400">
-          <HeartIcon />
+      {/* Fertile Window / Risk Period */}
+      <div className={buildCardClasses(theme, "fertile")}>
+        <div
+          className={`flex-shrink-0 ${theme.colors.fertile.text} ${theme.colors.fertile.darkText || ""}`}
+        >
+          {getIconForType(theme, "fertile")}
         </div>
         <div className="min-w-0 flex-1">
           <p className="mb-0.5 text-sm font-medium text-gray-600 dark:text-gray-400">
-            {t("fertileWindow")}
+            {t(`${theme.textPrefix}.fertileTitle`)}
           </p>
           <p className="text-sm font-semibold text-gray-900 sm:text-base dark:text-gray-100">
             {formatDateRange(fertileWindowStart, fertileWindowEnd, locale)}
@@ -153,13 +244,15 @@ export function OvulationPredictionCards({
       </div>
 
       {/* Next Period */}
-      <div className="flex items-center gap-3 rounded-2xl border-2 border-red-300 bg-red-50 p-3 sm:gap-4 sm:p-5 dark:border-red-700/50 dark:bg-red-950/30">
-        <div className="flex-shrink-0 text-red-600 dark:text-red-400">
-          <CalendarIcon />
+      <div className={buildCardClasses(theme, "period")}>
+        <div
+          className={`flex-shrink-0 ${theme.colors.period.text} ${theme.colors.period.darkText || ""}`}
+        >
+          {getIconForType(theme, "period")}
         </div>
         <div className="min-w-0 flex-1">
           <p className="mb-0.5 text-sm font-medium text-gray-600 dark:text-gray-400">
-            {t("nextPeriod")}
+            {t(`${theme.textPrefix}.periodTitle`)}
           </p>
           <p className="text-sm font-semibold text-gray-900 sm:text-base dark:text-gray-100">
             {format(nextPeriodStart, "MMM dd, yyyy", {
@@ -170,13 +263,15 @@ export function OvulationPredictionCards({
       </div>
 
       {/* PMS Period */}
-      <div className="flex items-center gap-3 rounded-2xl border-2 border-yellow-300 bg-yellow-50 p-3 sm:gap-4 sm:p-5 dark:border-yellow-700/50 dark:bg-yellow-950/30">
-        <div className="flex-shrink-0 text-yellow-600 dark:text-yellow-400">
-          <SunIcon />
+      <div className={buildCardClasses(theme, "pms")}>
+        <div
+          className={`flex-shrink-0 ${theme.colors.pms.text} ${theme.colors.pms.darkText || ""}`}
+        >
+          {getIconForType(theme, "pms")}
         </div>
         <div className="min-w-0 flex-1">
           <p className="mb-0.5 text-sm font-medium text-gray-600 dark:text-gray-400">
-            {t("pmsPeriod")}
+            {t(`${theme.textPrefix}.pmsTitle`)}
           </p>
           <p className="text-sm font-semibold text-gray-900 sm:text-base dark:text-gray-100">
             {formatDateRange(pmsStart, pmsEnd, locale)}

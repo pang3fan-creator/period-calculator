@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
 import { OvulationPeriodCalculator } from "@/components/calculator/ovulation-period-calculator";
-import { HowToCalculate } from "@/components/home/how-to-calculate";
+import { OvulationHowToCalculate } from "@/components/calculator/ovulation-how-to-calculate";
 import { AlgorithmTransparency } from "@/components/home/algorithm-transparency";
 import { DeepKnowledge } from "@/components/home/deep-knowledge";
 import { FAQ } from "@/components/home/faq";
@@ -209,7 +209,7 @@ export default function OvulationCalculatorPage() {
 
         {/* How to Calculate */}
         <div className="mt-24 w-full max-w-4xl">
-          <HowToCalculate />
+          <OvulationHowToCalculate />
         </div>
 
         {/* Algorithm Transparency */}

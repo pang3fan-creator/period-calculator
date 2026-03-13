@@ -193,7 +193,23 @@
     "nextPeriod": "Next Period",
     "pmsPeriod": "PMS Period",
     "calculateButton": "Calculate",
-    "resetButton": "Reset"
+    "resetButton": "Reset",
+    "conceive": {
+      "ovulationTitle": "Best Time to Conceive",
+      "ovulationSubtitle": "Your most fertile moment",
+      "fertileTitle": "Fertile Window",
+      "fertileDesc": "Sperm can survive up to 5 days. Seize this golden opportunity.",
+      "periodTitle": "Next Period",
+      "pmsTitle": "Self-Care Alert"
+    },
+    "avoid": {
+      "ovulationTitle": "Ovulation Day (High Risk)",
+      "ovulationSubtitle": "Highest pregnancy probability",
+      "fertileTitle": "High Risk Period",
+      "fertileDesc": "Highest pregnancy probability. Strict contraception required.",
+      "periodTitle": "Expected Period",
+      "pmsTitle": "PMS Warning Period"
+    }
   },
   "calculator": {
     "form": {
@@ -256,6 +272,14 @@
         "ovulation": "Ovulation",
         "fertile": "Fertile Window",
         "pms": "PMS"
+      },
+      "conceive": {
+        "legendOvulation": "Best Conception Time",
+        "legendFertile": "Fertile Window"
+      },
+      "avoid": {
+        "legendOvulation": "High Risk Day",
+        "legendFertile": "High Risk Period"
       }
     },
     "validation": {
@@ -463,6 +487,27 @@
       "step4": {
         "title": "Check Your Confidence Level",
         "description": "Review your prediction confidence level based on cycle consistency. High confidence means your cycles are regular."
+      }
+    }
+  },
+  "ovulationHowToCalculate": {
+    "title": "How to Use the Ovulation Calculator",
+    "steps": {
+      "step1": {
+        "title": "Enter Your Last Period Date",
+        "description": "Input the first day of your most recent menstrual period. This is the baseline for calculating your ovulation date."
+      },
+      "step2": {
+        "title": "Set Your Cycle Length",
+        "description": "Enter your average cycle length (typically 21-35 days). Our algorithm uses this to predict your fertile window."
+      },
+      "step3": {
+        "title": "Choose Your Purpose",
+        "description": "Select whether you're trying to conceive or avoid pregnancy. This customizes your results presentation."
+      },
+      "step4": {
+        "title": "Get Your Predictions",
+        "description": "See your ovulation date, fertile window, next period, and PMS dates displayed on an interactive calendar."
       }
     }
   },

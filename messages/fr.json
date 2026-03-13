@@ -193,7 +193,23 @@
     "nextPeriod": "Prochaines Règles",
     "pmsPeriod": "Période SPM",
     "calculateButton": "Calculer",
-    "resetButton": "Réinitialiser"
+    "resetButton": "Réinitialiser",
+    "conceive": {
+      "ovulationTitle": "Meilleur Moment pour Concevoir",
+      "ovulationSubtitle": "Votre moment le plus fertile",
+      "fertileTitle": "Fenêtre Fertile",
+      "fertileDesc": "Les spermatozoïdes peuvent survivre jusqu'à 5 jours. Saisissez cette opportunité dorée.",
+      "periodTitle": "Prochaines Règles",
+      "pmsTitle": "Alerte Autosoins"
+    },
+    "avoid": {
+      "ovulationTitle": "Jour d'Ovulation (Risque Élevé)",
+      "ovulationSubtitle": "Plus forte probabilité de grossesse",
+      "fertileTitle": "Période à Risque Élevé",
+      "fertileDesc": "Plus forte probabilité de grossesse. Contraception stricte requise.",
+      "periodTitle": "Règles Attendues",
+      "pmsTitle": "Période d'Alerte SPM"
+    }
   },
   "calculator": {
     "form": {
@@ -257,6 +273,14 @@
         "ovulation": "Ovulation",
         "fertile": "Fenêtre Fertile",
         "pms": "SPM"
+      },
+      "conceive": {
+        "legendOvulation": "Meilleur Moment de Conception",
+        "legendFertile": "Fenêtre Fertile"
+      },
+      "avoid": {
+        "legendOvulation": "Jour à Risque Élevé",
+        "legendFertile": "Période à Risque Élevé"
       }
     },
     "validation": {
@@ -463,6 +487,27 @@
       "step4": {
         "title": "Vérifiez Votre Niveau de Confiance",
         "description": "Vérifiez votre niveau de confiance de prédiction basé sur la régularité de vos cycles. Une confiance élevée signifie que vos cycles sont réguliers."
+      }
+    }
+  },
+  "ovulationHowToCalculate": {
+    "title": "Comment Utiliser le Calculateur d'Ovulation",
+    "steps": {
+      "step1": {
+        "title": "Entrez la Date de vos Dernières Règles",
+        "description": "Saisissez le premier jour de vos dernières règles. C'est la base pour calculer votre date d'ovulation."
+      },
+      "step2": {
+        "title": "Définissez la Durée de votre Cycle",
+        "description": "Entrez la durée moyenne de votre cycle (généralement 21-35 jours). Notre algorithme l'utilise pour prédire votre fenêtre fertile."
+      },
+      "step3": {
+        "title": "Choisissez votre Objectif",
+        "description": "Sélectionnez si vous essayez de concevoir ou d'éviter une grossesse. Cela personnalise la présentation de vos résultats."
+      },
+      "step4": {
+        "title": "Obtenez vos Prédictions",
+        "description": "Visualisez votre date d'ovulation, fenêtre fertile, prochaines règles et dates de SPM sur un calendrier interactif."
       }
     }
   },
