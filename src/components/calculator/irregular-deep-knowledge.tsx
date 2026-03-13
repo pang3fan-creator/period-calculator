@@ -146,6 +146,28 @@ export function IrregularDeepKnowledge() {
             )}
           </div>
         ))}
+
+        {/* References Section */}
+        <hr className="my-6 border-gray-200 dark:border-gray-700" />
+        <div>
+          <h4 className="mb-3 text-base font-semibold text-gray-800 dark:text-white">
+            {t("references")}
+          </h4>
+          <ol className="list-inside list-decimal space-y-1 text-sm text-gray-600 dark:text-gray-400">
+            <li>
+              American College of Obstetricians and Gynecologists (ACOG).
+              "Abnormal Uterine Bleeding."
+            </li>
+            <li>
+              Mayo Clinic. "Menstrual cycle: What&apos;s normal, what&apos;s
+              not."
+            </li>
+            <li>
+              National Institute of Child Health and Human Development (NICHD).
+              "What causes menstrual irregularities?"
+            </li>
+          </ol>
+        </div>
       </div>
 
       {/* Image Lightbox Modal */}

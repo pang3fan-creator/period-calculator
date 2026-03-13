@@ -77,7 +77,7 @@ export function IrregularAlgorithmTransparency() {
         </div>
 
         {/* Prediction Window */}
-        <div className="mt-8 rounded-2xl bg-gray-50 p-4 dark:bg-gray-800/50 md:mt-10 md:p-6">
+        <div className="mt-8 rounded-2xl bg-gray-50 p-4 md:mt-10 md:p-6 dark:bg-gray-800/50">
           <h3 className="mb-4 text-center text-sm font-semibold text-gray-700 dark:text-gray-300">
             📅 {t("predictionWindow.title")}
           </h3>
@@ -86,7 +86,7 @@ export function IrregularAlgorithmTransparency() {
           <div className="hidden md:block">
             <div className="relative">
               {/* Timeline Line */}
-              <div className="absolute top-6 right-0 left-0 h-0.5 bg-gradient-to-r from-amber-300 via-primary-400 to-amber-300 dark:from-amber-600 dark:via-primary-500 dark:to-amber-600" />
+              <div className="via-primary-400 dark:via-primary-500 absolute top-6 right-0 left-0 h-0.5 bg-gradient-to-r from-amber-300 to-amber-300 dark:from-amber-600 dark:to-amber-600" />
 
               {/* Nodes */}
               <div className="relative grid grid-cols-3 gap-4">
@@ -112,12 +112,12 @@ export function IrregularAlgorithmTransparency() {
               label={t("predictionWindow.earliest")}
               variant="edge"
             />
-            <div className="h-0.5 flex-1 bg-gradient-to-r from-amber-300 via-primary-400 to-amber-300 dark:from-amber-600 dark:via-primary-500 dark:to-amber-600" />
+            <div className="via-primary-400 dark:via-primary-500 h-0.5 flex-1 bg-gradient-to-r from-amber-300 to-amber-300 dark:from-amber-600 dark:to-amber-600" />
             <MobilePredictionNode
               label={t("predictionWindow.mostLikely")}
               variant="center"
             />
-            <div className="h-0.5 flex-1 bg-gradient-to-r from-amber-300 via-primary-400 to-amber-300 dark:from-amber-600 dark:via-primary-500 dark:to-amber-600" />
+            <div className="via-primary-400 dark:via-primary-500 h-0.5 flex-1 bg-gradient-to-r from-amber-300 to-amber-300 dark:from-amber-600 dark:to-amber-600" />
             <MobilePredictionNode
               label={t("predictionWindow.latest")}
               variant="edge"
@@ -250,10 +250,7 @@ function MobileConfidenceCard({
       </div>
       <ul className="mt-2 space-y-1 pl-9">
         {rules.map((rule, index) => (
-          <li
-            key={index}
-            className="text-xs text-gray-600 dark:text-gray-400"
-          >
+          <li key={index} className="text-xs text-gray-600 dark:text-gray-400">
             {rule}
           </li>
         ))}
