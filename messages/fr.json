@@ -125,6 +125,8 @@
     "subtitle": "Tout le monde n'a pas un cycle de 28 jours. Notre algorithme intelligent aide à trouver la fenêtre de vos prochaines règles en fonction de votre historique unique.",
     "metaTitle": "Calculateur de règles irrégulières : Suivi de Cycle et SOPK",
     "metaDescription": "Prédisez votre cycle avec notre calculateur de règles irrégulières. Idéal pour le SOPK et les cycles instables. Sans inscription, 100% privé, précis et sûr.",
+    "twitterTitle": "Calculateur de Règles Irrégulières - Suivi des Cycles Variables",
+    "twitterDescription": "Calculez vos règles même avec des cycles irréguliers. Notre algorithme utilise les données historiques pour des prédictions précises. 100% privé.",
     "periodHistory": "Historique des Règles",
     "periodHistoryHelp": "Entrez au moins 3 dates de début de règles récentes",
     "periodNumber": "Règles {number}",
@@ -155,6 +157,10 @@
       "periodCalculator": {
         "title": "Calculateur de Règles",
         "description": "Calculateur Précis de Règles : Suivi Menstruel Privé"
+      },
+      "ovulationCalculator": {
+        "title": "Calculateur d'Ovulation",
+        "description": "Calculateur d'Ovulation : Trouvez Vos Jours les Plus Fertiles"
       }
     },
     "backToHome": "Retour au Calculateur de Règles"
@@ -489,7 +495,24 @@
         "description": "Votre cycle est un signe vital, au même titre que votre pression artérielle ou votre fréquence cardiaque. Faire confiance à un Calculateur de règles irrégulières pour cartographier votre rythme unique est la première étape vers une gestion proactive de votre santé. Que vous fassiez face au SOPK ou simplement à un mois de stress intense, laissez notre Calculateur de règles irrégulières faire le travail complexe de prédiction pour que vous puissiez vous concentrer sur votre bien-être."
       }
     },
-    "references": "Références"
+    "references": "Références",
+    "lastUpdated": "Dernière mise à jour : Mars 2026",
+    "medicallyReviewed": "Révisé médicalement",
+    "keyStatistics": {
+      "title": "Statistiques Clés Sur Les Règles Irrégulières",
+      "stat1": {
+        "value": "14-25%",
+        "description": "des femmes ont des cycles menstruels irréguliers (ACOG)"
+      },
+      "stat2": {
+        "value": "21-35 jours",
+        "description": "est la plage normale de durée du cycle menstruel (NHS UK)"
+      },
+      "stat3": {
+        "value": "6-12%",
+        "description": "des femmes en âge de procréer ont le SOPK (NICHD)"
+      }
+    }
   },
   "faq": {
     "title": "FAQ sur les Règles: Réponses d'Experts",

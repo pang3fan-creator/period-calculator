@@ -125,6 +125,8 @@
     "subtitle": "No todos tienen un ciclo de 28 días. Nuestro algoritmo inteligente ayuda a encontrar la ventana de tu próximo período basándose en tu historial único.",
     "metaTitle": "Calculadora de Periodo Irregular: Predicción de Ciclo y SOP",
     "metaDescription": "Predice tu próximo ciclo con nuestra calculadora de periodo irregular. Ideal para SOP y variaciones. Sin registro, 100% privada y precisa ventana de fertilidad.",
+    "twitterTitle": "Calculadora de Periodo Irregular - Seguimiento de Ciclos Irregulares",
+    "twitterDescription": "Calcula tu periodo incluso con ciclos irregulares. Nuestro algoritmo usa datos históricos para predicciones precisas. 100% privado.",
     "periodHistory": "Historial de Periodos",
     "periodHistoryHelp": "Ingresa al menos 3 fechas de inicio de periodo recientes",
     "periodNumber": "Periodo {number}",
@@ -155,6 +157,10 @@
       "periodCalculator": {
         "title": "Calculadora de Periodo",
         "description": "Calculadora Precisa de Periodo: Rastreador Privado de Ciclo Menstrual"
+      },
+      "ovulationCalculator": {
+        "title": "Calculadora de Ovulación",
+        "description": "Calculadora de Ovulación: Encuentra Tus Días Más Fértiles"
       }
     },
     "backToHome": "Volver a la Calculadora de Periodo"
@@ -488,7 +494,24 @@
         "description": "Tu ciclo es un signo vital, muy parecido a tu presión arterial o ritmo cardíaco. Confiar en una Calculadora de periodos irregulares para mapear tu ritmo único es el primer paso hacia una gestión de salud proactiva. Ya sea que estés lidiando con el SOP o simplemente con un mes de mucho estrés, deja que nuestra Calculadora de periodos irregulares haga el trabajo pesado de la predicción para que puedas concentrarte en sentirte lo mejor posible."
       }
     },
-    "references": "Referencias"
+    "references": "Referencias",
+    "lastUpdated": "Última actualización: Marzo 2026",
+    "medicallyReviewed": "Revisado médicamente",
+    "keyStatistics": {
+      "title": "Estadísticas Clave Sobre Periodos Irregulares",
+      "stat1": {
+        "value": "14-25%",
+        "description": "de las mujeres experimentan ciclos menstruales irregulares (ACOG)"
+      },
+      "stat2": {
+        "value": "21-35 días",
+        "description": "es el rango normal de duración del ciclo menstrual (NHS UK)"
+      },
+      "stat3": {
+        "value": "6-12%",
+        "description": "de las mujeres en edad reproductiva tienen SOP (NICHD)"
+      }
+    }
   },
   "faq": {
     "title": "Preguntas Frecuentes sobre el Periodo: Respuestas de Expertos",

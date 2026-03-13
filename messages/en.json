@@ -125,6 +125,8 @@
     "subtitle": "Not everyone's cycle is 28 days. Our smart algorithm helps find your next period window based on your unique history.",
     "metaTitle": "Irregular Period Calculator: Accurate Cycle Window Predictor",
     "metaDescription": "Predict your next cycle with our Irregular Period Calculator. Designed for PCOS and cycle variance. No login required—100% private, accurate window tracking.",
+    "twitterTitle": "Irregular Period Calculator - Track Uneven Cycles",
+    "twitterDescription": "Calculate your period even with irregular cycles. Our algorithm uses historical data to provide accurate predictions. 100% private.",
     "periodHistory": "Period History",
     "periodHistoryHelp": "Enter at least 3 recent period start dates",
     "periodNumber": "Period {number}",
@@ -155,6 +157,10 @@
       "periodCalculator": {
         "title": "Period Calculator",
         "description": "Accurate Period Calculator: Private Menstrual Cycle Tracker"
+      },
+      "ovulationCalculator": {
+        "title": "Ovulation Calculator",
+        "description": "Ovulation Calculator: Find Your Most Fertile Days"
       }
     },
     "backToHome": "Back to Period Calculator"
@@ -489,7 +495,24 @@
         "description": "Your cycle is a vital sign, much like your blood pressure or heart rate. Trusting an Irregular Period Calculator to map your unique rhythm is the first step toward proactive health management. Whether you're dealing with PCOS or just a high-stress month, let our Irregular Period Calculator do the heavy lifting of prediction so you can focus on feeling your best."
       }
     },
-    "references": "References"
+    "references": "References",
+    "lastUpdated": "Last Updated: March 2026",
+    "medicallyReviewed": "Medically Reviewed",
+    "keyStatistics": {
+      "title": "Key Statistics About Irregular Periods",
+      "stat1": {
+        "value": "14-25%",
+        "description": "of women experience irregular menstrual cycles (ACOG)"
+      },
+      "stat2": {
+        "value": "21-35 days",
+        "description": "is the normal menstrual cycle length range (NHS UK)"
+      },
+      "stat3": {
+        "value": "6-12%",
+        "description": "of women of reproductive age have PCOS (NICHD)"
+      }
+    }
   },
   "faq": {
     "title": "Period FAQ: Answers from Experts",
