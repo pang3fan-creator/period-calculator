@@ -157,13 +157,6 @@ export default async function HomePage({
           priceCurrency: "USD",
           availability: "https://schema.org/InStock",
         },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.8",
-          ratingCount: "1000",
-          bestRating: "5",
-          worstRating: "1",
-        },
         author: {
           "@id": `${baseUrl}/#organization`,
         },

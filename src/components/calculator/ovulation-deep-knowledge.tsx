@@ -93,12 +93,12 @@ export function OvulationDeepKnowledge() {
         </p>
 
         {/* Key Statistics - AI SEO Optimization */}
-        <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          <div className="dark:bg-dark-bg/50 rounded-2xl bg-white/50 p-4 text-center">
-            <div className="text-trust-green-500 dark:text-trust-green-400 font-heading text-3xl font-bold">
+        <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-3">
+          <div className="text-center">
+            <p className="text-primary-600 dark:text-primary-400 text-2xl font-bold">
               {t("keyStatistics.stat1.value")}
-            </div>
-            <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+            </p>
+            <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
               {t("keyStatistics.stat1.label")}{" "}
               <a
                 href={t("keyStatistics.stat1.sourceUrl")}
@@ -108,13 +108,13 @@ export function OvulationDeepKnowledge() {
               >
                 ({t("keyStatistics.stat1.source")})
               </a>
-            </div>
+            </p>
           </div>
-          <div className="dark:bg-dark-bg/50 rounded-2xl bg-white/50 p-4 text-center">
-            <div className="text-trust-green-500 dark:text-trust-green-400 font-heading text-3xl font-bold">
+          <div className="text-center">
+            <p className="text-primary-600 dark:text-primary-400 text-2xl font-bold">
               {t("keyStatistics.stat2.value")}
-            </div>
-            <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+            </p>
+            <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
               {t("keyStatistics.stat2.label")}{" "}
               <a
                 href={t("keyStatistics.stat2.sourceUrl")}
@@ -124,13 +124,13 @@ export function OvulationDeepKnowledge() {
               >
                 ({t("keyStatistics.stat2.source")})
               </a>
-            </div>
+            </p>
           </div>
-          <div className="dark:bg-dark-bg/50 rounded-2xl bg-white/50 p-4 text-center">
-            <div className="text-trust-green-500 dark:text-trust-green-400 font-heading text-3xl font-bold">
+          <div className="text-center">
+            <p className="text-primary-600 dark:text-primary-400 text-2xl font-bold">
               {t("keyStatistics.stat3.value")}
-            </div>
-            <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+            </p>
+            <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
               {t("keyStatistics.stat3.label")}{" "}
               <a
                 href={t("keyStatistics.stat3.sourceUrl")}
@@ -140,7 +140,7 @@ export function OvulationDeepKnowledge() {
               >
                 ({t("keyStatistics.stat3.source")})
               </a>
-            </div>
+            </p>
           </div>
         </div>
 
