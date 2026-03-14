@@ -74,14 +74,12 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: `${baseUrl}/${locale === "en" ? "" : locale}/irregular-period-calculator`,
-      languages: locales.reduce(
-        (acc, loc) => {
-          acc[localeNames[loc]] =
-            `${baseUrl}/${loc === "en" ? "" : loc}/irregular-period-calculator`;
-          return acc;
-        },
-        {} as Record<string, string>,
-      ),
+      languages: {
+        en: `${baseUrl}/irregular-period-calculator`,
+        es: `${baseUrl}/es/irregular-period-calculator`,
+        fr: `${baseUrl}/fr/irregular-period-calculator`,
+        "x-default": `${baseUrl}/irregular-period-calculator`,
+      },
     },
   };
 }

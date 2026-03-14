@@ -67,6 +67,7 @@ export async function generateMetadata({
         en: `${baseUrl}/privacy-policy`,
         es: `${baseUrl}/es/privacy-policy`,
         fr: `${baseUrl}/fr/privacy-policy`,
+        "x-default": `${baseUrl}/privacy-policy`,
       },
     },
   };

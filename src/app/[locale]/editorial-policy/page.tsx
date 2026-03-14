@@ -75,6 +75,7 @@ export async function generateMetadata({
         en: `${baseUrl}/editorial-policy`,
         es: `${baseUrl}/es/editorial-policy`,
         fr: `${baseUrl}/fr/editorial-policy`,
+        "x-default": `${baseUrl}/editorial-policy`,
       },
     },
   };

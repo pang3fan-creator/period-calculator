@@ -573,6 +573,63 @@
       }
     }
   },
+  "ovulationDeepKnowledge": {
+    "title": "Comprender el período de ovulación: la clave para la concepción",
+    "description": "Comprender el ritmo mensual de tu cuerpo es el primer paso hacia una concepción exitosa o una gestión proactiva de tu salud reproductiva. Aunque muchos creen que el \"Día 14\" es la norma universal, la realidad biológica es mucho más diversa. Por ello, una Calculadora del periodo de ovulación basada en datos es esencial para identificar tu ventana fértil única en lugar de confiar en un promedio genérico.",
+    "lastUpdated": "Última actualización: Marzo 2026",
+    "medicallyReviewed": "Revisado médicamente",
+    "topics": {
+      "whatIsOvulation": {
+        "title": "¿Qué es exactamente la ovulación?",
+        "description": "La ovulación es el evento biológico en el que un óvulo maduro es liberado del ovario, viaja por la trompa de Falopio y queda disponible para la fertilización. Este proceso es desencadenado por un aumento repentino de la Hormona Luteinizante (LH). Debido a que el óvulo solo permanece viable entre 12 y 24 horas después de su liberación, la precisión de una Calculadora del periodo de ovulación se convierte en la herramienta más valiosa de tu kit de planificación."
+      },
+      "fertileWindow": {
+        "title": "La \"Ventana Fértil\" explicada",
+        "description": "El secreto para quedar embarazada reside en la \"Ventana Fértil\": los cinco días previos a la ovulación más el día de la ovulación misma. Este intervalo de seis días existe porque los espermatozoides pueden sobrevivir dentro del tracto reproductivo femenino hasta cinco días. Al usar una Calculadora del periodo de ovulación, puedes identificar estos días de alta probabilidad. Una Calculadora del periodo de ovulación analiza tus datos históricos del ciclo para asegurar que no pierdas esta breve oportunidad mensual."
+      },
+      "trackingSignals": {
+        "title": "Seguimiento de señales biológicas junto con la tecnología",
+        "description": "Aunque una Calculadora del periodo de ovulación proporciona el marco matemático de tu ciclo, tu cuerpo a menudo ofrece pistas físicas. Muchas usuarias encuentran que combinar una Calculadora del periodo de ovulación con el seguimiento \"sintotérmico\" ofrece los mejores resultados:",
+        "signals": {
+          "cervicalMucus": {
+            "title": "Cambios en el moco cervical:",
+            "description": "Al acercarte a la fecha predicha por tu Calculadora del periodo de ovulación, tu flujo puede volverse transparente, elástico y similar a la clara de huevo cruda."
+          },
+          "bbt": {
+            "title": "Temperatura corporal basal (TCB):",
+            "description": "Un ligero aumento en tu temperatura de reposo suele ocurrir 24 horas después de la ovulación. Registrar este cambio ayuda a que la Calculadora del periodo de ovulación refine sus predicciones futuras."
+          },
+          "lutealPhase": {
+            "title": "Consistencia de la fase lútea:",
+            "description": "El tiempo desde la ovulación hasta tu próximo periodo suele ser constante (unos 14 días). Una Calculadora del periodo de ovulación utiliza esta estabilidad para \"trabajar hacia atrás\" y encontrar tu fecha de liberación."
+          }
+        }
+      },
+      "precisionMatters": {
+        "title": "Por qué la precisión es fundamental",
+        "description": "Para quienes tienen un ciclo de 28 días, el cálculo es sencillo. Sin embargo, si tu ciclo varía incluso dos o tres días, tu ventana fértil se desplaza. Una Calculadora del periodo de ovulación avanzada maneja esta complejidad calculando tus promedios móviles. Confiar en una Calculadora del periodo de ovulación reduce el estrés de \"adivinar\" y lo reemplaza con un enfoque estructurado y basado en evidencia para tu fertilidad."
+      },
+      "professionalAdvice": {
+        "title": "Cuándo buscar asesoramiento profesional",
+        "description": "Aunque una Calculadora del periodo de ovulación es un recurso educativo poderoso, no es una herramienta de diagnóstico. Según el Colegio Americano de Obstetras y Ginecólogos (ACOG), debes consultar a un especialista en fertilidad si:",
+        "conditions": {
+          "item1": "Tienes menos de 35 años y has intentado concebir durante más de un año.",
+          "item2": "Tienes más de 35 años y lo has intentado durante seis meses.",
+          "item3": "Los datos en tu Calculadora del periodo de ovulación muestran ciclos menores a 21 días o mayores a 35 días."
+        },
+        "conclusion": "Usar una Calculadora del periodo de ovulación para documentar tu historial de ciclos proporciona a tu médico datos objetivos, lo que puede acelerar significativamente cualquier evaluación médica necesaria. Al registrar consistentemente tus fechas en la Calculadora del periodo de ovulación, te conviertes en una participante activa en tu propio camino hacia la salud."
+      }
+    },
+    "references": {
+      "title": "Referencias",
+      "items": [
+        "American College of Obstetricians and Gynecologists (ACOG). \"Evaluating Infertility.\"",
+        "Mayo Clinic. \"Ovulation signs: When is conception most likely?\"",
+        "National Institutes of Health (NIH). \"The Menstrual Cycle and Fertile Window.\"",
+        "Planned Parenthood. \"The Calendar Method (Fertility Awareness-Based Medicine).\""
+      ]
+    }
+  },
   "irregularDeepKnowledge": {
     "title": "Entendiendo los periodos irregulares: Qué significa para tu salud",
     "description": "Para muchas personas, el ciclo \"perfecto\" de 28 días es más un mito de los libros de texto que una realidad biológica. Si tu menstruación llega antes de lo esperado, se retrasa o simplemente se salta un mes, no estás sola. Sin embargo, navegar por esta imprevisibilidad requiere algo más que suposiciones; requiere una Calculadora de periodos irregulares especializada que comprenda los matices de las fluctuaciones hormonales.",
@@ -654,29 +711,29 @@
     "expandLabel": "Expandir {question}",
     "collapseLabel": "Contraer {question}",
     "items": {
-      "latePeriod": {
-        "question": "¿Se me ha retrasado el periodo?",
-        "answer": "Por lo general, se considera que un periodo está \"retrasado\" si no llega dentro de los cinco días posteriores a la fecha en que esperabas que comenzara, según el Colegio Americano de Obstetricistas y Ginecólogos (ACOG). Sin embargo, como pocas personas tienen un ciclo perfectamente regular de 28 días, es normal ver pequeñas variaciones de 2-7 días. Si tienes actividad sexual y tu periodo se retrasa incluso un solo día, el paso más fiable es hacerte una prueba de embarazo, ya que nuestra Calculadora de Periodo ofrece una estimación basada en promedios, no una certeza biológica. Fuente: Directrices ACOG."
+      "whatIsOvulation": {
+        "question": "¿Qué es el periodo de ovulación y cómo se calcula?",
+        "answer": "La ovulación es el momento específico de tu ciclo menstrual en el que un óvulo maduro es liberado del ovario, quedando disponible para la fertilización. Para determinar este momento, una Calculadora del periodo de ovulación suele restar la duración de tu fase lútea (el tiempo entre la ovulación y tu siguiente periodo, generalmente 14 días) de la duración total de tu ciclo. Al identificar este punto medio biológico, una Calculadora del periodo de ovulación te ayuda a comprender la breve ventana de 12 a 24 horas en la que el óvulo es viable."
       },
-      "nextPeriodDate": {
-        "question": "¿Cómo calculo la fecha de mi próximo periodo?",
-        "answer": "Para encontrar tu próxima fecha de inicio, primero debes identificar el \"Día 1\" de tu último ciclo. Ese es el primer día en que notaste un flujo constante. A partir de ahí, suma la duración promedio de tu ciclo, es decir, el número de días desde el inicio de un periodo hasta el inicio del siguiente. Por ejemplo, si tu último periodo comenzó el 1 de marzo y tu ciclo promedio es de 28 días, se prevé que tu próximo periodo empieza el 29 de marzo. Según el NHS del Reino Unido, la mayoría de los ciclos menstruales oscilan entre 21 y 35 días."
+      "symptoms": {
+        "question": "¿Cuáles son los síntomas de la ovulación?",
+        "answer": "Aunque una Calculadora del periodo de ovulación proporciona una estimación matemática, tu cuerpo a menudo señala el evento a través de cambios físicos. Los síntomas comunes incluyen un cambio en el moco cervical (volviéndose transparente y elástico, como clara de huevo), un dolor leve en el bajo abdomen conocido como mittelschmerz, y un sentido del olfato más agudo o aumento de la libido. Muchas mujeres utilizan una Calculadora del periodo de ovulación junto con el seguimiento de estos síntomas para obtener una visión más completa de su salud reproductiva."
       },
-      "safePeriod": {
-        "question": "¿Cómo calculo mi \"periodo seguro\"?",
-        "answer": "El \"periodo seguro\" se refiere a los días del ciclo en los que es menos probable concebir, normalmente al principio y al final del ciclo. Para calcularlo, primero debes identificar tu ventana de ovulación, que suele ocurrir entre 12 y 16 días antes de tu próximo periodo, según ACOG. Aun así, es importante recordar que el \"método del calendario\" no es 100% exacto. Los espermatozoides pueden sobrevivir dentro del cuerpo hasta cinco días, por lo que basarse solo en una calculadora como método anticonceptivo puede ser arriesgado. Fuente: ACOG y NHS Reino Unido."
+      "howToCalculate": {
+        "question": "¿Cómo calcular mi periodo de ovulación?",
+        "answer": "Para calcular tu ventana manualmente, debes conocer el primer día de tu último periodo y la duración promedio de tu ciclo. Sin embargo, la forma más eficiente de garantizar la precisión es utilizar una Calculadora del periodo de ovulación dedicada. Al ingresar tus fechas en una Calculadora del periodo de ovulación, el algoritmo analiza el historial de tu ciclo para señalar tu pico de fertilidad. Confiar en una Calculadora del periodo de ovulación es especialmente útil si deseas identificar la \"ventana fértil\": los cinco días previos a la liberación del óvulo cuando los espermatozoides pueden sobrevivir en el cuerpo."
       },
-      "periodEarly": {
-        "question": "¿Por qué me vino el periodo antes este mes?",
-        "answer": "Es bastante común que el periodo llegue unos días antes. Según una investigación publicada en Women's Health Issues, esto suele ocurrir porque la ovulación se adelantó con respecto a lo habitual. Entre los desencadenantes frecuentes están los niveles altos de estrés (35% de los casos), los cambios importantes en tu horario de sueño, una nueva rutina de ejercicio intenso o incluso un viaje reciente. Si tu periodo se adelanta con frecuencia (más de 7 días) o viene acompañado de un dolor inusual, se recomienda consultar con un profesional de salud."
+      "daysAfterPeriod": {
+        "question": "¿Cuántos días después de mi periodo ovulo?",
+        "answer": "En un ciclo estándar de 28 días, la ovulación suele ocurrir alrededor del día 14. Sin embargo, el momento exacto depende totalmente de la duración de tu ciclo específico. Una Calculadora del periodo de ovulación mostrará que si tienes un ciclo más corto (por ejemplo, 21 días), podrías ovular solo 7 días después de que comience tu periodo. Usar una Calculadora del periodo de ovulación te ayuda a evitar el \"mito del día 14\" al proporcionar una fecha adaptada a tus datos biológicos únicos."
       },
-      "normalFlow": {
-        "question": "¿Cuánto flujo es normal durante el periodo?",
-        "answer": "La persona promedio pierde entre 30 ml y 80 ml de sangre a lo largo de todo el periodo, es decir, unas 2 a 5 cucharadas, según ACOG. En términos prácticos, esto suele equivaler a empapar una toalla sanitaria o un tampón cada 3 o 4 horas. Si necesitas cambiar tu protección cada hora o notas coágulos más grandes que una moneda grande, tu flujo podría considerarse abundante (menorragia) y conviene buscar orientación médica. Fuente: Colegio Americano de Obstetricistas y Ginecólogos."
+      "pregnantAfterOvulation": {
+        "question": "¿Puedo quedar embarazada dos días después de la ovulación?",
+        "answer": "Biológicamente, las posibilidades de concebir dos días después de la ovulación son extremadamente bajas. Una vez que se libera un óvulo, solo sobrevive de 12 a 24 horas. Una Calculadora del periodo de ovulación se enfoca en los días previos a la ovulación porque los espermatozoides pueden vivir durante cinco días, pero una vez que el óvulo se ha desintegrado, la ventana fértil se cierra. Si tu Calculadora del periodo de ovulación indica que tu pico ha pasado, tu cuerpo probablemente ha pasado a la fase lútea, donde el embarazo ya no es posible para ese ciclo."
       },
-      "pregnancyFromLmp": {
-        "question": "¿Por qué el embarazo se calcula desde la última menstruación (LMP)?",
-        "answer": "Como la mayoría de las personas no conoce el momento exacto de la concepción, los profesionales de la salud usan la Fecha de la Última Menstruación, o LMP por sus siglas en inglés, como un punto de partida claro y objetivo, según ACOG y NHS. Dado que la ovulación suele producirse unas dos semanas después de que empieza el periodo, eso significa que durante las dos primeras semanas de un \"embarazo de 40 semanas\" en realidad todavía no hay embarazo. Este estándar ayuda a los médicos a estimar con más precisión la fecha probable de parto y el desarrollo fetal. Fuente: Boletín de Práctica ACOG."
+      "irregularCycles": {
+        "question": "¿Es precisa esta calculadora de ovulación para ciclos irregulares?",
+        "answer": "Si tus ciclos varían significativamente, una Calculadora del periodo de ovulación sigue siendo una herramienta muy útil, aunque proporciona una \"ventana predicha\" en lugar de una única fecha certera. Para quienes tienen irregularidad, una Calculadora del periodo de ovulación utiliza promedios móviles para estimar cuándo podría abrirse tu próxima ventana. Aunque una Calculadora del periodo de ovulación no puede prever cambios repentinos en el estilo de vida o el estrés que podrían retrasar la ovulación, sigue siendo la mejor manera de documentar tendencias que luego puedes compartir con un profesional de la salud."
       }
     }
   },

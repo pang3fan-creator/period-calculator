@@ -58,6 +58,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
           `${baseUrl}${altLocale.code}${page.path}`;
       }
 
+      // Add x-default pointing to English version
+      alternateLanguages["x-default"] = `${baseUrl}${page.path}`;
+
       sitemapEntries.push({
         url,
         lastModified,

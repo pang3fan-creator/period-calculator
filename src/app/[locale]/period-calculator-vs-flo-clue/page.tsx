@@ -50,14 +50,12 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: `${baseUrl}/${locale === "en" ? "" : locale}/period-calculator-vs-flo-clue`,
-      languages: locales.reduce(
-        (acc, loc) => {
-          acc[localeNames[loc]] =
-            `${baseUrl}/${loc === "en" ? "" : loc}/period-calculator-vs-flo-clue`;
-          return acc;
-        },
-        {} as Record<string, string>,
-      ),
+      languages: {
+        en: `${baseUrl}/period-calculator-vs-flo-clue`,
+        es: `${baseUrl}/es/period-calculator-vs-flo-clue`,
+        fr: `${baseUrl}/fr/period-calculator-vs-flo-clue`,
+        "x-default": `${baseUrl}/period-calculator-vs-flo-clue`,
+      },
     },
   };
 }

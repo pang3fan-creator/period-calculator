@@ -56,13 +56,12 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: `${baseUrl}/${locale === "en" ? "" : locale}`,
-      languages: locales.reduce(
-        (acc, loc) => {
-          acc[localeNames[loc]] = `${baseUrl}/${loc === "en" ? "" : loc}`;
-          return acc;
-        },
-        {} as Record<string, string>,
-      ),
+      languages: {
+        en: `${baseUrl}/`,
+        es: `${baseUrl}/es`,
+        fr: `${baseUrl}/fr`,
+        "x-default": `${baseUrl}/`,
+      },
     },
   };
 }

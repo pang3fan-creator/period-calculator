@@ -4,12 +4,12 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 const faqItems = [
-  "latePeriod",
-  "nextPeriodDate",
-  "safePeriod",
-  "periodEarly",
-  "normalFlow",
-  "pregnancyFromLmp",
+  "whatIsOvulation",
+  "symptoms",
+  "howToCalculate",
+  "daysAfterPeriod",
+  "pregnantAfterOvulation",
+  "irregularCycles",
 ] as const;
 
 /**

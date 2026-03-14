@@ -4,7 +4,8 @@ import sitemap from "./sitemap";
 describe("sitemap", () => {
   it("should generate correct number of URLs", () => {
     const sitemapEntries = sitemap();
-    // 3 main pages + 3 irregular-period-calculator pages + 3 ovulation-period-calculator pages + 3 privacy-policy pages + 3 editorial-policy pages + 3 about pages = 18 entries
+    // 6 pages × 3 languages = 18 entries
+    // Pages: home, irregular, ovulation, privacy, editorial, about
     expect(sitemapEntries).toHaveLength(18);
   });
 
@@ -66,6 +67,18 @@ describe("sitemap", () => {
     expect(urls).toContain(`${baseUrl}/about`);
     expect(urls).toContain(`${baseUrl}/es/about`);
     expect(urls).toContain(`${baseUrl}/fr/about`);
+  });
+
+  it("should include x-default in alternates", () => {
+    const sitemapEntries = sitemap();
+    const baseUrl = "https://www.aiperiodcalculator.com";
+
+    const homePage = sitemapEntries.find((entry) => entry.url === baseUrl);
+    expect(homePage?.alternates?.languages).toBeDefined();
+    expect(homePage?.alternates?.languages?.["x-default"]).toBe(baseUrl);
+    expect(homePage?.alternates?.languages?.["en"]).toBe(baseUrl);
+    expect(homePage?.alternates?.languages?.["es"]).toBe(`${baseUrl}/es`);
+    expect(homePage?.alternates?.languages?.["fr"]).toBe(`${baseUrl}/fr`);
   });
 
   it("should have valid lastModified dates", () => {

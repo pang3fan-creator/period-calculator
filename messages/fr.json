@@ -574,6 +574,63 @@
       }
     }
   },
+  "ovulationDeepKnowledge": {
+    "title": "Comprendre la période d'ovulation : la clé de la conception",
+    "description": "Comprendre le rythme mensuel de votre corps est la première étape vers une conception réussie ou une gestion proactive de votre santé reproductive. Bien que beaucoup pensent que le « Jour 14 » est la norme universelle, la réalité biologique est bien plus complexe. C'est pourquoi un Calculateur de période d'ovulation basé sur des données est essentiel pour identifier votre fenêtre de fertilité unique plutôt que de se fier à une moyenne générique.",
+    "lastUpdated": "Dernière mise à jour : Mars 2026",
+    "medicallyReviewed": "Révisé médicalement",
+    "topics": {
+      "whatIsOvulation": {
+        "title": "Qu'est-ce que l'ovulation exactement ?",
+        "description": "L'ovulation est l'événement biologique au cours duquel un ovule mûr est libéré par l'ovaire, descend dans la trompe de Fallope et devient disponible pour la fécondation. Ce processus est déclenché par une poussée soudaine d'hormone lutéinisante (LH). Comme l'ovule ne reste viable que pendant 12 à 24 heures après sa libération, la précision d'un Calculateur de période d'ovulation devient l'outil le plus précieux de votre planification."
+      },
+      "fertileWindow": {
+        "title": "La « fenêtre de fertilité » expliquée",
+        "description": "Le secret pour tomber enceinte réside dans la « fenêtre de fertilité » : les cinq jours précédant l'ovulation plus le jour de l'ovulation lui-même. Cet intervalle de six jours existe car les spermatozoïdes peuvent survivre dans l'appareil reproducteur féminin jusqu'à cinq jours. En utilisant un Calculateur de période d'ovulation, vous pouvez identifier ces jours à forte probabilité. Un Calculateur de période d'ovulation analyse l'historique de vos cycles pour s'assurer que vous ne manquez pas cette brève opportunité mensuelle."
+      },
+      "trackingSignals": {
+        "title": "Suivre les signaux biologiques parallèlement à la technologie",
+        "description": "Bien qu'un Calculateur de période d'ovulation fournisse le cadre mathématique de votre cycle, votre corps offre souvent des indices physiques. De nombreuses utilisatrices constatent que le couplage d'un Calculateur de période d'ovulation avec un suivi « sympto-thermique » donne les meilleurs résultats :",
+        "signals": {
+          "cervicalMucus": {
+            "title": "Modification de la glaire cervicale :",
+            "description": "À l'approche de la date prédite par votre Calculateur de période d'ovulation, vos pertes peuvent devenir transparentes, extensibles et semblables à du blanc d'œuf cru."
+          },
+          "bbt": {
+            "title": "Température basale du corps (TBC) :",
+            "description": "Une légère augmentation de votre température au repos survient généralement 24 heures après l'ovulation. Noter ce changement aide le Calculateur de période d'ovulation à affiner ses prévisions futures."
+          },
+          "lutealPhase": {
+            "title": "Constance de la phase lutéale :",
+            "description": "Le temps écoulé entre l'ovulation et vos prochaines règles est généralement constant (environ 14 jours). Un Calculateur de période d'ovulation utilise cette stabilité pour « travailler à rebours » et trouver votre date de libération."
+          }
+        }
+      },
+      "precisionMatters": {
+        "title": "Pourquoi la précision est-elle importante ?",
+        "description": "Pour celles qui ont un cycle de 28 jours, le calcul est simple. Cependant, si votre cycle varie même de deux ou trois jours, votre fenêtre de fertilité se déplace. Un Calculateur de période d'ovulation avancé gère cette complexité en calculant vos moyennes mobiles. Se fier à un Calculateur de période d'ovulation réduit le stress de l'incertitude et le remplace par une approche structurée et factuelle de votre fertilité."
+      },
+      "professionalAdvice": {
+        "title": "Quand consulter un professionnel ?",
+        "description": "Bien qu'un Calculateur de période d'ovulation soit une ressource pédagogique puissante, ce n'est pas un outil de diagnostic. Selon l'American College of Obstetricians and Gynecologists (ACOG), vous devriez consulter un spécialiste de la fertilité si :",
+        "conditions": {
+          "item1": "Vous avez moins de 35 ans et essayez de concevoir depuis plus d'un an.",
+          "item2": "Vous avez plus de 35 ans et essayez depuis six mois.",
+          "item3": "Les données de votre Calculateur de période d'ovulation indiquent des cycles inférieurs à 21 jours ou supérieurs à 35 jours."
+        },
+        "conclusion": "L'utilisation d'un Calculateur de période d'ovulation pour documenter l'historique de vos cycles fournit à votre médecin des données objectives, ce qui peut accélérer considérablement les évaluations médicales. En enregistrant systématiquement vos dates dans le Calculateur de période d'ovulation, vous devenez actrice de votre parcours de santé."
+      }
+    },
+    "references": {
+      "title": "Références",
+      "items": [
+        "American College of Obstetricians and Gynecologists (ACOG). \"Evaluating Infertility.\"",
+        "Mayo Clinic. \"Ovulation signs: When is conception most likely?\"",
+        "National Institutes of Health (NIH). \"The Menstrual Cycle and Fertile Window.\"",
+        "Planned Parenthood. \"The Calendar Method (Fertility Awareness-Based Medicine).\""
+      ]
+    }
+  },
   "irregularDeepKnowledge": {
     "title": "Comprendre les règles irrégulières : Quel impact sur votre santé ?",
     "description": "Pour beaucoup, le cycle « parfait » de 28 jours est davantage un mythe médical qu'une réalité biologique. Si vos règles arrivent en avance, en retard, ou sautent parfois un mois entier, vous n'êtes pas seule. Cependant, naviguer dans cette imprévisibilité demande plus que de simples suppositions ; cela nécessite un Calculateur de règles irrégulières spécialisé, capable de comprendre les nuances des fluctuations hormonales.",
@@ -655,29 +712,29 @@
     "expandLabel": "Développer {question}",
     "collapseLabel": "Réduire {question}",
     "items": {
-      "latePeriod": {
-        "question": "Mes règles sont-elles en retard ?",
-        "answer": "En général, on considère qu'un retard de règles existe lorsque vos règles ne sont pas arrivées dans les cinq jours suivant leur date prévue, selon le Collège Américain des Obstétriciens et Gynécologues (ACOG). Cependant, comme peu de personnes ont un cycle parfaitement régulier de 28 jours, de légères variations de 2-7 jours sont normales. Si vous êtes sexuellement active et que vos règles ont ne serait-ce qu'un jour de retard, l'étape la plus fiable est de faire un test de grossesse, car notre Calculateur de Règles fournit une estimation basée sur des moyennes, pas une certitude biologique. Source : Directives ACOG."
+      "whatIsOvulation": {
+        "question": "Qu'est-ce que la période d'ovulation et comment est-elle calculée ?",
+        "answer": "L'ovulation est le moment précis de votre cycle menstruel où un ovule mûr est libéré par l'ovaire, le rendant disponible pour la fécondation. Pour déterminer ce moment, un Calculateur de période d'ovulation soustrait généralement la durée de votre phase lutéale (le temps entre l'ovulation et vos prochaines règles, soit environ 14 jours) de la durée totale de votre cycle. En identifiant ce point médian biologique, un Calculateur de période d'ovulation vous aide à comprendre la brève fenêtre de 12 à 24 heures pendant laquelle l'ovule est viable."
       },
-      "nextPeriodDate": {
-        "question": "Comment calculer la date de mes prochaines règles ?",
-        "answer": "Pour trouver votre prochaine date de début, vous devez d'abord identifier le « jour 1 » de votre dernier cycle. Il s'agit du tout premier jour où vous avez remarqué un flux régulier. À partir de là, ajoutez la durée moyenne de votre cycle, c'est-à-dire le nombre de jours entre le début d'une période et le début de la suivante. Par exemple, si vos dernières règles ont commencé le 1er mars et que votre cycle moyen est de 28 jours, vos prochaines règles sont prévues pour le 29 mars. Selon le NHS du Royaume-Uni, la plupart des cycles menstruels varient entre 21 et 35 jours."
+      "symptoms": {
+        "question": "Quels sont les symptômes de l'ovulation ?",
+        "answer": "Bien qu'un Calculateur de période d'ovulation fournisse une estimation mathématique, votre corps signale souvent l'événement par des changements physiques. Les symptômes courants incluent une modification de la glaire cervicale (devenant claire et élastique, comme du blanc d'œuf), une légère douleur dans le bas-ventre appelée mittelschmerz, et un odorat plus sensible ou une libido accrue. De nombreuses femmes utilisent un Calculateur de période d'ovulation en complément du suivi de ces symptômes pour obtenir une vision globale de leur santé reproductive."
       },
-      "safePeriod": {
-        "question": "Comment calculer ma « période sûre » ?",
-        "answer": "La « période sûre » correspond aux jours du cycle où vous avez le moins de chances de concevoir, généralement tout au début et tout à la fin du cycle. Pour la calculer, il faut d'abord identifier votre fenêtre d'ovulation, qui se situe généralement entre 12 et 16 jours avant vos prochaines règles, selon ACOG. Il est toutefois important de se rappeler que la « méthode du calendrier » n'est pas fiable à 100 %. Les spermatozoïdes peuvent survivre jusqu'à cinq jours dans le corps, ce qui rend risqué le fait de compter uniquement sur une calculatrice comme moyen de contraception. Source : ACOG et NHS Royaume-Uni."
+      "howToCalculate": {
+        "question": "Comment calculer ma période d'ovulation ?",
+        "answer": "Pour calculer manuellement votre fenêtre, vous devez connaître le premier jour de vos dernières règles et la durée moyenne de votre cycle. Cependant, le moyen le plus efficace d'assurer la précision est d'utiliser un Calculateur de période d'ovulation dédié. En saisissant vos dates dans un Calculateur de période d'ovulation, l'algorithme analyse l'historique de votre cycle pour cibler votre pic de fertilité. S'appuyer sur un Calculateur de période d'ovulation est particulièrement utile si vous souhaitez identifier la « fenêtre de fertilité » — les cinq jours précédant la libération de l'ovule pendant lesquels les spermatozoïdes peuvent survivre dans le corps."
       },
-      "periodEarly": {
-        "question": "Pourquoi mes règles sont-elles arrivées tôt ce mois-ci ?",
-        "answer": "Il est assez courant que les règles arrivent quelques jours en avance. Selon une recherche publiée dans Women's Health Issues, cela se produit souvent parce que l'ovulation a eu lieu plus tôt que d'habitude. Parmi les déclencheurs fréquents, on retrouve un niveau de stress élevé (35% des cas), des changements importants dans votre rythme de sommeil, une nouvelle routine sportive intense ou même un voyage récent. Si vos règles arrivent régulièrement en avance (plus de 7 jours) ou s'accompagnent de douleurs inhabituelles, il est recommandé de consulter un professionnel de santé."
+      "daysAfterPeriod": {
+        "question": "Combien de jours après mes règles est-ce que j'ovule ?",
+        "answer": "Dans un cycle standard de 28 jours, l'ovulation se produit généralement vers le 14e jour. Cependant, le moment exact dépend entièrement de la durée de votre cycle spécifique. Un Calculateur de période d'ovulation montrera que si vous avez un cycle court (ex: 21 jours), vous pourriez ovuler seulement 7 jours après le début de vos règles. L'utilisation d'un Calculateur de période d'ovulation vous aide à éviter le « mythe du 14e jour » en fournissant une date adaptée à vos données biologiques uniques."
       },
-      "normalFlow": {
-        "question": "Quelle quantité de flux est normale pendant les règles ?",
-        "answer": "En moyenne, une personne perd entre 30 ml et 80 ml de sang pendant l'ensemble de ses règles, soit environ 2 à 5 cuillères à soupe, selon ACOG. Concrètement, cela correspond souvent au fait de saturer une serviette hygiénique ou un tampon toutes les 3 à 4 heures. Si vous devez changer de protection toutes les heures ou si vous remarquez des caillots plus gros qu'une pièce de monnaie, votre flux peut être considéré comme abondant (ménorragie) et il est préférable de demander un avis médical. Source : Collège Américain des Obstétriciens et Gynécologues."
+      "pregnantAfterOvulation": {
+        "question": "Puis-je tomber enceinte deux jours après l'ovulation ?",
+        "answer": "Biologiquement, les chances de concevoir deux jours après l'ovulation sont extrêmement faibles. Une fois l'ovule libéré, il ne survit que 12 à 24 heures. Un Calculateur de période d'ovulation se concentre sur les jours précédant l'ovulation car les spermatozoïdes peuvent vivre cinq jours, mais une fois l'ovule désintégré, la fenêtre de fertilité se ferme. Si votre Calculateur de période d'ovulation indique que votre pic est passé, votre corps est probablement passé en phase lutéale, où la grossesse n'est plus possible pour ce cycle."
       },
-      "pregnancyFromLmp": {
-        "question": "Pourquoi la grossesse est-elle calculée à partir des dernières règles (LMP) ?",
-        "answer": "Comme la plupart des personnes ne connaissent pas le moment exact de la conception, les professionnels de santé utilisent la date des dernières règles, ou LMP en anglais, comme point de départ clair et objectif, selon ACOG et NHS. Puisque l'ovulation survient généralement environ deux semaines après le début des règles, cela signifie que pendant les deux premières semaines d'une « grossesse de 40 semaines », vous n'êtes en réalité pas encore enceinte. Cette norme aide les médecins à estimer plus précisément la date d'accouchement et à suivre les étapes du développement fœtal. Source : Bulletin de Pratique ACOG."
+      "irregularCycles": {
+        "question": "Ce calculateur d'ovulation est-il précis pour les cycles irréguliers ?",
+        "answer": "Si vos cycles varient de manière importante, un Calculateur de période d'ovulation reste un outil très utile, bien qu'il fournisse une « fenêtre prédite » plutôt qu'une date unique certaine. Pour les cycles irréguliers, un Calculateur de période d'ovulation utilise des moyennes mobiles pour estimer l'ouverture de votre prochaine fenêtre. Bien qu'un Calculateur de période d'ovulation ne puisse pas anticiper des changements soudains de mode de vie ou de stress, il reste le meilleur moyen de documenter les tendances à partager ensuite avec un professionnel de santé."
       }
     }
   },
