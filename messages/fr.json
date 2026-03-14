@@ -69,7 +69,7 @@
       },
       "ovulationCalculator": {
         "title": "Calculateur d'Ovulation",
-        "description": "Calculateur d'Ovulation : Trouvez votre Fenêtre Féconde"
+        "description": "Calculateur de période d'ovulation : Fenêtre de Fertilité"
       }
     }
   },
@@ -174,7 +174,7 @@
       },
       "ovulationCalculator": {
         "title": "Calculateur d'Ovulation",
-        "description": "Calculateur d'Ovulation : Trouvez Vos Jours les Plus Fertiles"
+        "description": "Calculateur de période d'ovulation : Fenêtre de Fertilité"
       }
     },
     "backToHome": "Retour au Calculateur de Règles"

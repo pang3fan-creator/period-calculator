@@ -69,7 +69,7 @@
       },
       "ovulationCalculator": {
         "title": "Ovulation Calculator",
-        "description": "Ovulation Calculator: Find Your Fertile Window"
+        "description": "Ovulation Period Calculator: Accurate Fertile Window Tracker"
       }
     }
   },
@@ -174,7 +174,7 @@
       },
       "ovulationCalculator": {
         "title": "Ovulation Calculator",
-        "description": "Ovulation Calculator: Find Your Most Fertile Days"
+        "description": "Ovulation Period Calculator: Accurate Fertile Window Tracker"
       }
     },
     "backToHome": "Back to Period Calculator"

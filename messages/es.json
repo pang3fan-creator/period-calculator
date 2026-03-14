@@ -69,7 +69,7 @@
       },
       "ovulationCalculator": {
         "title": "Calculadora de Ovulación",
-        "description": "Calculadora de Ovulación: Encuentra tu Ventana Fértil"
+        "description": "Calculadora del Periodo de Ovulación: Días Fértiles y Ciclo"
       }
     }
   },
@@ -174,7 +174,7 @@
       },
       "ovulationCalculator": {
         "title": "Calculadora de Ovulación",
-        "description": "Calculadora de Ovulación: Encuentra Tus Días Más Fértiles"
+        "description": "Calculadora del Periodo de Ovulación: Días Fértiles y Ciclo"
       }
     },
     "backToHome": "Volver a la Calculadora de Periodo"
