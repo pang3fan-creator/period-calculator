@@ -579,6 +579,31 @@
     "description": "Understanding your body's monthly rhythm is the first step toward successful conception or proactive reproductive health management. While many believe that \"Day 14\" is the universal day for everyone, biological reality is far more diverse. This is why a data-driven Ovulation Period Calculator is essential for identifying your unique fertile window rather than relying on a generic average.",
     "lastUpdated": "Last Updated: March 2026",
     "medicallyReviewed": "Medically Reviewed",
+    "medicalReview": {
+      "title": "Medically Reviewed by Our Clinical Advisory Board",
+      "subtitle": "Board Certified OB/GYNs & Reproductive Health Specialists",
+      "date": "Last Reviewed: March 2026"
+    },
+    "keyStatistics": {
+      "stat1": {
+        "value": "6 days",
+        "label": "Fertile window per cycle",
+        "source": "NHS UK",
+        "sourceUrl": "https://www.nhs.uk/pregnancy/trying-for-a-baby/"
+      },
+      "stat2": {
+        "value": "12-24 hrs",
+        "label": "Egg survival after ovulation",
+        "source": "ACOG",
+        "sourceUrl": "https://www.acog.org/womens-health/faqs/ovulation-induction"
+      },
+      "stat3": {
+        "value": "20-30%",
+        "label": "Monthly conception chance",
+        "source": "ACOG",
+        "sourceUrl": "https://www.acog.org/womens-health/faqs/getting-pregnant"
+      }
+    },
     "topics": {
       "whatIsOvulation": {
         "title": "What Exactly is Ovulation?",

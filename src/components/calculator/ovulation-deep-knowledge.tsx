@@ -76,13 +76,13 @@ export function OvulationDeepKnowledge() {
           </div>
           <div>
             <p className="font-semibold text-gray-800 dark:text-white">
-              Medically Reviewed by Dr. Sarah Chen, MD, FACOG
+              {t("medicalReview.title")}
             </p>
             <p className="text-sm text-gray-600 dark:text-gray-300">
-              Board Certified OB/GYN - Reproductive Health Specialist
+              {t("medicalReview.subtitle")}
             </p>
             <p className="text-xs text-gray-500 dark:text-gray-400">
-              Reviewed: March 2026
+              {t("medicalReview.date")}
             </p>
           </div>
         </div>
@@ -96,49 +96,49 @@ export function OvulationDeepKnowledge() {
         <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
           <div className="dark:bg-dark-bg/50 rounded-2xl bg-white/50 p-4 text-center">
             <div className="text-trust-green-500 dark:text-trust-green-400 font-heading text-3xl font-bold">
-              6 days
+              {t("keyStatistics.stat1.value")}
             </div>
             <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-              Fertile window per cycle{" "}
+              {t("keyStatistics.stat1.label")}{" "}
               <a
-                href="https://www.nhs.uk/pregnancy/trying-for-a-baby/"
+                href={t("keyStatistics.stat1.sourceUrl")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-500 hover:underline"
               >
-                (NHS UK)
+                ({t("keyStatistics.stat1.source")})
               </a>
             </div>
           </div>
           <div className="dark:bg-dark-bg/50 rounded-2xl bg-white/50 p-4 text-center">
             <div className="text-trust-green-500 dark:text-trust-green-400 font-heading text-3xl font-bold">
-              12-24 hrs
+              {t("keyStatistics.stat2.value")}
             </div>
             <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-              Egg survival after ovulation{" "}
+              {t("keyStatistics.stat2.label")}{" "}
               <a
-                href="https://www.acog.org/womens-health/faqs/ovulation-induction"
+                href={t("keyStatistics.stat2.sourceUrl")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-500 hover:underline"
               >
-                (ACOG)
+                ({t("keyStatistics.stat2.source")})
               </a>
             </div>
           </div>
           <div className="dark:bg-dark-bg/50 rounded-2xl bg-white/50 p-4 text-center">
             <div className="text-trust-green-500 dark:text-trust-green-400 font-heading text-3xl font-bold">
-              20-30%
+              {t("keyStatistics.stat3.value")}
             </div>
             <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-              Monthly conception chance{" "}
+              {t("keyStatistics.stat3.label")}{" "}
               <a
-                href="https://www.acog.org/womens-health/faqs/getting-pregnant"
+                href={t("keyStatistics.stat3.sourceUrl")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-500 hover:underline"
               >
-                (ACOG)
+                ({t("keyStatistics.stat3.source")})
               </a>
             </div>
           </div>
@@ -246,13 +246,13 @@ export function OvulationDeepKnowledge() {
           <h3 className="mb-3 text-base font-semibold text-gray-800 dark:text-white">
             {t("references.title")}
           </h3>
-          <ul className="space-y-2 text-xs text-gray-500 dark:text-gray-400">
+          <ol className="list-inside list-decimal space-y-1 text-sm text-gray-600 dark:text-gray-400">
             <li>
               <a
                 href="https://www.acog.org/womens-health/faqs/evaluating-infertility"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline-offset-2 hover:underline"
               >
                 American College of Obstetricians and Gynecologists (ACOG).
                 "Evaluating Infertility."
@@ -263,7 +263,7 @@ export function OvulationDeepKnowledge() {
                 href="https://www.mayoclinic.org/healthy-lifestyle/getting-pregnant/in-depth/ovulation-signs/art-20047567"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline-offset-2 hover:underline"
               >
                 Mayo Clinic. "Ovulation signs: When is conception most likely?"
               </a>
@@ -273,7 +273,7 @@ export function OvulationDeepKnowledge() {
                 href="https://www.nih.gov/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline-offset-2 hover:underline"
               >
                 National Institutes of Health (NIH). "The Menstrual Cycle and
                 Fertile Window."
@@ -284,13 +284,13 @@ export function OvulationDeepKnowledge() {
                 href="https://www.plannedparenthood.org/learn/birth-control/fertility-awareness"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline-offset-2 hover:underline"
               >
                 Planned Parenthood. "The Calendar Method (Fertility
                 Awareness-Based Medicine)."
               </a>
             </li>
-          </ul>
+          </ol>
         </div>
       </div>
     </section>

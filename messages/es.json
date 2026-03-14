@@ -578,6 +578,31 @@
     "description": "Comprender el ritmo mensual de tu cuerpo es el primer paso hacia una concepción exitosa o una gestión proactiva de tu salud reproductiva. Aunque muchos creen que el \"Día 14\" es la norma universal, la realidad biológica es mucho más diversa. Por ello, una Calculadora del periodo de ovulación basada en datos es esencial para identificar tu ventana fértil única en lugar de confiar en un promedio genérico.",
     "lastUpdated": "Última actualización: Marzo 2026",
     "medicallyReviewed": "Revisado médicamente",
+    "medicalReview": {
+      "title": "Revisado médicamente por nuestro consejo asesor clínico",
+      "subtitle": "OB/GYN certificados y especialistas en salud reproductiva",
+      "date": "Última revisión: Marzo 2026"
+    },
+    "keyStatistics": {
+      "stat1": {
+        "value": "6 días",
+        "label": "Ventana fértil por ciclo",
+        "source": "NHS UK",
+        "sourceUrl": "https://www.nhs.uk/pregnancy/trying-for-a-baby/"
+      },
+      "stat2": {
+        "value": "12-24 hrs",
+        "label": "Supervivencia del óvulo tras la ovulación",
+        "source": "ACOG",
+        "sourceUrl": "https://www.acog.org/womens-health/faqs/ovulation-induction"
+      },
+      "stat3": {
+        "value": "20-30%",
+        "label": "Posibilidad mensual de concepción",
+        "source": "ACOG",
+        "sourceUrl": "https://www.acog.org/womens-health/faqs/getting-pregnant"
+      }
+    },
     "topics": {
       "whatIsOvulation": {
         "title": "¿Qué es exactamente la ovulación?",
