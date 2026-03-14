@@ -26,7 +26,11 @@
     "privacyBadge": "Vos données ne quittent jamais votre appareil",
     "darkMode": "Mode Sombre",
     "lightMode": "Mode Clair",
-    "language": "Langue"
+    "language": "Langue",
+    "schema": {
+      "organizationDescription": "Suivi de cycle menstruel axé sur la confidentialité aidant les femmes à comprendre leur corps sans compromettre la sécurité de leurs données personnelles.",
+      "breadcrumbHome": "Accueil"
+    }
   },
   "privacyPopup": {
     "buttonLabel": "Confidentialité",
@@ -61,6 +65,13 @@
     "title": "Calculateur Précis de Règles",
     "subtitle": "Utilisez notre Calculateur de Règles gratuit pour prédire votre prochain cycle, ovulation et fenêtre de fertilité. Pas d'inscription nécessaire—100% privé, sécurisé et précis. Notre Calculateur de Règles vous aide à suivre votre cycle menstruel avec précision.",
     "comingSoon": "Calculateur bientôt disponible.",
+    "featureList": {
+      "periodPrediction": "Prédiction des règles",
+      "ovulationTracking": "Suivi de l'ovulation",
+      "cycleAnalysis": "Analyse du cycle",
+      "privacyStorage": "Stockage local privé",
+      "multiLanguage": "Support multilingue"
+    },
     "otherTools": {
       "title": "Autres Outils et Ressources Gratuits",
       "irregularCalculator": {
@@ -141,6 +152,13 @@
     "metaDescription": "Prédisez votre cycle avec notre calculateur de règles irrégulières. Idéal pour le SOPK et les cycles instables. Sans inscription, 100% privé, précis et sûr.",
     "twitterTitle": "Calculateur de Règles Irrégulières - Suivi des Cycles Variables",
     "twitterDescription": "Calculez vos règles même avec des cycles irréguliers. Notre algorithme utilise les données historiques pour des prédictions précises. 100% privé.",
+    "featureList": {
+      "irregularPrediction": "Prédiction de cycle irrégulier",
+      "cycleVariance": "Analyse de variance de cycle",
+      "confidenceScoring": "Score de confiance de prédiction",
+      "privacyStorage": "Stockage local privé",
+      "multiLanguage": "Support multilingue"
+    },
     "periodHistory": "Historique des Règles",
     "periodHistoryHelp": "Entrez au moins 3 dates de début de règles récentes",
     "periodNumber": "Règles {number}",
@@ -183,6 +201,14 @@
     "h1Title": "Calculateur de Période d'Ovulation",
     "title": "Calculateur d'Ovulation",
     "subtitle": "Trouvez vos jours les plus fertiles",
+    "featureList": {
+      "ovulationPrediction": "Prédiction de date d'ovulation",
+      "fertileWindow": "Calcul de fenêtre fertile",
+      "cycleTracking": "Suivi de cycle",
+      "calendarIntegration": "Intégration calendrier",
+      "privacyStorage": "Stockage local privé",
+      "multiLanguage": "Support multilingue"
+    },
     "purpose": "J'utilise ceci pour",
     "tryingToConceive": "Essayer de concevoir",
     "avoidingPregnancy": "Éviter la grossesse",

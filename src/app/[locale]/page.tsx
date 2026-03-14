@@ -79,9 +79,6 @@ const faqItemKeys = [
 // HowTo step keys
 const howToStepKeys = ["step1", "step2", "step3", "step4"] as const;
 
-// Fixed publication date for Article schema (site launch date)
-const siteLaunchDate = "2024-01-01T00:00:00.000Z";
-
 export default async function HomePage({
   params,
 }: {
@@ -93,9 +90,10 @@ export default async function HomePage({
   const tHome = await getTranslations("home");
   const tMetadata = await getTranslations("metadata");
   const tHowTo = await getTranslations("howToCalculate");
-  const tDeepKnowledge = await getTranslations("deepKnowledge");
   const tFaq = await getTranslations("faq");
   const tOtherTools = await getTranslations("home.otherTools");
+  const tSchema = await getTranslations("common.schema");
+  const tFeatureList = await getTranslations("home.featureList");
 
   // Combined JSON-LD Schema using @graph for better organization
   const combinedSchema = {
@@ -113,19 +111,19 @@ export default async function HomePage({
           width: 1200,
           height: 630,
         },
-        description:
-          "Privacy-first menstrual cycle tracker helping women understand their bodies without compromising personal data security.",
+        description: tSchema("organizationDescription"),
         contactPoint: {
           "@type": "ContactPoint",
           email: "hello@aiperiodcalculator.com",
           contactType: "customer service",
+          availableLanguage: ["English", "Spanish", "French"],
         },
         sameAs: [
           "https://twitter.com/aiperiodcalc",
           "https://www.facebook.com/aiperiodcalculator",
         ],
       },
-      // WebSite with search action
+      // WebSite
       {
         "@type": "WebSite",
         name: "Period Calculator",
@@ -133,24 +131,28 @@ export default async function HomePage({
         publisher: {
           "@id": `${baseUrl}/#organization`,
         },
-        potentialAction: {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: `${baseUrl}/?s={search_term_string}`,
-          },
-          "query-input": "required name=search_term_string",
+        mainEntity: {
+          "@id": `${baseUrl}/#webapplication`,
         },
       },
-      // SoftwareApplication (enhanced)
+      // WebApplication
       {
-        "@type": "SoftwareApplication",
+        "@type": "WebApplication",
+        "@id": `${baseUrl}/#webapplication`,
         name: tMetadata("title"),
         description: tMetadata("description"),
         url: baseUrl,
         applicationCategory: "HealthApplication",
         operatingSystem: "Web Browser",
+        browserRequirements: "Requires JavaScript",
         inLanguage: locale,
+        featureList: [
+          tFeatureList("periodPrediction"),
+          tFeatureList("ovulationTracking"),
+          tFeatureList("cycleAnalysis"),
+          tFeatureList("privacyStorage"),
+          tFeatureList("multiLanguage"),
+        ],
         offers: {
           "@type": "Offer",
           price: "0",
@@ -160,7 +162,6 @@ export default async function HomePage({
         author: {
           "@id": `${baseUrl}/#organization`,
         },
-        softwareVersion: "1.0.0",
       },
       // BreadcrumbList
       {
@@ -170,8 +171,7 @@ export default async function HomePage({
           {
             "@type": "ListItem",
             position: 1,
-            name:
-              locale === "en" ? "Home" : locale === "es" ? "Inicio" : "Accueil",
+            name: tSchema("breadcrumbHome"),
             item: baseUrl,
           },
           {
@@ -209,24 +209,6 @@ export default async function HomePage({
           name: tHowTo(`steps.${key}.title`),
           text: tHowTo(`steps.${key}.description`),
         })),
-      },
-      // Article (Deep Knowledge)
-      {
-        "@type": "Article",
-        headline: tDeepKnowledge("title"),
-        description: tDeepKnowledge("description"),
-        url: baseUrl,
-        inLanguage: locale,
-        image: `${baseUrl}/assets/menstrual_cycle.jpg`,
-        author: {
-          "@id": `${baseUrl}/#organization`,
-        },
-        publisher: {
-          "@id": `${baseUrl}/#organization`,
-        },
-        datePublished: siteLaunchDate,
-        dateModified: "2026-03-01T00:00:00.000Z",
-        articleSection: "Health",
       },
     ],
   };

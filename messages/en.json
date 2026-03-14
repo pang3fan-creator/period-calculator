@@ -26,7 +26,11 @@
     "privacyBadge": "Your data never leaves your device",
     "darkMode": "Dark Mode",
     "lightMode": "Light Mode",
-    "language": "Language"
+    "language": "Language",
+    "schema": {
+      "organizationDescription": "Privacy-first menstrual cycle tracker helping women understand their bodies without compromising personal data security.",
+      "breadcrumbHome": "Home"
+    }
   },
   "privacyPopup": {
     "buttonLabel": "Privacy",
@@ -61,6 +65,13 @@
     "title": "Accurate Period Calculator",
     "subtitle": "Use our free Period Calculator to predict your next cycle, ovulation, and fertile window. No login required—100% private, secure, and accurate medical-grade tool. Our Period Calculator helps you track your menstrual cycle with precision.",
     "comingSoon": "Calculator coming soon.",
+    "featureList": {
+      "periodPrediction": "Period prediction",
+      "ovulationTracking": "Ovulation tracking",
+      "cycleAnalysis": "Cycle analysis",
+      "privacyStorage": "Privacy-first local storage",
+      "multiLanguage": "Multi-language support"
+    },
     "otherTools": {
       "title": "Other Free Tools & Resources",
       "irregularCalculator": {
@@ -141,6 +152,13 @@
     "metaDescription": "Predict your next cycle with our Irregular Period Calculator. Designed for PCOS and cycle variance. No login required—100% private, accurate window tracking.",
     "twitterTitle": "Irregular Period Calculator - Track Uneven Cycles",
     "twitterDescription": "Calculate your period even with irregular cycles. Our algorithm uses historical data to provide accurate predictions. 100% private.",
+    "featureList": {
+      "irregularPrediction": "Irregular cycle prediction",
+      "cycleVariance": "Cycle variance analysis",
+      "confidenceScoring": "Prediction confidence scoring",
+      "privacyStorage": "Privacy-first local storage",
+      "multiLanguage": "Multi-language support"
+    },
     "periodHistory": "Period History",
     "periodHistoryHelp": "Enter at least 3 recent period start dates",
     "periodNumber": "Period {number}",
@@ -183,6 +201,14 @@
     "h1Title": "Ovulation Period Calculator",
     "title": "Ovulation Calculator",
     "subtitle": "Find your most fertile days",
+    "featureList": {
+      "ovulationPrediction": "Ovulation date prediction",
+      "fertileWindow": "Fertile window calculation",
+      "cycleTracking": "Cycle tracking",
+      "calendarIntegration": "Calendar integration",
+      "privacyStorage": "Privacy-first local storage",
+      "multiLanguage": "Multi-language support"
+    },
     "purpose": "I'm using this for",
     "tryingToConceive": "Trying to conceive",
     "avoidingPregnancy": "Avoiding pregnancy",

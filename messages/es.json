@@ -26,7 +26,11 @@
     "privacyBadge": "Tus datos nunca salen de tu dispositivo",
     "darkMode": "Modo Oscuro",
     "lightMode": "Modo Claro",
-    "language": "Idioma"
+    "language": "Idioma",
+    "schema": {
+      "organizationDescription": "Rastreador de ciclo menstrual centrado en la privacidad que ayuda a las mujeres a entender sus cuerpos sin comprometer la seguridad de sus datos personales.",
+      "breadcrumbHome": "Inicio"
+    }
   },
   "privacyPopup": {
     "buttonLabel": "Privacidad",
@@ -61,6 +65,13 @@
     "title": "Calculadora Precisa de Periodo",
     "subtitle": "Usa nuestra Calculadora de Periodo gratuita para predecir tu próximo ciclo, ovulación y ventana fértil. Sin registro necesario—100% privada, segura y precisa. Nuestra Calculadora de Periodo te ayuda a seguir tu ciclo menstrual con precisión.",
     "comingSoon": "Calculadora próximamente.",
+    "featureList": {
+      "periodPrediction": "Predicción de periodo",
+      "ovulationTracking": "Seguimiento de ovulación",
+      "cycleAnalysis": "Análisis de ciclo",
+      "privacyStorage": "Almacenamiento local privado",
+      "multiLanguage": "Soporte multilingüe"
+    },
     "otherTools": {
       "title": "Otras Herramientas y Recursos Gratuitos",
       "irregularCalculator": {
@@ -141,6 +152,13 @@
     "metaDescription": "Predice tu próximo ciclo con nuestra calculadora de periodo irregular. Ideal para SOP y variaciones. Sin registro, 100% privada y precisa ventana de fertilidad.",
     "twitterTitle": "Calculadora de Periodo Irregular - Seguimiento de Ciclos Irregulares",
     "twitterDescription": "Calcula tu periodo incluso con ciclos irregulares. Nuestro algoritmo usa datos históricos para predicciones precisas. 100% privado.",
+    "featureList": {
+      "irregularPrediction": "Predicción de ciclo irregular",
+      "cycleVariance": "Análisis de varianza de ciclo",
+      "confidenceScoring": "Puntuación de confianza de predicción",
+      "privacyStorage": "Almacenamiento local privado",
+      "multiLanguage": "Soporte multilingüe"
+    },
     "periodHistory": "Historial de Periodos",
     "periodHistoryHelp": "Ingresa al menos 3 fechas de inicio de periodo recientes",
     "periodNumber": "Periodo {number}",
@@ -183,6 +201,14 @@
     "h1Title": "Calculadora de Periodo de Ovulación",
     "title": "Calculadora de Ovulación",
     "subtitle": "Encuentra tus días más fértiles",
+    "featureList": {
+      "ovulationPrediction": "Predicción de fecha de ovulación",
+      "fertileWindow": "Cálculo de ventana fértil",
+      "cycleTracking": "Seguimiento de ciclo",
+      "calendarIntegration": "Integración de calendario",
+      "privacyStorage": "Almacenamiento local privado",
+      "multiLanguage": "Soporte multilingüe"
+    },
     "purpose": "Estoy usando esto para",
     "tryingToConceive": "Intentando quedar embarazada",
     "avoidingPregnancy": "Evitar embarazo",

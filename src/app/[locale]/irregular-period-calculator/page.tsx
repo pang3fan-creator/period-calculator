@@ -36,6 +36,19 @@ const localeNames: Record<string, string> = {
   fr: "fr-FR",
 };
 
+// FAQ item keys from the translation file
+const irregularFaqItemKeys = [
+  "getPregnant",
+  "dueDate",
+  "ovulation",
+  "averageCycle",
+  "pcos",
+  "inaccurate",
+] as const;
+
+// HowTo step keys from the translation file
+const irregularHowToStepKeys = ["step1", "step2", "step3", "step4"] as const;
+
 export async function generateMetadata({
   params,
 }: {
@@ -91,7 +104,12 @@ export default async function IrregularPeriodCalculatorPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations("irregularCalculator");
+  const tMetadata = await getTranslations("metadata.irregular");
+  const tHowTo = await getTranslations("irregularHowToCalculate");
+  const tFaq = await getTranslations("irregularFaq");
   const tOtherTools = await getTranslations("irregularCalculator.otherTools");
+  const tSchema = await getTranslations("common.schema");
+  const tFeatureList = await getTranslations("irregularCalculator.featureList");
 
   // Combined JSON-LD Schema using @graph for better organization
   const combinedSchema = {
@@ -100,59 +118,82 @@ export default async function IrregularPeriodCalculatorPage({
       // Organization (E-E-A-T signal)
       {
         "@type": "Organization",
-        "@id": "https://www.aiperiodcalculator.com/#organization",
+        "@id": `${baseUrl}/#organization`,
         name: "Period Calculator",
-        url: "https://www.aiperiodcalculator.com",
+        url: baseUrl,
         logo: {
           "@type": "ImageObject",
-          url: "https://www.aiperiodcalculator.com/logo.png",
+          url: `${baseUrl}/logo.png`,
           width: 1200,
           height: 630,
         },
-        description:
-          "Privacy-first menstrual cycle tracker helping women understand their bodies without compromising personal data security.",
+        description: tSchema("organizationDescription"),
         contactPoint: {
           "@type": "ContactPoint",
           email: "hello@aiperiodcalculator.com",
           contactType: "customer service",
+          availableLanguage: ["English", "Spanish", "French"],
         },
         sameAs: [
           "https://twitter.com/aiperiodcalc",
           "https://www.facebook.com/aiperiodcalculator",
         ],
       },
+      // WebSite
+      {
+        "@type": "WebSite",
+        name: "Period Calculator",
+        url: baseUrl,
+        publisher: {
+          "@id": `${baseUrl}/#organization`,
+        },
+        mainEntity: {
+          "@id": `${baseUrl}/irregular-period-calculator/#webapplication`,
+        },
+      },
       // WebApplication
       {
         "@type": "WebApplication",
-        name: "Irregular Period Calculator",
-        description:
-          "Calculate your period even with irregular cycles. Our algorithm uses historical data to provide accurate predictions. 100% private.",
-        url: "https://www.aiperiodcalculator.com/irregular-period-calculator",
+        "@id": `${baseUrl}/irregular-period-calculator/#webapplication`,
+        name: tMetadata("title"),
+        description: tMetadata("description"),
+        url: `${baseUrl}/irregular-period-calculator`,
         applicationCategory: "HealthApplication",
         operatingSystem: "Web Browser",
+        browserRequirements: "Requires JavaScript",
+        inLanguage: locale,
+        featureList: [
+          tFeatureList("irregularPrediction"),
+          tFeatureList("cycleVariance"),
+          tFeatureList("confidenceScoring"),
+          tFeatureList("privacyStorage"),
+          tFeatureList("multiLanguage"),
+        ],
         offers: {
           "@type": "Offer",
           price: "0",
           priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
         },
         author: {
-          "@id": "https://www.aiperiodcalculator.com/#organization",
+          "@id": `${baseUrl}/#organization`,
         },
       },
       // BreadcrumbList
       {
         "@type": "BreadcrumbList",
+        inLanguage: locale,
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
-            name: "Home",
+            name: tSchema("breadcrumbHome"),
             item: baseUrl,
           },
           {
             "@type": "ListItem",
             position: 2,
-            name: "Irregular Period Calculator",
+            name: t("title"),
             item: `${baseUrl}/irregular-period-calculator`,
           },
         ],
@@ -160,83 +201,30 @@ export default async function IrregularPeriodCalculatorPage({
       // FAQPage
       {
         "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "Will irregular periods affect my ability to get pregnant?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "While having an unpredictable cycle can make timing conception more challenging, it does not necessarily mean you cannot get pregnant. The primary hurdle is identifying your fertile window. Because ovulation may occur at different times each month, using an Irregular Period Calculator is vital to mapping out the range of days when you are most likely to conceive.",
-            },
+        inLanguage: locale,
+        mainEntity: irregularFaqItemKeys.map((key) => ({
+          "@type": "Question",
+          name: tFaq(`items.${key}.question`),
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: tFaq(`items.${key}.answer`),
           },
-          {
-            "@type": "Question",
-            name: "How do I calculate my due date with irregular periods?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Standard pregnancy math relies on the Naegele's Rule, which assumes a 28-day cycle. For those with variance, this method is often inaccurate. Medical professionals typically recommend an early dating ultrasound to confirm the gestational age. In the meantime, you can provide your doctor with the historical data from your Irregular Period Calculator.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "How can I calculate ovulation if my cycles are irregular?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Calculating ovulation when your dates shift requires looking for a window rather than a single day. You should monitor physical signs like cervical mucus changes alongside the data provided by your Irregular Period Calculator. An advanced Irregular Period Calculator uses your previous 3 to 6 months of data to determine your shortest and longest cycles.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "How do I calculate my average cycle length with irregular periods?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "To find your average, you should sum the total days of your last six cycles and divide by six. However, for those with high variance, the simple average can be misleading. An Irregular Period Calculator doesn't just give you a flat average; it calculates the standard deviation to show you how much your cycle typically fluctuates.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Is an Irregular Period Calculator accurate for Polycystic Ovary Syndrome (PCOS)?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "For individuals with PCOS, hormones often don't follow a predictable rise and fall, making exact predictions difficult. While no digital tool can be 100% accurate for PCOS, an Irregular Period Calculator is an essential management tool. By consistently logging your data, you can identify emerging patterns that might otherwise go unnoticed.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "What should I do if my predictions are inaccurate for three consecutive cycles?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "If your actual start dates consistently fall outside the window predicted by your Irregular Period Calculator, it may be a sign of an underlying hormonal shift or significant lifestyle stress. Medical experts at the Mayo Clinic suggest that cycle tracking as a vital sign is crucial. If the Irregular Period Calculator shows a persistent trend of increasing irregularity over 90 days, you should schedule an appointment with a gynecologist.",
-            },
-          },
-        ],
+        })),
       },
       // HowTo
       {
         "@type": "HowTo",
-        name: "How to Calculate Irregular Periods",
-        description:
-          "Learn how to use our irregular period calculator to get accurate predictions despite cycle variations.",
+        name: tHowTo("title"),
+        description: tHowTo("description"),
+        inLanguage: locale,
         author: {
-          "@id": "https://www.aiperiodcalculator.com/#organization",
+          "@id": `${baseUrl}/#organization`,
         },
-        step: [
-          {
-            "@type": "HowToStep",
-            name: "Enter your cycle history",
-            text: "Input the start dates of your last 3-6 menstrual cycles.",
-          },
-          {
-            "@type": "HowToStep",
-            name: "Set your typical cycle variation",
-            text: "Indicate how many days your cycle typically varies from the average.",
-          },
-          {
-            "@type": "HowToStep",
-            name: "View your prediction window",
-            text: "See your earliest, most likely, and latest predicted dates for your next period.",
-          },
-        ],
+        step: irregularHowToStepKeys.map((key) => ({
+          "@type": "HowToStep",
+          name: tHowTo(`steps.${key}.title`),
+          text: tHowTo(`steps.${key}.description`),
+        })),
       },
     ],
   };

@@ -36,6 +36,19 @@ const localeNames: Record<string, string> = {
   fr: "fr-FR",
 };
 
+// FAQ item keys from the translation file
+const ovulationFaqItemKeys = [
+  "whatIsOvulation",
+  "symptoms",
+  "howToCalculate",
+  "daysAfterPeriod",
+  "pregnantAfterOvulation",
+  "irregularCycles",
+] as const;
+
+// HowTo step keys from the translation file
+const ovulationHowToStepKeys = ["step1", "step2", "step3", "step4"] as const;
+
 export async function generateMetadata({
   params,
 }: {
@@ -99,9 +112,19 @@ export async function generateMetadata({
   };
 }
 
-export default async function OvulationCalculatorPage() {
+export default async function OvulationCalculatorPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const t = await getTranslations("ovulationCalculator");
+  const tMetadata = await getTranslations("metadata.ovulation");
+  const tHowTo = await getTranslations("ovulationHowToCalculate");
+  const tFaq = await getTranslations("ovulationFaq");
   const tOtherTools = await getTranslations("ovulationCalculator.otherTools");
+  const tSchema = await getTranslations("common.schema");
+  const tFeatureList = await getTranslations("ovulationCalculator.featureList");
 
   // Combined JSON-LD Schema using @graph for better semantic relationships
   const combinedSchema = {
@@ -119,12 +142,12 @@ export default async function OvulationCalculatorPage() {
           width: 1200,
           height: 630,
         },
-        description:
-          "Privacy-first menstrual cycle tracker helping women understand their bodies without compromising personal data security.",
+        description: tSchema("organizationDescription"),
         contactPoint: {
           "@type": "ContactPoint",
           email: "hello@aiperiodcalculator.com",
           contactType: "customer service",
+          availableLanguage: ["English", "Spanish", "French"],
         },
         sameAs: [
           "https://twitter.com/aiperiodcalc",
@@ -134,169 +157,90 @@ export default async function OvulationCalculatorPage() {
       // WebSite Schema
       {
         "@type": "WebSite",
-        "@id": `${baseUrl}/#website`,
-        url: baseUrl,
         name: "Period Calculator",
+        url: baseUrl,
         publisher: {
           "@id": `${baseUrl}/#organization`,
         },
-      },
-      // WebPage Schema
-      {
-        "@type": "WebPage",
-        "@id": `${baseUrl}/ovulation-period-calculator#webpage`,
-        url: `${baseUrl}/ovulation-period-calculator`,
-        name: "Ovulation Calculator: Track Your Fertile Window",
-        description:
-          "Use our free Ovulation Calculator to find your peak fertility days. Track your fertile window accurately for pregnancy planning.",
-        isPartOf: {
-          "@id": `${baseUrl}/#website`,
-        },
-        about: {
-          "@type": "MedicalProcedure",
-          name: "Ovulation Prediction",
-        },
         mainEntity: {
-          "@id": `${baseUrl}/ovulation-period-calculator#webapplication`,
+          "@id": `${baseUrl}/ovulation-period-calculator/#webapplication`,
         },
       },
-      // WebApplication Schema (Enhanced)
+      // WebApplication Schema
       {
         "@type": "WebApplication",
-        "@id": `${baseUrl}/ovulation-period-calculator#webapplication`,
-        name: "Ovulation Calculator",
-        description:
-          "Calculate your ovulation date and fertile window. Plan pregnancy or understand your cycle better. 100% private - all data stays in your browser.",
+        "@id": `${baseUrl}/ovulation-period-calculator/#webapplication`,
+        name: tMetadata("title"),
+        description: tMetadata("description"),
         url: `${baseUrl}/ovulation-period-calculator`,
         applicationCategory: "HealthApplication",
-        applicationSubCategory: "Reproductive Health Application",
-        operatingSystem: "Any",
-        browserRequirements: "Requires JavaScript. Requires HTML5.",
-        softwareVersion: "1.0",
+        operatingSystem: "Web Browser",
+        browserRequirements: "Requires JavaScript",
+        inLanguage: locale,
+        featureList: [
+          tFeatureList("ovulationPrediction"),
+          tFeatureList("fertileWindow"),
+          tFeatureList("cycleTracking"),
+          tFeatureList("calendarIntegration"),
+          tFeatureList("privacyStorage"),
+          tFeatureList("multiLanguage"),
+        ],
         offers: {
           "@type": "Offer",
           price: "0",
           priceCurrency: "USD",
           availability: "https://schema.org/InStock",
         },
-        featureList: [
-          "Ovulation date prediction",
-          "Fertile window calculation",
-          "Cycle tracking",
-          "Calendar integration",
-          "Privacy-first design",
-        ],
+        author: {
+          "@id": `${baseUrl}/#organization`,
+        },
       },
       // BreadcrumbList Schema
       {
         "@type": "BreadcrumbList",
+        inLanguage: locale,
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
-            name: "Home",
+            name: tSchema("breadcrumbHome"),
             item: baseUrl,
           },
           {
             "@type": "ListItem",
             position: 2,
-            name: "Ovulation Calculator",
+            name: t("title"),
             item: `${baseUrl}/ovulation-period-calculator`,
           },
         ],
       },
-      // HowTo Schema (Enhanced)
+      // HowTo Schema
       {
         "@type": "HowTo",
-        name: "How to Calculate Your Ovulation Date",
-        description:
-          "Learn how to use our ovulation calculator to find your most fertile days.",
-        totalTime: "PT2M",
-        estimatedCost: {
-          "@type": "MonetaryAmount",
-          currency: "USD",
-          value: "0",
+        name: tHowTo("title"),
+        description: tHowTo("steps.step1.description"),
+        inLanguage: locale,
+        author: {
+          "@id": `${baseUrl}/#organization`,
         },
-        step: [
-          {
-            "@type": "HowToStep",
-            position: 1,
-            name: "Enter your last period start date",
-            text: "Input the first day of your most recent menstrual period.",
-          },
-          {
-            "@type": "HowToStep",
-            position: 2,
-            name: "Set your cycle length",
-            text: "Enter your average cycle length (typically 21-35 days).",
-          },
-          {
-            "@type": "HowToStep",
-            position: 3,
-            name: "Choose your purpose",
-            text: "Select whether you're trying to conceive or trying to avoid pregnancy.",
-          },
-          {
-            "@type": "HowToStep",
-            position: 4,
-            name: "View your results",
-            text: "See your ovulation date, fertile window, and next period start date.",
-          },
-        ],
+        step: ovulationHowToStepKeys.map((key) => ({
+          "@type": "HowToStep",
+          name: tHowTo(`steps.${key}.title`),
+          text: tHowTo(`steps.${key}.description`),
+        })),
       },
       // FAQPage Schema
       {
         "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "What is the ovulation period and how is it calculated?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Ovulation is the specific point in your menstrual cycle when a mature egg is released from the ovary, making it available for fertilization. To determine this timing, an Ovulation Period Calculator typically subtracts the length of your luteal phase (the time between ovulation and your next period, usually 14 days) from your total cycle length. By identifying this biological midpoint, an Ovulation Period Calculator helps you understand the brief 12-to-24-hour window when the egg is viable.",
-            },
+        inLanguage: locale,
+        mainEntity: ovulationFaqItemKeys.map((key) => ({
+          "@type": "Question",
+          name: tFaq(`items.${key}.question`),
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: tFaq(`items.${key}.answer`),
           },
-          {
-            "@type": "Question",
-            name: "What are the symptoms of ovulation?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "While an Ovulation Period Calculator provides a mathematical estimate, your body often signals the event through physical changes. Common symptoms include a change in cervical mucus (becoming clear and stretchy, like egg whites), a mild ache in the lower abdomen known as mittelschmerz, and a heightened sense of smell or increased libido. Many women use an Ovulation Period Calculator in tandem with tracking these symptoms to gain a more comprehensive view of their reproductive health.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "How do I calculate my ovulation period?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: 'To calculate your window manually, you must know the first day of your last period and your average cycle length. However, the most efficient way to ensure accuracy is to use a dedicated Ovulation Period Calculator. By inputting your dates into an Ovulation Period Calculator, the algorithm analyzes your cycle\'s history to pinpoint your peak fertility. Relying on an Ovulation Period Calculator is especially helpful if you want to identify the "fertile window"—the five days leading up to egg release when sperm can survive in the body.',
-            },
-          },
-          {
-            "@type": "Question",
-            name: "How many days after my period do I ovulate?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: 'In a standard 28-day cycle, ovulation usually occurs around Day 14. However, the exact timing depends entirely on the length of your specific cycle. An Ovulation Period Calculator will show that if you have a shorter cycle (e.g., 21 days), you might ovulate just 7 days after your period starts. Using an Ovulation Period Calculator helps you avoid the "Day 14 myth" by providing a date tailored to your unique biological data.',
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Can I get pregnant two days after ovulation?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Biologically, the chances of conceiving two days after ovulation are extremely low. Once an egg is released, it only survives for about 12 to 24 hours. An Ovulation Period Calculator focuses on the days leading up to ovulation because sperm can live for five days, but once the egg has disintegrated, the fertile window closes. If your Ovulation Period Calculator indicates that your peak has passed, your body has likely moved into the luteal phase, where pregnancy is no longer possible for that cycle.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Is this ovulation calculator accurate for irregular cycles?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: 'If your cycles vary significantly, an Ovulation Period Calculator is still a highly useful tool, though it provides a "predicted window" rather than a single certain date. For those with irregularity, an Ovulation Period Calculator uses moving averages to estimate when your next window might open. While an Ovulation Period Calculator cannot account for sudden lifestyle changes or stress that might delay ovulation, it remains the best way to document trends that you can later share with a healthcare professional for a deeper medical evaluation.',
-            },
-          },
-        ],
+        })),
       },
     ],
   };
