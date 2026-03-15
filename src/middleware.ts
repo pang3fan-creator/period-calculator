@@ -12,5 +12,7 @@ export const config = {
     "/irregular-period-calculator",
     "/ovulation-period-calculator",
     "/about",
+    "/blog/:slug",
+    "/(en|es|fr)/blog/:slug",
   ],
 };

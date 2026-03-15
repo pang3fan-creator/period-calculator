@@ -843,5 +843,15 @@
     "copyEmail": "Copy Email Address",
     "copied": "Copied!",
     "close": "Close"
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Articles and guides about menstrual health and cycle tracking",
+    "readMore": "Read more",
+    "readingTime": "{minutes} min read",
+    "backToHome": "Back to Home",
+    "noPosts": "No posts available yet.",
+    "publishedOn": "Published on",
+    "byAuthor": "By {author}"
   }
 }

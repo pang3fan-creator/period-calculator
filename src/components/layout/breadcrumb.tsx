@@ -10,6 +10,7 @@ interface BreadcrumbItem {
   path: string;
   name: string;
   isCurrent: boolean;
+  noLink?: boolean;
 }
 
 interface BreadcrumbProps {
@@ -20,6 +21,7 @@ interface BreadcrumbProps {
   overrides?: Array<{
     segment: string;
     name: string;
+    noLink?: boolean;
   }>;
   className?: string;
 }
@@ -82,10 +84,14 @@ export function Breadcrumb({ overrides, className = "" }: BreadcrumbProps) {
         .join(" ");
     }
 
+    // Check if this item should have no link
+    const noLink = override?.noLink || (!translationKey && !override);
+
     items.push({
       path: currentPath,
       name,
       isCurrent: isLast,
+      noLink,
     });
   });
 
@@ -107,10 +113,10 @@ export function Breadcrumb({ overrides, className = "" }: BreadcrumbProps) {
                 aria-hidden="true"
               />
             )}
-            {item.isCurrent ? (
+            {item.isCurrent || item.noLink ? (
               <span
                 className="text-primary-500 dark:text-primary-400 ml-1 font-medium"
-                aria-current="page"
+                aria-current={item.isCurrent ? "page" : undefined}
               >
                 {item.name}
               </span>

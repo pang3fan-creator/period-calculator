@@ -63,6 +63,13 @@ src/
 - 结构化数据: WebApplication, FAQPage, HowTo
 - Editorial Policy 页面说明公式来源 (ACOG/NHS)
 
+### 7. JSON-LD Schema 最佳实践
+- **Schema 类型选择**: 使用 `WebApplication`（非 SoftwareApplication），工具页面不使用 `Article`
+- **SearchAction**: 仅当网站有实际搜索功能时添加，否则会被视为误导
+- **多语言支持**: Schema 文本内容（featureList、description、breadcrumb）应从翻译文件获取
+- **@graph 模式**: 使用 `@graph` 组织多 Schema，配合 `@id` 引用避免重复
+- **FAQ/HowTo 数据**: 从翻译文件动态获取，不要在页面硬编码
+
 ---
 
 ## 开发经验与常见问题

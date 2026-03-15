@@ -13,7 +13,6 @@ export const breadcrumbConfig: Record<string, string> = {
   "/privacy-policy": "nav.privacyPolicy",
   "/editorial-policy": "nav.editorialPolicy",
   "/period-calculator-vs-flo-clue": "nav.comparison",
-  "/blog": "nav.blog",
 };
 
 /**

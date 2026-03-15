@@ -842,5 +842,15 @@
     "copyEmail": "Copiar dirección de correo",
     "copied": "¡Copiado!",
     "close": "Cerrar"
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Artículos y guías sobre salud menstrual y seguimiento del ciclo",
+    "readMore": "Leer más",
+    "readingTime": "{minutes} min de lectura",
+    "backToHome": "Volver al Inicio",
+    "noPosts": "No hay artículos disponibles.",
+    "publishedOn": "Publicado el",
+    "byAuthor": "Por {author}"
   }
 }
