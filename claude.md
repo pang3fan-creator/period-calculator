@@ -30,8 +30,8 @@ src/
 │   ├── privacy-policy/
 │   ├── editorial-policy/
 │   ├── period-calculator-vs-flo-clue/
-│   └── blog/[slug]/
-├── components/             # React 组件
+│   └── blog/[slug]/            # 博客详情页（无列表页，工具导向站点）
+├── components/                 # React 组件
 │   ├── layout/             # 布局组件 (Header, Footer, Breadcrumb)
 │   ├── ui/                 # UI 组件
 │   └── seo/                # SEO 组件 (JsonLd)
@@ -96,3 +96,8 @@ src/
 ### 6. 测试注意事项
 - Node.js v24 + vitest 4.x 可能出现 "No test suite found" 临时性错误
 - 解决方案：`npx vitest run --reporter=verbose`
+
+### 7. 博客系统
+- MDX 内容位于 `src/content/blog/{locale}/*.mdx`
+- 使用 `next-mdx-remote/rsc` 渲染，`gray-matter` 解析 frontmatter
+- 只有详情页 `[slug]`，无列表页（工具导向站点不需要文章发现功能）

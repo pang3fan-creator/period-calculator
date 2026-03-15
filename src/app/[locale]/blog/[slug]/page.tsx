@@ -1,5 +1,6 @@
 import { getTranslations, getLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -7,6 +8,25 @@ import { getPostBySlug, getAllUniqueSlugs } from "@/lib/blog/posts";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { mdxComponents } from "@/components/blog/mdx-components";
 import type { Metadata } from "next";
+
+function ArrowLeftIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className={className}
+    >
+      <line x1="19" y1="12" x2="5" y2="12" />
+      <polyline points="12 19 5 12 12 5" />
+    </svg>
+  );
+}
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -67,8 +87,8 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center px-4 py-16">
-      <div className="w-full max-w-4xl">
+    <main className="flex min-h-screen flex-col items-center px-4 py-12">
+      <div className="w-full max-w-3xl">
         <Breadcrumb
           overrides={[
             { segment: "blog", name: t("title"), noLink: true },
@@ -77,33 +97,56 @@ export default async function BlogPostPage({ params }: PageProps) {
         />
       </div>
 
-      <article className="w-full max-w-4xl">
-        <header className="mb-8">
-          <h1 className="text-primary-400 mb-4 text-3xl font-bold">
-            {post.title}
-          </h1>
+      <article className="w-full max-w-3xl">
+        {/* 封面图 */}
+        <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-xl">
+          <Image
+            src="/og-image.png"
+            alt={post.title}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
 
-          <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-            <time dateTime={post.date}>
-              {t("publishedOn")}{" "}
-              {new Date(post.date).toLocaleDateString(locale, {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </time>
-            <span>{t("byAuthor", { author: post.author })}</span>
-            {post.readingTime && <span>{post.readingTime}</span>}
-          </div>
-        </header>
+        {/* 标题 */}
+        <h1 className="text-primary-400 mb-4 text-center text-4xl font-bold">
+          {post.title}
+        </h1>
 
+        {/* 元信息 */}
+        <div className="mb-8 flex flex-wrap items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+          <span className="flex items-center gap-1">
+            ✍️ {post.author}
+          </span>
+          <time dateTime={post.date} className="flex items-center gap-1">
+            📅{" "}
+            {new Date(post.date).toLocaleDateString(locale, {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </time>
+          {post.readingTime && (
+            <span className="flex items-center gap-1">
+              ⏱️ {post.readingTime}
+            </span>
+          )}
+        </div>
+
+        {/* 正文 */}
         <div className="prose prose-gray dark:prose-invert max-w-none">
           <MDXRemote source={post.content} components={mdxComponents} />
         </div>
 
-        <footer className="mt-12 border-t border-gray-200 pt-6 dark:border-gray-700">
-          <Link href="/" className="text-primary-400 hover:underline">
-            ← {t("backToHome")}
+        {/* 底部 */}
+        <footer className="mt-12 text-center">
+          <Link
+            href="/"
+            className="hover:text-trust-green-500 dark:hover:text-trust-green-400 inline-flex items-center gap-2 rounded-full text-gray-500 transition-colors duration-200 dark:text-gray-400"
+          >
+            <ArrowLeftIcon className="h-4 w-4" />
+            <span className="text-sm">{t("backToHome")}</span>
           </Link>
         </footer>
       </article>
