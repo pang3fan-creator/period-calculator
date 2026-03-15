@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { getAllUniqueSlugs } from "@/lib/blog/posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.aiperiodcalculator.com";
@@ -44,6 +45,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  // Get all blog post slugs
+  const blogSlugs = getAllUniqueSlugs();
+
   const sitemapEntries: MetadataRoute.Sitemap = [];
 
   // Generate sitemap entries with alternate language links
@@ -66,6 +70,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified,
         changeFrequency: page.changefreq,
         priority: page.priority,
+        alternates: {
+          languages: alternateLanguages,
+        },
+      });
+    }
+  }
+
+  // Generate blog post entries
+  for (const slug of blogSlugs) {
+    for (const locale of locales) {
+      const url = `${baseUrl}${locale.code}/blog/${slug}`;
+      const alternateLanguages: Record<string, string> = {};
+
+      // Add all language variants as alternates
+      for (const altLocale of locales) {
+        alternateLanguages[altLocale.lang] =
+          `${baseUrl}${altLocale.code}/blog/${slug}`;
+      }
+
+      // Add x-default pointing to English version
+      alternateLanguages["x-default"] = `${baseUrl}/blog/${slug}`;
+
+      sitemapEntries.push({
+        url,
+        lastModified,
+        changeFrequency: "monthly",
+        priority: 0.6,
         alternates: {
           languages: alternateLanguages,
         },

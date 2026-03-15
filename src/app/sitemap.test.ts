@@ -4,9 +4,10 @@ import sitemap from "./sitemap";
 describe("sitemap", () => {
   it("should generate correct number of URLs", () => {
     const sitemapEntries = sitemap();
-    // 6 pages × 3 languages = 18 entries
+    // 6 pages × 3 languages + 2 blog posts × 3 languages = 24 entries
     // Pages: home, irregular, ovulation, privacy, editorial, about
-    expect(sitemapEntries).toHaveLength(18);
+    // Blog posts: first-post, tracking-ovulation-bbt
+    expect(sitemapEntries).toHaveLength(24);
   });
 
   it("should include main pages with correct priority", () => {

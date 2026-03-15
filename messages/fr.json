@@ -135,7 +135,10 @@
     "links": "Liens",
     "trust": "Confiance",
     "trustText": "Vos données ne quittent jamais votre appareil.",
-    "copyright": "© {year} Calculateur de Règles. Tous droits réservés."
+    "copyright": "© {year} Calculateur de Règles. Tous droits réservés.",
+    "calculators": "Calculateurs",
+    "blog": "Blog",
+    "legal": "Légal"
   },
   "settings": {
     "title": "Paramètres",

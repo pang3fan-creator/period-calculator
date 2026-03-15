@@ -135,7 +135,10 @@
     "links": "Enlaces",
     "trust": "Confianza",
     "trustText": "Tus datos nunca salen de tu dispositivo.",
-    "copyright": "© {year} Calculadora de Periodo. Todos los derechos reservados."
+    "copyright": "© {year} Calculadora de Periodo. Todos los derechos reservados.",
+    "calculators": "Calculadoras",
+    "blog": "Blog",
+    "legal": "Legal"
   },
   "settings": {
     "title": "Ajustes",

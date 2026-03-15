@@ -135,7 +135,10 @@
     "links": "Links",
     "trust": "Trust",
     "trustText": "Your data never leaves your device.",
-    "copyright": "© {year} Period Calculator. All rights reserved."
+    "copyright": "© {year} Period Calculator. All rights reserved.",
+    "calculators": "Calculators",
+    "blog": "Blog",
+    "legal": "Legal"
   },
   "settings": {
     "title": "Settings",
