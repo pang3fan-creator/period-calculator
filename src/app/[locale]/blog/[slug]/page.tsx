@@ -107,8 +107,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       <div className="w-full max-w-3xl">
         <Breadcrumb
           overrides={[
-            { segment: "blog", name: t("title"), noLink: true },
-            { segment: slug, name: slug },
+            { segment: slug, name: post.title, noLink: true },
           ]}
         />
       </div>
@@ -181,7 +180,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           "@context": "https://schema.org",
           "@graph": [
             {
-              "@type": "Article",
+              "@type": "BlogPosting",
               headline: post.title,
               description: post.excerpt,
               image: post.coverImage
@@ -219,12 +218,6 @@ export default async function BlogPostPage({ params }: PageProps) {
                 {
                   "@type": "ListItem",
                   position: 2,
-                  name: t("title"),
-                  item: `${BASE_URL}/${localePath}blog`,
-                },
-                {
-                  "@type": "ListItem",
-                  position: 3,
                   name: post.title,
                 },
               ],
