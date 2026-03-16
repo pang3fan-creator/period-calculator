@@ -187,8 +187,8 @@ export default async function BlogPostPage({ params }: PageProps) {
               image: post.coverImage
                 ? `${BASE_URL}${post.coverImage}`
                 : `${BASE_URL}/og-image.png`,
-              datePublished: post.date,
-              dateModified: post.date,
+              datePublished: `${post.date}T00:00:00+00:00`,
+              dateModified: `${post.date}T00:00:00+00:00`,
               author: {
                 "@type": "Organization",
                 name: post.author,
