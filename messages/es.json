@@ -855,5 +855,10 @@
     "noPosts": "No hay artículos disponibles.",
     "publishedOn": "Publicado el",
     "byAuthor": "Por {author}"
+  },
+  "authorBox": {
+    "teamDescription": "Nuestro equipo editorial proporciona contenido basado en ciencia revisado por profesionales médicos.",
+    "medicallyReviewedBy": "Revisado médicamente por:",
+    "reviewedOn": "Revisado el"
   }
 }

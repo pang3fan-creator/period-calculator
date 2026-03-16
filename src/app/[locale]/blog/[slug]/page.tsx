@@ -6,6 +6,7 @@ import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { JsonLd } from "@/components/seo/json-ld";
 import { getPostBySlug, getAllUniqueSlugs } from "@/lib/blog/posts";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import { mdxComponents } from "@/components/blog/mdx-components";
 import type { Metadata } from "next";
 
@@ -44,6 +45,8 @@ export async function generateStaticParams() {
   );
 }
 
+const BASE_URL = "https://www.aiperiodcalculator.com";
+
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
@@ -54,6 +57,8 @@ export async function generateMetadata({
   if (!post) {
     return { title: "Not Found" };
   }
+
+  const coverImageUrl = post.coverImage || "/og-image.png";
 
   return {
     title: post.title,
@@ -72,6 +77,14 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
+      images: [
+        {
+          url: coverImageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
   };
 }
@@ -80,11 +93,14 @@ export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
   const locale = (await getLocale()) as "en" | "es" | "fr";
   const t = await getTranslations("blog");
+  const tNav = await getTranslations("nav");
   const post = getPostBySlug(slug, locale);
 
   if (!post) {
     notFound();
   }
+
+  const localePath = locale === "en" ? "" : `${locale}/`;
 
   return (
     <main className="flex min-h-screen flex-col items-center px-4 py-12">
@@ -137,7 +153,15 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         {/* 正文 */}
         <div className="prose prose-gray dark:prose-invert max-w-none">
-          <MDXRemote source={post.content} components={mdxComponents} />
+          <MDXRemote
+            source={post.content}
+            components={mdxComponents}
+            options={{
+              mdxOptions: {
+                remarkPlugins: [remarkGfm],
+              },
+            }}
+          />
         </div>
 
         {/* 底部 */}
@@ -155,14 +179,57 @@ export default async function BlogPostPage({ params }: PageProps) {
       <JsonLd
         data={{
           "@context": "https://schema.org",
-          "@type": "Article",
-          headline: post.title,
-          description: post.excerpt,
-          datePublished: post.date,
-          author: {
-            "@type": "Person",
-            name: post.author,
-          },
+          "@graph": [
+            {
+              "@type": "Article",
+              headline: post.title,
+              description: post.excerpt,
+              image: post.coverImage
+                ? `${BASE_URL}${post.coverImage}`
+                : `${BASE_URL}/og-image.png`,
+              datePublished: post.date,
+              dateModified: post.date,
+              author: {
+                "@type": "Organization",
+                name: post.author,
+                url: `${BASE_URL}/about`,
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "Period Calculator",
+                logo: {
+                  "@type": "ImageObject",
+                  url: `${BASE_URL}/logo.png`,
+                },
+              },
+              mainEntityOfPage: {
+                "@type": "WebPage",
+                "@id": `${BASE_URL}/${localePath}blog/${slug}`,
+              },
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: tNav("home"),
+                  item: `${BASE_URL}/${localePath}`,
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: t("title"),
+                  item: `${BASE_URL}/${localePath}blog`,
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: post.title,
+                },
+              ],
+            },
+          ],
         }}
       />
     </main>

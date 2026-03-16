@@ -34,7 +34,7 @@ export const mdxComponents: MDXComponents = {
       return (
         <Link
           href={href}
-          className="text-primary-400 hover:text-primary-500 underline"
+          className="text-primary-400 hover:text-primary-500 hover:underline"
         >
           {children}
         </Link>
@@ -43,7 +43,7 @@ export const mdxComponents: MDXComponents = {
     return (
       <a
         href={href}
-        className="text-primary-400 hover:text-primary-500 underline"
+        className="text-primary-400 hover:text-primary-500 hover:underline"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -85,6 +85,32 @@ export const mdxComponents: MDXComponents = {
       className="mx-auto my-6 max-w-2xl rounded-xl shadow-lg"
       loading="lazy"
     />
+  ),
+  table: ({ children }) => (
+    <div className="my-6 overflow-x-auto">
+      <table className="min-w-full divide-y divide-gray-200 rounded-lg border border-gray-200 dark:border-gray-700 dark:divide-gray-700">
+        {children}
+      </table>
+    </div>
+  ),
+  thead: ({ children }) => (
+    <thead className="bg-gray-50 dark:bg-gray-800">{children}</thead>
+  ),
+  tbody: ({ children }) => (
+    <tbody className="divide-y divide-gray-200 bg-white dark:divide-gray-700 dark:bg-gray-900">
+      {children}
+    </tbody>
+  ),
+  tr: ({ children }) => <tr>{children}</tr>,
+  th: ({ children }) => (
+    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100">
+      {children}
+    </th>
+  ),
+  td: ({ children }) => (
+    <td className="px-4 py-3 text-sm text-gray-700 dark:text-gray-300">
+      {children}
+    </td>
   ),
   CalculatorCTA,
   AuthorBox,

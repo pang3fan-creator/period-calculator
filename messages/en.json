@@ -856,5 +856,10 @@
     "noPosts": "No posts available yet.",
     "publishedOn": "Published on",
     "byAuthor": "By {author}"
+  },
+  "authorBox": {
+    "teamDescription": "Our editorial team provides science-based content reviewed by medical professionals.",
+    "medicallyReviewedBy": "Medically reviewed by:",
+    "reviewedOn": "Reviewed on"
   }
 }

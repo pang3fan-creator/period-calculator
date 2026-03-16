@@ -101,3 +101,5 @@ src/
 - MDX 内容位于 `src/content/blog/{locale}/*.mdx`
 - 使用 `next-mdx-remote/rsc` 渲染，`gray-matter` 解析 frontmatter
 - 只有详情页 `[slug]`，无列表页（工具导向站点不需要文章发现功能）
+- **next-mdx-remote/rsc 不支持 import**：组件必须通过 `mdx-components.tsx` 注册
+- **静态文件避开动态路由路径**：`/blog/[slug]` 会捕获 `/blog/image.png`，图片放 `public/images/`
