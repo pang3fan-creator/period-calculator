@@ -18,7 +18,7 @@ export function AuthorBox({
   return (
     <div className="my-8 rounded-lg border border-gray-200 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-800">
       <div className="flex items-start gap-4">
-        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900">
+        <div className="bg-primary-100 dark:bg-primary-900 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full">
           <span className="text-primary-500 text-xl">✍️</span>
         </div>
         <div>

@@ -106,9 +106,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     <main className="flex min-h-screen flex-col items-center px-4 py-12">
       <div className="w-full max-w-3xl">
         <Breadcrumb
-          overrides={[
-            { segment: slug, name: post.title, noLink: true },
-          ]}
+          overrides={[{ segment: slug, name: post.title, noLink: true }]}
         />
       </div>
 
@@ -132,9 +130,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         {/* 元信息 */}
         <div className="mb-8 flex flex-wrap items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-          <span className="flex items-center gap-1">
-            ✍️ {post.author}
-          </span>
+          <span className="flex items-center gap-1">✍️ {post.author}</span>
           <time dateTime={post.date} className="flex items-center gap-1">
             📅{" "}
             {new Date(post.date).toLocaleDateString(locale, {

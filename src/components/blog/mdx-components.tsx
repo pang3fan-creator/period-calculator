@@ -88,7 +88,7 @@ export const mdxComponents: MDXComponents = {
   ),
   table: ({ children }) => (
     <div className="my-6 overflow-x-auto">
-      <table className="min-w-full divide-y divide-gray-200 rounded-lg border border-gray-200 dark:border-gray-700 dark:divide-gray-700">
+      <table className="min-w-full divide-y divide-gray-200 rounded-lg border border-gray-200 dark:divide-gray-700 dark:border-gray-700">
         {children}
       </table>
     </div>

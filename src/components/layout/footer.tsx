@@ -62,12 +62,18 @@ export async function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/irregular-period-calculator" className={linkClassName}>
+                <Link
+                  href="/irregular-period-calculator"
+                  className={linkClassName}
+                >
                   {tNav("irregularCalculator")}
                 </Link>
               </li>
               <li>
-                <Link href="/ovulation-period-calculator" className={linkClassName}>
+                <Link
+                  href="/ovulation-period-calculator"
+                  className={linkClassName}
+                >
                   {tNav("ovulationCalculator")}
                 </Link>
               </li>

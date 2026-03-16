@@ -163,7 +163,7 @@ export default async function HomePage({
           "@id": `${baseUrl}/#organization`,
         },
       },
-      // BreadcrumbList
+      // BreadcrumbList (simplified for homepage - single level)
       {
         "@type": "BreadcrumbList",
         inLanguage: locale,
@@ -172,12 +172,6 @@ export default async function HomePage({
             "@type": "ListItem",
             position: 1,
             name: tSchema("breadcrumbHome"),
-            item: baseUrl,
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: tHome("title"),
             item: baseUrl,
           },
         ],
