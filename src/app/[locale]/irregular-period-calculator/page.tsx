@@ -246,26 +246,6 @@ export default async function IrregularPeriodCalculatorPage({
           <IrregularPeriodCalculator />
         </div>
 
-        {/* How to Calculate */}
-        <div className="mt-24 w-full max-w-4xl">
-          <IrregularHowToCalculate />
-        </div>
-
-        {/* Algorithm Transparency */}
-        <div className="mt-24 w-full max-w-4xl">
-          <IrregularAlgorithmTransparency />
-        </div>
-
-        {/* Deep Knowledge */}
-        <div className="mt-24 w-full max-w-4xl">
-          <IrregularDeepKnowledge />
-        </div>
-
-        {/* FAQ */}
-        <div className="mt-24 w-full max-w-4xl">
-          <IrregularFAQ />
-        </div>
-
         {/* Other Free Tools & Resources */}
         <div className="mt-24 w-full max-w-4xl">
           <section className="w-full">
@@ -297,6 +277,26 @@ export default async function IrregularPeriodCalculatorPage({
               </div>
             </div>
           </section>
+        </div>
+
+        {/* How to Calculate */}
+        <div className="mt-24 w-full max-w-4xl">
+          <IrregularHowToCalculate />
+        </div>
+
+        {/* Algorithm Transparency */}
+        <div className="mt-24 w-full max-w-4xl">
+          <IrregularAlgorithmTransparency />
+        </div>
+
+        {/* Deep Knowledge */}
+        <div className="mt-24 w-full max-w-4xl">
+          <IrregularDeepKnowledge />
+        </div>
+
+        {/* FAQ */}
+        <div className="mt-24 w-full max-w-4xl">
+          <IrregularFAQ />
         </div>
 
         {/* Footer Navigation */}

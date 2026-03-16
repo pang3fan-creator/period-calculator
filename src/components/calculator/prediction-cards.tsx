@@ -8,7 +8,6 @@ import type { Locale } from "@/i18n/config";
 import {
   getOvulationTheme,
   buildCardClasses,
-  type OvulationTheme,
 } from "@/lib/theme/ovulation-theme";
 
 // Locale mapping for date-fns

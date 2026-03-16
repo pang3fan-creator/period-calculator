@@ -13,6 +13,7 @@ export interface PostMetadata {
   date: string;
   author: string;
   readingTime?: string;
+  coverImage?: string;
 }
 
 export interface Post extends PostMetadata {
@@ -45,7 +46,8 @@ export function getAllPosts(locale: Locale): PostMetadata[] {
       excerpt: data.excerpt || "",
       date: data.date || "",
       author: data.author || "",
-      readingTime: readingTimeResult.text,
+      readingTime: data.readTime || readingTimeResult.text,
+      coverImage: data.coverImage,
     };
   });
 
@@ -71,7 +73,8 @@ export function getPostBySlug(slug: string, locale: Locale): Post | null {
     excerpt: data.excerpt || "",
     date: data.date || "",
     author: data.author || "",
-    readingTime: readingTimeResult.text,
+    readingTime: data.readTime || readingTimeResult.text,
+    coverImage: data.coverImage,
     content,
   };
 }

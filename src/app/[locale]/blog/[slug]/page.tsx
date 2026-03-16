@@ -56,7 +56,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${post.title} | Period Calculator`,
+    title: post.title,
     description: post.excerpt,
     alternates: {
       canonical: `/${locale === "en" ? "" : locale}blog/${slug}`,
@@ -92,7 +92,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <Breadcrumb
           overrides={[
             { segment: "blog", name: t("title"), noLink: true },
-            { segment: slug, name: post.title },
+            { segment: slug, name: slug },
           ]}
         />
       </div>
@@ -101,11 +101,12 @@ export default async function BlogPostPage({ params }: PageProps) {
         {/* 封面图 */}
         <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-xl">
           <Image
-            src="/og-image.png"
+            src={post.coverImage || "/og-image.png"}
             alt={post.title}
             fill
             className="object-cover"
             priority
+            unoptimized
           />
         </div>
 

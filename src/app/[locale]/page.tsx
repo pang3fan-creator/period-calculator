@@ -227,26 +227,6 @@ export default async function HomePage({
           <PeriodCalculator />
         </div>
 
-        {/* Second Screen: How to Calculate */}
-        <div className="mt-24 w-full max-w-4xl">
-          <HowToCalculate />
-        </div>
-
-        {/* Algorithm Transparency */}
-        <div className="mt-24 w-full max-w-4xl">
-          <AlgorithmTransparency />
-        </div>
-
-        {/* Third Screen: Deep Knowledge */}
-        <div className="mt-24 w-full max-w-4xl">
-          <DeepKnowledge />
-        </div>
-
-        {/* Bottom Screen: FAQ */}
-        <div className="mt-24 w-full max-w-4xl">
-          <FAQ />
-        </div>
-
         {/* Other Free Tools & Resources */}
         <div className="mt-24 w-full max-w-4xl">
           <section className="w-full">
@@ -278,6 +258,26 @@ export default async function HomePage({
               </div>
             </div>
           </section>
+        </div>
+
+        {/* Second Screen: How to Calculate */}
+        <div className="mt-24 w-full max-w-4xl">
+          <HowToCalculate />
+        </div>
+
+        {/* Algorithm Transparency */}
+        <div className="mt-24 w-full max-w-4xl">
+          <AlgorithmTransparency />
+        </div>
+
+        {/* Third Screen: Deep Knowledge */}
+        <div className="mt-24 w-full max-w-4xl">
+          <DeepKnowledge />
+        </div>
+
+        {/* Bottom Screen: FAQ */}
+        <div className="mt-24 w-full max-w-4xl">
+          <FAQ />
         </div>
       </div>
     </>

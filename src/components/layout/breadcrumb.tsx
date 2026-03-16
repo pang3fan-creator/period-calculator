@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { ChevronRightIcon } from "@/components/icons";
 import { breadcrumbConfig } from "@/config/breadcrumbs";
@@ -37,7 +37,6 @@ const SUPPORTED_LOCALES = ["en", "es", "fr"];
  */
 export function Breadcrumb({ overrides, className = "" }: BreadcrumbProps) {
   const pathname = usePathname();
-  const locale = useLocale();
   const tNav = useTranslations("nav");
   const tBreadcrumb = useTranslations("breadcrumb");
 

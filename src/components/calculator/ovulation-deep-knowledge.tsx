@@ -255,7 +255,7 @@ export function OvulationDeepKnowledge() {
                 className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline-offset-2 hover:underline"
               >
                 American College of Obstetricians and Gynecologists (ACOG).
-                "Evaluating Infertility."
+                &ldquo;Evaluating Infertility.&rdquo;
               </a>
             </li>
             <li>
@@ -265,7 +265,8 @@ export function OvulationDeepKnowledge() {
                 rel="noopener noreferrer"
                 className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline-offset-2 hover:underline"
               >
-                Mayo Clinic. "Ovulation signs: When is conception most likely?"
+                Mayo Clinic. &ldquo;Ovulation signs: When is conception most
+                likely?&rdquo;
               </a>
             </li>
             <li>
@@ -275,8 +276,8 @@ export function OvulationDeepKnowledge() {
                 rel="noopener noreferrer"
                 className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline-offset-2 hover:underline"
               >
-                National Institutes of Health (NIH). "The Menstrual Cycle and
-                Fertile Window."
+                National Institutes of Health (NIH). &ldquo;The Menstrual Cycle
+                and Fertile Window.&rdquo;
               </a>
             </li>
             <li>
@@ -286,8 +287,8 @@ export function OvulationDeepKnowledge() {
                 rel="noopener noreferrer"
                 className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline-offset-2 hover:underline"
               >
-                Planned Parenthood. "The Calendar Method (Fertility
-                Awareness-Based Medicine)."
+                Planned Parenthood. &ldquo;The Calendar Method (Fertility
+                Awareness-Based Medicine).&rdquo;
               </a>
             </li>
           </ol>

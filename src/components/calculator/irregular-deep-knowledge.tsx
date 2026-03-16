@@ -19,7 +19,6 @@ import { useState, useEffect, useRef } from "react";
  */
 export function IrregularDeepKnowledge() {
   const t = useTranslations("irregularDeepKnowledge");
-  const [isImageOpen, setIsImageOpen] = useState(false);
   const [openImage, setOpenImage] = useState<string | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const triggerButtonRef = useRef<HTMLDivElement>(null);
@@ -235,7 +234,7 @@ export function IrregularDeepKnowledge() {
                 className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline-offset-2 hover:underline"
               >
                 American College of Obstetricians and Gynecologists (ACOG).
-                "Abnormal Uterine Bleeding."
+                &ldquo;Abnormal Uterine Bleeding.&rdquo;
               </a>
             </li>
             <li>
@@ -245,8 +244,8 @@ export function IrregularDeepKnowledge() {
                 rel="noopener noreferrer"
                 className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline-offset-2 hover:underline"
               >
-                Mayo Clinic. "Menstrual cycle: What&apos;s normal, what&apos;s
-                not."
+                Mayo Clinic. &ldquo;Menstrual cycle: What&apos;s normal,
+                what&apos;s not.&rdquo;
               </a>
             </li>
             <li>
@@ -257,7 +256,7 @@ export function IrregularDeepKnowledge() {
                 className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline-offset-2 hover:underline"
               >
                 National Institute of Child Health and Human Development
-                (NICHD). "What causes menstrual irregularities?"
+                (NICHD). &ldquo;What causes menstrual irregularities?&rdquo;
               </a>
             </li>
           </ol>

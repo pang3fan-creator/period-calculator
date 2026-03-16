@@ -267,26 +267,6 @@ export default async function OvulationCalculatorPage({
           <OvulationPeriodCalculator />
         </div>
 
-        {/* How to Calculate */}
-        <div className="mt-24 w-full max-w-4xl">
-          <OvulationHowToCalculate />
-        </div>
-
-        {/* Algorithm Transparency */}
-        <div className="mt-24 w-full max-w-4xl">
-          <OvulationAlgorithmTransparency />
-        </div>
-
-        {/* Deep Knowledge */}
-        <div className="mt-24 w-full max-w-4xl">
-          <OvulationDeepKnowledge />
-        </div>
-
-        {/* FAQ */}
-        <div className="mt-24 w-full max-w-4xl">
-          <OvulationFAQ />
-        </div>
-
         {/* Other Free Tools & Resources */}
         <div className="mt-24 w-full max-w-4xl">
           <section className="w-full">
@@ -318,6 +298,26 @@ export default async function OvulationCalculatorPage({
               </div>
             </div>
           </section>
+        </div>
+
+        {/* How to Calculate */}
+        <div className="mt-24 w-full max-w-4xl">
+          <OvulationHowToCalculate />
+        </div>
+
+        {/* Algorithm Transparency */}
+        <div className="mt-24 w-full max-w-4xl">
+          <OvulationAlgorithmTransparency />
+        </div>
+
+        {/* Deep Knowledge */}
+        <div className="mt-24 w-full max-w-4xl">
+          <OvulationDeepKnowledge />
+        </div>
+
+        {/* FAQ */}
+        <div className="mt-24 w-full max-w-4xl">
+          <OvulationFAQ />
         </div>
 
         {/* Footer Navigation */}

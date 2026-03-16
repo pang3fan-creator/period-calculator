@@ -1,5 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import { Link } from "@/i18n/routing";
+import { CalculatorCTA } from "./CalculatorCTA";
+import { AuthorBox } from "./AuthorBox";
 
 export const mdxComponents: MDXComponents = {
   h1: ({ children }) => (
@@ -8,7 +10,7 @@ export const mdxComponents: MDXComponents = {
     </h1>
   ),
   h2: ({ children }) => (
-    <h2 className="text-primary-400 mt-10 mb-4 text-3xl font-semibold">
+    <h2 className="text-primary-400 mt-10 mb-4 text-2xl font-semibold">
       {children}
     </h2>
   ),
@@ -76,6 +78,7 @@ export const mdxComponents: MDXComponents = {
     </code>
   ),
   img: ({ src, alt }) => (
+    // eslint-disable-next-line @next/next/no-img-element
     <img
       src={src}
       alt={alt}
@@ -83,4 +86,6 @@ export const mdxComponents: MDXComponents = {
       loading="lazy"
     />
   ),
+  CalculatorCTA,
+  AuthorBox,
 };
