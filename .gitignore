@@ -2,6 +2,7 @@
 
 /.claude
 /.omc
+/.codex
 
 # dependencies
 /node_modules

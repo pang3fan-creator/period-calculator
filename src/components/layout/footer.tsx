@@ -117,6 +117,16 @@ export async function Footer() {
                   {tNav("about")}
                 </Link>
               </li>
+              <li>
+                <a
+                  href="https://dang.ai/"
+                  target="_blank"
+                  rel="noopener"
+                  className={linkClassName}
+                >
+                  Dang.ai
+                </a>
+              </li>
             </ul>
           </div>
         </div>
