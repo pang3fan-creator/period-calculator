@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { getAllPosts } from "@/lib/blog/posts";
@@ -48,6 +49,19 @@ export async function Footer() {
                 {t("trustText")}
               </p>
             </div>
+            <a
+              href="https://aiagentsdirectory.com/agent/accurate-period-calculator?utm_source=badge&utm_medium=referral&utm_campaign=free_listing&utm_content=accurate-period-calculator"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-block rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+            >
+              <Image
+                src="https://aiagentsdirectory.com/featured-badge.svg?v=2024"
+                alt="Accurate Period Calculator - Featured AI Agent on AI Agents Directory"
+                width="200"
+                height="50"
+              />
+            </a>
           </div>
 
           {/* 第二列: Calculators */}

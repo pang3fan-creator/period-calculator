@@ -31,6 +31,22 @@ vi.mock("next-intl/server", () => ({
   getLocale: async () => "en",
 }));
 
+vi.mock("next/image", () => ({
+  default: ({
+    alt,
+    height,
+    src,
+    width,
+  }: {
+    alt: string;
+    height: number | string;
+    src: string;
+    width: number | string;
+  }) =>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src={src} alt={alt} width={width} height={height} />,
+}));
+
 vi.mock("@/i18n/routing", () => ({
   Link: ({
     children,
@@ -52,6 +68,24 @@ vi.mock("@/lib/blog/posts", () => ({
 }));
 
 describe("Footer", () => {
+  it("renders the AI Agents Directory featured badge in the brand trust area", async () => {
+    const html = renderToString(await Footer());
+
+    expect(html).toContain(
+      'href="https://aiagentsdirectory.com/agent/accurate-period-calculator?utm_source=badge&amp;utm_medium=referral&amp;utm_campaign=free_listing&amp;utm_content=accurate-period-calculator"',
+    );
+    expect(html).toContain(
+      'src="https://aiagentsdirectory.com/featured-badge.svg?v=2024"',
+    );
+    expect(html).toContain(
+      'alt="Accurate Period Calculator - Featured AI Agent on AI Agents Directory"',
+    );
+    expect(html).toContain('width="200"');
+    expect(html).toContain('height="50"');
+    expect(html).toContain('target="_blank"');
+    expect(html).toContain('rel="noopener noreferrer"');
+  });
+
   it("renders the Dang.ai external link with safe target attributes", async () => {
     const html = renderToString(await Footer());
 
