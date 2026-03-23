@@ -198,7 +198,6 @@ export default async function OvulationCalculatorPage({
       // BreadcrumbList Schema
       {
         "@type": "BreadcrumbList",
-        inLanguage: locale,
         itemListElement: [
           {
             "@type": "ListItem",

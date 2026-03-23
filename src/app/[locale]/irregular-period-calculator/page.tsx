@@ -182,7 +182,6 @@ export default async function IrregularPeriodCalculatorPage({
       // BreadcrumbList
       {
         "@type": "BreadcrumbList",
-        inLanguage: locale,
         itemListElement: [
           {
             "@type": "ListItem",

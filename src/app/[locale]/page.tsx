@@ -166,7 +166,6 @@ export default async function HomePage({
       // BreadcrumbList (simplified for homepage - single level)
       {
         "@type": "BreadcrumbList",
-        inLanguage: locale,
         itemListElement: [
           {
             "@type": "ListItem",
