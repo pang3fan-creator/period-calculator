@@ -59,7 +59,10 @@
   "header": {
     "appName": "Calculateur de Règles",
     "toggleTheme": "Changer le thème",
-    "selectLanguage": "Sélectionner la langue"
+    "selectLanguage": "Sélectionner la langue",
+    "menu": "Menu",
+    "irregularCalculator": "Calculateur de Règles Irrégulières",
+    "ovulationCalculator": "Calculateur de Période d'Ovulation"
   },
   "home": {
     "title": "Calculateur Précis de Règles",

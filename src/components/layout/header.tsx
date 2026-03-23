@@ -84,22 +84,30 @@ export function Header() {
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
 
-  // Close language dropdown on outside click
+  // Mobile menu
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdowns on outside click
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (langRef.current && !langRef.current.contains(e.target as Node)) {
         setLangOpen(false);
+      }
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Close language dropdown on Escape
+  // Close dropdowns on Escape
   useEffect(() => {
     function handleEscape(e: KeyboardEvent) {
       if (e.key === "Escape") {
         setLangOpen(false);
+        setMenuOpen(false);
       }
     }
     document.addEventListener("keydown", handleEscape);
@@ -118,16 +126,76 @@ export function Header() {
       }`}
     >
       <nav className="mx-auto flex h-14 w-full items-center justify-between px-5">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="focus-visible:ring-primary-400 font-heading text-primary-400 rounded-lg text-xl font-bold outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-        >
-          {t("appName")}
-        </Link>
+        {/* Logo and Nav Links */}
+        <div className="flex items-center gap-6">
+          <Link
+            href="/"
+            className="focus-visible:ring-primary-400 font-heading text-primary-400 rounded-lg text-xl font-bold outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+          >
+            {t("appName")}
+          </Link>
+
+          {/* Desktop Nav Links */}
+          <div className="hidden items-center gap-4 md:flex">
+            <Link
+              href="/irregular-period-calculator"
+              className="focus-visible:ring-primary-400 font-heading rounded-lg text-sm font-medium text-gray-600 outline-none transition-colors hover:text-gray-800 focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-300 dark:hover:text-gray-100"
+            >
+              {t("irregularCalculator")}
+            </Link>
+            <Link
+              href="/ovulation-period-calculator"
+              className="focus-visible:ring-primary-400 font-heading rounded-lg text-sm font-medium text-gray-600 outline-none transition-colors hover:text-gray-800 focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-300 dark:hover:text-gray-100"
+            >
+              {t("ovulationCalculator")}
+            </Link>
+          </div>
+        </div>
 
         {/* Right side controls */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          {/* Mobile Menu Toggle */}
+          <button
+            type="button"
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="focus-visible:ring-primary-400 hover:bg-warmbeige-100 dark:hover:bg-dark-surface flex min-h-[48px] min-w-[48px] items-center justify-center rounded-xl text-gray-500 transition-colors outline-none hover:text-gray-700 focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-200 md:hidden"
+            aria-expanded={menuOpen}
+            aria-label={t("menu")}
+          >
+            {menuOpen ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </svg>
+            )}
+          </button>
+
           {/* Theme Toggle */}
           <button
             type="button"
@@ -245,6 +313,32 @@ export function Header() {
           </div>
         </div>
       </nav>
+
+      {/* Mobile Menu Dropdown */}
+      {menuOpen && (
+        <div
+          ref={menuRef}
+          className="shadow-soft dark:bg-dark-card absolute top-full left-4 right-4 z-50 mt-2 rounded-xl bg-white py-2 md:hidden"
+          role="menu"
+        >
+          <Link
+            href="/irregular-period-calculator"
+            onClick={() => setMenuOpen(false)}
+            className="focus-visible:ring-primary-400 font-heading block px-4 py-3 text-sm font-medium text-gray-600 outline-none transition-colors hover:bg-gray-50 focus-visible:ring-2 focus-visible:ring-inset dark:text-gray-300 dark:hover:bg-dark-surface"
+            role="menuitem"
+          >
+            {t("irregularCalculator")}
+          </Link>
+          <Link
+            href="/ovulation-period-calculator"
+            onClick={() => setMenuOpen(false)}
+            className="focus-visible:ring-primary-400 font-heading block px-4 py-3 text-sm font-medium text-gray-600 outline-none transition-colors hover:bg-gray-50 focus-visible:ring-2 focus-visible:ring-inset dark:text-gray-300 dark:hover:bg-dark-surface"
+            role="menuitem"
+          >
+            {t("ovulationCalculator")}
+          </Link>
+        </div>
+      )}
     </header>
   );
 }

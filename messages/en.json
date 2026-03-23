@@ -59,7 +59,10 @@
   "header": {
     "appName": "Period Calculator",
     "toggleTheme": "Toggle theme",
-    "selectLanguage": "Select language"
+    "selectLanguage": "Select language",
+    "menu": "Menu",
+    "irregularCalculator": "Irregular Period Calculator",
+    "ovulationCalculator": "Ovulation Period Calculator"
   },
   "home": {
     "title": "Accurate Period Calculator",

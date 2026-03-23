@@ -59,7 +59,10 @@
   "header": {
     "appName": "Calculadora de Periodo",
     "toggleTheme": "Cambiar tema",
-    "selectLanguage": "Seleccionar idioma"
+    "selectLanguage": "Seleccionar idioma",
+    "menu": "Menú",
+    "irregularCalculator": "Calculadora de Periodo Irregular",
+    "ovulationCalculator": "Calculadora de Periodo de Ovulación"
   },
   "home": {
     "title": "Calculadora Precisa de Periodo",
