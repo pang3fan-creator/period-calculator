@@ -147,7 +147,7 @@ export function CalculatorForm({ initialData, onSubmit }: CalculatorFormProps) {
 
       {/* Cycle Length Slider + Number Input */}
       <div className="space-y-4">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
           <label
             htmlFor="cycleLength"
             className="block text-lg font-semibold text-gray-800 dark:text-gray-100"
@@ -199,7 +199,7 @@ export function CalculatorForm({ initialData, onSubmit }: CalculatorFormProps) {
 
       {/* Period Length Slider + Number Input */}
       <div className="space-y-4">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
           <label
             htmlFor="periodLength"
             className="block text-lg font-semibold text-gray-800 dark:text-gray-100"

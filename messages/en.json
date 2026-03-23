@@ -173,7 +173,7 @@
     "minPeriodsRequired": "At least {min} periods required for accurate calculation",
     "periodLengthLabel": "Period Length",
     "periodLengthUnit": "days",
-    "calculateButton": "Calculate My Period",
+    "calculateButton": "Calculate",
     "resetButton": "Reset",
     "averageCycle": "Average Cycle",
     "standardDeviation": "Std Dev",
@@ -266,7 +266,7 @@
       "periodLengthLabel": "Period length",
       "periodLengthHelp": "How long does your period last?",
       "periodLengthUnit": "days",
-      "calculateButton": "Calculate My Period",
+      "calculateButton": "Calculate",
       "resetButton": "Reset"
     },
     "predictions": {

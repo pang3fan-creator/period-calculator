@@ -173,7 +173,7 @@
     "minPeriodsRequired": "Au moins {min} périodes requises pour un calcul précis",
     "periodLengthLabel": "Durée des Règles",
     "periodLengthUnit": "jours",
-    "calculateButton": "Calculer Mes Règles",
+    "calculateButton": "Calculer",
     "resetButton": "Recommencer",
     "averageCycle": "Cycle Moyen",
     "standardDeviation": "Écart-type",
@@ -266,7 +266,7 @@
       "periodLengthLabel": "Durée des règles",
       "periodLengthHelp": "Combien de temps durent vos règles?",
       "periodLengthUnit": "jours",
-      "calculateButton": "Calculer Mes Règles",
+      "calculateButton": "Calculer",
       "resetButton": "Réinitialiser"
     },
     "predictions": {

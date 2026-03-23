@@ -357,12 +357,12 @@ export function IrregularPeriodCalculator() {
           {/* Action Buttons */}
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
             {/* Add to Calendar Dropdown */}
-            <div className="relative" ref={dropdownRef}>
+            <div className="relative w-full sm:w-auto" ref={dropdownRef}>
               <button
                 type="button"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 aria-label={tResults("addToCalendarMenu")}
-                className="dark:bg-dark-card dark:hover:bg-dark-card/80 flex min-h-[48px] items-center justify-center gap-2 rounded-2xl border-2 border-gray-300 bg-white px-6 py-3 text-base font-semibold text-gray-700 transition-colors hover:bg-gray-50 focus:ring-2 focus:ring-gray-300 focus:outline-none dark:border-gray-600 dark:text-gray-200 dark:focus:ring-gray-500"
+                className="dark:bg-dark-card dark:hover:bg-dark-card/80 flex min-h-[48px] w-full items-center justify-center gap-2 rounded-2xl border-2 border-gray-300 bg-white px-6 py-3 text-base font-semibold text-gray-700 transition-colors hover:bg-gray-50 focus:ring-2 focus:ring-gray-300 focus:outline-none dark:border-gray-600 dark:text-gray-200 dark:focus:ring-gray-500"
               >
                 <CalendarPlusIcon className="h-5 w-5" />
                 {tResults("addToCalendarMenu")}
@@ -414,7 +414,7 @@ export function IrregularPeriodCalculator() {
             <button
               type="button"
               onClick={handleReset}
-              className="flex min-h-[48px] items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 px-6 py-3 text-base font-semibold text-white transition-colors hover:from-pink-600 hover:to-rose-600 focus:ring-2 focus:ring-pink-300 focus:outline-none dark:focus:ring-pink-700"
+              className="flex min-h-[48px] w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 px-6 py-3 text-base font-semibold text-white transition-colors hover:from-pink-600 hover:to-rose-600 focus:ring-2 focus:ring-pink-300 focus:outline-none dark:focus:ring-pink-700 sm:w-auto"
             >
               <RefreshIcon className="h-5 w-5" />
               {tResults("recalculate")}

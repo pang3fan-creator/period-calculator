@@ -166,23 +166,23 @@ export function CalendarView({
   return (
     <div className="dark:bg-dark-card shadow-card flex w-full flex-col gap-6 rounded-3xl bg-white p-6 md:p-8">
       {/* Calendar Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
         <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
           {t("title")}
         </h2>
 
         {/* Month Navigation */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <button
             type="button"
             onClick={handlePreviousMonth}
             aria-label={t("previousMonth")}
-            className="rounded-xl p-3 text-gray-600 transition-colors hover:text-gray-900 focus:ring-2 focus:ring-gray-300 focus:outline-none dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-gray-600"
+            className="rounded-xl p-2 text-gray-600 transition-colors hover:text-gray-900 focus:ring-2 focus:ring-gray-300 focus:outline-none dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-gray-600"
           >
             <ChevronLeftIcon className="h-5 w-5" />
           </button>
 
-          <span className="min-w-[140px] text-center text-lg font-semibold text-gray-800 dark:text-gray-100">
+          <span className="min-w-[120px] text-center text-base font-semibold text-gray-800 dark:text-gray-100 sm:min-w-[140px] sm:text-lg">
             {monthTitle}
           </span>
 
@@ -190,7 +190,7 @@ export function CalendarView({
             type="button"
             onClick={handleNextMonth}
             aria-label={t("nextMonth")}
-            className="rounded-xl p-3 text-gray-600 transition-colors hover:text-gray-900 focus:ring-2 focus:ring-gray-300 focus:outline-none dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-gray-600"
+            className="rounded-xl p-2 text-gray-600 transition-colors hover:text-gray-900 focus:ring-2 focus:ring-gray-300 focus:outline-none dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-gray-600"
           >
             <ChevronRightIcon className="h-5 w-5" />
           </button>

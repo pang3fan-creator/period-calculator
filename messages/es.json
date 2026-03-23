@@ -173,7 +173,7 @@
     "minPeriodsRequired": "Se requieren al menos {min} periodos para un cálculo preciso",
     "periodLengthLabel": "Duración del Periodo",
     "periodLengthUnit": "días",
-    "calculateButton": "Calcular Mi Periodo",
+    "calculateButton": "Calcular",
     "resetButton": "Comenzar de Nuevo",
     "averageCycle": "Ciclo Promedio",
     "standardDeviation": "Desv. Est.",
@@ -266,7 +266,7 @@
       "periodLengthLabel": "Duración del periodo",
       "periodLengthHelp": "¿Cuánto dura tu periodo?",
       "periodLengthUnit": "días",
-      "calculateButton": "Calcular Mi Periodo",
+      "calculateButton": "Calcular",
       "resetButton": "Restablecer"
     },
     "predictions": {
