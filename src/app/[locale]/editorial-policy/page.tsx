@@ -440,7 +440,7 @@ export default async function EditorialPolicyPage({
                                     <a
                                       href={medicalSourceLinks[index]}
                                       target="_blank"
-                                      rel="noopener noreferrer"
+                                      rel="noopener noreferrer nofollow"
                                       className="hover:text-trust-green-600 dark:hover:text-trust-green-400 text-sm font-medium text-gray-600 underline underline-offset-2 dark:text-gray-300"
                                     >
                                       {item}

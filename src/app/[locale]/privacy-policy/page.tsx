@@ -450,7 +450,7 @@ export default async function PrivacyPolicyPage({
                             <a
                               href="https://gdpr.eu"
                               target="_blank"
-                              rel="noopener noreferrer"
+                              rel="noopener noreferrer nofollow"
                               className="text-trust-blue-500 hover:underline"
                             >
                               GDPR
@@ -459,7 +459,7 @@ export default async function PrivacyPolicyPage({
                             <a
                               href="https://oag.ca.gov/privacy/ccpa"
                               target="_blank"
-                              rel="noopener noreferrer"
+                              rel="noopener noreferrer nofollow"
                               className="text-trust-blue-500 hover:underline"
                             >
                               CCPA

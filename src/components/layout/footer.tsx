@@ -52,7 +52,7 @@ export async function Footer() {
             <a
               href="https://aiagentsdirectory.com/agent/accurate-period-calculator?utm_source=badge&utm_medium=referral&utm_campaign=free_listing&utm_content=accurate-period-calculator"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer nofollow"
               className="mt-4 inline-block rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
             >
               <Image
@@ -135,7 +135,7 @@ export async function Footer() {
                 <a
                   href="https://dang.ai/"
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer nofollow"
                   className={linkClassName}
                 >
                   Dang.ai

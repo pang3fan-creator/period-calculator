@@ -45,7 +45,7 @@ export const mdxComponents: MDXComponents = {
         href={href}
         className="text-primary-400 hover:text-primary-500 hover:underline"
         target="_blank"
-        rel="noopener noreferrer"
+        rel="noopener noreferrer nofollow"
       >
         {children}
       </a>

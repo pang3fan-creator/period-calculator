@@ -230,7 +230,7 @@ export function IrregularDeepKnowledge() {
               <a
                 href="https://www.acog.org/womens-health/faqs/abnormal-uterine-bleeding"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline-offset-2 hover:underline"
               >
                 American College of Obstetricians and Gynecologists (ACOG).
@@ -241,7 +241,7 @@ export function IrregularDeepKnowledge() {
               <a
                 href="https://www.mayoclinic.org/womens-health/menstrual-cycle/expert-answers/faq-20058275"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline-offset-2 hover:underline"
               >
                 Mayo Clinic. &ldquo;Menstrual cycle: What&apos;s normal,
@@ -252,7 +252,7 @@ export function IrregularDeepKnowledge() {
               <a
                 href="https://www.nichd.nih.gov/health/topics/menstruation/conditioninfo/causes"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline-offset-2 hover:underline"
               >
                 National Institute of Child Health and Human Development

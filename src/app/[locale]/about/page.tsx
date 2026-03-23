@@ -351,7 +351,7 @@ export default async function AboutPage({
                 <a
                   href="https://www.acog.org"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 font-medium underline underline-offset-2"
                 >
                   ACOG
@@ -360,7 +360,7 @@ export default async function AboutPage({
                 <a
                   href="https://www.who.int"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 font-medium underline underline-offset-2"
                 >
                   WHO
@@ -369,7 +369,7 @@ export default async function AboutPage({
                 <a
                   href="https://www.nhs.uk"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 font-medium underline underline-offset-2"
                 >
                   NHS

@@ -103,7 +103,7 @@ export function OvulationDeepKnowledge() {
               <a
                 href={t("keyStatistics.stat1.sourceUrl")}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="text-primary-500 hover:underline"
               >
                 ({t("keyStatistics.stat1.source")})
@@ -119,7 +119,7 @@ export function OvulationDeepKnowledge() {
               <a
                 href={t("keyStatistics.stat2.sourceUrl")}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="text-primary-500 hover:underline"
               >
                 ({t("keyStatistics.stat2.source")})
@@ -135,7 +135,7 @@ export function OvulationDeepKnowledge() {
               <a
                 href={t("keyStatistics.stat3.sourceUrl")}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="text-primary-500 hover:underline"
               >
                 ({t("keyStatistics.stat3.source")})
@@ -251,7 +251,7 @@ export function OvulationDeepKnowledge() {
               <a
                 href="https://www.acog.org/womens-health/faqs/evaluating-infertility"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline-offset-2 hover:underline"
               >
                 American College of Obstetricians and Gynecologists (ACOG).
@@ -262,7 +262,7 @@ export function OvulationDeepKnowledge() {
               <a
                 href="https://www.mayoclinic.org/healthy-lifestyle/getting-pregnant/in-depth/ovulation-signs/art-20047567"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline-offset-2 hover:underline"
               >
                 Mayo Clinic. &ldquo;Ovulation signs: When is conception most
@@ -273,7 +273,7 @@ export function OvulationDeepKnowledge() {
               <a
                 href="https://www.nih.gov/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline-offset-2 hover:underline"
               >
                 National Institutes of Health (NIH). &ldquo;The Menstrual Cycle
@@ -284,7 +284,7 @@ export function OvulationDeepKnowledge() {
               <a
                 href="https://www.plannedparenthood.org/learn/birth-control/fertility-awareness"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 underline-offset-2 hover:underline"
               >
                 Planned Parenthood. &ldquo;The Calendar Method (Fertility
