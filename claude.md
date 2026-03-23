@@ -40,7 +40,8 @@ src/
 ├── lib/                    # 工具函数
 │   ├── calculator/         # 计算算法
 │   ├── calendar/           # ICS 日历生成
-│   └── storage/            # 本地存储
+│   ├── storage/            # 本地存储
+│   └── url.ts              # 多语言 URL 生成（buildUrl, getLocalePath）
 └── messages/               # 多语言翻译文件
 ```
 
@@ -62,6 +63,7 @@ src/
 - 每个路由使用 Metadata API 动态生成 TDK
 - 结构化数据: WebApplication, FAQPage, HowTo
 - Editorial Policy 页面说明公式来源 (ACOG/NHS)
+- **多语言 URL**: 使用 `buildUrl(locale, "/path")` 生成 canonical/hreflang URL，避免 `/${locale}/path` 拼接错误
 
 ### 7. JSON-LD Schema 最佳实践
 - **Schema 类型选择**: 使用 `WebApplication`（非 SoftwareApplication），工具页面不使用 `Article`
@@ -107,3 +109,12 @@ src/
 - 只有详情页 `[slug]`，无列表页（工具导向站点不需要文章发现功能）
 - **next-mdx-remote/rsc 不支持 import**：组件必须通过 `mdx-components.tsx` 注册
 - **静态文件避开动态路由路径**：`/blog/[slug]` 会捕获 `/blog/image.png`，图片放 `public/images/`
+
+### 8. 多语言 URL 拼接
+- **错误模式**: `/${locale}/path` 产生 `/frpath`，`/${locale === "en" ? "" : locale}/path` 产生 `//path`
+- **正确做法**: 使用 `buildUrl(locale, "/path")` 从 `@/lib/url` 导入
+- **hreflang x-default**: 所有页面都应包含 x-default 指向默认语言版本
+
+### 9. sitemap 维护
+- 新增页面时需同步更新 `src/app/sitemap.ts` 的 `pages` 数组
+- 检查：`npm run build` 后验证 `.next/server/app/sitemap.xml.body` 是否包含新页面

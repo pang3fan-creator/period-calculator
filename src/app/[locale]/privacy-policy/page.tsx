@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { JsonLd } from "@/components/seo/json-ld";
+import { buildUrl, BASE_URL } from "@/lib/url";
 
 export async function generateMetadata({
   params,
@@ -20,12 +21,6 @@ export async function generateMetadata({
     es: "Aprende cómo protegemos tu privacidad. Todos tus datos permanecen en tu dispositivo - nunca recopilamos ni almacenamos tu información personal.",
     fr: "Découvrez comment nous protégeons votre vie privée. Toutes vos données restent sur votre appareil - nous ne collectons ni ne stockons vos informations personnelles.",
   };
-  const baseUrl = "https://www.aiperiodcalculator.com";
-  const languages: Record<string, string> = {
-    en: "/",
-    es: "/es",
-    fr: "/fr",
-  };
   const localeNames: Record<string, string> = {
     en: "en-US",
     es: "es-ES",
@@ -39,7 +34,7 @@ export async function generateMetadata({
     openGraph: {
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
-      url: `${baseUrl}${languages[locale] || languages.en}/privacy-policy`,
+      url: buildUrl(locale, "/privacy-policy"),
       siteName: "Period Calculator",
       locale: localeNames[locale],
       alternateLocale: locales
@@ -48,7 +43,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: `${baseUrl}/og-image.png`,
+          url: `${BASE_URL}/og-image.png`,
           width: 1200,
           height: 630,
           alt: titles[locale] || titles.en,
@@ -59,15 +54,15 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: titles[locale] || titles.en,
       description: descriptions[locale] || descriptions.en,
-      images: [`${baseUrl}/og-image.png`],
+      images: [`${BASE_URL}/og-image.png`],
     },
     alternates: {
-      canonical: `${baseUrl}${languages[locale] || languages.en}/privacy-policy`,
+      canonical: buildUrl(locale, "/privacy-policy"),
       languages: {
-        en: `${baseUrl}/privacy-policy`,
-        es: `${baseUrl}/es/privacy-policy`,
-        fr: `${baseUrl}/fr/privacy-policy`,
-        "x-default": `${baseUrl}/privacy-policy`,
+        en: `${BASE_URL}/privacy-policy`,
+        es: `${BASE_URL}/es/privacy-policy`,
+        fr: `${BASE_URL}/fr/privacy-policy`,
+        "x-default": `${BASE_URL}/privacy-policy`,
       },
     },
   };
@@ -286,20 +281,18 @@ export default async function PrivacyPolicyPage({
     },
   );
 
-  const baseUrl = "https://www.aiperiodcalculator.com";
-
   // Schema Markup for Privacy Policy page
   const privacySchema = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Organization",
-        "@id": `${baseUrl}/#organization`,
+        "@id": `${BASE_URL}/#organization`,
         name: "Period Calculator",
-        url: baseUrl,
+        url: BASE_URL,
         logo: {
           "@type": "ImageObject",
-          url: `${baseUrl}/logo.png`,
+          url: `${BASE_URL}/logo.png`,
           width: 1200,
           height: 630,
         },
@@ -323,13 +316,13 @@ export default async function PrivacyPolicyPage({
             position: 1,
             name:
               locale === "en" ? "Home" : locale === "es" ? "Inicio" : "Accueil",
-            item: baseUrl,
+            item: BASE_URL,
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Privacy Policy",
-            item: `${baseUrl}/privacy-policy`,
+            item: `${BASE_URL}/privacy-policy`,
           },
         ],
       },
@@ -337,12 +330,12 @@ export default async function PrivacyPolicyPage({
         "@type": "WebPage",
         name: t("title"),
         description: t("intro"),
-        url: `${baseUrl}/privacy-policy`,
+        url: `${BASE_URL}/privacy-policy`,
         inLanguage: locale,
         datePublished: "2024-01-01",
         dateModified: new Date().toISOString().split("T")[0],
         publisher: {
-          "@id": `${baseUrl}/#organization`,
+          "@id": `${BASE_URL}/#organization`,
         },
       },
     ],

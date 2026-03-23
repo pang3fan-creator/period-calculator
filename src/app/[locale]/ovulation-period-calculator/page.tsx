@@ -8,6 +8,7 @@ import { OvulationHowToCalculate } from "@/components/calculator/ovulation-how-t
 import { OvulationDeepKnowledge } from "@/components/calculator/ovulation-deep-knowledge";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { Link } from "@/i18n/routing";
+import { buildUrl, BASE_URL } from "@/lib/url";
 
 // Back arrow icon
 function ArrowLeftIcon({ className }: { className?: string }) {
@@ -28,7 +29,6 @@ function ArrowLeftIcon({ className }: { className?: string }) {
   );
 }
 
-const baseUrl = "https://www.aiperiodcalculator.com";
 const locales = ["en", "es", "fr"];
 const localeNames: Record<string, string> = {
   en: "en-US",
@@ -78,7 +78,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `${baseUrl}/${locale === "en" ? "" : locale}/ovulation-period-calculator`,
+      url: buildUrl(locale, "/ovulation-period-calculator"),
       siteName: "Period Calculator",
       locale: localeNames[locale],
       alternateLocale: locales
@@ -87,7 +87,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: `${baseUrl}/og-image.png`,
+          url: `${BASE_URL}/og-image.png`,
           width: 1200,
           height: 630,
           alt: "Ovulation Calculator",
@@ -98,15 +98,15 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [`${baseUrl}/og-image.png`],
+      images: [`${BASE_URL}/og-image.png`],
     },
     alternates: {
-      canonical: `${baseUrl}/${locale === "en" ? "" : locale}/ovulation-period-calculator`,
+      canonical: buildUrl(locale, "/ovulation-period-calculator"),
       languages: {
-        en: `${baseUrl}/ovulation-period-calculator`,
-        es: `${baseUrl}/es/ovulation-period-calculator`,
-        fr: `${baseUrl}/fr/ovulation-period-calculator`,
-        "x-default": `${baseUrl}/ovulation-period-calculator`,
+        en: `${BASE_URL}/ovulation-period-calculator`,
+        es: `${BASE_URL}/es/ovulation-period-calculator`,
+        fr: `${BASE_URL}/fr/ovulation-period-calculator`,
+        "x-default": `${BASE_URL}/ovulation-period-calculator`,
       },
     },
   };
@@ -133,12 +133,12 @@ export default async function OvulationCalculatorPage({
       // Organization Schema (E-E-A-T signal)
       {
         "@type": "Organization",
-        "@id": `${baseUrl}/#organization`,
+        "@id": `${BASE_URL}/#organization`,
         name: "Period Calculator",
-        url: baseUrl,
+        url: BASE_URL,
         logo: {
           "@type": "ImageObject",
-          url: `${baseUrl}/logo.png`,
+          url: `${BASE_URL}/logo.png`,
           width: 1200,
           height: 630,
         },
@@ -158,21 +158,21 @@ export default async function OvulationCalculatorPage({
       {
         "@type": "WebSite",
         name: "Period Calculator",
-        url: baseUrl,
+        url: BASE_URL,
         publisher: {
-          "@id": `${baseUrl}/#organization`,
+          "@id": `${BASE_URL}/#organization`,
         },
         mainEntity: {
-          "@id": `${baseUrl}/ovulation-period-calculator/#webapplication`,
+          "@id": `${BASE_URL}/ovulation-period-calculator/#webapplication`,
         },
       },
       // WebApplication Schema
       {
         "@type": "WebApplication",
-        "@id": `${baseUrl}/ovulation-period-calculator/#webapplication`,
+        "@id": `${BASE_URL}/ovulation-period-calculator/#webapplication`,
         name: tMetadata("title"),
         description: tMetadata("description"),
-        url: `${baseUrl}/ovulation-period-calculator`,
+        url: `${BASE_URL}/ovulation-period-calculator`,
         applicationCategory: "HealthApplication",
         operatingSystem: "Web Browser",
         browserRequirements: "Requires JavaScript",
@@ -192,7 +192,7 @@ export default async function OvulationCalculatorPage({
           availability: "https://schema.org/InStock",
         },
         author: {
-          "@id": `${baseUrl}/#organization`,
+          "@id": `${BASE_URL}/#organization`,
         },
       },
       // BreadcrumbList Schema
@@ -204,13 +204,13 @@ export default async function OvulationCalculatorPage({
             "@type": "ListItem",
             position: 1,
             name: tSchema("breadcrumbHome"),
-            item: baseUrl,
+            item: BASE_URL,
           },
           {
             "@type": "ListItem",
             position: 2,
             name: t("title"),
-            item: `${baseUrl}/ovulation-period-calculator`,
+            item: `${BASE_URL}/ovulation-period-calculator`,
           },
         ],
       },
@@ -221,7 +221,7 @@ export default async function OvulationCalculatorPage({
         description: tHowTo("steps.step1.description"),
         inLanguage: locale,
         author: {
-          "@id": `${baseUrl}/#organization`,
+          "@id": `${BASE_URL}/#organization`,
         },
         step: ovulationHowToStepKeys.map((key) => ({
           "@type": "HowToStep",

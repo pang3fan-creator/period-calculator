@@ -8,6 +8,7 @@ import { IrregularAlgorithmTransparency } from "@/components/calculator/irregula
 import { Breadcrumb } from "@/components/layout/breadcrumb";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
+import { buildUrl, BASE_URL } from "@/lib/url";
 
 // Back arrow icon
 function ArrowLeftIcon({ className }: { className?: string }) {
@@ -28,7 +29,6 @@ function ArrowLeftIcon({ className }: { className?: string }) {
   );
 }
 
-const baseUrl = "https://www.aiperiodcalculator.com";
 const locales = ["en", "es", "fr"];
 const localeNames: Record<string, string> = {
   en: "en-US",
@@ -63,7 +63,7 @@ export async function generateMetadata({
     openGraph: {
       title: t("metaTitle"),
       description: t("metaDescription"),
-      url: `${baseUrl}/${locale === "en" ? "" : locale}/irregular-period-calculator`,
+      url: buildUrl(locale, "/irregular-period-calculator"),
       siteName: "Period Calculator",
       locale: localeNames[locale],
       alternateLocale: locales
@@ -72,7 +72,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: `${baseUrl}/og-image.png`,
+          url: `${BASE_URL}/og-image.png`,
           width: 1200,
           height: 630,
           alt: "Irregular Period Calculator",
@@ -83,15 +83,15 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("twitterTitle"),
       description: t("twitterDescription"),
-      images: [`${baseUrl}/og-image.png`],
+      images: [`${BASE_URL}/og-image.png`],
     },
     alternates: {
-      canonical: `${baseUrl}/${locale === "en" ? "" : locale}/irregular-period-calculator`,
+      canonical: buildUrl(locale, "/irregular-period-calculator"),
       languages: {
-        en: `${baseUrl}/irregular-period-calculator`,
-        es: `${baseUrl}/es/irregular-period-calculator`,
-        fr: `${baseUrl}/fr/irregular-period-calculator`,
-        "x-default": `${baseUrl}/irregular-period-calculator`,
+        en: `${BASE_URL}/irregular-period-calculator`,
+        es: `${BASE_URL}/es/irregular-period-calculator`,
+        fr: `${BASE_URL}/fr/irregular-period-calculator`,
+        "x-default": `${BASE_URL}/irregular-period-calculator`,
       },
     },
   };
@@ -118,12 +118,12 @@ export default async function IrregularPeriodCalculatorPage({
       // Organization (E-E-A-T signal)
       {
         "@type": "Organization",
-        "@id": `${baseUrl}/#organization`,
+        "@id": `${BASE_URL}/#organization`,
         name: "Period Calculator",
-        url: baseUrl,
+        url: BASE_URL,
         logo: {
           "@type": "ImageObject",
-          url: `${baseUrl}/logo.png`,
+          url: `${BASE_URL}/logo.png`,
           width: 1200,
           height: 630,
         },
@@ -143,21 +143,21 @@ export default async function IrregularPeriodCalculatorPage({
       {
         "@type": "WebSite",
         name: "Period Calculator",
-        url: baseUrl,
+        url: BASE_URL,
         publisher: {
-          "@id": `${baseUrl}/#organization`,
+          "@id": `${BASE_URL}/#organization`,
         },
         mainEntity: {
-          "@id": `${baseUrl}/irregular-period-calculator/#webapplication`,
+          "@id": `${BASE_URL}/irregular-period-calculator/#webapplication`,
         },
       },
       // WebApplication
       {
         "@type": "WebApplication",
-        "@id": `${baseUrl}/irregular-period-calculator/#webapplication`,
+        "@id": `${BASE_URL}/irregular-period-calculator/#webapplication`,
         name: tMetadata("title"),
         description: tMetadata("description"),
-        url: `${baseUrl}/irregular-period-calculator`,
+        url: `${BASE_URL}/irregular-period-calculator`,
         applicationCategory: "HealthApplication",
         operatingSystem: "Web Browser",
         browserRequirements: "Requires JavaScript",
@@ -176,7 +176,7 @@ export default async function IrregularPeriodCalculatorPage({
           availability: "https://schema.org/InStock",
         },
         author: {
-          "@id": `${baseUrl}/#organization`,
+          "@id": `${BASE_URL}/#organization`,
         },
       },
       // BreadcrumbList
@@ -188,13 +188,13 @@ export default async function IrregularPeriodCalculatorPage({
             "@type": "ListItem",
             position: 1,
             name: tSchema("breadcrumbHome"),
-            item: baseUrl,
+            item: BASE_URL,
           },
           {
             "@type": "ListItem",
             position: 2,
             name: t("title"),
-            item: `${baseUrl}/irregular-period-calculator`,
+            item: `${BASE_URL}/irregular-period-calculator`,
           },
         ],
       },
@@ -218,7 +218,7 @@ export default async function IrregularPeriodCalculatorPage({
         description: tHowTo("description"),
         inLanguage: locale,
         author: {
-          "@id": `${baseUrl}/#organization`,
+          "@id": `${BASE_URL}/#organization`,
         },
         step: irregularHowToStepKeys.map((key) => ({
           "@type": "HowToStep",

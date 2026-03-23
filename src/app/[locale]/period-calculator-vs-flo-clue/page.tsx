@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Breadcrumb } from "@/components/layout/breadcrumb";
+import { buildUrl, BASE_URL } from "@/lib/url";
 
-const baseUrl = "https://www.aiperiodcalculator.com";
 const locales = ["en", "es", "fr"];
 const localeNames: Record<string, string> = {
   en: "en-US",
@@ -25,7 +25,7 @@ export async function generateMetadata({
       title: "Period Calculator vs Flo vs Clue - Which is Best?",
       description:
         "Compare Period Calculator with Flo, Clue, and Natural Cycles. Privacy-focused, free, and accurate menstrual cycle tracking without data collection.",
-      url: `${baseUrl}/${locale === "en" ? "" : locale}/period-calculator-vs-flo-clue`,
+      url: buildUrl(locale, "/period-calculator-vs-flo-clue"),
       siteName: "Period Calculator",
       locale: localeNames[locale],
       alternateLocale: locales
@@ -34,7 +34,7 @@ export async function generateMetadata({
       type: "article",
       images: [
         {
-          url: `${baseUrl}/og-image.png`,
+          url: `${BASE_URL}/og-image.png`,
           width: 1200,
           height: 630,
           alt: "Period Calculator vs Flo vs Clue Comparison",
@@ -46,15 +46,15 @@ export async function generateMetadata({
       title: "Period Calculator vs Flo vs Clue - Which is Best?",
       description:
         "Compare Period Calculator with Flo, Clue, and Natural Cycles. Privacy-focused, free, and accurate menstrual cycle tracking without data collection.",
-      images: [`${baseUrl}/og-image.png`],
+      images: [`${BASE_URL}/og-image.png`],
     },
     alternates: {
-      canonical: `${baseUrl}/${locale === "en" ? "" : locale}/period-calculator-vs-flo-clue`,
+      canonical: buildUrl(locale, "/period-calculator-vs-flo-clue"),
       languages: {
-        en: `${baseUrl}/period-calculator-vs-flo-clue`,
-        es: `${baseUrl}/es/period-calculator-vs-flo-clue`,
-        fr: `${baseUrl}/fr/period-calculator-vs-flo-clue`,
-        "x-default": `${baseUrl}/period-calculator-vs-flo-clue`,
+        en: `${BASE_URL}/period-calculator-vs-flo-clue`,
+        es: `${BASE_URL}/es/period-calculator-vs-flo-clue`,
+        fr: `${BASE_URL}/fr/period-calculator-vs-flo-clue`,
+        "x-default": `${BASE_URL}/period-calculator-vs-flo-clue`,
       },
     },
   };
@@ -120,9 +120,9 @@ export default async function ComparisonPage({
     headline: "Period Calculator vs Flo vs Clue - Which is Best in 2025?",
     description:
       "Comprehensive comparison of top period tracking apps. Privacy-focused Period Calculator vs popular alternatives Flo, Clue, and Natural Cycles.",
-    url: `${baseUrl}/period-calculator-vs-flo-clue`,
+    url: `${BASE_URL}/period-calculator-vs-flo-clue`,
     inLanguage: locale,
-    image: `${baseUrl}/og-image.png`,
+    image: `${BASE_URL}/og-image.png`,
     author: {
       "@type": "Organization",
       name: "Period Calculator",

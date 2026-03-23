@@ -8,6 +8,7 @@ import { getPostBySlug, getAllUniqueSlugs } from "@/lib/blog/posts";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { mdxComponents } from "@/components/blog/mdx-components";
+import { buildUrl, BASE_URL } from "@/lib/url";
 import type { Metadata } from "next";
 
 function ArrowLeftIcon({ className }: { className?: string }) {
@@ -45,8 +46,6 @@ export async function generateStaticParams() {
   );
 }
 
-const BASE_URL = "https://www.aiperiodcalculator.com";
-
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
@@ -64,11 +63,12 @@ export async function generateMetadata({
     title: post.title,
     description: post.excerpt,
     alternates: {
-      canonical: `/${locale === "en" ? "" : locale}blog/${slug}`,
+      canonical: buildUrl(locale, `/blog/${slug}`),
       languages: {
-        en: `/blog/${slug}`,
-        es: `/es/blog/${slug}`,
-        fr: `/fr/blog/${slug}`,
+        en: `${BASE_URL}/blog/${slug}`,
+        es: `${BASE_URL}/es/blog/${slug}`,
+        fr: `${BASE_URL}/fr/blog/${slug}`,
+        "x-default": `${BASE_URL}/blog/${slug}`,
       },
     },
     openGraph: {
@@ -99,8 +99,6 @@ export default async function BlogPostPage({ params }: PageProps) {
   if (!post) {
     notFound();
   }
-
-  const localePath = locale === "en" ? "" : `${locale}/`;
 
   return (
     <main className="flex min-h-screen flex-col items-center px-4 py-12">
@@ -199,7 +197,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               },
               mainEntityOfPage: {
                 "@type": "WebPage",
-                "@id": `${BASE_URL}/${localePath}blog/${slug}`,
+                "@id": buildUrl(locale, `/blog/${slug}`),
               },
             },
             {
@@ -209,7 +207,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                   "@type": "ListItem",
                   position: 1,
                   name: tNav("home"),
-                  item: `${BASE_URL}/${localePath}`,
+                  item: buildUrl(locale, ""),
                 },
                 {
                   "@type": "ListItem",

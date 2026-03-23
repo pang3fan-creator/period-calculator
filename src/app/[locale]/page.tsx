@@ -7,8 +7,8 @@ import { DeepKnowledge } from "@/components/home/deep-knowledge";
 import { FAQ } from "@/components/home/faq";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Link } from "@/i18n/routing";
+import { buildUrl, BASE_URL } from "@/lib/url";
 
-const baseUrl = "https://www.aiperiodcalculator.com";
 const locales = ["en", "es", "fr"];
 const localeNames: Record<string, string> = {
   en: "en-US",
@@ -32,7 +32,7 @@ export async function generateMetadata({
     openGraph: {
       title: t("title"),
       description: t("description"),
-      url: `${baseUrl}/${locale === "en" ? "" : locale}`,
+      url: buildUrl(locale, ""),
       siteName: "Period Calculator",
       locale: localeNames[locale],
       alternateLocale: locales
@@ -41,7 +41,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: `${baseUrl}/og-image.png`,
+          url: `${BASE_URL}/og-image.png`,
           width: 1200,
           height: 630,
           alt: t("title"),
@@ -52,15 +52,15 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: [`${baseUrl}/og-image.png`],
+      images: [`${BASE_URL}/og-image.png`],
     },
     alternates: {
-      canonical: `${baseUrl}/${locale === "en" ? "" : locale}`,
+      canonical: buildUrl(locale, ""),
       languages: {
-        en: `${baseUrl}/`,
-        es: `${baseUrl}/es`,
-        fr: `${baseUrl}/fr`,
-        "x-default": `${baseUrl}/`,
+        en: `${BASE_URL}/`,
+        es: `${BASE_URL}/es`,
+        fr: `${BASE_URL}/fr`,
+        "x-default": `${BASE_URL}/`,
       },
     },
   };
@@ -102,12 +102,12 @@ export default async function HomePage({
       // Organization (E-E-A-T signal)
       {
         "@type": "Organization",
-        "@id": `${baseUrl}/#organization`,
+        "@id": `${BASE_URL}/#organization`,
         name: "Period Calculator",
-        url: baseUrl,
+        url: BASE_URL,
         logo: {
           "@type": "ImageObject",
-          url: `${baseUrl}/logo.png`,
+          url: `${BASE_URL}/logo.png`,
           width: 1200,
           height: 630,
         },
@@ -127,21 +127,21 @@ export default async function HomePage({
       {
         "@type": "WebSite",
         name: "Period Calculator",
-        url: baseUrl,
+        url: BASE_URL,
         publisher: {
-          "@id": `${baseUrl}/#organization`,
+          "@id": `${BASE_URL}/#organization`,
         },
         mainEntity: {
-          "@id": `${baseUrl}/#webapplication`,
+          "@id": `${BASE_URL}/#webapplication`,
         },
       },
       // WebApplication
       {
         "@type": "WebApplication",
-        "@id": `${baseUrl}/#webapplication`,
+        "@id": `${BASE_URL}/#webapplication`,
         name: tMetadata("title"),
         description: tMetadata("description"),
-        url: baseUrl,
+        url: BASE_URL,
         applicationCategory: "HealthApplication",
         operatingSystem: "Web Browser",
         browserRequirements: "Requires JavaScript",
@@ -160,7 +160,7 @@ export default async function HomePage({
           availability: "https://schema.org/InStock",
         },
         author: {
-          "@id": `${baseUrl}/#organization`,
+          "@id": `${BASE_URL}/#organization`,
         },
       },
       // BreadcrumbList (simplified for homepage - single level)
@@ -172,7 +172,7 @@ export default async function HomePage({
             "@type": "ListItem",
             position: 1,
             name: tSchema("breadcrumbHome"),
-            item: baseUrl,
+            item: BASE_URL,
           },
         ],
       },
@@ -196,7 +196,7 @@ export default async function HomePage({
         description: tHowTo("title"),
         inLanguage: locale,
         author: {
-          "@id": `${baseUrl}/#organization`,
+          "@id": `${BASE_URL}/#organization`,
         },
         step: howToStepKeys.map((key) => ({
           "@type": "HowToStep",
