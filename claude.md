@@ -74,6 +74,7 @@ src/
 - **FAQ/HowTo 数据**: 从翻译文件动态获取，不要在页面硬编码
 - **日期格式**: 必须使用 ISO 8601 含时区格式（`2026-03-16T00:00:00+00:00`，非 `2026-03-16`）
 - **BreadcrumbList 层级**: 只能包含实际存在的页面，不可虚构中间层级；首页应简化为单项
+- **BreadcrumbList inLanguage**: 该类型不支持 `inLanguage` 属性，多语言信号应通过 `hreflang` 标签传递
 - **HowTo 富媒体**: Google 已废弃（2024），但保留 Schema 仍有 AI SEO 价值
 
 ---

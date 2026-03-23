@@ -3,6 +3,7 @@
 /.claude
 /.omc
 /.codex
+/.superpowers
 
 # dependencies
 /node_modules
