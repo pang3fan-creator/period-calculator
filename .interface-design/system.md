@@ -1,6 +1,6 @@
 # Period Calculator 设计系统
 
-本文档从现有代码中提取的设计模式，用于保持 UI 一致性。
+> 最后更新: 2026-03-23
 
 ---
 
@@ -11,49 +11,73 @@
 - **Base**: 4px
 - **Scale**: 4, 8, 12, 16, 24, 32, 48, 64, 80
 
-### 应用场景
+### 常用间距（按频率排序）
 
-| 类名                    | 值   | 用途                 |
-| ----------------------- | ---- | -------------------- |
-| `p-1` / `px-1` / `py-1` | 4px  | 紧凑间距             |
-| `p-2` / `px-2` / `py-2` | 8px  | 小间距               |
-| `p-3` / `px-3` / `py-3` | 12px | 中等间距             |
-| `p-4` / `px-4` / `py-4` | 16px | 标准间距             |
-| `p-6` / `px-6` / `py-6` | 24px | 大间距（卡片内边距） |
-| `p-8` / `px-8` / `py-8` | 32px | 超大间距             |
-| `gap-1`                 | 4px  | 元素间紧凑间距       |
-| `gap-2`                 | 8px  | 元素间小间距         |
-| `gap-3`                 | 12px | 元素间中等间距       |
-| `gap-4`                 | 16px | 元素间标准间距       |
-| `gap-6`                 | 24px | 元素间大间距         |
+| 类名 | 值 | 出现次数 | 用途 |
+|------|-----|---------|------|
+| `gap-3` | 12px | 25次 | 卡片内元素间距 |
+| `gap-4` | 16px | 20次 | 主要间距 |
+| `gap-6` | 24px | 14次 | 区块间距 |
+| `gap-8` | 32px | 7次 | 大区块间距 |
 
 ### 垂直间距 (space-y)
 
-| 类名         | 值   | 用途                 |
-| ------------ | ---- | -------------------- |
-| `space-y-1` | 4px  | 紧凑垂直间距         |
-| `space-y-2` | 8px  | 小垂直间距           |
-| `space-y-3` | 12px | 中等垂直间距         |
-| `space-y-4` | 16px | 表单区块间距         |
-| `space-y-6` | 24px | 页面区块间距         |
-| `space-y-8` | 32px | 大区块间距           |
+| 类名 | 值 | 用途 |
+|------|-----|------|
+| `space-y-3` | 12px | 紧凑垂直间距（FAQ项之间） |
+| `space-y-4` | 16px | 表单区块间距 |
+| `space-y-6` | 24px | 页面区块间距 |
+| `space-y-8` | 32px | 大区块间距（表单元素之间） |
 
 ### 安全触摸区域
 
 - **最小值**: `min-h-[48px]` / `min-w-[48px]`
+- **出现次数**: 98次
 - **用途**: 所有可点击元素（按钮、链接、图标）
 
 ---
 
 ## 圆角系统
 
-| 类名           | 值     | 用途                 |
-| -------------- | ------ | -------------------- |
-| `rounded-lg`   | 8px    | 小圆角               |
-| `rounded-xl`   | 12px   | 中圆角               |
-| `rounded-2xl`  | 16px   | 大圆角（按钮、面板） |
-| `rounded-3xl`  | 24px   | 超大圆角（卡片）     |
-| `rounded-full` | 9999px | 圆形（徽章、指示器） |
+| 类名 | 值 | 出现次数 | 用途 |
+|------|-----|---------|------|
+| `rounded-2xl` | 16px | 29次 | 按钮、小卡片、输入框 |
+| `rounded-3xl` | 24px | 8次 | 主卡片容器 |
+| `rounded-xl` | 12px | 少量 | 下拉菜单、语言选择器 |
+
+**建议**:
+- 按钮/输入框: `rounded-2xl`
+- 卡片: `rounded-3xl`
+- 下拉菜单: `rounded-xl`
+
+---
+
+## 深度策略
+
+**混合策略**: 边框为主，阴影为辅
+
+| 类型 | 出现次数 | 用途 |
+|------|---------|------|
+| `border-2` | 39次 | 卡片边框、输入框边框 |
+| `shadow-*` | 16次 | 悬浮元素、强调效果 |
+
+### 阴影层级
+
+| 类名 | 用途 |
+|------|------|
+| `shadow-card` | 卡片阴影（轻柔） |
+| `shadow-soft` | Header、下拉菜单 |
+| `shadow-warm` | 主按钮（粉色光晕） |
+
+### 边框模式
+
+```tsx
+// 标准卡片边框
+className = "border-2 border-warmbeige-200 dark:border-dark-border"
+
+// 输入框边框
+className = "border-2 border-primary-200 focus:border-primary-400"
+```
 
 ---
 
@@ -67,105 +91,160 @@ className = "min-h-[48px] rounded-2xl font-body transition-all";
 
 ### 变体
 
-| 变体        | 样式                                                                  |
-| ----------- | --------------------------------------------------------------------- |
-| `primary`   | `bg-primary-400 text-white hover:bg-primary-500`                      |
+| 变体 | 样式 |
+|------|------|
+| `primary` | `bg-primary-400 text-white hover:bg-primary-500` |
 | `secondary` | `bg-warmbeige-100 text-gray-800 dark:bg-dark-card dark:text-gray-100` |
-| `ghost`     | `bg-transparent text-gray-700 dark:text-gray-300`                     |
+| `ghost` | `bg-transparent text-gray-700 dark:text-gray-300` |
 
 ### 尺寸
 
-| 尺寸 | 水平内边距    | 垂直内边距    | 字体        |
-| ---- | ------------- | ------------- | ----------- |
-| `sm` | `px-4` (16px) | `py-2` (8px)  | `text-sm`   |
+| 尺寸 | 水平内边距 | 垂直内边距 | 字体 |
+|------|-----------|-----------|------|
+| `sm` | `px-4` (16px) | `py-2` (8px) | `text-sm` |
 | `md` | `px-6` (24px) | `py-3` (12px) | `text-base` |
-| `lg` | `px-8` (32px) | `py-4` (16px) | `text-lg`   |
-
-### 示例代码
-
-```tsx
-<Button variant="primary" size="md">
-  点击我
-</Button>
-```
+| `lg` | `px-8` (32px) | `py-4` (16px) | `text-lg` |
 
 ---
 
 ## 卡片组件
 
-### 样式
+### 标准卡片
 
 ```tsx
-// 推荐样式（带边框）
-className = "border-warmbeige-200 dark:border-dark-border dark:bg-dark-card rounded-3xl border bg-white p-6";
+// 带阴影（默认）
+className = "shadow-card dark:bg-dark-card rounded-3xl bg-white p-6 md:p-8"
+
+// 带边框
+className = "border-warmbeige-200 dark:border-dark-border dark:bg-dark-card rounded-3xl border-2 bg-white p-6"
 ```
 
-### 属性
+### 卡片属性
 
-| 属性   | 值                                            | 说明         |
-| ------ | --------------------------------------------- | ------------ |
-| 背景   | `bg-white` / `dark:bg-dark-card`              | 支持深色模式 |
-| 边框   | `border border-warmbeige-200 dark:border-dark-border` | 温暖色调边框 |
-| 圆角   | `rounded-3xl` (24px)                          | 超大圆角     |
-| 内边距 | `p-6` (24px) / `sm:p-8` (32px)                | 响应式内边距 |
+| 属性 | 值 | 说明 |
+|------|-----|------|
+| 背景 | `bg-white` / `dark:bg-dark-card` | 支持深色模式 |
+| 边框 | `border-2 border-warmbeige-200` | 温暖色调边框 |
+| 圆角 | `rounded-3xl` (24px) | 超大圆角 |
+| 内边距 | `p-6` / `md:p-8` | 响应式内边距 |
 
-### 卡片变体
+---
+
+## 输入框组件
+
+### 文本输入框
 
 ```tsx
-// 基础卡片（推荐）
-className = "border-warmbeige-200 dark:border-dark-border dark:bg-dark-card rounded-3xl border bg-white p-6 sm:p-8"
-
-// 悬停效果卡片
-className = "hover:border-primary-200 dark:hover:border-primary-700 rounded-3xl border bg-white p-5 md:p-6"
-
-// 阴影卡片（特殊场景）
-className = "shadow-card dark:bg-dark-card rounded-3xl bg-white p-6"
+className = "border-primary-200 dark:border-dark-border focus:border-primary-400 focus:ring-primary-100 min-h-[48px] w-full rounded-xl border-2 bg-white px-4 py-3 text-gray-800 transition-colors focus:ring-4 dark:text-gray-100"
 ```
 
-### 示例代码
+### 滑块
 
 ```tsx
-<Card>
-  <h2>卡片标题</h2>
-  <p>卡片内容</p>
-</Card>
+className = "bg-primary-100 dark:bg-dark-border accent-primary-400 h-2 w-full cursor-pointer appearance-none rounded-full"
+```
+
+### 日期选择器
+
+```tsx
+className = "border-primary-200 dark:bg-dark-card dark:border-dark-border focus:border-primary-400 focus:ring-primary-100 dark:focus:ring-primary-900/30 min-h-[48px] w-full cursor-pointer rounded-xl border-2 bg-white px-4 py-3 text-gray-800 transition-colors focus:ring-4 dark:text-gray-100"
 ```
 
 ---
 
-## 深度策略
+## 颜色系统
 
-### 优先级
+### 主色调（Dusty Rose）
 
-1. **优先使用边框**：用于卡片、面板、分隔区域
-2. **阴影用于强调**：用于悬浮元素、模态框、按钮
+| Shade | Hex | 用途 |
+|-------|-----|------|
+| 50 | `#fdf2f4` | Lightest tint |
+| 100 | `#fbe5ea` | Backgrounds |
+| 200 | `#f8ced8` | Borders |
+| 400 | `#eb7e97` | **Primary brand** |
+| 500 | `#df5579` | Hover states |
 
-### 边框使用（推荐）
+### 背景色
+
+| Token | Light Mode | Dark Mode |
+|-------|------------|-----------|
+| Page | `ivory-100` | `dark-bg` |
+| Card | `white` / `warmbeige-50` | `dark-card` |
+| Surface | `warmbeige-100` | `dark-surface` |
+
+### 语义色（日历可视化）
+
+| 事件 | Border | Background |
+|------|--------|------------|
+| Period | `rose-300` | `rose-50` |
+| Ovulation | `violet-400` | `violet-50` |
+| Fertile | `emerald-400` | `emerald-50` |
+| PMS | `amber-300` | `amber-50` |
+
+---
+
+## 字体系统
+
+### 字体族
+
+```css
+--font-heading: var(--font-playfair), serif;  /* h1-h6 */
+--font-body: var(--font-inter), sans-serif;   /* body text */
+```
+
+### 标题尺寸
+
+| 元素 | Mobile | Desktop |
+|------|--------|---------|
+| h1 | `text-3xl` | `text-4xl` |
+| h2 | `text-2xl` | `text-3xl` |
+| h3 | `text-xl` | `text-2xl` |
+
+---
+
+## 布局模式
+
+### 预测卡片网格
 
 ```tsx
-// 卡片边框
-className = "border border-warmbeige-200 dark:border-dark-border rounded-3xl";
-
-// 顶部边框（分隔线）
-className = "border-t border-warmbeige-200";
-
-// 深色模式边框
-className = "border-warmbeige-200 dark:border-dark-border";
+<div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+  {cards.map(card => (
+    <div className="flex items-center gap-3 p-3 sm:gap-4 sm:p-5
+                    rounded-3xl border-2">
+      {/* Icon + Content */}
+    </div>
+  ))}
+</div>
 ```
 
-### 阴影层级
+### FAQ 手风琴
 
-| 类名          | 用途                     |
-| ------------- | ------------------------ |
-| `shadow-card` | 卡片阴影（特殊场景）     |
-| `shadow-soft` | 轻微阴影（悬停效果）     |
-| `shadow-warm` | 温暖色调阴影（强调元素） |
+```tsx
+<div className="space-y-3">
+  {items.map(item => (
+    <div className="rounded-3xl border-2 border-warmbeige-200 bg-white">
+      <button className="min-h-[48px] w-full p-4 text-left">
+        {/* Question */}
+      </button>
+      <div className={isOpen ? "max-h-96" : "max-h-0"}>
+        {/* Answer */}
+      </div>
+    </div>
+  ))}
+</div>
 ```
 
-### 优先级
+### 表单布局
 
-1. **优先使用阴影**：用于卡片、面板、悬浮元素
-2. **边框用于分隔**：用于页面区域分隔、列表项分隔
+```tsx
+<form className="space-y-8">
+  {/* Each input group */}
+  <div className="space-y-3">
+    <label>...</label>
+    <input>...</input>
+  </div>
+</form>
+```
 
 ---
 
@@ -176,18 +255,14 @@ className = "border-warmbeige-200 dark:border-dark-border";
 所有交互元素必须包含：
 
 ```tsx
-className =
-  "focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-2 outline-none";
+className = "focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-2 outline-none";
 ```
 
 ### 触摸目标
 
 ```tsx
-// 最小触摸尺寸
+// 最小触摸尺寸 (WCAG 2.1)
 className = "min-h-[48px] min-w-[48px]";
-
-// 带内边距的触摸目标
-className = "p-3"; // 12px + 内容
 ```
 
 ### ARIA 属性
@@ -195,107 +270,12 @@ className = "p-3"; // 12px + 内容
 ```tsx
 // 装饰性图标（必须）
 <svg aria-hidden="true">
-  <path d="..." />
-</svg>
 
 // 仅图标按钮
 <button aria-label="关闭">
 
-// 选项卡状态
-<button aria-selected="true">
-```
-
-### SVG 图标模式
-
-所有装饰性 SVG 必须包含：
-
-```tsx
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  strokeWidth="2"
-  strokeLinecap="round"
-  strokeLinejoin="round"
-  aria-hidden="true"
->
-  <path d="..." />
-</svg>
-```
-
----
-
-## 输入框/表单组件
-
-### 输入框样式
-
-```tsx
-className = "border-primary-200 dark:border-dark-border focus:border-primary-400 focus:ring-primary-100 min-h-[48px] w-full rounded-xl border-2 bg-white px-4 py-3 text-gray-800 transition-colors focus:ring-4 dark:text-gray-100"
-```
-
-### 滑块样式
-
-```tsx
-className = "bg-primary-100 dark:bg-dark-border accent-primary-400 h-2 w-full cursor-pointer appearance-none rounded-full"
-```
-
-### 表单按钮变体
-
-| 类型     | 样式                                                                 |
-| -------- | -------------------------------------------------------------------- |
-| 主要按钮 | `bg-primary-400 hover:bg-primary-500 shadow-warm rounded-2xl px-6 py-3` |
-| 次要按钮 | `border-primary-200 hover:border-primary-300 rounded-2xl border-2 px-6 py-3` |
-
----
-
-## 颜色使用
-
-### 主色调（Dusty Rose）
-
-| 类名                   | 用途                 |
-| ---------------------- | -------------------- |
-| `bg-primary-400`       | 主要按钮、活跃状态   |
-| `text-primary-400`     | 链接、标题、强调文本 |
-| `hover:bg-primary-500` | 悬停状态             |
-
-### 背景色
-
-| 类名                             | 用途               |
-| -------------------------------- | ------------------ |
-| `bg-ivory-50` / `bg-ivory-100`   | 页面背景           |
-| `bg-warmbeige-100`               | 次要按钮、浅色区域 |
-| `bg-white` / `dark:bg-dark-card` | 卡片背景           |
-| `bg-dark-bg`                     | 深色模式页面背景   |
-
-### 文本色
-
-| 类名            | 用途                 |
-| --------------- | -------------------- |
-| `text-gray-800` | 主要文本（浅色模式） |
-| `text-gray-100` | 主要文本（深色模式） |
-| `text-gray-600` | 次要文本             |
-| `text-gray-400` | 占位符、禁用状态     |
-
----
-
-## 字体系统
-
-### 字体族
-
-```css
---font-heading: var(--font-playfair), serif; /* 标题 */
---font-body: var(--font-inter), sans-serif; /* 正文 */
-```
-
-### 应用
-
-```tsx
-// 标题
-className = "font-heading";
-
-// 正文
-className = "font-body";
+// 展开状态
+<button aria-expanded={isOpen}>
 ```
 
 ---
@@ -305,101 +285,56 @@ className = "font-body";
 ### 预定义动画
 
 ```css
---animate-fade-in: fade-in 0.5s ease-in-out;
---animate-slide-up: slide-up 0.4s ease-out;
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Usage */
+animate-fade-in   /* 0.5s ease-in-out */
+animate-slide-up  /* 0.4s ease-out */
 ```
 
 ### 过渡
 
 ```tsx
 // 标准过渡
-className = "transition-all";
+className = "transition-all"
 
-// 快速过渡
-className = "transition-colors duration-200";
+// 颜色过渡
+className = "transition-colors duration-200"
 
-// 缓慢过渡
-className = "transition-transform duration-300 ease-out";
+// 变换过渡
+className = "transition-transform duration-300"
 ```
 
 ---
 
-## 深色模式实现
+## 深色模式
 
-### 深色类策略
+### 类策略
 
 ```css
 /* Tailwind v4 配置 */
 @custom-variant dark (&:where(.dark, .dark *));
 ```
 
-### 深色模式样式模式
+### 样式模式
 
 ```tsx
 // 背景和文本
-className = "bg-white dark:bg-dark-card text-gray-800 dark:text-gray-100";
+className = "bg-white dark:bg-dark-card text-gray-800 dark:text-gray-100"
 
 // 边框
-className = "border-warmbeige-200 dark:border-dark-border";
+className = "border-warmbeige-200 dark:border-dark-border"
 
 // 悬停状态
-className = "hover:bg-warmbeige-50 dark:hover:bg-dark-surface";
-```
-
----
-
-## 布局模式
-
-### 粘性页脚
-
-```tsx
-<body className="flex min-h-screen flex-col">
-  <Header />
-  <main className="flex-1">{children}</main>
-  <Footer />
-</body>
-```
-
-### 网格布局
-
-```tsx
-// 四列均分（移动端底部导航）
-className = "grid grid-cols-4";
-
-// 两列布局
-className = "grid grid-cols-2 gap-2";
-```
-
----
-
-## 移动端导航
-
-### 底部导航栏
-
-```tsx
-className = "border-warmbeige-200 dark:border-dark-border fixed right-0 bottom-0 left-0 z-50 border-t backdrop-blur-md"
-```
-
-### 导航项
-
-```tsx
-className = "focus-visible:ring-primary-400 flex flex-col items-center justify-center gap-1 rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-```
-
----
-
-## 日历组件
-
-### 日历单元格
-
-```tsx
-className = "flex h-11 min-h-[44px] items-center justify-center rounded-2xl text-sm font-medium transition-all"
-```
-
-### 日历容器
-
-```tsx
-className = "shadow-card dark:bg-dark-card flex w-full flex-col gap-6 rounded-3xl bg-white p-6 md:p-8"
+className = "hover:bg-warmbeige-50 dark:hover:bg-dark-surface"
 ```
 
 ---
@@ -408,12 +343,11 @@ className = "shadow-card dark:bg-dark-card flex w-full flex-col gap-6 rounded-3x
 
 - `src/components/ui/button.tsx` - 按钮组件
 - `src/components/ui/card.tsx` - 卡片组件
-- `src/components/ui/skeleton.tsx` - 骨架屏组件
 - `src/components/layout/header.tsx` - 页头组件
 - `src/components/layout/footer.tsx` - 页脚组件
-- `src/components/layout/mobile-nav.tsx` - 移动端导航
 - `src/components/calculator/calculator-form.tsx` - 表单组件
 - `src/components/calculator/calendar-view.tsx` - 日历组件
+- `src/components/calculator/prediction-cards.tsx` - 预测卡片
+- `src/components/home/faq.tsx` - FAQ 组件
+- `src/lib/theme/ovulation-theme.ts` - 排卵期主题配置
 - `src/app/globals.css` - 全局样式和主题变量
-- `src/app/[locale]/privacy-policy/page.tsx` - 政策页面（SVG 图标模式）
-- `src/app/[locale]/editorial-policy/page.tsx` - 编辑政策页面
