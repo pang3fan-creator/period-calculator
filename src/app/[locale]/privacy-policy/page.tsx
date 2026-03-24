@@ -252,7 +252,7 @@ export default async function PrivacyPolicyPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations("privacyPolicy");
+  const t = await getTranslations({ locale, namespace: "privacyPolicy" });
 
   const sections = [
     "dataCollection",

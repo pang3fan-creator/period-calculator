@@ -1,15 +1,18 @@
 import Image from "next/image";
-import { getTranslations, getLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
-import { getAllPosts } from "@/lib/blog/posts";
+import { getAllPostMetadata } from "@/lib/blog/posts";
 import type { Locale } from "@/i18n/config";
 
-export async function Footer() {
-  const t = await getTranslations("footer");
-  const tNav = await getTranslations("nav");
-  const tCommon = await getTranslations("common");
-  const locale = (await getLocale()) as Locale;
-  const blogPosts = getAllPosts(locale);
+interface FooterProps {
+  locale: Locale;
+}
+
+export async function Footer({ locale }: FooterProps) {
+  const t = await getTranslations({ locale, namespace: "footer" });
+  const tNav = await getTranslations({ locale, namespace: "nav" });
+  const tCommon = await getTranslations({ locale, namespace: "common" });
+  const blogPosts = getAllPostMetadata(locale);
 
   const linkClassName =
     "focus-visible:ring-primary-400 hover:text-primary-400 block rounded-lg text-sm text-gray-500 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2 dark:text-gray-400";

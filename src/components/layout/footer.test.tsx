@@ -3,7 +3,12 @@ import { renderToString } from "react-dom/server";
 import { Footer } from "./footer";
 
 vi.mock("next-intl/server", () => ({
-  getTranslations: async (namespace: string) => (key: string) => {
+  getTranslations: async ({
+    namespace,
+  }: {
+    locale: string;
+    namespace: string;
+  }) => (key: string) => {
     const translations: Record<string, Record<string, string>> = {
       footer: {
         tagline: "Privacy-first period tracking",
@@ -28,7 +33,6 @@ vi.mock("next-intl/server", () => ({
 
     return translations[namespace]?.[key] || key;
   },
-  getLocale: async () => "en",
 }));
 
 vi.mock("next/image", () => ({
@@ -64,12 +68,12 @@ vi.mock("@/i18n/routing", () => ({
 }));
 
 vi.mock("@/lib/blog/posts", () => ({
-  getAllPosts: () => [{ slug: "sample-post", title: "Sample Post" }],
+  getAllPostMetadata: () => [{ slug: "sample-post", title: "Sample Post" }],
 }));
 
 describe("Footer", () => {
   it("renders the AI Agents Directory featured badge in the brand trust area", async () => {
-    const html = renderToString(await Footer());
+    const html = renderToString(await Footer({ locale: "en" }));
 
     expect(html).toContain(
       'href="https://aiagentsdirectory.com/agent/accurate-period-calculator?utm_source=badge&amp;utm_medium=referral&amp;utm_campaign=free_listing&amp;utm_content=accurate-period-calculator"',
@@ -83,15 +87,15 @@ describe("Footer", () => {
     expect(html).toContain('width="200"');
     expect(html).toContain('height="50"');
     expect(html).toContain('target="_blank"');
-    expect(html).toContain('rel="noopener noreferrer"');
+    expect(html).toContain('rel="noopener noreferrer nofollow"');
   });
 
   it("renders the Dang.ai external link with safe target attributes", async () => {
-    const html = renderToString(await Footer());
+    const html = renderToString(await Footer({ locale: "en" }));
 
     expect(html).toContain('href="https://dang.ai/"');
     expect(html).toContain('target="_blank"');
-    expect(html).toContain('rel="noopener"');
+    expect(html).toContain('rel="noopener noreferrer nofollow"');
     expect(html).toContain("Dang.ai");
   });
 });

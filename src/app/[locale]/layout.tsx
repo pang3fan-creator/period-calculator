@@ -1,6 +1,8 @@
 import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import type { Locale } from "@/i18n/config";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -8,6 +10,7 @@ import { ErrorBoundary } from "@/components/error-boundary";
 import { ReportButton } from "@/components/ui/report-button";
 import { Playfair_Display, Inter } from "next/font/google";
 import { Metadata } from "next";
+import { getStaticLocaleParams } from "@/i18n/static-rendering";
 
 export async function generateMetadata({
   params,
@@ -20,6 +23,10 @@ export async function generateMetadata({
     description:
       "Calculate your next period, fertile window, and ovulation date. 100% private.",
   };
+}
+
+export function generateStaticParams() {
+  return getStaticLocaleParams();
 }
 
 const playfair = Playfair_Display({
@@ -47,6 +54,8 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  setRequestLocale(locale);
+
   const messages = (await import(`../../../messages/${locale}.json`)).default;
 
   return (
@@ -65,7 +74,7 @@ export default async function LocaleLayout({
             <main className="flex-1 pt-20 pb-0 md:pt-24">
               <ErrorBoundary>{children}</ErrorBoundary>
             </main>
-            <Footer />
+            <Footer locale={locale as Locale} />
             <ReportButton />
           </NextIntlClientProvider>
         </ThemeProvider>

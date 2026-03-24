@@ -22,7 +22,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations("metadata");
+  const t = await getTranslations({ locale, namespace: "metadata" });
 
   return {
     title: {
@@ -87,13 +87,25 @@ export default async function HomePage({
   const { locale } = await params;
 
   // Server-side translations
-  const tHome = await getTranslations("home");
-  const tMetadata = await getTranslations("metadata");
-  const tHowTo = await getTranslations("howToCalculate");
-  const tFaq = await getTranslations("faq");
-  const tOtherTools = await getTranslations("home.otherTools");
-  const tSchema = await getTranslations("common.schema");
-  const tFeatureList = await getTranslations("home.featureList");
+  const tHome = await getTranslations({ locale, namespace: "home" });
+  const tMetadata = await getTranslations({ locale, namespace: "metadata" });
+  const tHowTo = await getTranslations({
+    locale,
+    namespace: "howToCalculate",
+  });
+  const tFaq = await getTranslations({ locale, namespace: "faq" });
+  const tOtherTools = await getTranslations({
+    locale,
+    namespace: "home.otherTools",
+  });
+  const tSchema = await getTranslations({
+    locale,
+    namespace: "common.schema",
+  });
+  const tFeatureList = await getTranslations({
+    locale,
+    namespace: "home.featureList",
+  });
 
   // Combined JSON-LD Schema using @graph for better organization
   const combinedSchema = {

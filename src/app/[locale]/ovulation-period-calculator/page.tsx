@@ -118,13 +118,28 @@ export default async function OvulationCalculatorPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations("ovulationCalculator");
-  const tMetadata = await getTranslations("metadata.ovulation");
-  const tHowTo = await getTranslations("ovulationHowToCalculate");
-  const tFaq = await getTranslations("ovulationFaq");
-  const tOtherTools = await getTranslations("ovulationCalculator.otherTools");
-  const tSchema = await getTranslations("common.schema");
-  const tFeatureList = await getTranslations("ovulationCalculator.featureList");
+  const t = await getTranslations({ locale, namespace: "ovulationCalculator" });
+  const tMetadata = await getTranslations({
+    locale,
+    namespace: "metadata.ovulation",
+  });
+  const tHowTo = await getTranslations({
+    locale,
+    namespace: "ovulationHowToCalculate",
+  });
+  const tFaq = await getTranslations({ locale, namespace: "ovulationFaq" });
+  const tOtherTools = await getTranslations({
+    locale,
+    namespace: "ovulationCalculator.otherTools",
+  });
+  const tSchema = await getTranslations({
+    locale,
+    namespace: "common.schema",
+  });
+  const tFeatureList = await getTranslations({
+    locale,
+    namespace: "ovulationCalculator.featureList",
+  });
 
   // Combined JSON-LD Schema using @graph for better semantic relationships
   const combinedSchema = {

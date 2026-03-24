@@ -55,7 +55,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations("irregularCalculator");
+  const t = await getTranslations({ locale, namespace: "irregularCalculator" });
 
   return {
     title: t("metaTitle"),
@@ -103,13 +103,28 @@ export default async function IrregularPeriodCalculatorPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations("irregularCalculator");
-  const tMetadata = await getTranslations("metadata.irregular");
-  const tHowTo = await getTranslations("irregularHowToCalculate");
-  const tFaq = await getTranslations("irregularFaq");
-  const tOtherTools = await getTranslations("irregularCalculator.otherTools");
-  const tSchema = await getTranslations("common.schema");
-  const tFeatureList = await getTranslations("irregularCalculator.featureList");
+  const t = await getTranslations({ locale, namespace: "irregularCalculator" });
+  const tMetadata = await getTranslations({
+    locale,
+    namespace: "metadata.irregular",
+  });
+  const tHowTo = await getTranslations({
+    locale,
+    namespace: "irregularHowToCalculate",
+  });
+  const tFaq = await getTranslations({ locale, namespace: "irregularFaq" });
+  const tOtherTools = await getTranslations({
+    locale,
+    namespace: "irregularCalculator.otherTools",
+  });
+  const tSchema = await getTranslations({
+    locale,
+    namespace: "common.schema",
+  });
+  const tFeatureList = await getTranslations({
+    locale,
+    namespace: "irregularCalculator.featureList",
+  });
 
   // Combined JSON-LD Schema using @graph for better organization
   const combinedSchema = {

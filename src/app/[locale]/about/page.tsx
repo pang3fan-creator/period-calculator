@@ -154,7 +154,7 @@ export default async function AboutPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations("about");
+  const t = await getTranslations({ locale, namespace: "about" });
 
   // Get today's date for freshness signal
   const today = new Date().toLocaleDateString(

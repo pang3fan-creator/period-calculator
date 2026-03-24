@@ -272,7 +272,7 @@ export default async function EditorialPolicyPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations("editorialPolicy");
+  const t = await getTranslations({ locale, namespace: "editorialPolicy" });
 
   const sections = [
     "medicalSources",

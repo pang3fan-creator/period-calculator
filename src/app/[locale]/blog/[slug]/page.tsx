@@ -1,4 +1,4 @@
-import { getTranslations, getLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
@@ -10,6 +10,7 @@ import remarkGfm from "remark-gfm";
 import { mdxComponents } from "@/components/blog/mdx-components";
 import { buildUrl, BASE_URL } from "@/lib/url";
 import type { Metadata } from "next";
+import type { Locale } from "@/i18n/config";
 
 function ArrowLeftIcon({ className }: { className?: string }) {
   return (
@@ -31,7 +32,7 @@ function ArrowLeftIcon({ className }: { className?: string }) {
 }
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -49,9 +50,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const locale = (await getLocale()) as "en" | "es" | "fr";
-  const post = getPostBySlug(slug, locale);
+  const { locale, slug } = await params;
+  const post = getPostBySlug(slug, locale as Locale);
 
   if (!post) {
     return { title: "Not Found" };
@@ -90,11 +90,10 @@ export async function generateMetadata({
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
-  const { slug } = await params;
-  const locale = (await getLocale()) as "en" | "es" | "fr";
-  const t = await getTranslations("blog");
-  const tNav = await getTranslations("nav");
-  const post = getPostBySlug(slug, locale);
+  const { locale, slug } = await params;
+  const t = await getTranslations({ locale, namespace: "blog" });
+  const tNav = await getTranslations({ locale, namespace: "nav" });
+  const post = getPostBySlug(slug, locale as Locale);
 
   if (!post) {
     notFound();
