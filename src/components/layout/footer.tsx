@@ -52,20 +52,7 @@ export async function Footer({ locale }: FooterProps) {
                 {t("trustText")}
               </p>
             </div>
-            <a
-              href="https://aiagentsdirectory.com/agent/accurate-period-calculator?utm_source=badge&utm_medium=referral&utm_campaign=free_listing&utm_content=accurate-period-calculator"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              className="mt-4 inline-block rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-            >
-              <Image
-                src="https://aiagentsdirectory.com/featured-badge.svg?v=2024"
-                alt="Accurate Period Calculator - Featured AI Agent on AI Agents Directory"
-                width="200"
-                height="50"
-              />
-            </a>
-          </div>
+                      </div>
 
           {/* 第二列: Calculators */}
           <div>
@@ -134,23 +121,44 @@ export async function Footer({ locale }: FooterProps) {
                   {tNav("about")}
                 </Link>
               </li>
-              <li>
-                <a
-                  href="https://dang.ai/"
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  className={linkClassName}
-                >
-                  Dang.ai
-                </a>
-              </li>
-            </ul>
+                          </ul>
           </div>
         </div>
 
         {/* Copyright bar */}
         <div className="border-warmbeige-200 dark:border-dark-border mt-8 border-t pt-6 text-center text-xs text-gray-400">
           {t("copyright", { year: new Date().getFullYear() })}
+        </div>
+
+        {/* External links */}
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-gray-400">
+          <a
+            href="https://dang.ai/"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="inline-block rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+          >
+            <Image
+              src="https://cdn.prod.website-files.com/63d8afd87da01fb58ea3fbcb/6487e2868c6c8f93b4828827_dang-badge.png"
+              alt="Dang.ai"
+              width={150}
+              height={54}
+              unoptimized
+            />
+          </a>
+          <a
+            href="https://aiagentsdirectory.com/agent/accurate-period-calculator?utm_source=badge&utm_medium=referral&utm_campaign=free_listing&utm_content=accurate-period-calculator"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="inline-block rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+          >
+            <Image
+              src="https://aiagentsdirectory.com/featured-badge.svg?v=2024"
+              alt="Accurate Period Calculator - Featured AI Agent on AI Agents Directory"
+              width="200"
+              height="50"
+            />
+          </a>
         </div>
       </div>
     </footer>
