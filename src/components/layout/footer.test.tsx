@@ -98,4 +98,13 @@ describe("Footer", () => {
     expect(html).toContain('rel="noopener noreferrer nofollow"');
     expect(html).toContain("Dang.ai");
   });
+
+  it("renders the Submit AI Tools external link with safe target attributes", async () => {
+    const html = renderToString(await Footer({ locale: "en" }));
+
+    expect(html).toContain('href="https://submitaitools.org"');
+    expect(html).toContain('target="_blank"');
+    expect(html).toContain('rel="noopener noreferrer nofollow"');
+    expect(html).toContain("Submit AI Tools");
+  });
 });

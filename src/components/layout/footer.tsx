@@ -159,6 +159,20 @@ export async function Footer({ locale }: FooterProps) {
               height="50"
             />
           </a>
+          <a
+            href="https://submitaitools.org"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="inline-block rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+          >
+            <Image
+              src="https://submitaitools.org/static_submitaitools/images/submitaitools.png"
+              alt="Submit AI Tools"
+              width={200}
+              height={60}
+              unoptimized
+            />
+          </a>
         </div>
       </div>
     </footer>
