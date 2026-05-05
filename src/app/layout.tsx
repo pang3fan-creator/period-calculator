@@ -62,6 +62,10 @@ export const metadata: Metadata = {
       fr: "/fr",
     },
   },
+  other: {
+    "yandex-verification": "73d3f4e5a46d5cd1",
+    "baidu-site-verification": "codeva-L3jKfbPefm",
+  },
 };
 
 export default function RootLayout({
